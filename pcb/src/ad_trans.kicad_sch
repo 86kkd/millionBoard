@@ -1,0 +1,5009 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "c2f9115f-3c64-430d-91df-117d67a9c70e")
+	(paper "A4")
+	(lib_symbols
+		(symbol "ProDoc_CAN-easyedapro:5-Voltage"
+			(power)
+			(pin_numbers hide)
+			(pin_names hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ProDoc_CAN-easyedapro:"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power-5V"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "5-Voltage_1_0"
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy 1.27 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 0 0 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ProDoc_CAN-easyedapro:AFC20-S04ACA-00"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "X"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ProDoc_CAN-easyedapro:CONN-SMD_AFC20-S04ACA-00"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20210330/C2764211_02EB64B884E80A283E97197BD72D19B1.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "插针结构:1x4P;间距:2mm;安装方式:卧贴;参考系列:PH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:2A;工作温度范围:-20°C~+85°C;"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part" "AFC20-S04ACA-00"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "JS(钜硕电子)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier Part" "C2764213"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier" "LCSC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "AFC20-S04ACA-00_1_0"
+				(rectangle
+					(start -1.27 -6.35)
+					(end 3.81 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 5.08)
+					(radius 0.381)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -3.81 3.81 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -3.81 1.27 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -3.81 -1.27 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -3.81 -3.81 0)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 2.54 8.89 270)
+					(length 2.54)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 2.54 -8.89 90)
+					(length 2.54)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ProDoc_CAN-easyedapro:CapAcitance"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "100nF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CapAcitance_1_0"
+				(polyline
+					(pts
+						(xy -0.508 -2.032) (xy -0.508 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 2.032) (xy 0.508 -2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ProDoc_CAN-easyedapro:Ground-GND"
+			(power)
+			(pin_numbers hide)
+			(pin_names hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "ProDoc_CAN-easyedapro:"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Ground-GND_1_0"
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -3.302) (xy 1.778 -3.302)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -4.064) (xy 1.016 -4.064)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.254 -4.826) (xy 0.254 -4.826)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 0 0 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ProDoc_CAN-easyedapro:HX711"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ProDoc_CAN-easyedapro:SOP-16_L10.0-W3.9-P1.27-LS6.0-BL"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20201105/C43656_14FD91CAE53E7DB415D03EABCB162D83.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "称重AD采集芯片"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part" "HX711"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "AVIA(海芯科技)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier Part" "C43656"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier" "LCSC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part Name" "HX711"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "HX711_1_0"
+				(rectangle
+					(start -11.43 -11.43)
+					(end 11.43 11.43)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "HX711"
+					(at 1.27 -1.7018 900)
+					(effects
+						(font
+							(size 1.5748 1.5748)
+						)
+						(justify left bottom)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 8.89 0)
+					(length 5.08)
+					(name "VSUP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 -6.35 180)
+					(length 5.08)
+					(name "INPB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 -3.81 180)
+					(length 5.08)
+					(name "PD_SCK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 -1.27 180)
+					(length 5.08)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 1.27 180)
+					(length 5.08)
+					(name "XO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 3.81 180)
+					(length 5.08)
+					(name "XI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 6.35 180)
+					(length 5.08)
+					(name "RATE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 8.89 180)
+					(length 5.08)
+					(name "DVDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 6.35 0)
+					(length 5.08)
+					(name "BASE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 3.81 0)
+					(length 5.08)
+					(name "AVDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 1.27 0)
+					(length 5.08)
+					(name "VFB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 -1.27 0)
+					(length 5.08)
+					(name "AGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 -3.81 0)
+					(length 5.08)
+					(name "VBG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 -6.35 0)
+					(length 5.08)
+					(name "INNA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -16.51 -8.89 0)
+					(length 5.08)
+					(name "INPA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 -8.89 180)
+					(length 5.08)
+					(name "INNB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ProDoc_CAN-easyedapro:S8550_C105432"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ProDoc_CAN-easyedapro:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20171228/C164891_15144412930301213894.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "晶体管类型:PNP;集电极电流(Ic):500mA;集射极击穿电压(Vceo):25V;功率(Pd):300mW;直流电流增益(hFE@Ic,Vce):120@50mA,1V;"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part" "S8550"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "CJ(江苏长电/长晶)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier Part" "C105432"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier" "LCSC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "S8550_C105432_1_0"
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 0 0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 1.524 -1.016) (xy 1.524 -1.016) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ProDoc_CAN-easyedapro:电阻"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "10K"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "电阻_1_0"
+				(rectangle
+					(start -2.54 1.016)
+					(end 2.54 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 135.89 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "05464233-2229-4ce2-9f0f-50191b2c4945")
+	)
+	(junction
+		(at 82.55 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "05ccd506-728c-48c1-9a72-b4d749c4bd64")
+	)
+	(junction
+		(at 83.82 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "40de66ed-37b8-4a0d-9196-a3fa83907efd")
+	)
+	(junction
+		(at 68.58 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68e4d39d-4fd6-48c3-b95f-144caf25dc76")
+	)
+	(junction
+		(at 95.25 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "69827111-9091-439c-a28a-9658f912833e")
+	)
+	(junction
+		(at 96.52 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f7e35e3-1ea7-482c-982f-f270a9984a8e")
+	)
+	(junction
+		(at 82.55 160.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "70e879fe-a956-4bb9-9b94-a7e36399448d")
+	)
+	(junction
+		(at 135.89 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7f1eaac8-b490-4017-8b18-4bcf3967853f")
+	)
+	(junction
+		(at 83.82 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "87f877e1-ee9f-4b41-824f-26922724d64d")
+	)
+	(junction
+		(at 134.62 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "96629ad0-497e-466d-b245-2eb067f6fcfd")
+	)
+	(junction
+		(at 83.82 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a3250936-abef-47e0-9fb6-684c9726618d")
+	)
+	(junction
+		(at 134.62 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ad35cbb5-688b-4d0e-af62-17116641cb93")
+	)
+	(junction
+		(at 69.85 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c174988d-3176-45a1-8569-56dfcb1df7d4")
+	)
+	(junction
+		(at 96.52 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d267e63b-7e0e-41d6-aa3c-2726b187e183")
+	)
+	(junction
+		(at 85.09 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dbcef610-48ee-439a-96d2-970a842b27ff")
+	)
+	(junction
+		(at 95.25 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e520c5d2-ff95-482a-95a4-e32a03e89715")
+	)
+	(junction
+		(at 134.62 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f40bfa2f-7ee9-42ad-9de7-3b8f933a33c4")
+	)
+	(junction
+		(at 135.89 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fcce16a2-87df-4ee0-b09a-7de3493b6a9e")
+	)
+	(no_connect
+		(at 207.01 48.26)
+		(uuid "2c3fe760-4842-49a1-b8ef-3b7100b2f90a")
+	)
+	(no_connect
+		(at 134.62 152.4)
+		(uuid "44032de5-3d08-4ac7-ada7-5d92884130c6")
+	)
+	(no_connect
+		(at 207.01 111.76)
+		(uuid "576a5a49-715c-4978-bc81-7b8c1040e0a3")
+	)
+	(no_connect
+		(at 207.01 66.04)
+		(uuid "9cbe90b1-ca83-4add-82aa-f5f10132c1a9")
+	)
+	(no_connect
+		(at 207.01 129.54)
+		(uuid "a63a72ea-8a09-4f6d-990a-0d125ea45d61")
+	)
+	(no_connect
+		(at 135.89 66.04)
+		(uuid "b53e8684-ee73-4bad-a234-ea2f88350923")
+	)
+	(no_connect
+		(at 135.89 55.88)
+		(uuid "d4bd7b1f-f5f3-409e-ac35-0a56f1942301")
+	)
+	(no_connect
+		(at 134.62 142.24)
+		(uuid "d5dec162-d229-4485-8606-6974b41beb2a")
+	)
+	(no_connect
+		(at 134.62 149.86)
+		(uuid "d841adbf-62fa-4a70-af4f-d1e345ca9d2f")
+	)
+	(no_connect
+		(at 135.89 63.5)
+		(uuid "eafb1384-81ee-4d28-9474-48e1a1358ab7")
+	)
+	(wire
+		(pts
+			(xy 102.87 48.26) (xy 102.87 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01bc12f7-fa7a-436a-9f5a-6d545f63dcbc")
+	)
+	(wire
+		(pts
+			(xy 101.6 149.86) (xy 82.55 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "034faf3d-3453-45ff-960b-7259dc0e9a49")
+	)
+	(wire
+		(pts
+			(xy 97.79 144.78) (xy 97.79 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0789a3af-4d35-4bef-a12f-9b3bc46dc3fb")
+	)
+	(wire
+		(pts
+			(xy 135.89 58.42) (xy 147.32 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0abf09f3-9047-4e6c-b5c6-b25421ce527d")
+	)
+	(wire
+		(pts
+			(xy 69.85 35.56) (xy 96.52 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1077834d-2ac7-4428-b358-98fb366d5e11")
+	)
+	(wire
+		(pts
+			(xy 99.06 50.8) (xy 102.87 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f728e16-6e6a-4d8d-b9dd-3dd13679d58e")
+	)
+	(wire
+		(pts
+			(xy 134.62 129.54) (xy 101.6 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2620c6ca-2c6b-4359-9251-f8efb466d13f")
+	)
+	(wire
+		(pts
+			(xy 101.6 137.16) (xy 97.79 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2659e4b3-e528-4d0e-96b1-0afadbaddb67")
+	)
+	(wire
+		(pts
+			(xy 101.6 129.54) (xy 101.6 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2680a1f8-8d10-434e-b63c-e9951e12a946")
+	)
+	(wire
+		(pts
+			(xy 92.71 60.96) (xy 102.87 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26ae654e-92b1-4ac0-b618-99eb22d76e88")
+	)
+	(wire
+		(pts
+			(xy 102.87 43.18) (xy 135.89 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b269efd-e05b-4a36-a7dc-b6843ef1c525")
+	)
+	(wire
+		(pts
+			(xy 213.36 62.23) (xy 213.36 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b6ccb83-1d21-45a1-ac06-d05130e75353")
+	)
+	(wire
+		(pts
+			(xy 101.6 147.32) (xy 91.44 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "306ed898-9cef-4e0d-96a6-bede8e759357")
+	)
+	(wire
+		(pts
+			(xy 134.62 121.92) (xy 107.95 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32ee2cfe-c859-4515-a44e-1948567110d6")
+	)
+	(wire
+		(pts
+			(xy 68.58 134.62) (xy 68.58 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3384c033-6f1e-4189-90e2-b4ee985e4857")
+	)
+	(wire
+		(pts
+			(xy 146.05 144.78) (xy 134.62 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34d29a47-1de2-4fc0-9fe0-3fc258122c07")
+	)
+	(wire
+		(pts
+			(xy 99.06 40.64) (xy 104.14 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35632283-c98a-461f-b1de-225cb47b473f")
+	)
+	(wire
+		(pts
+			(xy 99.06 40.64) (xy 99.06 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36042792-6cc7-4998-8e03-99d9bc79e7e2")
+	)
+	(wire
+		(pts
+			(xy 134.62 139.7) (xy 139.7 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3933a893-1479-4950-81b7-cb68cdce3754")
+	)
+	(wire
+		(pts
+			(xy 69.85 52.07) (xy 69.85 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bf25fbc-18d3-4b8a-9fb8-c8a10de0436f")
+	)
+	(wire
+		(pts
+			(xy 140.97 53.34) (xy 135.89 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cd8bac9-f7c9-47c6-9ed6-bf2a8f1d8d8d")
+	)
+	(wire
+		(pts
+			(xy 102.87 66.04) (xy 88.9 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50de436c-6e3c-4d91-83d6-9e40eaf49e9c")
+	)
+	(wire
+		(pts
+			(xy 97.79 137.16) (xy 97.79 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53c4243b-2926-44ed-a3ad-b4f55d88b76d")
+	)
+	(wire
+		(pts
+			(xy 83.82 142.24) (xy 83.82 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55b224c3-2488-4a60-99f0-d38036c3d00a")
+	)
+	(wire
+		(pts
+			(xy 83.82 134.62) (xy 85.09 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "564b6913-256d-4a19-ab92-7144c8bfff26")
+	)
+	(wire
+		(pts
+			(xy 135.89 35.56) (xy 135.89 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "572d3d7b-c2a6-4ae7-8f1c-5c9fb5ce1663")
+	)
+	(wire
+		(pts
+			(xy 134.62 129.54) (xy 134.62 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dc0ff2a-d9e0-452b-874d-9811e1d2cf68")
+	)
+	(wire
+		(pts
+			(xy 97.79 121.92) (xy 95.25 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65d266ea-a4a4-43d4-bdd0-7907f18eb3a7")
+	)
+	(wire
+		(pts
+			(xy 95.25 121.92) (xy 68.58 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68ce05b3-0576-4904-9165-3cb53da68a8d")
+	)
+	(wire
+		(pts
+			(xy 96.52 48.26) (xy 96.52 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d77c48b-5e34-451a-9689-5f3c581333f9")
+	)
+	(wire
+		(pts
+			(xy 99.06 58.42) (xy 102.87 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70304ea3-1ac8-48ac-9313-28f7fc979619")
+	)
+	(wire
+		(pts
+			(xy 85.09 48.26) (xy 85.09 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b5a7c12-788e-4ca7-b48c-5bffcb8e6028")
+	)
+	(wire
+		(pts
+			(xy 139.7 139.7) (xy 139.7 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c2d0592-b014-4640-aa31-7ae09430ed00")
+	)
+	(wire
+		(pts
+			(xy 95.25 139.7) (xy 101.6 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e2d127d-1cc3-4480-861a-d5cca58bf05b")
+	)
+	(wire
+		(pts
+			(xy 109.22 35.56) (xy 135.89 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85ff859c-877c-4a77-b7d8-53be8edeec63")
+	)
+	(wire
+		(pts
+			(xy 134.62 137.16) (xy 134.62 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8af97d34-7cd7-4fbd-9e04-8e55e692d490")
+	)
+	(wire
+		(pts
+			(xy 87.63 160.02) (xy 87.63 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "921d2de7-56db-4707-b442-d39456f332f2")
+	)
+	(wire
+		(pts
+			(xy 146.05 147.32) (xy 134.62 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92999bfd-a760-4cb5-a747-606b1e918cf2")
+	)
+	(wire
+		(pts
+			(xy 86.36 48.26) (xy 85.09 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "960eef25-d094-4830-94fa-2dadea4ef2ca")
+	)
+	(wire
+		(pts
+			(xy 83.82 63.5) (xy 102.87 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "999f6d11-034a-48e1-a621-428ca41471c7")
+	)
+	(wire
+		(pts
+			(xy 101.6 142.24) (xy 83.82 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ef81cc9-f057-4c2f-8d47-63c29536339d")
+	)
+	(wire
+		(pts
+			(xy 135.89 43.18) (xy 135.89 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a02c1c2b-ee85-4b1b-92be-61010be9b909")
+	)
+	(wire
+		(pts
+			(xy 135.89 48.26) (xy 135.89 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a27d150d-5ad8-4aa7-8c20-c0eac5bc6316")
+	)
+	(wire
+		(pts
+			(xy 95.25 139.7) (xy 95.25 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6b4edcf-95b2-423c-8333-1ffc20eb6f87")
+	)
+	(wire
+		(pts
+			(xy 134.62 121.92) (xy 142.24 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a75c8fef-c24e-4397-a6d0-216b0b58eb03")
+	)
+	(wire
+		(pts
+			(xy 143.51 35.56) (xy 135.89 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a787388b-4071-427f-8f59-18ac684e8fea")
+	)
+	(wire
+		(pts
+			(xy 87.63 152.4) (xy 101.6 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a81bcf75-e46c-420a-b1a8-3fe5529fe503")
+	)
+	(wire
+		(pts
+			(xy 88.9 73.66) (xy 83.82 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae6910ad-9ad1-40a1-ab7e-a2bfadf31386")
+	)
+	(wire
+		(pts
+			(xy 99.06 77.47) (xy 99.06 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b16c2137-d100-44f2-96bc-bf85e1ed8603")
+	)
+	(wire
+		(pts
+			(xy 92.71 67.31) (xy 92.71 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9bc2cb9-cb89-46d2-b30b-1c562ff880d3")
+	)
+	(wire
+		(pts
+			(xy 69.85 38.1) (xy 69.85 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfd22ce8-d645-422e-af06-f403ad5049f0")
+	)
+	(wire
+		(pts
+			(xy 91.44 147.32) (xy 91.44 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4f051a6-f548-4b8c-9b5f-b5d28f288a37")
+	)
+	(wire
+		(pts
+			(xy 134.62 134.62) (xy 134.62 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7d87c06-371f-4734-a3db-5ae0bbdece0f")
+	)
+	(wire
+		(pts
+			(xy 101.6 144.78) (xy 97.79 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbd6fb86-9250-49cf-857f-cd6fc54513cd")
+	)
+	(wire
+		(pts
+			(xy 96.52 35.56) (xy 99.06 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2be747e-fd5f-4269-8fbb-193a8c442f8f")
+	)
+	(wire
+		(pts
+			(xy 88.9 66.04) (xy 88.9 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4628ee1-406f-4218-b57a-7f0b657d916d")
+	)
+	(wire
+		(pts
+			(xy 82.55 134.62) (xy 83.82 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d84feeb9-3888-40c6-81a2-3dfb9b3c4299")
+	)
+	(wire
+		(pts
+			(xy 135.89 60.96) (xy 147.32 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d90b313d-dcd1-4a73-925a-b3de8b58983f")
+	)
+	(wire
+		(pts
+			(xy 140.97 77.47) (xy 140.97 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db472318-0518-45f1-8ff6-085de7b2766e")
+	)
+	(wire
+		(pts
+			(xy 85.09 55.88) (xy 102.87 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcb06070-e4a6-4880-8d55-acc027468cd7")
+	)
+	(wire
+		(pts
+			(xy 68.58 121.92) (xy 68.58 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e646706b-7a3a-4a4f-97ce-c9abf91a82e0")
+	)
+	(wire
+		(pts
+			(xy 85.09 48.26) (xy 83.82 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7275c27-022e-4207-8215-3fb130dcce97")
+	)
+	(wire
+		(pts
+			(xy 102.87 53.34) (xy 96.52 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8aeb0af-652d-4623-b648-d1d3c6ba19dd")
+	)
+	(wire
+		(pts
+			(xy 82.55 160.02) (xy 87.63 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f240fac5-0e51-482a-b685-adb100731b18")
+	)
+	(wire
+		(pts
+			(xy 69.85 48.26) (xy 73.66 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3c84670-df6d-4309-8d21-ba27bfdabd60")
+	)
+	(wire
+		(pts
+			(xy 96.52 48.26) (xy 96.52 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3dca1f7-dd4c-49db-af60-5e6923798e53")
+	)
+	(wire
+		(pts
+			(xy 95.25 121.92) (xy 95.25 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5d3f866-8dd9-4fc3-a5b9-4fb4435276cc")
+	)
+	(wire
+		(pts
+			(xy 102.87 127) (xy 97.79 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7e32f11-c48e-4bd3-8ce9-d4a6ce84d749")
+	)
+	(wire
+		(pts
+			(xy 72.39 134.62) (xy 68.58 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe46194e-eadf-4fe6-b40e-4785556878f7")
+	)
+	(label ""
+		(at 94.615 149.86 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "19aa6c92-eb95-4425-8fd4-f6a285c43b4b")
+	)
+	(label ""
+		(at 97.79 130.81 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2514f136-4486-435b-83b1-aeca4dee19c0")
+	)
+	(label ""
+		(at 92.075 142.24 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "841f1749-59b6-4186-acca-d13d82395e91")
+	)
+	(label ""
+		(at 94.615 152.4 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dfe53d92-c6c1-4bd5-ae79-939a31476819")
+	)
+	(label ""
+		(at 85.09 121.92 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e219dbff-e363-4dff-86dc-1edd30de2305")
+	)
+	(global_label "A1+"
+		(shape input)
+		(at 73.66 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "20b4f35c-ad08-4598-9396-21da25a68877")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 73.66 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PD_SCK"
+		(shape input)
+		(at 147.32 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3650da49-9d25-4360-b0fc-6f65060f67bd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A1+"
+		(shape input)
+		(at 213.36 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4f84d280-f8cb-4e66-a0a4-bca739655fd1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "+3.3V"
+		(shape input)
+		(at 143.51 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "56a48f8e-fe47-4ec2-aba6-64866a54e238")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 143.51 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DOUT1"
+		(shape input)
+		(at 147.32 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "62310797-cd01-4252-b7a1-ad38de29ef41")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "+3.3V"
+		(shape input)
+		(at 142.24 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6fc65f3e-014b-4613-a6ee-34df25b69844")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 142.24 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A+"
+		(shape input)
+		(at 72.39 160.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7d77a3a9-3139-4710-8c9d-e71271e38375")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 72.39 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A1-"
+		(shape input)
+		(at 73.66 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8fb0b4cd-d449-4e97-83c7-50b05bc72f20")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 73.66 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A1-"
+		(shape input)
+		(at 213.36 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a180a72f-3667-40f4-845c-7145bebddfb4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A-"
+		(shape input)
+		(at 213.36 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b08399dd-af5d-4da5-a98e-01d12d56dac3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DOUT2"
+		(shape input)
+		(at 146.05 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d40181e5-7bbd-4cce-b96e-21cb602e3dc5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 146.05 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A-"
+		(shape input)
+		(at 72.39 149.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d739c50d-3726-46c7-b965-58dc8ccc6d69")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 72.39 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PD_SCK"
+		(shape input)
+		(at 146.05 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "eaebfda6-72a8-4447-874f-431961874360")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 146.05 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A+"
+		(shape input)
+		(at 213.36 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f07d31dc-264c-4976-9ff5-e4051e65e987")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:5-Voltage")
+		(at 213.36 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1c183a37-8cf6-4df8-9515-cae39990701d")
+		(property "Reference" "#PWR09"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 213.36 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power-5V"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fce0e5b6-9fb2-4318-8492-33c8afcec79e")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:S8550_C105432")
+		(at 104.14 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "30a20b50-311d-4724-b6a1-54e6283e8599")
+		(property "Reference" "Q1"
+			(at 101.6 34.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "~"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20171228/C164891_15144412930301213894.pdf"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "晶体管类型:PNP;集电极电流(Ic):500mA;集射极击穿电压(Vceo):25V;功率(Pd):300mW;直流电流增益(hFE@Ic,Vce):120@50mA,1V;"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "S8550"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CJ(江苏长电/长晶)"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C105432"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
+			(at 104.14 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b87a71e9-0f11-4508-b134-978da54ab8f8")
+		)
+		(pin "3"
+			(uuid "65981e1f-cec3-4523-8f5e-ec0670d0b37f")
+		)
+		(pin "1"
+			(uuid "eb8a02db-a381-4398-aad7-2c8c03ef8c9e")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:AFC20-S04ACA-00")
+		(at 209.55 57.15 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b8ec60e-f9da-4359-9249-b7df60fa6774")
+		(property "Reference" "X4"
+			(at 205.74 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "~"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:CONN-SMD_AFC20-S04ACA-00"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20210330/C2764211_02EB64B884E80A283E97197BD72D19B1.pdf"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "插针结构:1x4P;间距:2mm;安装方式:卧贴;参考系列:PH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:2A;工作温度范围:-20°C~+85°C;"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "AFC20-S04ACA-00"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "JS(钜硕电子)"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C2764213"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "cd82dd40-5162-4a8f-bde5-2f78fa77f39b")
+		)
+		(pin "1"
+			(uuid "54964556-a077-4e86-8568-49c7943f5068")
+		)
+		(pin "2"
+			(uuid "f0cd7abf-6180-4826-8d3d-6c21ef26f2c5")
+		)
+		(pin "3"
+			(uuid "67353579-c73c-48a0-bad2-4601030d7268")
+		)
+		(pin "4"
+			(uuid "c9e65147-e07d-411a-a945-9ac3a5a860e3")
+		)
+		(pin "5"
+			(uuid "282e639f-3f82-407d-be34-cfbd432656eb")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "X4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:5-Voltage")
+		(at 213.36 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "40d8c5d0-9261-4375-a412-bcdcc59cd668")
+		(property "Reference" "#PWR03"
+			(at 213.36 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 213.36 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 213.36 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power-5V"
+			(at 213.36 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "708aba64-f760-4602-b1dd-68a32fd633e6")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:HX711")
+		(at 118.11 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "42020ceb-d67d-4b9e-918a-1f6ed4d3b516")
+		(property "Reference" "U2"
+			(at 106.68 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "~"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:SOP-16_L10.0-W3.9-P1.27-LS6.0-BL"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20201105/C43656_14FD91CAE53E7DB415D03EABCB162D83.pdf"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "称重AD采集芯片"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "HX711"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "AVIA(海芯科技)"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C43656"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "HX711"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2ffee2e1-aaba-449d-ae63-7fd4099465f2")
+		)
+		(pin "10"
+			(uuid "fdc18c7a-f8a6-4085-8391-a56212a7df74")
+		)
+		(pin "11"
+			(uuid "c3918eef-157a-48b5-b423-330205373da9")
+		)
+		(pin "2"
+			(uuid "e0d612af-0fe0-490d-bebc-d25b8f79ef34")
+		)
+		(pin "7"
+			(uuid "6b111a35-93a7-4fa6-98aa-7a1c7ab61837")
+		)
+		(pin "8"
+			(uuid "46fbc61f-4f80-43ee-a071-ba3a47d854bf")
+		)
+		(pin "13"
+			(uuid "59563a04-6add-4479-b263-73286e0b8c4e")
+		)
+		(pin "5"
+			(uuid "251d2670-5ccc-48e1-a8d5-88a0d5f90b36")
+		)
+		(pin "12"
+			(uuid "36838726-ee4a-4803-8e5d-716406f6ffa2")
+		)
+		(pin "6"
+			(uuid "88e4d1e5-768b-445f-9d80-e76fa686ae04")
+		)
+		(pin "14"
+			(uuid "a4a26bf2-7557-4e77-8256-ea38042b5464")
+		)
+		(pin "3"
+			(uuid "ea51f67d-a519-4868-8008-ed2e47a87c0b")
+		)
+		(pin "9"
+			(uuid "9a6fc4a3-7ac5-4de3-9b92-0b939f7a184e")
+		)
+		(pin "15"
+			(uuid "1573a9ed-4aa9-4ff1-8794-cff77ca76ada")
+		)
+		(pin "4"
+			(uuid "dab5ee2b-c1cf-4a1a-976f-c7ea8a3eca07")
+		)
+		(pin "16"
+			(uuid "be4e5f90-2290-42e5-955d-a78f3e1b57bc")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 213.36 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4fa907ed-bbd6-4b76-93d1-35958c7c099f")
+		(property "Reference" "#PWR010"
+			(at 213.36 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 213.36 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 213.36 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 213.36 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b6d2ddaa-5776-472a-bd8b-47b4e06a42c7")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 97.79 163.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5322fcda-8c0f-4090-9db1-959248ce453c")
+		(property "Reference" "#PWR08"
+			(at 97.79 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 97.79 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 97.79 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 97.79 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 97.79 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b91f7460-b49a-4dfc-9848-2eb3f40a9fdd")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 77.47 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "55919cef-902d-42fe-8012-8519bc448153")
+		(property "Reference" "R2hx4"
+			(at 74.93 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "20k"
+			(at 77.47 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 77.47 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "34d0d102-89ff-49a6-9d4f-bc002f439cc3")
+		)
+		(pin "1"
+			(uuid "85b70d68-7dc9-45bc-b84f-1802bcae3c70")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R2hx4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 92.71 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "55df5511-5b9d-45f9-a505-455f162d3e6f")
+		(property "Reference" "#PWR05"
+			(at 92.71 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 92.71 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 92.71 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 92.71 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b23cc760-718c-4f11-a39c-1d05f7324220")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 69.85 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60b9a5d6-bbf7-4fa3-a6f6-cb8367b56b8c")
+		(property "Reference" "#PWR01"
+			(at 69.85 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 69.85 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 69.85 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 69.85 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1655525e-9839-4e20-9402-dfd1247c107f")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:CapAcitance")
+		(at 82.55 154.94 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "65ab1b9b-35fb-4209-b772-96ca1d3a486e")
+		(property "Reference" "C4"
+			(at 86.36 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "0.1uF/25V"
+			(at 82.55 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
+			(at 82.55 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 82.55 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "37cfb9a6-126e-49f5-b110-a40b76cbb0d4")
+		)
+		(pin "2"
+			(uuid "3f329bec-e031-45dc-840c-505694884a5b")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:CapAcitance")
+		(at 92.71 72.39 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "66454d3f-3c80-4634-a922-0bde49536e61")
+		(property "Reference" "C5"
+			(at 96.52 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "0.1uF/25V"
+			(at 92.71 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
+			(at 92.71 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 92.71 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b929c20c-9783-4006-a066-e205ebaa2f50")
+		)
+		(pin "1"
+			(uuid "b6910837-29d2-4891-bcaa-f524c93b5fbb")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 68.58 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6a6c3b2c-ffd2-4f87-b9fc-0332c2bfc99a")
+		(property "Reference" "#PWR02"
+			(at 68.58 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 68.58 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 68.58 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 68.58 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 68.58 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f165f885-8dbf-44cf-a651-4df772d0bb2d")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 77.47 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6bf8ca10-d529-48d3-b5df-9307638a0b7f")
+		(property "Reference" "R4"
+			(at 74.93 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "100"
+			(at 77.47 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 77.47 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c756ba9d-80b4-464d-9643-63712e048e09")
+		)
+		(pin "1"
+			(uuid "bda476e0-e0da-45ae-b8fd-b9c2f04808f5")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 90.17 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "725b45f2-d83f-4eef-bb50-0385b67cb6a7")
+		(property "Reference" "R1hx4"
+			(at 87.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "20k"
+			(at 90.17 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 90.17 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 90.17 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4c1fc793-2ed8-4309-8c72-b09a379a307b")
+		)
+		(pin "1"
+			(uuid "04652f1b-39c4-4a43-b6ea-801101a51a77")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R1hx4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:CapAcitance")
+		(at 83.82 68.58 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77ea199f-2b02-482e-be86-1d20fd1f071d")
+		(property "Reference" "C3"
+			(at 87.63 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "0.1uF/25V"
+			(at 83.82 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
+			(at 83.82 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 83.82 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e205ec2a-7eed-4301-8874-5454d05787a1")
+		)
+		(pin "2"
+			(uuid "30dba461-fc98-4fe6-a5df-720723a2b7ef")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:CapAcitance")
+		(at 91.44 158.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7adba2b7-16c1-4915-82cc-e9361739fcf9")
+		(property "Reference" "C6"
+			(at 95.25 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "0.1uF/25V"
+			(at 91.44 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
+			(at 91.44 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e6ab4573-cb2f-42d4-8cd9-489c3855bebb")
+		)
+		(pin "1"
+			(uuid "bba18bd0-7da8-4fa4-859a-6680531bdbe0")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 139.7 162.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "81341a1c-3e69-4e6c-84b3-26c1bacf6443")
+		(property "Reference" "#PWR012"
+			(at 139.7 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 139.7 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 139.7 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ea947c51-edaf-4384-a7e6-0e023a9b6621")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:S8550_C105432")
+		(at 102.87 124.46 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8dd5fc5f-89db-4a60-9f42-6e2e73fe65e9")
+		(property "Reference" "Q2"
+			(at 100.33 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "~"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20171228/C164891_15144412930301213894.pdf"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "晶体管类型:PNP;集电极电流(Ic):500mA;集射极击穿电压(Vceo):25V;功率(Pd):300mW;直流电流增益(hFE@Ic,Vce):120@50mA,1V;"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "S8550"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CJ(江苏长电/长晶)"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C105432"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
+			(at 102.87 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "8ff3e41f-f949-456d-ba56-5834f8c56b36")
+		)
+		(pin "1"
+			(uuid "ad5b2e1c-47d1-4a39-b228-49fd7e2b7a9e")
+		)
+		(pin "2"
+			(uuid "bf34612b-2667-40dd-8cbd-b0ee90bc907b")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 78.74 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "954dea45-a218-4ea1-8dc2-3c692beaaadb")
+		(property "Reference" "R2"
+			(at 76.2 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "100"
+			(at 78.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 78.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8d9efda4-0f6c-4150-9359-d6f5cff9060c")
+		)
+		(pin "1"
+			(uuid "f48fd74f-ff82-4eea-b37f-5d86f6f905b2")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:CapAcitance")
+		(at 69.85 43.18 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a2ba9db2-39f5-4397-bfeb-98040aa56039")
+		(property "Reference" "C1"
+			(at 66.04 41.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "10uF/25V"
+			(at 69.85 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
+			(at 69.85 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 69.85 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "59e2adab-2e5e-4268-835c-f392a114c8a3")
+		)
+		(pin "1"
+			(uuid "a178d274-c173-4441-9109-ec6422b6374c")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 78.74 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a94b8ace-3bb7-46ef-a6ed-4f8d76996610")
+		(property "Reference" "R2hx3"
+			(at 76.2 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "20k"
+			(at 78.74 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 78.74 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d385c4c6-fc9a-414e-8291-5a8c71423552")
+		)
+		(pin "2"
+			(uuid "9a620ed1-c36c-4c10-a7a5-502baf6cd8bb")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R2hx3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:CapAcitance")
+		(at 68.58 129.54 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "acd69160-c506-454f-a798-6da81e8f4580")
+		(property "Reference" "C2"
+			(at 64.77 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "10uF/25V"
+			(at 68.58 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
+			(at 68.58 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 68.58 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 68.58 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "363cb2c0-3931-424d-ae7d-03aaf6d0e522")
+		)
+		(pin "2"
+			(uuid "47f81c3b-18f5-419d-a5be-256615627c32")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:HX711")
+		(at 119.38 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b0ff4310-f37e-4c7e-a26c-c2f45949f0c3")
+		(property "Reference" "U1"
+			(at 107.95 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "~"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:SOP-16_L10.0-W3.9-P1.27-LS6.0-BL"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20201105/C43656_14FD91CAE53E7DB415D03EABCB162D83.pdf"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "称重AD采集芯片"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "HX711"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "AVIA(海芯科技)"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C43656"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "HX711"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "12"
+			(uuid "67f8237d-497d-4d4c-8d4e-e126ea8ac9c1")
+		)
+		(pin "10"
+			(uuid "d8113f45-92ad-403c-85d9-b8ff0d618b73")
+		)
+		(pin "13"
+			(uuid "958e725b-d8b7-4215-9b68-0a55394c591e")
+		)
+		(pin "15"
+			(uuid "34b4f18f-8f06-4821-af8d-8d3ea9bec866")
+		)
+		(pin "16"
+			(uuid "a6b1f650-08f2-480a-9f75-ccd48fb34feb")
+		)
+		(pin "4"
+			(uuid "d733bb2b-1c4a-4413-9c8f-85eaf6537340")
+		)
+		(pin "5"
+			(uuid "ac429e74-0f57-4edb-af62-0b1e21b576f2")
+		)
+		(pin "7"
+			(uuid "0a6b241b-0edf-4e20-ba4b-24c6c58171fd")
+		)
+		(pin "1"
+			(uuid "15c857a9-ba4e-49ec-8807-d69004cd1db1")
+		)
+		(pin "6"
+			(uuid "ca46e6b9-7e64-4fb3-8808-47e85fdac052")
+		)
+		(pin "3"
+			(uuid "4a413d82-0ffd-4e0b-a684-5ba4a3c286e5")
+		)
+		(pin "8"
+			(uuid "93228c1c-ab3c-438d-8c43-24eba76b2c51")
+		)
+		(pin "2"
+			(uuid "973ee531-2f28-4d23-9b08-5c03957807b5")
+		)
+		(pin "11"
+			(uuid "3fec7c99-35e6-46e6-8444-b23c1daf0a07")
+		)
+		(pin "14"
+			(uuid "671f3444-c1e1-45a0-ba5f-df61a8de3297")
+		)
+		(pin "9"
+			(uuid "84a55542-756a-490c-b82c-4cc37c2a463a")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 91.44 163.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c706c5e1-9143-4574-a8e4-049ad231d9b8")
+		(property "Reference" "#PWR06"
+			(at 91.44 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 91.44 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 91.44 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c441838-41ea-4ebc-a0e2-8e6a5a82a03d")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 91.44 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c89f0800-3d6a-404d-9ce9-05c004c90d42")
+		(property "Reference" "R1hx3"
+			(at 88.9 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "20k"
+			(at 91.44 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 91.44 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3cbdff8-0772-4923-a535-d26f05f34044")
+		)
+		(pin "2"
+			(uuid "f4b87e3f-e40b-4c75-abbb-1e84060c549e")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R1hx3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 140.97 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c954ba08-266d-4515-a300-214e96f6ea64")
+		(property "Reference" "#PWR011"
+			(at 140.97 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 140.97 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 140.97 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 140.97 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0d3397c4-7f4b-427c-bb72-7c535c397ded")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 213.36 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d9d3f99b-b334-4554-9cf5-7f0de954ab67")
+		(property "Reference" "#PWR04"
+			(at 213.36 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 213.36 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 213.36 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 213.36 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "424688b6-b468-4d2e-b67f-e7c8a6760e76")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 77.47 149.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9edddf6-ab7f-48a3-a7b7-b525c1854e99")
+		(property "Reference" "R3"
+			(at 74.93 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "100"
+			(at 77.47 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 77.47 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f4e090c5-51cd-4c03-88ae-5b430ced6c89")
+		)
+		(pin "2"
+			(uuid "7d6b5027-0681-4e18-8942-d55af3228af0")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:Ground-GND")
+		(at 99.06 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ec4526d3-3468-4f77-b009-ce33695dc1d0")
+		(property "Reference" "#PWR07"
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 99.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:"
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3aed1f16-0dc3-4629-943d-29f639f48e90")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:电阻")
+		(at 78.74 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa76f5a3-e5c0-47c1-8688-551d59719e73")
+		(property "Reference" "R1"
+			(at 76.2 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "100"
+			(at 78.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
+			(at 78.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b4921aa0-d28d-4494-8cb7-402e5def5dee")
+		)
+		(pin "1"
+			(uuid "8c0638f0-e46f-4783-8aa9-cce7077d6cc5")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProDoc_CAN-easyedapro:AFC20-S04ACA-00")
+		(at 209.55 120.65 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fcb27679-1534-47ac-9c6b-0f9d35a2838f")
+		(property "Reference" "X5"
+			(at 205.74 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right top)
+			)
+		)
+		(property "Value" "~"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProDoc_CAN-easyedapro:CONN-SMD_AFC20-S04ACA-00"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20210330/C2764211_02EB64B884E80A283E97197BD72D19B1.pdf"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "插针结构:1x4P;间距:2mm;安装方式:卧贴;参考系列:PH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:2A;工作温度范围:-20°C~+85°C;"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "AFC20-S04ACA-00"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "JS(钜硕电子)"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C2764213"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
+			(at 209.55 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "822e03ce-e99f-48e2-869b-19e2db38dabe")
+		)
+		(pin "3"
+			(uuid "7aa84bdd-b10a-4718-a6ce-1ecd79d7c27b")
+		)
+		(pin "4"
+			(uuid "b5949137-d1fa-469d-b5dc-02a5a67ea0c8")
+		)
+		(pin "2"
+			(uuid "b90041cc-5900-4add-9150-82b3213d12c0")
+		)
+		(pin "6"
+			(uuid "21ce1925-c166-4f91-af04-7d0a2e5887a6")
+		)
+		(pin "5"
+			(uuid "0f283d2f-a3be-41ef-8828-1f9dcc2f0376")
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/8fba7f70-ee79-43c5-9a20-c78e89a58965"
+					(reference "X5")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

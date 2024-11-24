@@ -1,0 +1,2619 @@
+ERC 报告 (2024-10-18T20:41:01+0800, UTF8 编码)
+
+***** 图纸 /
+
+***** 图纸 /dc-dc/
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(219.7100 mm, 120.6500 mm): 符号 Cboot1 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(212.0900 mm, 129.5400 mm): 符号 Cin3 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(227.3300 mm, 151.1300 mm): 符号 #PWR033 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(234.9500 mm, 146.0500 mm): 符号 C32 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(223.5200 mm, 146.0500 mm): 符号 R75 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(273.0500 mm, 151.1300 mm): 符号 #PWR036 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(199.3900 mm, 129.5400 mm): 符号 Cin2 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(203.2000 mm, 139.7000 mm): 符号 #PWR031 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(246.3800 mm, 123.1900 mm): 符号 U10 [LMR16030SDDAR]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(218.4400 mm, 82.5500 mm): 符号 U8 [TJA1050T/CM-YJLTY]
+[global_label_dangling]: 在原理图中的任何其他位置都未连接全局标签
+    ; warning
+    @(201.9300 mm, 58.4200 mm): 全局标签 'CAN_S'
+[global_label_dangling]: 在原理图中的任何其他位置都未连接全局标签
+    ; warning
+    @(201.9300 mm, 63.5000 mm): 全局标签 'CAN_RX'
+[global_label_dangling]: 在原理图中的任何其他位置都未连接全局标签
+    ; warning
+    @(201.9300 mm, 68.5800 mm): 全局标签 'CAN_TX'
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(193.0400 mm, 85.0900 mm): 符号 C30 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(190.5000 mm, 78.7400 mm): 符号 #PWR030 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(154.9400 mm, 190.5000 mm): 符号 #PWR028 [Ground-GND]
+[global_label_dangling]: 在原理图中的任何其他位置都未连接全局标签
+    ; warning
+    @(161.2900 mm, 172.7200 mm): 全局标签 'DOUT2'
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(220.9800 mm, 198.1200 mm): 符号 #PWR032 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(212.0900 mm, 184.1500 mm): 符号 L1 [FXL1040-330-M]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(207.0100 mm, 193.0400 mm): 符号 C31 [TAJD227K010RNJ]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(220.9800 mm, 189.2300 mm): 符号 D20 [SS53C]
+[global_label_dangling]: 在原理图中的任何其他位置都未连接全局标签
+    ; warning
+    @(247.6500 mm, 63.5000 mm): 全局标签 'GND'
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(243.8400 mm, 81.2800 mm): 符号 R76 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(243.8400 mm, 90.1700 mm): 符号 R77 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(242.5700 mm, 67.3100 mm): 符号 X3 [AFC20-S04ACA-00]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(254.0000 mm, 82.5500 mm): 符号 C33 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(262.8900 mm, 82.5500 mm): 符号 #PWR035 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(187.9600 mm, 129.5400 mm): 符号 Cin1 [CapAcitance]
+[global_label_dangling]: 在原理图中的任何其他位置都未连接全局标签
+    ; warning
+    @(158.7500 mm, 99.0600 mm): 全局标签 'DOUT1'
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(189.2300 mm, 90.1700 mm): 符号 #PWR029 [5-Voltage]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(260.3500 mm, 173.9900 mm): 符号 #PWR034 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(245.1100 mm, 186.6900 mm): 符号 U9 [LM2596S-5.0/TR]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(220.9800 mm, 175.2600 mm): 符号 Cin6 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(220.9800 mm, 170.1800 mm): 符号 Cin5 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(220.9800 mm, 165.1000 mm): 符号 Cin4 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(304.8000 mm, 129.5400 mm): 符号 Cout2 [CapAcitance]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(278.1300 mm, 133.3500 mm): 垂直线, 长度 0.0254 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(278.1300 mm, 133.3754 mm): 垂直线, 长度 1.2446 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(287.0200 mm, 120.6500 mm): 符号 L2 [FXL0630-8R2-M]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(278.1300 mm, 123.2154 mm): Symbol D21 引脚 1 [C, 未指定, 图线]
+[pin_not_connected]: 引脚未连接
+    ; error
+    @(278.1300 mm, 123.2154 mm): Symbol D21 引脚 1 [C, 未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(278.1300 mm, 128.2954 mm): 符号 D21 [SS510SMC]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(294.6400 mm, 129.5400 mm): 符号 Cout1 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(321.3100 mm, 125.7300 mm): 符号 Rfbt1 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(321.3100 mm, 142.2400 mm): 符号 Rfbb1 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(299.7200 mm, 151.1300 mm): 符号 #PWR039 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(300.9900 mm, 163.8300 mm): 符号 Cin7 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(332.7400 mm, 64.7700 mm): 符号 #PWR041 [5-Voltage]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(339.0900 mm, 74.9300 mm): 符号 #PWR043 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(332.7400 mm, 80.0100 mm): 符号 #PWR042 [5-Voltage]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(284.4800 mm, 77.4700 mm): 符号 C34 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(314.9600 mm, 73.6600 mm): 符号 U11 [HT7660ARZ]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(298.4500 mm, 85.0900 mm): 符号 #PWR038 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(300.9900 mm, 168.9100 mm): 符号 Cin8 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(340.3600 mm, 172.7200 mm): 符号 #PWR044 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(318.7700 mm, 185.4200 mm): 符号 U12 [LM2596S-3.3/TR]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(303.5300 mm, 199.3900 mm): 符号 #PWR040 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(295.9100 mm, 182.8800 mm): 符号 L3 [FXL1040-330-M]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(303.5300 mm, 187.9600 mm): 符号 D22 [SS53C]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(292.1000 mm, 168.9100 mm): 符号 #PWR037 [VIN]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(287.0200 mm, 191.7700 mm): 符号 C35 [TAJC337K006RNJ]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(300.9900 mm, 173.9900 mm): 符号 Cin9 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(292.1000 mm, 171.4500 mm): 符号 1 [Short-Symbol]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(81.2800 mm, 92.7100 mm): 符号 #PWR017 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(90.1700 mm, 104.1400 mm): 符号 R71 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(90.1700 mm, 114.3000 mm): 符号 R72 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(81.2800 mm, 83.8200 mm): 符号 C24 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(102.8700 mm, 88.9000 mm): 符号 R1hx1 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(90.1700 mm, 88.9000 mm): 符号 R2hx1 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(104.1400 mm, 113.0300 mm): 符号 C28 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(95.2500 mm, 109.2200 mm): 符号 C26 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(104.1400 mm, 118.1100 mm): 符号 #PWR021 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(115.5700 mm, 78.7400 mm): 符号 Q16 [S8550_C105432]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(130.8100 mm, 97.7900 mm): 符号 U6 [HX711]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(152.4000 mm, 116.8400 mm): 符号 #PWR027 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(110.4900 mm, 118.1100 mm): 符号 #PWR023 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(92.7100 mm, 162.5600 mm): 符号 R2hx2 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(83.8200 mm, 157.4800 mm): 符号 C25 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(105.4100 mm, 162.5600 mm): 符号 R1hx2 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(118.1100 mm, 152.4000 mm): 符号 Q17 [S8550_C105432]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(133.3500 mm, 171.4500 mm): 符号 U7 [HX711]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(92.7100 mm, 177.8000 mm): 符号 R73 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(83.8200 mm, 166.3700 mm): 符号 #PWR018 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(106.6800 mm, 191.7700 mm): 符号 #PWR022 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(113.0300 mm, 191.7700 mm): 符号 #PWR024 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(87.6300 mm, 233.6800 mm): 符号 X1 [AFC20-S04ACA-00]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(151.1300 mm, 227.3300 mm): 符号 #PWR025 [5-Voltage]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(106.6800 mm, 186.6900 mm): 符号 C29 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(92.7100 mm, 187.9600 mm): 符号 R74 [电阻]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(97.7900 mm, 182.8800 mm): 符号 C27 [CapAcitance]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(151.1300 mm, 234.9500 mm): 符号 #PWR026 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(147.3200 mm, 231.1400 mm): 符号 X2 [AFC20-S04ACA-00]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(91.4400 mm, 238.7600 mm): 符号 #PWR020 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_CAN-easyedapro'
+    ; warning
+    @(91.4400 mm, 229.8700 mm): 符号 #PWR019 [5-Voltage]
+
+***** 图纸 /电池保护/
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(454.6600 mm, 341.8840 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 331.7240 mm): 垂直线, 长度 11.4300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(454.6600 mm, 334.5180 mm): 垂直线, 长度 7.3660 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(431.8000 mm, 341.8840 mm): 水平线, 长度 15.2400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 349.5040 mm): Symbol C56 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 349.5040 mm): 水平线, 长度 44.4500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(466.0900 mm, 341.8840 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(466.0900 mm, 341.8840 mm): 水平线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(459.7400 mm, 341.8840 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(459.7400 mm, 341.8840 mm): 垂直线, 长度 9.3980 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(466.0900 mm, 341.8840 mm): 垂直线, 长度 190.5000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 339.3440 mm): 水平线, 长度 15.2400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 336.8040 mm): 水平线, 长度 15.2400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(431.8000 mm, 336.8040 mm): Symbol Q31 引脚 S3 [S3, 未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(483.8700 mm, 349.5040 mm): 水平线, 长度 17.7800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(472.4400 mm, 341.8840 mm): 水平线, 长度 11.4300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(466.0900 mm, 341.8840 mm): 水平线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(483.8700 mm, 200.6600 mm): 垂直线, 长度 141.2240 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(472.4400 mm, 209.5500 mm): 垂直线, 长度 132.3340 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(545.5920 mm, 329.1840 mm): 符号 D41 [DISOD123BAV21W;D;BAV21W;200V;0.5A;...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(545.5920 mm, 329.1840 mm): Symbol D41 引脚 A [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(545.5920 mm, 329.1840 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(553.4660 mm, 334.2640 mm): Symbol J2 引脚 3 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(553.4660 mm, 329.1840 mm): 符号 J2 [;SIP;1X4;2.54MM;4P]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(553.4660 mm, 334.2640 mm): 水平线, 长度 27.1780 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(547.3700 mm, 341.3760 mm): Symbol #PWR060 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(547.3700 mm, 341.3760 mm): 符号 #PWR060 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(553.4660 mm, 336.8040 mm): 水平线, 长度 6.0960 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(547.3700 mm, 336.8040 mm): 垂直线, 长度 4.5720 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(517.6520 mm, 334.2640 mm): Symbol R146 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(518.9220 mm, 331.7240 mm): 符号 R145 [RTRC0603FR100RJ;R;100R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(518.9220 mm, 334.2640 mm): 符号 R146 [RTRC0603FR100RJ;R;100R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(517.6520 mm, 331.7240 mm): 水平线, 长度 11.4300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(517.6520 mm, 334.2640 mm): 水平线, 长度 11.4300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(526.2880 mm, 331.7240 mm): 水平线, 长度 27.1780 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(526.2880 mm, 331.7240 mm): Symbol R145 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 331.7240 mm): 水平线, 长度 15.2400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 334.2640 mm): 水平线, 长度 15.2400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 334.2640 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(414.0200 mm, 315.2140 mm): 水平线, 长度 5.0800 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(425.4500 mm, 332.9940 mm): 符号 Q31 [MVMOSIRL40SC228X;Q;IRL40SC228;D2PA...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(408.9400 mm, 336.8040 mm): 水平线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(408.9400 mm, 336.8040 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(414.0200 mm, 336.8040 mm): 垂直线, 长度 21.5900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(417.8300 mm, 336.8040 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(415.2900 mm, 349.5040 mm): 水平线, 长度 15.2400 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(415.2900 mm, 349.5040 mm): 符号 C56 [CYC1206X7R1H105JG;C;100NF;100V;10%...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(393.7000 mm, 349.5040 mm): 符号 C55 [CYC1206X7R1H105JG;C;100NF;100V;10%...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(393.7000 mm, 349.5040 mm): Symbol C55 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(393.7000 mm, 349.5040 mm): 水平线, 长度 36.8300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(422.9100 mm, 330.4540 mm): 垂直线, 长度 2.5400 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(426.7200 mm, 327.9140 mm): 符号 R143 [RTRC1206F047RJY;R;47R;1%;1/4W;1206]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(425.4500 mm, 327.9140 mm): Symbol R143 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(425.4500 mm, 327.9140 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(459.7400 mm, 332.4860 mm): Symbol R144 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(459.7400 mm, 331.2160 mm): 符号 R144 [RTRC0603FR1MXXJ;R;1M;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(454.6600 mm, 328.1680 mm): 符号 D39 [DISOD323BZT52C15;ZD;BZT52C15;15V;S...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 320.2940 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(436.8800 mm, 327.9140 mm): 水平线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(434.0860 mm, 306.3240 mm): Symbol R142 引脚 2 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(426.7200 mm, 311.4040 mm): 符号 Q32 [MVMOSIRL40SC228X;Q;IRL40SC228;D2PA...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(419.1000 mm, 315.2140 mm): Symbol Q32 引脚 D [D, 未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(434.0860 mm, 306.3240 mm): 水平线, 长度 2.2860 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 317.7540 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 320.2940 mm): 水平线, 长度 13.9700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 317.7540 mm): 水平线, 长度 13.9700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 312.6740 mm): 水平线, 长度 13.9700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 315.2140 mm): 水平线, 长度 13.9700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 310.1340 mm): 水平线, 长度 13.9700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 315.2140 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 312.6740 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(454.6600 mm, 324.3580 mm): Symbol D39 引脚 K [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(454.6600 mm, 306.3240 mm): 水平线, 长度 20.5740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(454.6600 mm, 306.3240 mm): 垂直线, 长度 18.0340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(459.7400 mm, 323.8500 mm): 垂直线, 长度 17.5260 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(454.6600 mm, 306.3240 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(541.0200 mm, 308.8640 mm): 水平线, 长度 5.0800 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(541.0200 mm, 308.8640 mm): 符号 #PWR058 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(541.0200 mm, 308.8640 mm): Symbol #PWR058 引脚 1 [电源输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(530.8600 mm, 308.8640 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(528.3200 mm, 298.7040 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(528.3200 mm, 282.1940 mm): 水平线, 长度 3.8100 mm
+[pin_not_connected]: 引脚未连接
+    ; error
+    @(518.1600 mm, 282.1940 mm): Symbol R147 引脚 2 [2, 未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(523.2400 mm, 282.1940 mm): 符号 R147 [10k]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(518.1600 mm, 282.1940 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(518.1600 mm, 282.1940 mm): Symbol R147 引脚 2 [2, 未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(532.1300 mm, 282.1940 mm): Symbol LED2 引脚 1 [1, 未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(543.5600 mm, 282.1940 mm): 符号 #PWR059 [GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(537.2100 mm, 282.1940 mm): 符号 LED2 [LED-0603_B]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(543.5600 mm, 282.1940 mm): 水平线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(543.5600 mm, 282.1940 mm): Symbol #PWR059 引脚 1 [电源输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(541.0200 mm, 298.7040 mm): 水平线, 长度 5.0800 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(541.0200 mm, 298.7040 mm): 符号 #PWR057 [Power-VCC]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(541.0200 mm, 298.7040 mm): Symbol #PWR057 引脚 1 [电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(321.3100 mm, 217.9320 mm): 符号 R127 [RC0603-NC]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(312.4200 mm, 217.1700 mm): 符号 NTC4 [NTC-10K+/-1%]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(316.2300 mm, 218.4400 mm): 符号 C49 [CYC0603001550X7RT;C;1NF;50V;10%;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(273.0500 mm, 160.0200 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(273.0500 mm, 160.2740 mm): 水平线, 长度 25.4000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(247.6500 mm, 123.1900 mm): 垂直线, 长度 37.0840 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.5020 mm, 223.5200 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.5020 mm, 223.5200 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.5820 mm, 223.5200 mm): 垂直线, 长度 4.3180 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.5820 mm, 219.2020 mm): Symbol R135 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(351.0280 mm, 223.5200 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(347.2180 mm, 223.5200 mm): 垂直线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(347.2180 mm, 229.8700 mm): Symbol #PWR054 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(347.2180 mm, 229.8700 mm): 符号 #PWR054 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(347.2180 mm, 229.8700 mm): 垂直线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(351.0280 mm, 212.0900 mm): 垂直线, 长度 29.2100 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(347.2180 mm, 217.1700 mm): 符号 NTC6 [NTC-10K+/-1%]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(351.0280 mm, 218.4400 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.3620 mm, 219.2020 mm): Symbol R136 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.3620 mm, 223.5200 mm): 垂直线, 长度 4.3180 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(356.3620 mm, 217.9320 mm): 符号 R136 [RTRC0603FR10KXJ;R;10K;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.5020 mm, 218.4400 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.6920 mm, 209.0420 mm): 垂直线, 长度 22.3520 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.5020 mm, 212.0900 mm): 垂直线, 长度 25.4000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.5020 mm, 218.4400 mm): Symbol C50 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.6920 mm, 209.0420 mm): Symbol NTC5 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.6920 mm, 223.5200 mm): 垂直线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.6920 mm, 229.8700 mm): Symbol #PWR050 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(329.6920 mm, 229.8700 mm): 符号 #PWR050 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.6920 mm, 229.8700 mm): 垂直线, 长度 6.3500 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(351.0280 mm, 218.4400 mm): 符号 C53 [CYC0603001550X7RT;C;1NF;50V;10%;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(351.0280 mm, 223.5200 mm): 水平线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(347.2180 mm, 219.7100 mm): Symbol NTC6 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(351.0280 mm, 218.4400 mm): Symbol C53 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(287.0200 mm, 349.5040 mm): 符号 R121 [RTRC2512FR0005R;R;0.005R;1%;3W;2512]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(300.9900 mm, 332.9940 mm): 符号 U16 [Short-Symbol]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(285.7500 mm, 362.7120 mm): 水平线, 长度 2.5400 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(287.0200 mm, 356.3620 mm): 符号 R122 [RTRC2512FR0005R;R;0.005R;1%;3W;2512]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(287.0200 mm, 362.7120 mm): 符号 R123 [RTRC2512FR0005R;R;0.005R;1%;3W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(285.7500 mm, 356.3620 mm): Symbol R122 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(285.7500 mm, 362.7120 mm): Symbol R123 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(294.3860 mm, 362.7120 mm): 水平线, 长度 6.6040 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 356.3620 mm): 水平线, 长度 6.6040 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 356.3620 mm): 垂直线, 长度 6.8580 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 362.7120 mm): 垂直线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(306.0700 mm, 167.6400 mm): 水平线, 长度 23.8760 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.5820 mm, 167.6400 mm): Symbol R134 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(306.0700 mm, 156.2100 mm): 水平线, 长度 23.3680 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.4380 mm, 152.4000 mm): 水平线, 长度 23.3680 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.4380 mm, 152.4000 mm): Symbol R130 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.6920 mm, 163.8300 mm): 水平线, 长度 23.6220 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 160.0200 mm): 水平线, 长度 74.6760 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(388.6200 mm, 163.8300 mm): 水平线, 长度 50.2920 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.0740 mm, 160.0200 mm): Symbol R132 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.3280 mm, 163.8300 mm): Symbol R133 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.3620 mm, 182.8800 mm): 垂直线, 长度 27.6860 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.4380 mm, 160.0200 mm): 水平线, 长度 23.3680 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(403.8600 mm, 156.2100 mm): 水平线, 长度 65.7860 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.0740 mm, 156.2100 mm): Symbol R131 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(333.5020 mm, 218.4400 mm): 符号 C50 [CYC0603001550X7RT;C;1NF;50V;10%;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.5020 mm, 186.6900 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.5020 mm, 186.6900 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.5820 mm, 186.6900 mm): 垂直线, 长度 23.8760 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(329.6920 mm, 186.6900 mm): 水平线, 长度 23.6220 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(351.0280 mm, 182.8800 mm): 水平线, 长度 3.8100 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(329.6920 mm, 217.1700 mm): 符号 NTC5 [NTC-10K+/-1%]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(338.5820 mm, 217.9320 mm): 符号 R135 [RTRC0603FR10KXJ;R;10K;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(347.2180 mm, 182.8800 mm): 垂直线, 长度 26.1620 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(306.0700 mm, 182.8800 mm): 水平线, 长度 41.1480 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(351.0280 mm, 182.8800 mm): 水平线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 362.7120 mm): 垂直线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 356.3620 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 356.3620 mm): 垂直线, 长度 6.8580 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(283.2100 mm, 332.9940 mm): 符号 U15 [Short-Symbol]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(236.2200 mm, 357.1240 mm): Symbol #PWR045 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(236.2200 mm, 357.1240 mm): 符号 #PWR045 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(472.4400 mm, 209.5500 mm): 符号 C58 [CYC1206X7R1H105JG;C;100NF;100V;10%...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(472.4400 mm, 186.6900 mm): 符号 C57 [CYC1206X7R1H105JG;C;100NF;100V;10%...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(483.8700 mm, 200.6600 mm): 符号 D40 [DISMDRS3MSMCXXXX;D;RS3M;1000V;3A;SMC]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(412.7500 mm, 184.4040 mm): 符号 R141 [RTRC0603FR3WTJY;R;3M;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 185.6740 mm): Symbol R141 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 185.6740 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 179.3240 mm): Symbol Q30 引脚 3 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.2360 mm, 167.6400 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.2360 mm, 171.4500 mm): 水平线, 长度 58.1660 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.2360 mm, 173.2280 mm): 垂直线, 长度 1.7780 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.2360 mm, 171.4500 mm): 垂直线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.2360 mm, 173.2280 mm): Symbol C54 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 160.2740 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 160.2740 mm): 垂直线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 160.2740 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 163.0680 mm): Symbol R140 引脚 2 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(364.2360 mm, 179.5780 mm): 符号 C54 [CYRFC0805H1UFDEJ;C;1UF;25V;10%;0805]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(364.4900 mm, 186.9440 mm): 符号 #PWR055 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.4900 mm, 179.5780 mm): 水平线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.4900 mm, 186.9440 mm): 垂直线, 长度 7.3660 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(364.4900 mm, 186.9440 mm): Symbol #PWR055 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 174.2440 mm): 水平线, 长度 2.2860 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 171.7040 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 179.3240 mm): 垂直线, 长度 3.8100 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(343.9160 mm, 136.6520 mm): 符号 #PWR053 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(340.1060 mm, 134.1120 mm): 符号 C52 [CY1206202UF100VX5;C;2.2UF;100V;10%...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.6600 mm, 44.7040 mm): 垂直线, 长度 43.9420 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(472.4400 mm, 44.7040 mm): 水平线, 长度 144.7800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(483.8700 mm, 44.7040 mm): 垂直线, 长度 143.2560 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(472.4400 mm, 44.7040 mm): 垂直线, 长度 135.6360 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(483.8700 mm, 44.7040 mm): 水平线, 长度 11.4300 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(340.1060 mm, 99.8220 mm): 符号 C51 [CY1206202UF100VX5;C;2.2UF;100V;10%...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(343.9160 mm, 102.3620 mm): 符号 #PWR051 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(327.4060 mm, 127.7620 mm): 符号 R129 [RTRC0805FR1KXXY;R;1K;1%;1/8W;0805]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 129.0320 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 134.1120 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 136.6520 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 136.6520 mm): Symbol #PWR053 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(340.1060 mm, 134.1120 mm): Symbol C52 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(337.0580 mm, 163.8300 mm): 符号 R133 [RTRC0603FR01KXJ;R;1K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(336.8040 mm, 160.0200 mm): 符号 R132 [RTRC0603FR01KXJ;R;1K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(336.8040 mm, 156.2100 mm): 符号 R131 [RTRC0603FR1MXXJ;R;1M;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(337.3120 mm, 167.6400 mm): 符号 R134 [RTRC0603FR01KXJ;R;1K;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.0740 mm, 151.3840 mm): 垂直线, 长度 1.0160 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(336.8040 mm, 152.4000 mm): 符号 R130 [RTRC0603FR3WTJY;R;3M;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(338.0740 mm, 151.3840 mm): 水平线, 长度 128.0160 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 144.7800 mm): 垂直线, 长度 10.6680 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(306.0700 mm, 144.7800 mm): 水平线, 长度 21.3360 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 134.1120 mm): 水平线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 188.2140 mm): Symbol #PWR056 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(421.6400 mm, 183.1340 mm): 符号 D38 [DISMD1N4148WTPSM;D;1N4148;75V;1A;S...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(412.7500 mm, 188.2140 mm): 符号 #PWR056 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 195.8340 mm): Symbol D38 引脚 K [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(412.7500 mm, 174.2440 mm): 垂直线, 长度 2.7940 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(412.7500 mm, 170.4340 mm): 符号 R140 [RTRC0603FR1MXXJ;R;1M;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(419.1000 mm, 174.2440 mm): 符号 Q30 [TRMMBT5401S23D;Q;MMBT5401;SOT-23]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 169.1640 mm): 垂直线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 115.0620 mm): Symbol D35 引脚 K [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(327.4060 mm, 102.3620 mm): 符号 D35 [DISOD123BAV21W;D;BAV21W;200V;0.5A;...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 102.3620 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 99.8220 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(333.7560 mm, 99.8220 mm): 水平线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 117.6020 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 120.1420 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 120.1420 mm): Symbol #PWR052 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(343.9160 mm, 120.1420 mm): 符号 #PWR052 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(341.3760 mm, 117.6020 mm): Symbol D36 引脚 A [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 117.6020 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 120.3960 mm): 垂直线, 长度 2.7940 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(335.0260 mm, 117.6020 mm): 符号 D36 [DISMBJ64ADO2144A;D;SMBJ64A;64V;5.8...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(331.2160 mm, 117.6020 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 120.3960 mm): Symbol R129 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 88.6460 mm): Symbol R128 引脚 2 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(327.4060 mm, 96.0120 mm): 符号 R128 [RTRC0805FR1KXXY;R;1K;1%;1/8W;0805]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(327.4060 mm, 88.6460 mm): 水平线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 99.8220 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 102.3620 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(343.9160 mm, 102.3620 mm): Symbol #PWR051 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(340.1060 mm, 99.8220 mm): Symbol C51 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 334.2640 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 334.2640 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 336.8040 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 336.8040 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 339.3440 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 339.3440 mm): 水平线, 长度 12.7000 mm
+[multiple_net_names]: P+{slash}C+ 和  都连接到同一项上; 将使用 P+{slash}C+ 作为网表中的网络名称
+    ; warning
+    @(528.3200 mm, 298.7040 mm): 全局标签 'P+/C+'
+    @(369.5700 mm, 326.0090 mm): 标签 ''
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 331.7240 mm): 垂直线, 长度 11.4300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(378.4600 mm, 327.9140 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 315.2140 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 317.7540 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 312.6740 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 310.1340 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 317.7540 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 315.2140 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 312.6740 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 320.2940 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 320.2940 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 331.7240 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(361.9500 mm, 306.3240 mm): 垂直线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 306.3240 mm): 垂直线, 长度 18.0340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 306.3240 mm): 水平线, 长度 5.0800 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(388.6200 mm, 311.4040 mm): 符号 Q28 [MVMOSIRL40SC228X;Q;IRL40SC228;D2PA...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(382.2700 mm, 306.3240 mm): 符号 R138 [RTRC1206F047RJY;R;47R;1%;1/4W;1206]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(378.4600 mm, 306.3240 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(378.4600 mm, 306.3240 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(382.2700 mm, 310.1340 mm): Symbol Q28 引脚 S1 [S1, 未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(424.1800 mm, 306.3240 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(425.4500 mm, 306.3240 mm): 水平线, 长度 1.2700 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(426.7200 mm, 306.3240 mm): 符号 R142 [RTRC1206F047RJY;R;47R;1%;1/4W;1206]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(378.4600 mm, 240.2840 mm): 垂直线, 长度 66.0400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(408.9400 mm, 240.2840 mm): 垂直线, 长度 96.5200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(378.4600 mm, 240.2840 mm): 水平线, 长度 10.1600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(431.8000 mm, 241.5540 mm): 垂直线, 长度 64.7700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(431.8000 mm, 241.5540 mm): 水平线, 长度 10.1600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(421.6400 mm, 241.5540 mm): 垂直线, 长度 45.7200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 339.3440 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 336.8040 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(447.0400 mm, 339.3440 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(361.9500 mm, 332.9940 mm): Symbol D37 引脚 A [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(361.9500 mm, 326.6440 mm): 符号 D37 [DISOD323BZT52C15;ZD;BZT52C15;15V;S...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 348.2340 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 348.2340 mm): Symbol U17 引脚 1 [Pin1, 输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(361.9500 mm, 341.8840 mm): 垂直线, 长度 8.8900 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(356.8700 mm, 331.7240 mm): 符号 R137 [RTRC0603FR10MKJ;R;10M;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 332.9940 mm): Symbol R137 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(391.1600 mm, 327.9140 mm): 水平线, 长度 1.5240 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(382.2700 mm, 327.9140 mm): 符号 R139 [RTRC1206F047RJY;R;47R;1%;1/4W;1206]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(388.6200 mm, 332.9940 mm): 符号 Q29 [MVMOSIRL40SC228X;Q;IRL40SC228;D2PA...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(381.0000 mm, 327.9140 mm): Symbol R139 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(391.1600 mm, 330.4540 mm): Symbol Q29 引脚 G [G, 未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(391.1600 mm, 330.4540 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 341.8840 mm): 垂直线, 长度 8.8900 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(356.8700 mm, 345.6940 mm): 符号 U17 [Short-Symbol]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 341.8840 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(356.8700 mm, 341.8840 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 341.8840 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(382.2700 mm, 341.8840 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(369.5700 mm, 341.8840 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(402.5900 mm, 336.8040 mm): 垂直线, 长度 21.5900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(402.5900 mm, 336.8040 mm): 水平线, 长度 6.3500 mm
+[multiple_net_names]: P-{slash}C- 和 DSGD 都连接到同一项上; 将使用 P-{slash}C- 作为网表中的网络名称
+    ; warning
+    @(483.8700 mm, 349.5040 mm): 全局标签 'P-/C-'
+    @(403.8600 mm, 240.2840 mm): 标签 'DSGD'
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(403.8600 mm, 240.2840 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(403.8600 mm, 156.2100 mm): 垂直线, 长度 84.0740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(388.6200 mm, 163.8300 mm): 垂直线, 长度 76.4540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(402.5900 mm, 315.2140 mm): 水平线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(391.1600 mm, 306.3240 mm): 水平线, 长度 1.5240 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(389.6360 mm, 306.3240 mm): Symbol R138 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(391.1600 mm, 308.8640 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 76.4540 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 68.5800 mm): 垂直线, 长度 7.8740 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 63.5000 mm): 符号 C37 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 57.1500 mm): 垂直线, 长度 3.5560 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 68.5800 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 68.5800 mm): Symbol R102 引脚 2 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 68.5800 mm): 符号 Q18 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 73.7616 mm): 垂直线, 长度 2.6924 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 53.3400 mm): 符号 R101 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 53.5940 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 53.5940 mm): 水平线, 长度 45.7200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 53.5940 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 53.3400 mm): Symbol R101 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 76.4540 mm): Symbol R103 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 68.5800 mm): 符号 R102 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 76.4540 mm): 符号 R103 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 76.4540 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 68.5800 mm): 水平线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(261.6200 mm, 76.4540 mm): 水平线, 长度 34.2900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(273.0500 mm, 53.5940 mm): 垂直线, 长度 94.9960 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(283.2100 mm, 144.7800 mm): 符号 U14 [ICSMDSOP28L36760;U;SH3676010B;TSSO...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 60.9600 mm): 符号 R79 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 68.5800 mm): 符号 R89 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 68.5800 mm): 符号 D23 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 133.3500 mm): 符号 C40 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 138.4300 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 138.4300 mm): Symbol R108 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 147.3200 mm): Symbol R109 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 147.3200 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 114.3000 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 114.3000 mm): Symbol R106 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 123.1900 mm): Symbol R107 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 123.1900 mm): 水平线, 长度 7.8740 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 157.4800 mm): 符号 C41 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(273.0500 mm, 152.6540 mm): 水平线, 长度 11.4300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(273.0500 mm, 152.4000 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(261.6200 mm, 152.6540 mm): 垂直线, 长度 76.2000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(252.7300 mm, 156.2100 mm): 垂直线, 长度 56.8960 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 84.0740 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 84.0740 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 91.6940 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 86.6140 mm): Symbol C38 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 86.6140 mm): 符号 C38 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 91.4400 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 91.4400 mm): 垂直线, 长度 4.8260 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 80.2640 mm): 垂直线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 84.0740 mm): 水平线, 长度 8.8900 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 91.6940 mm): 符号 Q19 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 96.8756 mm): 垂直线, 长度 2.1844 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 86.6140 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 96.8756 mm): Symbol Q19 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 99.3140 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 99.3140 mm): 垂直线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(224.7900 mm, 99.3140 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 99.3140 mm): 水平线, 长度 25.4000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 99.3140 mm): 垂直线, 长度 3.5560 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 91.4400 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 99.0600 mm): 水平线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 99.0600 mm): Symbol R105 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 91.6940 mm): Symbol R104 引脚 2 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 109.2200 mm): 符号 C39 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 162.8140 mm): 垂直线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 162.8140 mm): 垂直线, 长度 11.4300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 174.2440 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 162.8140 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 162.5600 mm): Symbol R110 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 162.8140 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(243.8400 mm, 167.8940 mm): 垂直线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(243.8400 mm, 174.2440 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(247.6500 mm, 201.1680 mm): 垂直线, 长度 29.2100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 189.4840 mm): 垂直线, 长度 15.2400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 211.0740 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 211.0740 mm): Symbol C42 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 216.1540 mm): Symbol R114 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 216.1540 mm): 水平线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 216.1540 mm): Symbol Q24 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 216.1540 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 224.7900 mm): 垂直线, 长度 8.6360 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 189.4840 mm): Symbol R112 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 189.4840 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 194.5640 mm): 垂直线, 长度 0.1016 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 194.6656 mm): 垂直线, 长度 6.2484 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 200.9140 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 201.1680 mm): 垂直线, 长度 11.6840 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 201.1680 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 201.1680 mm): 水平线, 长度 20.3200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 200.9140 mm): Symbol R113 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 201.1680 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 181.8640 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 184.4040 mm): Symbol Q23 引脚 3 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 189.4840 mm): 水平线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 174.2440 mm): Symbol R111 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(209.2960 mm, 162.8140 mm): 水平线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(209.2960 mm, 162.8140 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(209.2960 mm, 162.5600 mm): 水平线, 长度 1.5240 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 162.8140 mm): Symbol Q22 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 153.9240 mm): Symbol R88 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 162.5600 mm): Symbol R93 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 153.9240 mm): 水平线, 长度 25.4000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 167.9956 mm): 垂直线, 长度 6.2484 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 174.2440 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 167.8940 mm): 垂直线, 长度 0.1016 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 181.8640 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 181.8640 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 189.4840 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 181.8640 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 189.4840 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(185.4200 mm, 189.4840 mm): Symbol D28 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 189.4840 mm): Symbol R94 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 181.8640 mm): Symbol R83 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 208.5340 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 208.5340 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 216.1540 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(185.4200 mm, 216.1540 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 216.1540 mm): Symbol R95 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.3860 mm, 208.5340 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(172.7200 mm, 216.1540 mm): Symbol D29 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 208.5340 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(172.7200 mm, 216.1540 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.3860 mm, 208.5340 mm): Symbol R84 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(280.6700 mm, 164.0840 mm): 水平线, 长度 35.5600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(280.6700 mm, 167.6400 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(280.6700 mm, 163.8300 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(280.6700 mm, 167.8940 mm): 水平线, 长度 36.8300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(280.6700 mm, 171.4500 mm): 垂直线, 长度 0.5080 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(321.3100 mm, 219.2020 mm): Symbol R127 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(321.3100 mm, 223.5200 mm): 垂直线, 长度 4.3180 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(321.3100 mm, 210.5660 mm): 垂直线, 长度 20.0660 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(245.1100 mm, 164.0840 mm): 垂直线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(247.6500 mm, 171.9580 mm): 水平线, 长度 33.0200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(312.4200 mm, 209.0420 mm): Symbol NTC4 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(312.4200 mm, 209.0420 mm): 垂直线, 长度 18.5420 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(319.7860 mm, 175.2600 mm): 水平线, 长度 13.7160 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(319.7860 mm, 179.0700 mm): 水平线, 长度 13.7160 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 232.6640 mm): Symbol R120 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 224.7900 mm): 垂直线, 长度 7.8740 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(250.1900 mm, 291.0840 mm): 符号 #PWR046 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(294.6400 mm, 220.9800 mm): 符号 C47 [CYC0603001550X7RT;C;1NF;50V;10%;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(273.0500 mm, 213.3600 mm): 符号 #PWR047 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 232.6640 mm): Symbol R126 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 224.7900 mm): 垂直线, 长度 7.8740 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(300.9900 mm, 240.0300 mm): 符号 R126 [RTRC0805FR10RXY;R;10R;1%;1/8W;0805]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(312.4200 mm, 229.8700 mm): 符号 #PWR049 [Ground-GND]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 216.1540 mm): 符号 Q24 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 216.1540 mm): 符号 R114 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 204.7240 mm): 垂直线, 长度 3.5560 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 211.0740 mm): 符号 C42 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 235.2040 mm): 符号 C43 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 225.0440 mm): 符号 R115 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 240.2840 mm): 符号 D30 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.3440 mm, 264.4140 mm): 符号 R119 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 249.1740 mm): 符号 R116 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 259.3340 mm): 符号 C44 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 273.3040 mm): 符号 R117 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(209.5500 mm, 306.3240 mm): 符号 R99 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(227.3300 mm, 283.4640 mm): 符号 C45 [CYC0603011050X7RT;C;100NF;50V;10%;...]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 208.5340 mm): 符号 R84 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 216.1540 mm): 符号 R95 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 216.1540 mm): 符号 D29 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 288.5440 mm): 符号 R98 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 280.9240 mm): 符号 R87 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 288.5440 mm): 符号 D32 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 264.4140 mm): 符号 D31 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 264.4140 mm): 符号 R97 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 264.4140 mm): 符号 Q26 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 240.2840 mm): 符号 R96 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 232.6640 mm): 符号 R85 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 256.7940 mm): 符号 R86 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(250.1900 mm, 291.0840 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(250.1900 mm, 289.8140 mm): 水平线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(249.9360 mm, 289.8140 mm): 垂直线, 长度 1.5240 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(266.7000 mm, 306.3240 mm): 水平线, 长度 30.4800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(266.7000 mm, 186.6900 mm): 垂直线, 长度 119.6340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(250.1900 mm, 291.0840 mm): Symbol #PWR046 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(294.6400 mm, 258.0640 mm): Symbol #PWR048 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(283.2100 mm, 240.0300 mm): 符号 R120 [RTRC0805FR10RXY;R;10R;1%;1/8W;0805]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(288.2900 mm, 241.3000 mm): 符号 C46 [CYRFC0805H1UFDEJ;C;1UF;25V;10%;0805]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(294.6400 mm, 241.3000 mm): 符号 C48 [CYRFC0805H1UFDEJ;C;1UF;25V;10%;0805]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(294.6400 mm, 258.0640 mm): 符号 #PWR048 [Ground-GND]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(294.6400 mm, 252.7300 mm): 垂直线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(295.6560 mm, 335.5340 mm): 水平线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 241.3000 mm): 垂直线, 长度 89.1540 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(288.2900 mm, 335.5340 mm): 符号 R124 [RTRC2512FR0005R;R;0.005R;1%;3W;2512]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(249.9360 mm, 288.2900 mm): 符号 D34 [DISMD1N4148WTPSM;D;1N4148;75V;1A;S...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(249.9360 mm, 288.2900 mm): Symbol D34 引脚 A [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(261.6200 mm, 273.0500 mm): 水平线, 长度 11.6840 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(249.9360 mm, 273.0500 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 273.0500 mm): 水平线, 长度 22.6060 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(294.3860 mm, 349.5040 mm): 水平线, 长度 6.6040 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(285.7500 mm, 349.5040 mm): Symbol R121 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(285.7500 mm, 349.5040 mm): 水平线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 349.5040 mm): 水平线, 长度 46.9900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 343.1540 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 335.5340 mm): Symbol U16 引脚 1 [Pin1, 输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 349.5040 mm): 垂直线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 349.5040 mm): 水平线, 长度 55.8800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 343.1540 mm): 水平线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(300.9900 mm, 241.3000 mm): 垂直线, 长度 89.1540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(287.0200 mm, 335.5340 mm): Symbol R124 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 343.1540 mm): 垂直线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 343.1540 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 343.1540 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(287.0200 mm, 335.5340 mm): 水平线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(283.2100 mm, 335.5340 mm): Symbol U15 引脚 1 [Pin1, 输入, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(287.0200 mm, 343.1540 mm): Symbol R125 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(288.2900 mm, 343.1540 mm): 符号 R125 [RTRC2512FR0005R;R;0.005R;1%;3W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 277.1140 mm): Symbol C45 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 283.4640 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 277.1140 mm): 垂直线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 288.5440 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(222.2500 mm, 322.8340 mm): Symbol C36 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(236.2200 mm, 306.3240 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(236.2200 mm, 306.3240 mm): 垂直线, 长度 13.9700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 306.3240 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 306.3240 mm): 垂直线, 长度 17.7800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(222.2500 mm, 306.3240 mm): 水平线, 长度 5.3340 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(222.2500 mm, 306.3240 mm): 垂直线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 288.5440 mm): Symbol R118 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 288.5440 mm): 水平线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 280.9240 mm): 垂直线, 长度 2.5400 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 288.5440 mm): 符号 R118 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 306.3240 mm): 水平线, 长度 60.9600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 293.7256 mm): 垂直线, 长度 12.5984 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 288.5440 mm): 符号 Q27 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 293.6240 mm): 垂直线, 长度 0.1016 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.2800 mm, 306.3240 mm): 水平线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 293.7256 mm): Symbol Q27 引脚 2 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(222.2500 mm, 329.1840 mm): 符号 C36 [CYRFC0805H1UFDEJ;C;1UF;25V;10%;0805]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(222.2500 mm, 349.5040 mm): 水平线, 长度 13.9700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(222.2500 mm, 329.1840 mm): 垂直线, 长度 20.3200 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(236.2200 mm, 332.9940 mm): 符号 D33 [DISMD1N4148WTPSM;D;1N4148;75V;1A;S...]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(236.2200 mm, 349.5040 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(236.2200 mm, 332.9940 mm): 垂直线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(236.2200 mm, 332.9940 mm): Symbol D33 引脚 A [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 280.9240 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 280.9240 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 288.5440 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 288.5440 mm): Symbol R98 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 288.5440 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 288.5440 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(185.4200 mm, 288.5440 mm): Symbol D32 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 280.9240 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 273.3040 mm): 水平线, 长度 59.6900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 273.3040 mm): 水平线, 长度 22.8600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 280.9240 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 273.3040 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 288.5440 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 280.9240 mm): Symbol R87 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.2800 mm, 306.3240 mm): Symbol R99 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(140.9700 mm, 306.3240 mm): 水平线, 长度 25.4000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(140.9700 mm, 319.2780 mm): 垂直线, 长度 12.9540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(140.9700 mm, 327.9140 mm): 垂直线, 长度 21.5900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(140.9700 mm, 327.9140 mm): Symbol R78 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(97.7900 mm, 186.9440 mm): Symbol U13 引脚 13 [13, 未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(125.7300 mm, 249.1740 mm): 垂直线, 长度 72.3900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(115.5700 mm, 306.3240 mm): 垂直线, 长度 124.4600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 344.4240 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 346.9640 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 346.9640 mm): 水平线, 长度 31.2420 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 345.6940 mm): 水平线, 长度 31.2420 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(140.9700 mm, 326.6440 mm): 符号 R78 [RTRC1206F047RJY;R;47R;1%;1/4W;1206]
+[multiple_net_names]: GND_DIGITAL 和  都连接到同一项上; 将使用 GND_DIGITAL 作为网表中的网络名称
+    ; warning
+    @(343.9160 mm, 136.6520 mm): Symbol #PWR053 引脚 1 [GND_DIGITAL, 电源输入, 图线]
+    @(140.9700 mm, 330.4540 mm): 标签 ''
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(97.7900 mm, 344.4240 mm): Symbol B-2 引脚 5 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(92.7100 mm, 349.5040 mm): 符号 B-2 [POWER-PAD-5PIN-4.5MM]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(97.7900 mm, 344.4240 mm): 水平线, 长度 31.2420 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(140.9700 mm, 349.5040 mm): 水平线, 长度 81.2800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 348.2340 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 349.5040 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 349.5040 mm): 水平线, 长度 11.9380 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 349.5040 mm): 水平线, 长度 31.2420 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(129.0320 mm, 348.2340 mm): 水平线, 长度 31.2420 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 200.9140 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 200.9140 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 208.5340 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(137.1600 mm, 200.9140 mm): 垂直线, 长度 29.2100 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 174.2440 mm): 符号 R111 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 189.4840 mm): 符号 R112 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 189.4840 mm): 符号 Q23 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 189.4840 mm): 符号 D28 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 200.9140 mm): 符号 R113 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 189.4840 mm): 符号 R94 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 221.3356 mm): 垂直线, 长度 3.7084 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 225.0440 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 225.0440 mm): Symbol R115 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 221.2340 mm): 垂直线, 长度 0.1016 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 225.0440 mm): 水平线, 长度 59.6900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 225.0440 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 225.0440 mm): 水平线, 长度 10.1600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 216.1540 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(132.0800 mm, 225.0440 mm): 垂直线, 长度 50.8000 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 181.8640 mm): 符号 R83 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 200.9140 mm): 水平线, 长度 59.6900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 189.4840 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 235.2040 mm): Symbol C43 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 228.8540 mm): 垂直线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 225.0440 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 225.0440 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 235.2040 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 252.9840 mm): 垂直线, 长度 3.8100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 249.1740 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 240.2840 mm): 垂直线, 长度 8.6360 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.7100 mm, 264.4140 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 259.3340 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 259.3340 mm): Symbol C44 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 273.3040 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(227.3300 mm, 264.4140 mm): 垂直线, 长度 8.6360 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.7100 mm, 264.4140 mm): Symbol R119 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 273.3040 mm): Symbol R117 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 273.3040 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 273.3040 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 232.6640 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 240.2840 mm): Symbol Q25 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 240.2840 mm): 水平线, 长度 1.7780 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 240.2840 mm): 符号 Q25 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 264.4140 mm): 水平线, 长度 3.0480 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 273.3040 mm): 垂直线, 长度 3.7084 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 264.4140 mm): Symbol Q26 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 269.5956 mm): 垂直线, 长度 0.1016 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(218.4400 mm, 240.2840 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 249.1740 mm): 水平线, 长度 7.8740 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(219.4560 mm, 249.1740 mm): Symbol R116 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(218.4400 mm, 240.2840 mm): Symbol R100 引脚 2 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(211.0740 mm, 240.2840 mm): 符号 R100 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 245.4656 mm): 垂直线, 长度 3.7084 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 249.1740 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 256.7940 mm): 垂直线, 长度 2.5400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 245.3640 mm): 垂直线, 长度 0.1016 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 249.1740 mm): 水平线, 长度 59.6900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 240.2840 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(185.4200 mm, 240.2840 mm): Symbol D30 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(185.4200 mm, 264.4140 mm): Symbol D31 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 264.4140 mm): Symbol R97 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 264.4140 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 232.6640 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 232.6640 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 240.2840 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 232.6640 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 264.4140 mm): 水平线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 256.7940 mm): 水平线, 长度 8.8900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 256.7940 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 256.7940 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 249.1740 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 264.4140 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 256.7940 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 232.6640 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 240.2840 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 256.7940 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 232.6640 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 240.2840 mm): Symbol R96 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 232.6640 mm): Symbol R85 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 256.7940 mm): Symbol R86 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 256.7940 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.3860 mm, 106.6800 mm): Symbol R81 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 114.3000 mm): Symbol R91 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 84.0740 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 76.4540 mm): 水平线, 长度 59.6900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 76.4540 mm): 水平线, 长度 17.7800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 114.3000 mm): 水平线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 123.1900 mm): 垂直线, 长度 3.7084 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(127.0000 mm, 99.3140 mm): 水平线, 长度 15.2400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(124.4600 mm, 76.4540 mm): 垂直线, 长度 82.5500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 174.2440 mm): 水平线, 长度 59.6900 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 181.8640 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 181.8640 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 174.2440 mm): 垂直线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(133.3500 mm, 164.0840 mm): 垂直线, 长度 40.6400 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(127.0000 mm, 161.5440 mm): 垂直线, 长度 62.2300 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(127.0000 mm, 161.5440 mm): 水平线, 长度 20.3200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(124.4600 mm, 159.0040 mm): 水平线, 长度 17.7800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 181.8640 mm): 水平线, 长度 8.8900 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(101.6000 mm, 169.1640 mm): 符号 U13 [2.54-11P WT]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 166.6240 mm): 水平线, 长度 30.4800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 174.2440 mm): 水平线, 长度 25.4000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 176.7840 mm): 水平线, 长度 19.0500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 179.3240 mm): 水平线, 长度 12.7000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(119.3800 mm, 179.3240 mm): 垂直线, 长度 93.9800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(116.8400 mm, 53.3400 mm): 垂直线, 长度 103.1240 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 169.1640 mm): 水平线, 长度 35.5600 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 171.7040 mm): 水平线, 长度 30.4800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(106.6800 mm, 164.0840 mm): 水平线, 长度 26.6700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(116.8400 mm, 156.4640 mm): 水平线, 长度 10.1600 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 114.3000 mm): 符号 D25 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 114.3000 mm): 符号 R91 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 130.8100 mm): 符号 R82 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 114.3000 mm): 水平线, 长度 16.7640 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 138.4300 mm): 符号 D26 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 138.4300 mm): 符号 R92 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 138.4300 mm): 符号 Q21 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 153.9240 mm): 垂直线, 长度 1.0160 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 91.6940 mm): 符号 R90 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 91.6940 mm): 符号 D24 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 84.0740 mm): 符号 R80 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 91.6940 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 84.0740 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 91.6940 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 91.6940 mm): 水平线, 长度 16.7640 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.0200 mm, 106.6800 mm): 符号 R81 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 106.6800 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 123.1900 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 99.0600 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 99.3140 mm): 垂直线, 长度 7.3660 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 123.4440 mm): 水平线, 长度 8.8900 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 138.4300 mm): 符号 R108 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 138.4300 mm): 水平线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 147.3200 mm): 垂直线, 长度 3.7084 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 138.4300 mm): Symbol Q21 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 114.3000 mm): 符号 Q20 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 114.3000 mm): Symbol Q20 引脚 1 [未指定, 图线]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 123.1900 mm): 符号 R107 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 114.3000 mm): 符号 R106 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(210.8200 mm, 91.6940 mm): 水平线, 长度 2.7940 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 91.6940 mm): 符号 R104 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 99.0600 mm): 符号 R105 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 147.3200 mm): 符号 R109 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(204.4700 mm, 162.8140 mm): 符号 Q22 [TRMMBT5550SOTF;Q;MMBT5550;SO-T23]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(212.0900 mm, 162.5600 mm): 符号 R110 [RTRC0603F510RJY;R;510R;1%;1/10W;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(201.9300 mm, 157.7340 mm): 垂直线, 长度 2.7940 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 39.6240 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 40.8940 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 42.1640 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 44.7040 mm): 水平线, 长度 185.4200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 43.4340 mm): 垂直线, 长度 1.2700 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 44.7040 mm): 垂直线, 长度 8.6360 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(91.4400 mm, 43.4340 mm): 水平线, 长度 50.8000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(91.4400 mm, 44.7040 mm): 水平线, 长度 50.8000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(91.4400 mm, 43.4340 mm): Symbol B+2 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(91.4400 mm, 39.6240 mm): 水平线, 长度 50.8000 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(86.3600 mm, 44.7040 mm): 符号 B+2 [POWER-PAD-5PIN-4.5MM]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(91.4400 mm, 40.8940 mm): 水平线, 长度 50.8000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(91.4400 mm, 42.1640 mm): 水平线, 长度 50.8000 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 131.0640 mm): 垂直线, 长度 7.6200 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 138.4300 mm): 垂直线, 长度 7.3660 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 131.0640 mm): 水平线, 长度 16.5100 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(160.2740 mm, 153.9240 mm): 符号 R88 [RTRC2512FR47RXJ;R;47R;1%;1W;2512]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.3860 mm, 130.8100 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.3860 mm, 130.8100 mm): Symbol R82 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 138.4300 mm): Symbol R92 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 138.4300 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 131.0640 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 147.3200 mm): 垂直线, 长度 0.2540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 153.9240 mm): 垂直线, 长度 6.3500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(137.1600 mm, 147.5740 mm): 垂直线, 长度 19.0500 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 147.5740 mm): 水平线, 长度 5.0800 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 153.9240 mm): 垂直线, 长度 8.6360 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(142.2400 mm, 153.9240 mm): 水平线, 长度 16.7640 mm
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(166.3700 mm, 162.5600 mm): 符号 R93 [RTRC0603FR2K7XJ;R;2.7K;1%;1/10W;0603]
+[lib_symbol_issues]: 当前配置不包含库 'ProDoc_Sch-easyedapro'
+    ; warning
+    @(172.7200 mm, 162.5600 mm): 符号 D27 [LESMD0603LEDREDAL;D;LED;RED;0603]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 162.5600 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(158.7500 mm, 181.8640 mm): 水平线, 长度 16.5100 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(172.7200 mm, 91.6940 mm): Symbol D24 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(193.0400 mm, 60.9600 mm): 水平线, 长度 25.6540 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 68.5800 mm): Symbol R89 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.3860 mm, 60.9600 mm): Symbol R79 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(159.0040 mm, 68.5800 mm): 水平线, 长度 16.7640 mm
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.6400 mm, 91.6940 mm): Symbol R90 引脚 1 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(167.3860 mm, 84.0740 mm): Symbol R80 引脚 2 [未指定, 图线]
+[endpoint_off_grid]: 符号引脚或连线没有与栅格对齐
+    ; warning
+    @(208.0260 mm, 68.5800 mm): Symbol Q18 引脚 1 [未指定, 图线]
+
+ ** ERC 信息: 869 个错误 2 个警告 867
