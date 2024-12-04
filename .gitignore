@@ -6,3 +6,8 @@
 
 # KiCad local settings
 *.kicad_prl
+
+# KiCad cache files
+*-cache
+*-cache.lib
+*.fp-info-cache
