@@ -458,7 +458,13 @@
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "out1": "10A",
+      "out1_cs": "10A",
+      "out2": "10A",
+      "out3": "10A",
+      "out3_cs": "10A"
+    },
     "netclass_patterns": []
   },
   "pcbnew": {
