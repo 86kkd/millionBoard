@@ -1,0 +1,8 @@
+# pcb project backups
+*\-backups
+
+# KiCad lock files
+[~][^.]*\.kicad_pcb\.lck
+
+# KiCad local settings
+*.kicad_prl
