@@ -17,6 +17,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "common/base_classes/Sensor.h" // 传感器基类
+#include "common/foc_utils.h"           // FOC 工具函数
+#include "common/time_utils.h"          // 时间相关工具函数
+#include "sensors/HallSensor.h"         // 霍尔传感器基类
+
 // 引脚定义
 #define SWITCH_BUTTON 0 // 切换按钮的GPIO引脚
 #define PHASE_U_GPIO 3  // 电机U相GPIO引脚
@@ -24,12 +29,10 @@
 #define PHASE_W_GPIO 18 // 电机W相GPIO引脚
 #define MOTOR_PP 10     // 电机极对数
 
-// MT6701磁编码器SPI配置
-#define MT6701_SPI_HOST SPI2_HOST // 使用SPI2
-#define MT6701_SPI_SCLK_GPIO 12   // SPI时钟引脚
-#define MT6701_SPI_MISO_GPIO 13   // SPI数据输入引脚
-#define MT6701_SPI_MOSI_GPIO -1   // SPI数据输出引脚（未使用）
-#define MT6701_SPI_CS_GPIO 11     // SPI片选引脚
+// 霍尔传感器引脚定义
+#define HALL_A_GPIO 12 // 霍尔传感器 A 相 GPIO
+#define HALL_B_GPIO 13 // 霍尔传感器 B 相 GPIO
+#define HALL_C_GPIO 14 // 霍尔传感器 C 相 GPIO
 
 // 全局变量定义
 static foc_knob_handle_t foc_knob_handle = NULL; // FOC旋钮句柄
@@ -41,18 +44,29 @@ BLDCDriver3PWM driver =
     BLDCDriver3PWM(PHASE_U_GPIO, PHASE_V_GPIO, PHASE_W_GPIO); // 三相PWM驱动器
 BLDCMotor motor = BLDCMotor(MOTOR_PP);                        // 无刷电机对象
 
-// 磁编码器对象初始化
-MT6701 mt6701 =
-    MT6701(MT6701_SPI_HOST, (gpio_num_t)MT6701_SPI_SCLK_GPIO,
-           (gpio_num_t)MT6701_SPI_MISO_GPIO, (gpio_num_t)MT6701_SPI_MOSI_GPIO,
-           (gpio_num_t)MT6701_SPI_CS_GPIO);
+// 霍尔传感器对象初始化
+HallSensor hall_sensor =
+    HallSensor(HALL_A_GPIO, HALL_B_GPIO, HALL_C_GPIO, MOTOR_PP);
+
+// 霍尔传感器中断回调函数
+void hallA_doA() {
+    hall_sensor.handleA();
+}
+void hallB_doB() {
+    hall_sensor.handleB();
+}
+void hallC_doC() {
+    hall_sensor.handleC();
+}
+
 
 // 电机初始化函数
 void motor_init(void) {
   SimpleFOCDebug::enable();        // 启用FOC调试
   Serial.begin(115200);            // 初始化串口
-  mt6701.init();                   // 初始化编码器
-  motor.linkSensor(&mt6701);       // 连接编码器到电机
+  hall_sensor.init();                   // 初始化编码器
+  hall_sensor.enableInterrupts(hallA_doA, hallB_doB, hallC_doC);
+  motor.linkSensor(&hall_sensor);       // 连接编码器到电机
   driver.voltage_power_supply = 5; // 设置电源电压
   driver.voltage_limit = 5;        // 设置电压限制
   motor.velocity_limit = 10000;    // 设置速度限制
