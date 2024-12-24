@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "lceda")(type "KiCad")(uri "${KIPRJMOD}/.env/lceda.kicad_sym")(options "")(descr ""))
+)

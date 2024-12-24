@@ -1,0 +1,250 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "5cdb5c16-5e05-458b-86f0-906cf8114d7e")
+	(paper "A2")
+	(lib_symbols)
+	(sheet
+		(at 74.93 102.87)
+		(size 67.31 53.34)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5bb27dea-91cd-4621-b9fa-d4f3f4b06f5d")
+		(property "Sheetname" "电池保护"
+			(at 74.93 102.1584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "battery_protect.kicad_sch"
+			(at 74.93 156.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 194.056 212.852)
+		(size 69.85 61.214)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5f743cab-9820-4aca-8ca5-f45b69affbe2")
+		(property "Sheetname" "主控"
+			(at 194.056 212.1404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "main_ctrl.kicad_sch"
+			(at 194.056 274.6506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 305.054 107.442)
+		(size 78.486 51.308)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8870eec1-b6db-450c-a373-adafd7a8a6ff")
+		(property "Sheetname" "电机驱动"
+			(at 305.054 106.7304 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "motor_drive.kicad_sch"
+			(at 305.054 159.3346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 75.692 212.852)
+		(size 79.502 61.214)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8fba7f70-ee79-43c5-9a20-c78e89a58965")
+		(property "Sheetname" "ad转换"
+			(at 75.692 212.1404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ad_trans.kicad_sch"
+			(at 75.692 274.6506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 311.404 211.582)
+		(size 87.884 66.548)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "93df4dbe-6b68-4446-8795-6d4c035f014d")
+		(property "Sheetname" "GPS和音频"
+			(at 311.404 210.8704 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "GPS_Audio.kicad_sch"
+			(at 311.404 278.7146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.34 100.33)
+		(size 55.88 52.07)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a3fdbea3-d6e1-4d7c-a3ab-219642affbfc")
+		(property "Sheetname" "dc-dc"
+			(at 180.34 99.6184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "dc-dc.kicad_sch"
+			(at 180.34 152.9846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "字段 2" ""
+			(at 180.34 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "skateboard"
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
