@@ -34,8 +34,8 @@ typedef struct {
 sensor_data_t sensor_data = {
     .roll = 0, .pitch = 0, .yaw = 0, .temp = 0, .status = 0};
 
-// TWAI配置初始化
-void twai_init() {
+// 返回TWAI句柄的初始化函数
+twai_handle_t twai_init() {
   ESP_LOGI(TAG, "Initializing TWAI...");
   ESP_LOGI(TAG, "TX Pin: %d, RX Pin: %d", TX_GPIO_NUM, RX_GPIO_NUM);
 
@@ -53,7 +53,15 @@ void twai_init() {
   twai_timing_config_t t_config = TWAI_TIMING_CONFIG_1MBITS();
   twai_filter_config_t f_config = TWAI_FILTER_CONFIG_ACCEPT_ALL();
 
-  ESP_ERROR_CHECK(twai_driver_install(&g_config, &t_config, &f_config));
+  // 首先安装驱动
+  twai_handle_t handle = NULL;
+  ESP_ERROR_CHECK(
+      twai_driver_install_v2(&g_config, &t_config, &f_config, &handle));
+
+  if (handle == NULL) {
+    ESP_LOGE(TAG, "Failed to get TWAI handle");
+    return NULL;
+  }
 
   // 获取alerts以检查总线状态
   uint32_t alerts_triggered;
@@ -72,9 +80,15 @@ void twai_init() {
     ESP_LOGW(TAG, "RX queue full");
   }
 
-  ESP_ERROR_CHECK(twai_start());
+  // 启动 TWAI - 注意这里需要检查handle是否有效
+  if (handle != NULL) {
+    ESP_ERROR_CHECK(twai_start_v2(handle));
+  } else {
+    ESP_LOGE(TAG, "Cannot start TWAI: Invalid handle");
+    return NULL;
+  }
 
-  // 获取并打印更详细的状态信息
+  // 获取并打印状态信息
   twai_status_info_t status;
   twai_get_status_info(&status);
   ESP_LOGI(TAG, "TWAI Status:");
@@ -84,16 +98,18 @@ void twai_init() {
   ESP_LOGI(TAG, "RX Error Counter: %" PRIu32, status.rx_error_counter);
   ESP_LOGI(TAG, "Msgs To TX: %" PRIu32, status.msgs_to_tx);
   ESP_LOGI(TAG, "Msgs To RX: %" PRIu32, status.msgs_to_rx);
+
+  return handle;
 }
 
-void send_test_frame() {
+void send_test_frame(twai_handle_t handle) {
   twai_message_t msg = {
       .flags = TWAI_MSG_FLAG_NONE,
       .identifier = 0x123,
       .data_length_code = 8,
       .data = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08}};
 
-  auto is_success = twai_transmit(&msg, pdMS_TO_TICKS(100));
+  auto is_success = twai_transmit_v2(handle, &msg, pdMS_TO_TICKS(100));
 
   if (is_success == ESP_OK) {
     ESP_LOGI("TWAI", "Test frame sent success");
@@ -116,15 +132,14 @@ void parse_pdo1(uint8_t *data, sensor_data_t *sensor) {
 
   // 添加解析后的数据日志
   ESP_LOGI(TAG,
-           "Parsed values - Roll: %.2f, Pitch: %.2f, Yaw: %.2f, Temp: %.1f, "
+           "Parsed values - Roll: %.2f, Pitch: %.2f, Yaw: %.2f, Temp: %.1f°C, "
            "Status: %d",
            sensor->roll, sensor->pitch, sensor->yaw, sensor->temp,
            sensor->status);
 }
 
-// 发送SDO写命令（兼容ESP-IDF v5.0+）
-esp_err_t send_sdo_command(uint16_t index, uint8_t subindex, uint32_t data,
-                           bool save) {
+esp_err_t send_sdo_command(twai_handle_t handle, uint16_t index,
+                           uint8_t subindex, uint32_t data, bool save) {
   twai_message_t tx_msg;
   memset(&tx_msg, 0, sizeof(twai_message_t)); // 清零结构体
 
@@ -142,35 +157,41 @@ esp_err_t send_sdo_command(uint16_t index, uint8_t subindex, uint32_t data,
   tx_msg.data[6] = save ? 0xF0 : 0x00;            // Data2
   tx_msg.data[7] = 0x00;                          // Data3
 
-  return twai_transmit(&tx_msg, pdMS_TO_TICKS(100));
+  return twai_transmit_v2(handle, &tx_msg, pdMS_TO_TICKS(100));
 }
 
-// 配置传感器参数
-void config_sensor(void) {
+void config_sensor(twai_handle_t handle) {
   ESP_LOGI(TAG, "Configuring sensor...");
 
-  // 设置波特率250kbps并保存
-  esp_err_t err = send_sdo_command(0x1021, 0x00, 0x03 | (0xF0 << 8), false);
+  // 设置波特率
+  esp_err_t err =
+      send_sdo_command(handle, 0x1021, 0x00, 0x03 | (0xF0 << 8), false);
   ESP_LOGI(TAG, "Set baudrate result: %d", err);
   vTaskDelay(pdMS_TO_TICKS(100)); // 增加延时
 
-  // 设置数据周期10ms并保存
-  err = send_sdo_command(0x1023, 0x00, 0x000A | (0xF0 << 16), false);
+  err = send_sdo_command(handle, 0x1023, 0x00, 0x000A | (0xF0 << 16), false);
   ESP_LOGI(TAG, "Set cycle time result: %d", err);
-  vTaskDelay(pdMS_TO_TICKS(100)); // 增加延时
+  vTaskDelay(pdMS_TO_TICKS(100));
 
-  // 开启PDO1并保存
-  err = send_sdo_command(0x6000, 0x01, 0x01 | (0xF0 << 8), false);
+  err = send_sdo_command(handle, 0x6000, 0x01, 0x01 | (0xF0 << 8), false);
   ESP_LOGI(TAG, "Enable PDO1 result: %d", err);
-  vTaskDelay(pdMS_TO_TICKS(100)); // 增加延时
+  vTaskDelay(pdMS_TO_TICKS(100));
 }
 
-// 接收任务
+// 接收任务参数结构体
+typedef struct {
+  twai_handle_t handle;
+  sensor_data_t *sensor_data;
+} rx_task_params_t;
+
 void twai_receive_task(void *arg) {
+  rx_task_params_t *params = (rx_task_params_t *)arg;
   twai_message_t rx_msg;
+
   while (1) {
-    twai_handle_t handle = twai_handle();
-    auto success = twai_receive_v2(handle, &rx_msg, pdMS_TO_TICKS(1000));
+    auto success =
+        twai_receive_v2(params->handle, &rx_msg, pdMS_TO_TICKS(1000));
+
     if (success == ESP_OK) {
       // 改为INFO级别，确保可以看到消息
       ESP_LOGI(TAG, "Received message ID: 0x%03" PRIx32, rx_msg.identifier);
@@ -183,7 +204,7 @@ void twai_receive_task(void *arg) {
 
       if (rx_msg.identifier == PDO1_ID) {
         ESP_LOGI(TAG, "PDO1 message received!");
-        parse_pdo1(rx_msg.data, &sensor_data);
+        parse_pdo1(rx_msg.data, params->sensor_data);
       }
     } else if (success == ESP_ERR_TIMEOUT) {
       // 减少timeout日志频率，每秒只打印一次
@@ -204,25 +225,27 @@ void twai_receive_task(void *arg) {
 
 extern "C" void app_main(void) {
 
-  twai_init();
+  // 初始化TWAI并获取句柄
+  twai_handle_t handle = twai_init();
   ESP_LOGI(TAG, "TWAI initialized");
 
   // 添加引脚监视
   setup_pin_monitor();
-  xTaskCreate(twai_monitor_task, // 任务函数
-              "monitor_task",    // 任务名称
-              4096,              // 堆栈大小（字节）- 增加到4096
-              NULL,              // 任务参数
-              5,                 // 任务优先级
-              NULL               // 任务句柄
-  );
+  xTaskCreate(twai_monitor_task, "monitor_task", 4096, NULL, 5, NULL);
 
-  config_sensor();
+  // 配置传感器
+  config_sensor(handle);
   ESP_LOGI(TAG, "Sensor configured");
 
-  xTaskCreate(twai_receive_task, "twai_rx", 4096, NULL, RX_TASK_PRIO, NULL);
-  ESP_LOGI(TAG, "Receivetask created");
+  // 创建接收任务参数
+  rx_task_params_t rx_params = {.handle = handle, .sensor_data = &sensor_data};
 
+  // 创建接收任务
+  xTaskCreate(twai_receive_task, "twai_rx", 4096, &rx_params, RX_TASK_PRIO,
+              NULL);
+  ESP_LOGI(TAG, "Receive task created");
+
+  // 主循环
   while (1) {
     printf("Roll: %.2f°, Pitch: %.2f°, Yaw: %.2f°, Temp: %.1f°C\n",
            sensor_data.roll, sensor_data.pitch, sensor_data.yaw,
