@@ -1,3 +1,4 @@
+#include "config.h"
 #include "driver/gpio.h"
 #include "driver/twai.h"
 #include "esp_err.h"
@@ -9,9 +10,10 @@
 #include "utils.h"
 #include <cstring>
 #include <inttypes.h>
+#include <iomanip>
+#include <iostream>
+#include <sstream>
 #include <stdio.h>
-
-#include "config.h"
 
 // CANopen ID定义
 #define NODE_ID 0x05
@@ -50,7 +52,13 @@ twai_handle_t twai_init() {
                                     .clkout_divider = 0,
                                     .intr_flags = ESP_INTR_FLAG_LEVEL1};
 
-  twai_timing_config_t t_config = TWAI_TIMING_CONFIG_1MBITS();
+  twai_timing_config_t t_config = {
+      .brp = 160,              // 波特率预分频器
+      .tseg_1 = 16,            // 时间段1
+      .tseg_2 = 8,             // 时间段2
+      .sjw = 3,                // 同步跳转宽度
+      .triple_sampling = false // 三重采样
+  };
   twai_filter_config_t f_config = TWAI_FILTER_CONFIG_ACCEPT_ALL();
 
   // 首先安装驱动
@@ -141,41 +149,108 @@ void parse_pdo1(uint8_t *data, sensor_data_t *sensor) {
 esp_err_t send_sdo_command(twai_handle_t handle, uint16_t index,
                            uint8_t subindex, uint32_t data, bool save) {
   twai_message_t tx_msg;
-  memset(&tx_msg, 0, sizeof(twai_message_t)); // 清零结构体
+  memset(&tx_msg, 0, sizeof(twai_message_t));
 
   tx_msg.identifier = SDO_RX_ID;
   tx_msg.data_length_code = 8;
   tx_msg.flags = TWAI_MSG_FLAG_NONE;
 
-  // 填充数据（显式顺序赋值）
   tx_msg.data[0] = 0x23;                  // 写4字节命令
   tx_msg.data[1] = (uint8_t)(index);      // 索引低字节
   tx_msg.data[2] = (uint8_t)(index >> 8); // 索引高字节
   tx_msg.data[3] = subindex;
-  tx_msg.data[4] = (uint8_t)(data & 0xFF);        // Data0
-  tx_msg.data[5] = (uint8_t)((data >> 8) & 0xFF); // Data1
-  tx_msg.data[6] = save ? 0xF0 : 0x00;            // Data2
-  tx_msg.data[7] = 0x00;                          // Data3
+  tx_msg.data[4] = (uint8_t)(data & 0xFF);
+  tx_msg.data[5] = (uint8_t)((data >> 8) & 0xFF);
+  tx_msg.data[6] = save ? 0xF0 : 0x00;
+  tx_msg.data[7] = 0x00;
 
-  return twai_transmit_v2(handle, &tx_msg, pdMS_TO_TICKS(100));
+  esp_err_t err = twai_transmit_v2(handle, &tx_msg, pdMS_TO_TICKS(100));
+  if (err != ESP_OK) {
+    ESP_LOGE(TAG, "Failed to send SDO command: %d", err);
+    return err;
+  }
+
+  // 等待SDO应答
+  twai_message_t rx_msg;
+  err = twai_receive_v2(handle, &rx_msg, pdMS_TO_TICKS(1000));
+  if (err != ESP_OK) {
+    ESP_LOGE(TAG, "Failed to receive SDO response: %d", err);
+    return err;
+  }
+
+  // 检查应答
+  if (rx_msg.identifier != SDO_TX_ID) {
+    std::stringstream ss;
+    ss << "Unexpected response ID: 0x" << std::hex << std::setfill('0')
+       << std::setw(3) << rx_msg.identifier;
+    ESP_LOGE(TAG, "%s", ss.str().c_str());
+    return ESP_ERR_INVALID_RESPONSE;
+  }
+
+  if (rx_msg.data[0] == 0x60) { // 成功应答
+    return ESP_OK;
+  } else if (rx_msg.data[0] == 0x80) { // 错误应答
+    std::stringstream ss;
+    ss << "SDO error response: 0x" << std::hex << std::setfill('0')
+       << std::setw(2) << rx_msg.data[7] << std::setw(2) << rx_msg.data[6]
+       << std::setw(2) << rx_msg.data[5] << std::setw(2) << rx_msg.data[4];
+    ESP_LOGE(TAG, "%s", ss.str().c_str());
+    return ESP_ERR_INVALID_RESPONSE;
+  }
+
+  return ESP_ERR_INVALID_RESPONSE;
 }
 
 void config_sensor(twai_handle_t handle) {
   ESP_LOGI(TAG, "Configuring sensor...");
 
-  // 设置波特率
-  esp_err_t err =
-      send_sdo_command(handle, 0x1021, 0x00, 0x03 | (0xF0 << 8), false);
-  ESP_LOGI(TAG, "Set baudrate result: %d", err);
-  vTaskDelay(pdMS_TO_TICKS(100)); // 增加延时
+  // 1. 设置预运行模式
+  esp_err_t err = send_sdo_command(handle, 0x0000, 0x00, 0x80, false);
+  ESP_LOGI(TAG, "Set pre-operational mode result: %d", err);
+  vTaskDelay(pdMS_TO_TICKS(100));
 
-  err = send_sdo_command(handle, 0x1023, 0x00, 0x000A | (0xF0 << 16), false);
+  // 2. 设置波特率
+  err = send_sdo_command(handle, 0x1021, 0x00, 0x03, true); // 250kbps
+  ESP_LOGI(TAG, "Set baudrate result: %d", err);
+  vTaskDelay(pdMS_TO_TICKS(100));
+
+  // 3. 设置数据输出周期 (10ms)
+  err = send_sdo_command(handle, 0x1023, 0x00, 0x0A, true);
   ESP_LOGI(TAG, "Set cycle time result: %d", err);
   vTaskDelay(pdMS_TO_TICKS(100));
 
-  err = send_sdo_command(handle, 0x6000, 0x01, 0x01 | (0xF0 << 8), false);
+  // 4. 使能PDO1
+  err = send_sdo_command(handle, 0x6000, 0x01, 0x01, true);
   ESP_LOGI(TAG, "Enable PDO1 result: %d", err);
   vTaskDelay(pdMS_TO_TICKS(100));
+
+  // 5. 设置运行模式
+  err = send_sdo_command(handle, 0x0000, 0x00, 0x01, false);
+  ESP_LOGI(TAG, "Set operational mode result: %d", err);
+  vTaskDelay(pdMS_TO_TICKS(100));
+}
+
+void print_bus_status() {
+  twai_status_info_t status;
+  twai_get_status_info(&status);
+
+  std::stringstream ss;
+  ss << "\nDetailed TWAI Status:\n"
+     << "Bus State: "
+     << (status.state == TWAI_STATE_RUNNING      ? "RUNNING"
+         : status.state == TWAI_STATE_BUS_OFF    ? "BUS_OFF"
+         : status.state == TWAI_STATE_RECOVERING ? "RECOVERING"
+                                                 : "STOPPED")
+     << "\n"
+     << "TX Error Counter: " << status.tx_error_counter << "\n"
+     << "RX Error Counter: " << status.rx_error_counter << "\n"
+     << "TX Failed Count: " << status.tx_failed_count << "\n"
+     << "RX Missed Count: " << status.rx_missed_count << "\n"
+     << "RX Overrun Count: " << status.rx_overrun_count << "\n"
+     << "Bus-off Count: " << status.bus_error_count << "\n"
+     << "Arbitration Lost Count: " << status.arb_lost_count;
+
+  ESP_LOGI(TAG, "%s", ss.str().c_str());
 }
 
 // 接收任务参数结构体
@@ -233,6 +308,16 @@ extern "C" void app_main(void) {
   setup_pin_monitor();
   xTaskCreate(twai_monitor_task, "monitor_task", 4096, NULL, 5, NULL);
 
+  // 获取总线状态
+  twai_status_info_t status;
+  twai_get_status_info(&status);
+  std::stringstream ss;
+
+  // 设置16进制输出
+  ss << "Bus state: " << status.state << ", TEC: " << status.tx_error_counter
+     << ", REC: " << status.rx_error_counter;
+  ESP_LOGI(TAG, "%s", ss.str().c_str());
+
   // 配置传感器
   config_sensor(handle);
   ESP_LOGI(TAG, "Sensor configured");
@@ -250,6 +335,7 @@ extern "C" void app_main(void) {
     printf("Roll: %.2f°, Pitch: %.2f°, Yaw: %.2f°, Temp: %.1f°C\n",
            sensor_data.roll, sensor_data.pitch, sensor_data.yaw,
            sensor_data.temp);
+    print_bus_status(); // 添加状态监控
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
