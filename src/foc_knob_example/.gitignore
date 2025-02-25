@@ -1,6 +1,0 @@
-build
-.cache
-components
-dependencies.lock
-sdkconfig*
-managed_components
