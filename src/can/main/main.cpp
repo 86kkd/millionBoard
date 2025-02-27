@@ -48,55 +48,61 @@ void can_init(void) {
   // 安装驱动
   esp_err_t ret = twai_driver_install(&g_config, &t_config, &f_config);
   if (ret != ESP_OK) {
-    ESP_LOGE(TAG, "Driver install failed: 0x%x", ret);
+    ESP_LOGE(TAG, "%s:%d Driver install failed: 0x%x", __FILE__, __LINE__, ret);
     return;
   }
 
   // 启动CAN控制器
   if ((ret = twai_start()) != ESP_OK) {
-    ESP_LOGE(TAG, "Start failed: 0x%x", ret);
+    ESP_LOGE(TAG, "%s:%d Start failed: 0x%x", __FILE__, __LINE__, ret);
     return;
   }
-  ESP_LOGI(TAG, "CAN Started");
+  ESP_LOGI(TAG, "%s:%d CAN Started", __FILE__, __LINE__);
 
   // Check initial bus status
   twai_status_info_t status_info;
   twai_get_status_info(&status_info);
-  ESP_LOGI(
-      TAG,
-      "Bus Status - State:%d, TX Errs:%d, RX Errs:%d, Msgs Tx:%d, Msgs Rx:%d",
-      status_info.state, status_info.tx_error_counter,
-      status_info.rx_error_counter, status_info.tx_failed_count,
-      status_info.rx_missed_count);
+  ESP_LOGI(TAG,
+           "%s:%d Bus Status - State:%d, TX Errs:%d, RX Errs:%d, Msgs Tx:%d, "
+           "Msgs Rx:%d",
+           __FILE__, __LINE__, status_info.state, status_info.tx_error_counter,
+           status_info.rx_error_counter, status_info.tx_failed_count,
+           status_info.rx_missed_count);
 
   // Send NMT command with retry mechanism
   const int MAX_RETRIES = 3;
   for (int retry = 0; retry < MAX_RETRIES; retry++) {
     if (retry > 0) {
-      ESP_LOGW(TAG, "Retrying NMT command, attempt %d", retry + 1);
+      ESP_LOGW(TAG, "%s:%d Retrying NMT command, attempt %d", __FILE__, __LINE__,
+               retry + 1);
       vTaskDelay(pdMS_TO_TICKS(100 * (1 << retry))); // Exponential backoff
     }
 
     send_nmt_command(NODE_ID, 0x01);
 
+    ESP_LOGI(TAG, "%s:%d messsge to tx: %d", __FILE__, __LINE__,
+             status_info.msgs_to_tx);
+    ESP_LOGI(TAG, "%s:%d messsge to rx: %d", __FILE__, __LINE__,
+             status_info.msgs_to_rx);
+
     // Verify transmission
     twai_status_info_t post_tx_status;
     twai_get_status_info(&post_tx_status);
     if (post_tx_status.tx_failed_count == status_info.tx_failed_count) {
-      ESP_LOGI(TAG, "NMT command sent successfully");
+      ESP_LOGI(TAG, "%s:%d NMT command sent successfully", __FILE__, __LINE__);
       break;
     }
 
     if (retry == MAX_RETRIES - 1) {
-      ESP_LOGE(TAG, "Failed to send NMT command after %d attempts",
-               MAX_RETRIES);
+      ESP_LOGE(TAG, "%s:%d Failed to send NMT command after %d attempts", __FILE__,
+               __LINE__, MAX_RETRIES);
     }
   }
 }
 
 // Add new function for bus recovery
 void handle_bus_off_recovery(void) {
-  ESP_LOGW(TAG, "Initiating full bus reset procedure");
+  ESP_LOGW(TAG, "%s:%d Initiating full bus reset procedure", __FILE__, __LINE__);
 
   // Full cleanup sequence
   twai_stop();
@@ -113,7 +119,7 @@ void handle_bus_off_recovery(void) {
   ESP_ERROR_CHECK(twai_driver_install(&g_config, &t_config, &f_config));
   ESP_ERROR_CHECK(twai_start());
 
-  ESP_LOGI(TAG, "Bus reset complete");
+  ESP_LOGI(TAG, "%s:%d Bus reset complete", __FILE__, __LINE__);
 }
 // Update receive task with enhanced error handling
 void can_receive_task(void *arg) {
@@ -127,32 +133,39 @@ void can_receive_task(void *arg) {
 
     // Check for bus-off condition
     if (status.state == TWAI_STATE_BUS_OFF) {
+      ESP_LOGW(TAG, "%s:%d Bus off recovery", __FILE__, __LINE__);
       handle_bus_off_recovery();
       consecutive_errors = 0;
       continue;
     }
 
     // Monitor error counters
-    if (status.tx_error_counter > 96 || status.rx_error_counter > 96) {
-      ESP_LOGW(TAG, "High error counters - TX:%d, RX:%d",
+    if (status.tx_error_counter > 16 || status.rx_error_counter > 16) {
+      ESP_LOGW(TAG, "%s:%d High error counters - TX:%d, RX:%d", __FILE__, __LINE__,
                status.tx_error_counter, status.rx_error_counter);
     }
+    ESP_LOGI(TAG, "messsge to tx: %d", status.msgs_to_tx);
+    ESP_LOGI(TAG, "messsge to rx: %d", status.msgs_to_rx);
 
     esp_err_t ret = twai_receive(&rx_msg, pdMS_TO_TICKS(1000));
+    if (ret == ESP_ERR_TIMEOUT) {
+      ESP_LOGE(TAG, "%s:%d ret: twai receive timeout", __FILE__, __LINE__);
+    }
 
     if (ret == ESP_OK) {
       consecutive_errors = 0;
       if (rx_msg.identifier == T_PDO1_CAN_ID && rx_msg.data_length_code == 8) {
-        ESP_LOGI(TAG, "Received T_PDO1");
+        ESP_LOGI(TAG, "%s:%d Received T_PDO1", __FILE__, __LINE__);
         parse_pdo1_data(rx_msg.data);
       }
     } else if (ret != ESP_ERR_TIMEOUT) {
       consecutive_errors++;
-      ESP_LOGE(TAG, "Receive error: 0x%x (consecutive errors: %d)", ret,
-               consecutive_errors);
+      ESP_LOGE(TAG, "%s:%d Receive error: 0x%x (consecutive errors: %d)", __FILE__,
+               __LINE__, ret, consecutive_errors);
 
       if (consecutive_errors > 10) {
-        ESP_LOGE(TAG, "Too many consecutive errors, attempting bus recovery");
+        ESP_LOGE(TAG, "%s:%d Too many consecutive errors, attempting bus recovery",
+                 __FILE__, __LINE__);
         handle_bus_off_recovery();
         consecutive_errors = 0;
       }
@@ -173,6 +186,6 @@ void parse_pdo1_data(uint8_t *data) {
   float yaw = yaw_raw * 0.01f;
   float temp = data[6] / 2.0f - 40.0f;
 
-  ESP_LOGI(TAG, "Roll:%.2f° Pitch:%.2f° Yaw:%.2f° Temp:%.1fC Status:0x%02X",
-           roll, pitch, yaw, temp, data[7]);
+  ESP_LOGI(TAG, "%s:%d Roll:%.2f° Pitch:%.2f° Yaw:%.2f° Temp:%.1fC Status:0x%02X",
+           __FILE__, __LINE__, roll, pitch, yaw, temp, data[7]);
 }
