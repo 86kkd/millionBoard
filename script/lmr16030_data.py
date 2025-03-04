@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 
 def calculate_rt(fsw_khz):
     """计算RT电阻值(欧姆)，基于LMR16030/LMR16020系列芯片"""
-    fsw_hz = fsw_khz * 1000
-    rt_ohm = 42904 / (fsw_hz**1.088)
-    return rt_ohm
+    rt_ohm = 42904 / (fsw_khz**1.088)
+    return rt_ohm * 1000
 
 
 def calculate_feedback_resistors(vout, vref=0.75, rfbb=10000):
@@ -32,9 +31,9 @@ def calculate_output_capacitor(vout, iout_max, fsw_khz, voltage_ripple_ratio=0.0
     fsw = fsw_khz * 1000
     voltage_ripple = vout * voltage_ripple_ratio
     # 假设电感电流纹波为30%
-    inductor_ripple_current = 0.3 * iout_max
-    cout_min = inductor_ripple_current / (8 * fsw * voltage_ripple)
-    return cout_min * 1e6  # 转换为微法
+    curren_ripple = 0.9 * iout_max
+    cout_min = 3 * curren_ripple / fsw / voltage_ripple
+    return cout_min * 1e5  # 转换为微法
 
 
 def calculate_input_capacitor(
@@ -56,24 +55,11 @@ def calculate_bootstrap_capacitor(gate_charge=10e-9):
     return max(cboot * 1e6, 0.1)  # 转换为微法，最小0.1uF
 
 
-def calculate_soft_start_capacitor(startup_time_ms, current_source=10e-6):
+def calculate_soft_start_capacitor(startup_time_ms, current_source=3e-6):
     """计算软启动电容"""
-    # 典型的软启动电流源为10uA
+    # 典型的软启动电流源为3uA
     css = (current_source * startup_time_ms * 1e-3) / 0.7  # 0.7V是典型的阈值电压
     return css * 1e6  # 转换为微法
-
-
-def calculate_compensation_capacitor(
-    crossover_freq_khz, error_amp_gm=200e-6, rfbt=100e3, rfbb=10e3
-):
-    """计算补偿电容"""
-    # 简化计算，实际应根据环路分析确定
-    crossover_freq = crossover_freq_khz * 1000
-    feedback_divider = rfbb / (rfbt + rfbb)
-    ccomp = 1 / (
-        2 * math.pi * crossover_freq * (rfbt * feedback_divider) / error_amp_gm
-    )
-    return ccomp * 1e9  # 转换为纳法
 
 
 def main():
@@ -98,7 +84,6 @@ def main():
     cin_uf = calculate_input_capacitor(vin, iout_max, duty_cycle, fsw_khz)
     cboot_uf = calculate_bootstrap_capacitor()
     css_uf = calculate_soft_start_capacitor(startup_time_ms)
-    ccomp_nf = calculate_compensation_capacitor(fsw_khz / 10, rfbt=rfbt, rfbb=rfbb)
 
     # 显示结果
     print("\n===== 计算结果 =====")
@@ -119,9 +104,6 @@ def main():
     print(f"CBOOT = {cboot_uf:.2f} μF (标准值: 0.1 μF)")
     print(
         f"CSS = {css_uf:.2f} μF (最接近的标准值: {find_closest_capacitor_value(css_uf)} μF)"
-    )
-    print(
-        f"CCOMP = {ccomp_nf:.2f} nF (最接近的标准值: {find_closest_capacitor_value(ccomp_nf/1000)*1000} nF)"
     )
 
     # 额外信息
@@ -266,8 +248,24 @@ def find_closest_capacitor_value(value_uf):
     return closest
 
 
-def plot_efficiency_curve(vin, vout, iout_max, fsw_khz):
-    """绘制估算的效率曲线"""
+def plot_efficiency_curve(
+    vin, vout, iout_max, fsw_khz, typical_load_min=0.2, typical_load_max=0.8
+):
+    """
+    绘制估算的效率曲线，并标注正常工作区间和效率数值
+
+    参数:
+    vin - 输入电压 (V)
+    vout - 输出电压 (V)
+    iout_max - 最大输出电流 (A)
+    fsw_khz - 开关频率 (kHz)
+    typical_load_min - 典型负载最小值 (占最大负载的百分比)
+    typical_load_max - 典型负载最大值 (占最大负载的百分比)
+    """
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Rectangle
+
     # 简化的效率模型
     current_points = np.linspace(0.05, iout_max, 20)
     efficiencies = []
@@ -300,15 +298,104 @@ def plot_efficiency_curve(vin, vout, iout_max, fsw_khz):
         efficiency = (p_out / p_in) * 100 if p_in > 0 else 0
         efficiencies.append(efficiency)
 
-    plt.figure(figsize=(10, 6))
+    # 创建图表
+    fig, ax = plt.figure(figsize=(10, 6)), plt.gca()
+
+    # 绘制效率曲线
     plt.plot(current_points, efficiencies, "b-", linewidth=2)
+
+    # 计算典型负载区间
+    typical_min_current = iout_max * typical_load_min
+    typical_max_current = iout_max * typical_load_max
+
+    # 找到典型负载区间对应的效率值
+    min_idx = np.abs(current_points - typical_min_current).argmin()
+    max_idx = np.abs(current_points - typical_max_current).argmin()
+
+    typical_min_efficiency = efficiencies[min_idx]
+    typical_max_efficiency = efficiencies[max_idx]
+
+    # 计算最大效率及其对应的电流点
+    max_efficiency = max(efficiencies)
+    max_eff_idx = efficiencies.index(max_efficiency)
+    max_eff_current = current_points[max_eff_idx]
+
+    # Mark typical operating range
+    rect = Rectangle(
+        (typical_min_current, 70),
+        typical_max_current - typical_min_current,
+        30,
+        facecolor="lightgreen",
+        alpha=0.3,
+        label="Typical Operating Range",
+    )
+    ax.add_patch(rect)
+
+    # Annotate efficiency values on the chart
+    plt.annotate(
+        f"{typical_min_efficiency:.1f}%",
+        xy=(typical_min_current, typical_min_efficiency),
+        xytext=(typical_min_current - 0.1, typical_min_efficiency + 3),
+        arrowprops=dict(arrowstyle="->", color="red"),
+    )
+
+    plt.annotate(
+        f"{typical_max_efficiency:.1f}%",
+        xy=(typical_max_current, typical_max_efficiency),
+        xytext=(typical_max_current + 0.1, typical_max_efficiency + 3),
+        arrowprops=dict(arrowstyle="->", color="red"),
+    )
+
+    plt.annotate(
+        f"Max Efficiency: {max_efficiency:.1f}%",
+        xy=(max_eff_current, max_efficiency),
+        xytext=(max_eff_current, max_efficiency - 5),
+        arrowprops=dict(arrowstyle="->", color="red"),
+        fontweight="bold",
+    )
+
+    # Add chart elements
     plt.grid(True)
-    plt.xlabel("输出电流 (A)")
-    plt.ylabel("效率 (%)")
-    plt.title(f"降压转换器估算效率曲线 (Vin={vin}V, Vout={vout}V, Fsw={fsw_khz}kHz)")
+    plt.xlabel("Output Current (A)")
+    plt.ylabel("Efficiency (%)")
+    plt.title(
+        f"Buck Converter Efficiency Curve (Vin={vin}V, Vout={vout}V, Fsw={fsw_khz}kHz)"
+    )
     plt.xlim(0, iout_max * 1.1)
     plt.ylim(70, 100)
+
+    # Add legend
+    plt.legend(loc="lower right")
+
+    # Add efficiency data table
+    table_data = []
+    load_percentages = [10, 25, 50, 75, 100]
+
+    for pct in load_percentages:
+        current = iout_max * pct / 100
+        idx = np.abs(current_points - current).argmin()
+        efficiency = efficiencies[idx]
+        table_data.append([f"{pct}%", f"{current:.2f}A", f"{efficiency:.1f}%"])
+
+    # Add table
+    plt.table(
+        cellText=table_data,
+        colLabels=["Load Percentage", "Output Current", "Efficiency"],
+        loc="bottom",
+        bbox=[0.15, -0.35, 0.7, 0.2],
+    )
+
+    plt.subplots_adjust(bottom=0.25)  # Make room for the table
+
+    # Display chart
     plt.show()
+    # 打印典型工作区间的效率范围
+    print(f"典型工作区间 ({typical_load_min*100}%-{typical_load_max*100}% 负载):")
+    print(f"  - 电流范围: {typical_min_current:.2f}A - {typical_max_current:.2f}A")
+    print(
+        f"  - 效率范围: {min(typical_min_efficiency, typical_max_efficiency):.1f}% - {max(typical_min_efficiency, typical_max_efficiency):.1f}%"
+    )
+    print(f"最大效率: {max_efficiency:.1f}% (在 {max_eff_current:.2f}A 时)")
 
 
 if __name__ == "__main__":
