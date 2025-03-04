@@ -8,9 +8,9 @@
 static const char *TAG = "CAN_EXAMPLE";
 
 // CAN configuration
-#define CAN_TX_GPIO GPIO_NUM_5                      // CTX
-#define CAN_RX_GPIO GPIO_NUM_4                      // CRX
-#define CAN_BAUD_RATE TWAI_TIMING_CONFIG_500KBITS() // New timing config format
+#define CAN_TX_GPIO GPIO_NUM_3                      // CTX
+#define CAN_RX_GPIO GPIO_NUM_8                      // CRX
+#define CAN_BAUD_RATE TWAI_TIMING_CONFIG_250KBITS() // New timig config format
 
 // Sensor configuration
 #define NODE_ID 0x05
@@ -42,7 +42,7 @@ void can_init(void) {
   // Use official configuration macros
   twai_general_config_t g_config =
       TWAI_GENERAL_CONFIG_DEFAULT(CAN_TX_GPIO, CAN_RX_GPIO, TWAI_MODE_NORMAL);
-  twai_timing_config_t t_config = TWAI_TIMING_CONFIG_500KBITS();
+  twai_timing_config_t t_config = CAN_BAUD_RATE;
   twai_filter_config_t f_config = TWAI_FILTER_CONFIG_ACCEPT_ALL();
 
   // 安装驱动
@@ -73,8 +73,8 @@ void can_init(void) {
   const int MAX_RETRIES = 3;
   for (int retry = 0; retry < MAX_RETRIES; retry++) {
     if (retry > 0) {
-      ESP_LOGW(TAG, "%s:%d Retrying NMT command, attempt %d", __FILE__, __LINE__,
-               retry + 1);
+      ESP_LOGW(TAG, "%s:%d Retrying NMT command, attempt %d", __FILE__,
+               __LINE__, retry + 1);
       vTaskDelay(pdMS_TO_TICKS(100 * (1 << retry))); // Exponential backoff
     }
 
@@ -88,21 +88,22 @@ void can_init(void) {
     // Verify transmission
     twai_status_info_t post_tx_status;
     twai_get_status_info(&post_tx_status);
-    if (post_tx_status.tx_failed_count == status_info.tx_failed_count) {
+    if (post_tx_status.tx_failed_count == 0) {
       ESP_LOGI(TAG, "%s:%d NMT command sent successfully", __FILE__, __LINE__);
       break;
     }
 
     if (retry == MAX_RETRIES - 1) {
-      ESP_LOGE(TAG, "%s:%d Failed to send NMT command after %d attempts", __FILE__,
-               __LINE__, MAX_RETRIES);
+      ESP_LOGE(TAG, "%s:%d Failed to send NMT command after %d attempts",
+               __FILE__, __LINE__, MAX_RETRIES);
     }
   }
 }
 
 // Add new function for bus recovery
 void handle_bus_off_recovery(void) {
-  ESP_LOGW(TAG, "%s:%d Initiating full bus reset procedure", __FILE__, __LINE__);
+  ESP_LOGW(TAG, "%s:%d Initiating full bus reset procedure", __FILE__,
+           __LINE__);
 
   // Full cleanup sequence
   twai_stop();
@@ -141,11 +142,9 @@ void can_receive_task(void *arg) {
 
     // Monitor error counters
     if (status.tx_error_counter > 16 || status.rx_error_counter > 16) {
-      ESP_LOGW(TAG, "%s:%d High error counters - TX:%d, RX:%d", __FILE__, __LINE__,
-               status.tx_error_counter, status.rx_error_counter);
+      ESP_LOGW(TAG, "%s:%d High error counters - TX:%d, RX:%d", __FILE__,
+               __LINE__, status.tx_error_counter, status.rx_error_counter);
     }
-    ESP_LOGI(TAG, "messsge to tx: %d", status.msgs_to_tx);
-    ESP_LOGI(TAG, "messsge to rx: %d", status.msgs_to_rx);
 
     esp_err_t ret = twai_receive(&rx_msg, pdMS_TO_TICKS(1000));
     if (ret == ESP_ERR_TIMEOUT) {
@@ -155,16 +154,17 @@ void can_receive_task(void *arg) {
     if (ret == ESP_OK) {
       consecutive_errors = 0;
       if (rx_msg.identifier == T_PDO1_CAN_ID && rx_msg.data_length_code == 8) {
-        ESP_LOGI(TAG, "%s:%d Received T_PDO1", __FILE__, __LINE__);
+        ESP_LOGD(TAG, "%s:%d Received T_PDO1", __FILE__, __LINE__);
         parse_pdo1_data(rx_msg.data);
       }
     } else if (ret != ESP_ERR_TIMEOUT) {
       consecutive_errors++;
-      ESP_LOGE(TAG, "%s:%d Receive error: 0x%x (consecutive errors: %d)", __FILE__,
-               __LINE__, ret, consecutive_errors);
+      ESP_LOGE(TAG, "%s:%d Receive error: 0x%x (consecutive errors: %d)",
+               __FILE__, __LINE__, ret, consecutive_errors);
 
       if (consecutive_errors > 10) {
-        ESP_LOGE(TAG, "%s:%d Too many consecutive errors, attempting bus recovery",
+        ESP_LOGE(TAG,
+                 "%s:%d Too many consecutive errors, attempting bus recovery",
                  __FILE__, __LINE__);
         handle_bus_off_recovery();
         consecutive_errors = 0;
@@ -186,6 +186,7 @@ void parse_pdo1_data(uint8_t *data) {
   float yaw = yaw_raw * 0.01f;
   float temp = data[6] / 2.0f - 40.0f;
 
-  ESP_LOGI(TAG, "%s:%d Roll:%.2f° Pitch:%.2f° Yaw:%.2f° Temp:%.1fC Status:0x%02X",
+  ESP_LOGI(TAG,
+           "%s:%d Roll:%.2f° Pitch:%.2f° Yaw:%.2f° Temp:%.1fC Status:0x%02X",
            __FILE__, __LINE__, roll, pitch, yaw, temp, data[7]);
 }
