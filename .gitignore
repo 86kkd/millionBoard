@@ -11,3 +11,5 @@
 *-cache
 *-cache.lib
 *.fp-info-cache
+_autosave-skateboard.kicad_pcb
+fp-info-cache
