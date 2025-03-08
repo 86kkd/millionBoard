@@ -1,24 +1,28 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250227)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.99")
 	(uuid "c2f9115f-3c64-430d-91df-117d67a9c70e")
 	(paper "A4")
 	(lib_symbols
 		(symbol "ProDoc_CAN-easyedapro:5-Voltage"
-			(power)
-			(pin_numbers hide)
-			(pin_names hide)
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "#PWR"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Value" ""
@@ -31,29 +35,29 @@
 			)
 			(property "Footprint" "ProDoc_CAN-easyedapro:"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "Power-5V"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "5-Voltage_1_0"
@@ -100,11 +104,57 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ProDoc_CAN-easyedapro:AFC20-S04ACA-00"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer Part" "AFC20-S04ACA-00"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Supplier Part" "C2764213"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "JS(钜硕电子)"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Supplier" "LCSC"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "Reference" "X"
 				(at 0 0 0)
 				(effects
@@ -123,74 +173,29 @@
 			)
 			(property "Footprint" "ProDoc_CAN-easyedapro:CONN-SMD_AFC20-S04ACA-00"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20210330/C2764211_02EB64B884E80A283E97197BD72D19B1.pdf"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "插针结构:1x4P;间距:2mm;安装方式:卧贴;参考系列:PH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:2A;工作温度范围:-20°C~+85°C;"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Part" "AFC20-S04ACA-00"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "JS(钜硕电子)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Supplier Part" "C2764213"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Supplier" "LCSC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
 				)
 			)
 			(symbol "AFC20-S04ACA-00_1_0"
@@ -325,6 +330,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ProDoc_CAN-easyedapro:CapAcitance"
 			(exclude_from_sim no)
@@ -340,44 +346,44 @@
 			)
 			(property "Value" "100nF"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" ""
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "CapAcitance_1_0"
 				(polyline
 					(pts
-						(xy -0.508 -2.032) (xy -0.508 2.032)
+						(xy -0.508 0) (xy -2.54 0)
 					)
 					(stroke
 						(width 0)
@@ -389,7 +395,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.508 0) (xy -2.54 0)
+						(xy -0.508 -2.032) (xy -0.508 2.032)
 					)
 					(stroke
 						(width 0)
@@ -460,57 +466,62 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ProDoc_CAN-easyedapro:Ground-GND"
-			(power)
-			(pin_numbers hide)
-			(pin_names hide)
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "#PWR"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Value" ""
 				(at 0 -6.35 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Footprint" "ProDoc_CAN-easyedapro:"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" ""
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "Ground-GND_1_0"
@@ -581,11 +592,57 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ProDoc_CAN-easyedapro:HX711"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(property "Manufacturer" "AVIA(海芯科技)"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Supplier Part" "C43656"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part Name" "HX711"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer Part" "HX711"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Supplier" "LCSC"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "Reference" "U"
 				(at 0 0 0)
 				(effects
@@ -604,74 +661,29 @@
 			)
 			(property "Footprint" "ProDoc_CAN-easyedapro:SOP-16_L10.0-W3.9-P1.27-LS6.0-BL"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20201105/C43656_14FD91CAE53E7DB415D03EABCB162D83.pdf"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "称重AD采集芯片"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Part" "HX711"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "AVIA(海芯科技)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Supplier Part" "C43656"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Supplier" "LCSC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part Name" "HX711"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
 				)
 			)
 			(symbol "HX711_1_0"
@@ -706,132 +718,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 16.51 -6.35 180)
-					(length 5.08)
-					(name "INPB"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 16.51 -3.81 180)
-					(length 5.08)
-					(name "PD_SCK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 16.51 -1.27 180)
-					(length 5.08)
-					(name "DOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 16.51 1.27 180)
-					(length 5.08)
-					(name "XO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 16.51 3.81 180)
-					(length 5.08)
-					(name "XI"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 16.51 6.35 180)
-					(length 5.08)
-					(name "RATE"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 16.51 8.89 180)
-					(length 5.08)
-					(name "DVDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -966,6 +852,132 @@
 					)
 				)
 				(pin unspecified line
+					(at 16.51 8.89 180)
+					(length 5.08)
+					(name "DVDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 6.35 180)
+					(length 5.08)
+					(name "RATE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 3.81 180)
+					(length 5.08)
+					(name "XI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 1.27 180)
+					(length 5.08)
+					(name "XO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 -1.27 180)
+					(length 5.08)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 -3.81 180)
+					(length 5.08)
+					(name "PD_SCK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 16.51 -6.35 180)
+					(length 5.08)
+					(name "INPB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
 					(at 16.51 -8.89 180)
 					(length 5.08)
 					(name "INNB"
@@ -984,11 +996,57 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ProDoc_CAN-easyedapro:S8550_C105432"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(property "Supplier Part" "C105432"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "CJ(江苏长电/长晶)"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Supplier" "LCSC"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer Part" "S8550"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "Reference" "Q"
 				(at 0 0 0)
 				(effects
@@ -1007,89 +1065,32 @@
 			)
 			(property "Footprint" "ProDoc_CAN-easyedapro:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20171228/C164891_15144412930301213894.pdf"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "晶体管类型:PNP;集电极电流(Ic):500mA;集射极击穿电压(Vceo):25V;功率(Pd):300mW;直流电流增益(hFE@Ic,Vce):120@50mA,1V;"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Part" "S8550"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "CJ(江苏长电/长晶)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Supplier Part" "C105432"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Supplier" "LCSC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
 				)
 			)
 			(symbol "S8550_C105432_1_0"
-				(polyline
-					(pts
-						(xy 0 -0.762) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
 						(xy 0 2.286) (xy 0 -2.286)
@@ -1104,7 +1105,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 2.54) (xy 0 0.762)
+						(xy 0 -0.762) (xy 2.54 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -1117,6 +1118,18 @@
 				(polyline
 					(pts
 						(xy 0 -0.762) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 1.524 -1.016) (xy 1.524 -1.016) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 0 0.762)
 					)
 					(stroke
 						(width 0)
@@ -1145,24 +1158,6 @@
 					)
 				)
 				(pin input line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-				)
-				(pin input line
 					(at 2.54 5.08 270)
 					(length 2.54)
 					(name "3"
@@ -1180,7 +1175,26 @@
 						)
 					)
 				)
+				(pin input line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.0254 0.0254)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ProDoc_CAN-easyedapro:电阻"
 			(exclude_from_sim no)
@@ -1196,38 +1210,38 @@
 			)
 			(property "Value" "10K"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" ""
 				(at 0 0 0)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "电阻_1_0"
@@ -1279,6 +1293,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(junction
@@ -2121,7 +2136,6 @@
 	)
 	(label ""
 		(at 94.615 149.86 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2132,7 +2146,6 @@
 	)
 	(label ""
 		(at 97.79 130.81 90)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2143,7 +2156,6 @@
 	)
 	(label ""
 		(at 92.075 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2154,7 +2166,6 @@
 	)
 	(label ""
 		(at 94.615 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2165,7 +2176,6 @@
 	)
 	(label ""
 		(at 85.09 121.92 90)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2186,11 +2196,11 @@
 		(uuid "20b4f35c-ad08-4598-9396-21da25a68877")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 73.66 73.66 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2206,11 +2216,11 @@
 		(uuid "3650da49-9d25-4360-b0fc-6f65060f67bd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 147.32 60.96 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2226,11 +2236,11 @@
 		(uuid "4f84d280-f8cb-4e66-a0a4-bca739655fd1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 213.36 55.88 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2246,11 +2256,11 @@
 		(uuid "56a48f8e-fe47-4ec2-aba6-64866a54e238")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 143.51 35.56 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2266,11 +2276,11 @@
 		(uuid "62310797-cd01-4252-b7a1-ad38de29ef41")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 147.32 58.42 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2286,11 +2296,11 @@
 		(uuid "6fc65f3e-014b-4613-a6ee-34df25b69844")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 142.24 121.92 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2306,11 +2316,11 @@
 		(uuid "7d77a3a9-3139-4710-8c9d-e71271e38375")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 72.39 160.02 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2326,11 +2336,11 @@
 		(uuid "8fb0b4cd-d449-4e97-83c7-50b05bc72f20")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 73.66 63.5 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2346,11 +2356,11 @@
 		(uuid "a180a72f-3667-40f4-845c-7145bebddfb4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 213.36 58.42 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2366,11 +2376,11 @@
 		(uuid "b08399dd-af5d-4da5-a98e-01d12d56dac3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 213.36 121.92 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2386,11 +2396,11 @@
 		(uuid "d40181e5-7bbd-4cce-b96e-21cb602e3dc5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 146.05 144.78 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2406,11 +2416,11 @@
 		(uuid "d739c50d-3726-46c7-b965-58dc8ccc6d69")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 72.39 149.86 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2426,11 +2436,11 @@
 		(uuid "eaebfda6-72a8-4447-874f-431961874360")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 146.05 147.32 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2446,11 +2456,11 @@
 		(uuid "f07d31dc-264c-4976-9ff5-e4051e65e987")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 213.36 119.38 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 	)
@@ -2465,11 +2475,11 @@
 		(uuid "1c183a37-8cf6-4df8-9515-cae39990701d")
 		(property "Reference" "#PWR09"
 			(at 213.36 116.84 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -2482,29 +2492,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 213.36 116.84 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 213.36 116.84 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power-5V"
 			(at 213.36 116.84 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2528,6 +2538,51 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "30a20b50-311d-4724-b6a1-54e6283e8599")
+		(property "Manufacturer Part" "S8550"
+			(at 104.14 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "CJ(江苏长电/长晶)"
+			(at 104.14 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier Part" "C105432"
+			(at 104.14 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 104.14 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
+			(at 104.14 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Reference" "Q1"
 			(at 101.6 34.29 90)
 			(effects
@@ -2547,74 +2602,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
 			(at 104.14 38.1 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20171228/C164891_15144412930301213894.pdf"
 			(at 104.14 38.1 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "晶体管类型:PNP;集电极电流(Ic):500mA;集射极击穿电压(Vceo):25V;功率(Pd):300mW;直流电流增益(hFE@Ic,Vce):120@50mA,1V;"
 			(at 104.14 38.1 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part" "S8550"
-			(at 104.14 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "CJ(江苏长电/长晶)"
-			(at 104.14 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Part" "C105432"
-			(at 104.14 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 104.14 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
-			(at 104.14 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -2644,6 +2654,51 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3b8ec60e-f9da-4359-9249-b7df60fa6774")
+		(property "Manufacturer Part" "AFC20-S04ACA-00"
+			(at 209.55 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "JS(钜硕电子)"
+			(at 209.55 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier Part" "C2764213"
+			(at 209.55 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 209.55 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
+			(at 209.55 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Reference" "X4"
 			(at 205.74 46.99 0)
 			(effects
@@ -2663,74 +2718,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:CONN-SMD_AFC20-S04ACA-00"
 			(at 209.55 57.15 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20210330/C2764211_02EB64B884E80A283E97197BD72D19B1.pdf"
 			(at 209.55 57.15 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "插针结构:1x4P;间距:2mm;安装方式:卧贴;参考系列:PH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:2A;工作温度范围:-20°C~+85°C;"
 			(at 209.55 57.15 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part" "AFC20-S04ACA-00"
-			(at 209.55 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "JS(钜硕电子)"
-			(at 209.55 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Part" "C2764213"
-			(at 209.55 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 209.55 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
-			(at 209.55 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
 			)
 		)
 		(pin "6"
@@ -2771,11 +2781,11 @@
 		(uuid "40d8c5d0-9261-4375-a412-bcdcc59cd668")
 		(property "Reference" "#PWR03"
 			(at 213.36 53.34 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -2788,29 +2798,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 213.36 53.34 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 213.36 53.34 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power-5V"
 			(at 213.36 53.34 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2834,6 +2844,51 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "42020ceb-d67d-4b9e-918a-1f6ed4d3b516")
+		(property "Manufacturer Part" "HX711"
+			(at 118.11 143.51 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "AVIA(海芯科技)"
+			(at 118.11 143.51 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier Part" "C43656"
+			(at 118.11 143.51 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 118.11 143.51 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Name" "HX711"
+			(at 118.11 143.51 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Reference" "U2"
 			(at 106.68 132.08 0)
 			(effects
@@ -2853,74 +2908,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:SOP-16_L10.0-W3.9-P1.27-LS6.0-BL"
 			(at 118.11 143.51 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20201105/C43656_14FD91CAE53E7DB415D03EABCB162D83.pdf"
 			(at 118.11 143.51 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "称重AD采集芯片"
 			(at 118.11 143.51 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part" "HX711"
-			(at 118.11 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "AVIA(海芯科技)"
-			(at 118.11 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Part" "C43656"
-			(at 118.11 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 118.11 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part Name" "HX711"
-			(at 118.11 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2991,11 +3001,11 @@
 		(uuid "4fa907ed-bbd6-4b76-93d1-35958c7c099f")
 		(property "Reference" "#PWR010"
 			(at 213.36 124.46 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -3008,29 +3018,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 213.36 124.46 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 213.36 124.46 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 213.36 124.46 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3056,11 +3066,11 @@
 		(uuid "5322fcda-8c0f-4090-9db1-959248ce453c")
 		(property "Reference" "#PWR08"
 			(at 97.79 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -3073,29 +3083,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 97.79 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 97.79 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 97.79 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3130,39 +3140,39 @@
 		)
 		(property "Value" "20k"
 			(at 77.47 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 77.47 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 77.47 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 77.47 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3191,11 +3201,11 @@
 		(uuid "55df5511-5b9d-45f9-a505-455f162d3e6f")
 		(property "Reference" "#PWR05"
 			(at 92.71 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -3208,29 +3218,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 92.71 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 92.71 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 92.71 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3256,11 +3266,11 @@
 		(uuid "60b9a5d6-bbf7-4fa3-a6f6-cb8367b56b8c")
 		(property "Reference" "#PWR01"
 			(at 69.85 52.07 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -3273,29 +3283,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 69.85 52.07 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 69.85 52.07 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 69.85 52.07 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3330,39 +3340,39 @@
 		)
 		(property "Value" "0.1uF/25V"
 			(at 82.55 154.94 90)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right top)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
 			(at 82.55 154.94 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 82.55 154.94 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 82.55 154.94 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3400,39 +3410,39 @@
 		)
 		(property "Value" "0.1uF/25V"
 			(at 92.71 72.39 90)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right top)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
 			(at 92.71 72.39 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 92.71 72.39 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 92.71 72.39 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3461,11 +3471,11 @@
 		(uuid "6a6c3b2c-ffd2-4f87-b9fc-0332c2bfc99a")
 		(property "Reference" "#PWR02"
 			(at 68.58 138.43 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -3478,29 +3488,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 68.58 138.43 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 68.58 138.43 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 68.58 138.43 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3535,39 +3545,39 @@
 		)
 		(property "Value" "100"
 			(at 77.47 160.02 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 77.47 160.02 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 77.47 160.02 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 77.47 160.02 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3605,39 +3615,39 @@
 		)
 		(property "Value" "20k"
 			(at 90.17 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 90.17 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 90.17 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 90.17 134.62 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3675,39 +3685,39 @@
 		)
 		(property "Value" "0.1uF/25V"
 			(at 83.82 68.58 90)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right top)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
 			(at 83.82 68.58 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 83.82 68.58 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 83.82 68.58 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3745,39 +3755,39 @@
 		)
 		(property "Value" "0.1uF/25V"
 			(at 91.44 158.75 90)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right top)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
 			(at 91.44 158.75 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 91.44 158.75 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 91.44 158.75 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3806,11 +3816,11 @@
 		(uuid "81341a1c-3e69-4e6c-84b3-26c1bacf6443")
 		(property "Reference" "#PWR012"
 			(at 139.7 162.56 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -3823,29 +3833,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 139.7 162.56 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 139.7 162.56 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 139.7 162.56 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3869,6 +3879,51 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8dd5fc5f-89db-4a60-9f42-6e2e73fe65e9")
+		(property "Manufacturer Part" "S8550"
+			(at 102.87 124.46 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "CJ(江苏长电/长晶)"
+			(at 102.87 124.46 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier Part" "C105432"
+			(at 102.87 124.46 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 102.87 124.46 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
+			(at 102.87 124.46 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Reference" "Q2"
 			(at 100.33 120.65 90)
 			(effects
@@ -3888,74 +3943,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
 			(at 102.87 124.46 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20171228/C164891_15144412930301213894.pdf"
 			(at 102.87 124.46 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "晶体管类型:PNP;集电极电流(Ic):500mA;集射极击穿电压(Vceo):25V;功率(Pd):300mW;直流电流增益(hFE@Ic,Vce):120@50mA,1V;"
 			(at 102.87 124.46 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part" "S8550"
-			(at 102.87 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "CJ(江苏长电/长晶)"
-			(at 102.87 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Part" "C105432"
-			(at 102.87 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 102.87 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part Name" "S8550(RANGE:120-200) L档120-200"
-			(at 102.87 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
 			)
 		)
 		(pin "3"
@@ -3996,39 +4006,39 @@
 		)
 		(property "Value" "100"
 			(at 78.74 73.66 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 78.74 73.66 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 78.74 73.66 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 78.74 73.66 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4066,39 +4076,39 @@
 		)
 		(property "Value" "10uF/25V"
 			(at 69.85 43.18 90)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right top)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
 			(at 69.85 43.18 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 69.85 43.18 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 69.85 43.18 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4136,39 +4146,39 @@
 		)
 		(property "Value" "20k"
 			(at 78.74 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 78.74 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 78.74 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 78.74 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4206,39 +4216,39 @@
 		)
 		(property "Value" "10uF/25V"
 			(at 68.58 129.54 90)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right top)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:C0603"
 			(at 68.58 129.54 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 68.58 129.54 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 68.58 129.54 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4265,6 +4275,51 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b0ff4310-f37e-4c7e-a26c-c2f45949f0c3")
+		(property "Manufacturer Part" "HX711"
+			(at 119.38 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "AVIA(海芯科技)"
+			(at 119.38 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier Part" "C43656"
+			(at 119.38 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 119.38 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Name" "HX711"
+			(at 119.38 57.15 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Reference" "U1"
 			(at 107.95 45.72 0)
 			(effects
@@ -4284,74 +4339,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:SOP-16_L10.0-W3.9-P1.27-LS6.0-BL"
 			(at 119.38 57.15 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20201105/C43656_14FD91CAE53E7DB415D03EABCB162D83.pdf"
 			(at 119.38 57.15 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "称重AD采集芯片"
 			(at 119.38 57.15 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part" "HX711"
-			(at 119.38 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "AVIA(海芯科技)"
-			(at 119.38 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Part" "C43656"
-			(at 119.38 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 119.38 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part Name" "HX711"
-			(at 119.38 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
 			)
 		)
 		(pin "12"
@@ -4422,11 +4432,11 @@
 		(uuid "c706c5e1-9143-4574-a8e4-049ad231d9b8")
 		(property "Reference" "#PWR06"
 			(at 91.44 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -4439,29 +4449,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 91.44 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 91.44 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 91.44 163.83 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4496,39 +4506,39 @@
 		)
 		(property "Value" "20k"
 			(at 91.44 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 91.44 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 91.44 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 91.44 48.26 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4557,11 +4567,11 @@
 		(uuid "c954ba08-266d-4515-a300-214e96f6ea64")
 		(property "Reference" "#PWR011"
 			(at 140.97 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -4574,29 +4584,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 140.97 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 140.97 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 140.97 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4622,11 +4632,11 @@
 		(uuid "d9d3f99b-b334-4554-9cf5-7f0de954ab67")
 		(property "Reference" "#PWR04"
 			(at 213.36 62.23 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -4639,29 +4649,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 213.36 62.23 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 213.36 62.23 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 213.36 62.23 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4696,39 +4706,39 @@
 		)
 		(property "Value" "100"
 			(at 77.47 149.86 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 77.47 149.86 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 77.47 149.86 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 77.47 149.86 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4757,11 +4767,11 @@
 		(uuid "ec4526d3-3468-4f77-b009-ce33695dc1d0")
 		(property "Reference" "#PWR07"
 			(at 99.06 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "~"
@@ -4774,29 +4784,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:"
 			(at 99.06 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 99.06 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 99.06 77.47 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4831,39 +4841,39 @@
 		)
 		(property "Value" "100"
 			(at 78.74 63.5 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:R0603"
 			(at 78.74 63.5 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 78.74 63.5 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" ""
 			(at 78.74 63.5 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4890,6 +4900,51 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fcb27679-1534-47ac-9c6b-0f9d35a2838f")
+		(property "Manufacturer Part" "AFC20-S04ACA-00"
+			(at 209.55 120.65 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "JS(钜硕电子)"
+			(at 209.55 120.65 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier Part" "C2764213"
+			(at 209.55 120.65 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 209.55 120.65 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
+			(at 209.55 120.65 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Reference" "X5"
 			(at 205.74 110.49 0)
 			(effects
@@ -4909,74 +4964,29 @@
 		)
 		(property "Footprint" "ProDoc_CAN-easyedapro:CONN-SMD_AFC20-S04ACA-00"
 			(at 209.55 120.65 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20210330/C2764211_02EB64B884E80A283E97197BD72D19B1.pdf"
 			(at 209.55 120.65 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "插针结构:1x4P;间距:2mm;安装方式:卧贴;参考系列:PH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:2A;工作温度范围:-20°C~+85°C;"
 			(at 209.55 120.65 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part" "AFC20-S04ACA-00"
-			(at 209.55 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "JS(钜硕电子)"
-			(at 209.55 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Part" "C2764213"
-			(at 209.55 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 209.55 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part Name" "1x4P 间距:2mm 卧贴 系列:PH"
-			(at 209.55 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
 			)
 		)
 		(pin "1"

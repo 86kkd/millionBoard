@@ -8,8 +8,8 @@
 static const char *TAG = "CAN_EXAMPLE";
 
 // CAN configuration
-#define CAN_TX_GPIO GPIO_NUM_3                      // CTX
-#define CAN_RX_GPIO GPIO_NUM_8                      // CRX
+#define CAN_TX_GPIO GPIO_NUM_37                     // CTX
+#define CAN_RX_GPIO GPIO_NUM_38                     // CRX
 #define CAN_BAUD_RATE TWAI_TIMING_CONFIG_250KBITS() // New timig config format
 
 // Sensor configuration
