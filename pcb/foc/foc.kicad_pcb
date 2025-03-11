@@ -1,5 +1,5 @@
 (kicad_pcb
-	(version 20250222)
+	(version 20250302)
 	(generator "pcbnew")
 	(generator_version "9.99")
 	(general
@@ -80,7 +80,20 @@
 		)
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
-		(tenting front back)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -332,6 +345,10 @@
 			(roundrect_rratio 0.25)
 			(net 17 "Net-(Q3-SR)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "b28293c3-030a-4fe8-8f41-7299aa65feed")
 		)
 		(pad "2" smd roundrect
@@ -341,6 +358,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "e3f0e382-0ce6-49ab-82a2-983b9085de73")
 		)
 		(embedded_fonts no)
@@ -533,6 +554,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "33886eb0-24d4-484c-b5d7-ac36d4327502")
 		)
 		(pad "2" smd roundrect
@@ -542,6 +567,10 @@
 			(roundrect_rratio 0.25)
 			(net 3 "MOT_C")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "aca69e85-829a-403f-a8fb-edf81d5da63b")
 		)
 		(embedded_fonts no)
@@ -786,6 +815,10 @@
 			(net 4 "MOT_A")
 			(pinfunction "Pin_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "490d3f7e-f1f3-4c72-84c4-ff531c14467d")
 		)
 		(pad "2" thru_hole oval
@@ -797,6 +830,10 @@
 			(net 1 "MOT_B")
 			(pinfunction "Pin_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "6ce5514c-6f49-4b45-bce1-b01e2380e118")
 		)
 		(pad "3" thru_hole oval
@@ -808,6 +845,10 @@
 			(net 3 "MOT_C")
 			(pinfunction "Pin_3")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "be5fee67-ee8b-4a09-b39a-bfd5b6d47e90")
 		)
 		(embedded_fonts no)
@@ -1000,6 +1041,10 @@
 			(roundrect_rratio 0.25)
 			(net 26 "Net-(3.3V1-A)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "bfe9431a-097f-4e9b-8290-b1ff9b5f21af")
 		)
 		(pad "2" smd roundrect
@@ -1009,6 +1054,10 @@
 			(roundrect_rratio 0.25)
 			(net 23 "+3.3V")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "ecedd894-405b-4e97-ab96-af809acda6e6")
 		)
 		(embedded_fonts no)
@@ -1201,6 +1250,10 @@
 			(roundrect_rratio 0.25)
 			(net 24 "Net-(U1-REF1)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "8b644ab6-9258-48f4-b0df-7c285eab0dec")
 		)
 		(pad "2" smd roundrect
@@ -1210,6 +1263,10 @@
 			(roundrect_rratio 0.25)
 			(net 23 "+3.3V")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "ef97f23c-f12e-488f-801f-5fbc34614a91")
 		)
 		(embedded_fonts no)
@@ -1413,6 +1470,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3f3eead1-2459-40a4-a0dc-07c9df314763")
 		)
 		(pad "2" smd roundrect
@@ -1432,6 +1493,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "c31b0de7-77d8-4755-ba09-411b41f4457e")
 		)
@@ -1625,6 +1690,10 @@
 			(roundrect_rratio 0.25)
 			(net 12 "A2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "41487b91-0b5d-43fd-b01b-762f0d12f033")
 		)
 		(pad "2" smd roundrect
@@ -1634,6 +1703,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "2d555950-6d5a-487e-ae2b-bf4670439da6")
 		)
 		(embedded_fonts no)
@@ -2106,6 +2179,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "dbd6e52e-19d6-4fb9-833f-5ac8ec94ea8a")
 		)
 		(pad "2" smd roundrect
@@ -2116,6 +2193,10 @@
 			(net 9 "Net-(Q1-IN)")
 			(pinfunction "IN")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "bab354d6-4991-47f1-a2d6-93d03285374b")
 		)
 		(pad "3" smd roundrect
@@ -2126,6 +2207,10 @@
 			(net 10 "Net-(Q1-INH)")
 			(pinfunction "INH")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "edefafb0-8e2b-47f4-9c25-69caa9383317")
 		)
 		(pad "4" smd roundrect
@@ -2146,6 +2231,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "91414439-5377-493f-bf68-700f2c85aa35")
 		)
 		(pad "5" smd roundrect
@@ -2156,6 +2245,10 @@
 			(net 11 "Net-(Q1-SR)")
 			(pinfunction "SR")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "d2d28053-5a4d-4eb4-a626-447c1b6d8ea3")
 		)
 		(pad "6" smd roundrect
@@ -2166,6 +2259,10 @@
 			(net 12 "A2")
 			(pinfunction "IS")
 			(pintype "output")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "68c86bcd-851f-4b0b-9b9b-4eddf3a10720")
 		)
 		(pad "7" smd roundrect
@@ -2175,6 +2272,10 @@
 			(roundrect_rratio 0.25)
 			(net 2 "VCC")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "fe093e20-23da-4075-a2a3-e1bfb71f1560")
 		)
 		(pad "8" smd roundrect
@@ -2194,6 +2295,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "c89b7b96-bf23-4455-8522-071926f1f026")
 		)
@@ -2215,6 +2320,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3b875fa2-7e60-492b-bb3d-a23c8111d146")
 		)
 		(pad "8" smd roundrect
@@ -2234,6 +2343,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "ac8a700c-bf50-4734-af49-582a39918f70")
 		)
@@ -2255,6 +2368,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "1b9386d0-bb1f-460a-9f65-9488dfc6b375")
 		)
 		(pad "8" smd roundrect
@@ -2274,6 +2391,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "c9fc7b12-2f7b-44c8-b445-4eefe5b9eec2")
 		)
@@ -2519,6 +2640,10 @@
 			(net 33 "INH_EN")
 			(pinfunction "Pin_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "9793138e-de85-4c56-b395-379645a2133a")
 		)
 		(pad "2" thru_hole oval
@@ -2530,6 +2655,10 @@
 			(net 23 "+3.3V")
 			(pinfunction "Pin_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "6793ff47-db79-4fcf-a1bf-ed9b3426618f")
 		)
 		(embedded_fonts no)
@@ -2722,6 +2851,10 @@
 			(roundrect_rratio 0.25)
 			(net 15 "Net-(Q2-IN)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "309a483e-535b-432c-9b09-80b31f7c2115")
 		)
 		(pad "2" smd roundrect
@@ -2731,6 +2864,10 @@
 			(roundrect_rratio 0.25)
 			(net 32 "IN_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "8345e690-815a-4d65-869d-0969ac1b489a")
 		)
 		(embedded_fonts no)
@@ -2923,6 +3060,10 @@
 			(roundrect_rratio 0.25)
 			(net 12 "A2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "ce52ac42-9ee1-4260-8365-415214f96348")
 		)
 		(pad "2" smd roundrect
@@ -2932,6 +3073,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "42bf65c9-4a4c-43db-b920-304ecbb44f24")
 		)
 		(embedded_fonts no)
@@ -3124,6 +3269,10 @@
 			(roundrect_rratio 0.25)
 			(net 11 "Net-(Q1-SR)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "bc492e9f-f2a2-4d37-b5fb-5b9fe7bfe749")
 		)
 		(pad "2" smd roundrect
@@ -3133,6 +3282,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "73e90900-4fd2-43ad-b51a-a4a5ab050189")
 		)
 		(embedded_fonts no)
@@ -3325,6 +3478,10 @@
 			(roundrect_rratio 0.25)
 			(net 10 "Net-(Q1-INH)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "838f4945-da7c-489f-97cb-18a16d9da9e5")
 		)
 		(pad "2" smd roundrect
@@ -3334,6 +3491,10 @@
 			(roundrect_rratio 0.25)
 			(net 33 "INH_EN")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "7a98de80-e71b-41a6-a450-d917ced6944d")
 		)
 		(embedded_fonts no)
@@ -3526,6 +3687,10 @@
 			(roundrect_rratio 0.25)
 			(net 16 "Net-(Q2-INH)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "68d2991f-386c-4815-899a-14db8b908b72")
 		)
 		(pad "2" smd roundrect
@@ -3535,6 +3700,10 @@
 			(roundrect_rratio 0.25)
 			(net 33 "INH_EN")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "51c886df-5a6d-4d64-bd64-4939b4e24083")
 		)
 		(embedded_fonts no)
@@ -3958,6 +4127,10 @@
 			(roundrect_rratio 0.1)
 			(net 2 "VCC")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "19eb3de8-791d-4c2d-a0c4-5985d641a6b4")
 		)
 		(pad "2" smd roundrect
@@ -3967,6 +4140,10 @@
 			(roundrect_rratio 0.1)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "67bc58c2-5f75-4a6c-907d-a23f8f446be8")
 		)
 		(embedded_fonts no)
@@ -4159,6 +4336,10 @@
 			(roundrect_rratio 0.25)
 			(net 9 "Net-(Q1-IN)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "b5d20df7-9168-4d1f-bd39-7d15fd06a7ba")
 		)
 		(pad "2" smd roundrect
@@ -4168,6 +4349,10 @@
 			(roundrect_rratio 0.25)
 			(net 31 "IN_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3ae43dbd-a614-406e-8f14-8cd573fd0258")
 		)
 		(embedded_fonts no)
@@ -4360,6 +4545,10 @@
 			(roundrect_rratio 0.25)
 			(net 20 "Net-(Q3-IS)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "c8099ba5-a1d7-4aa9-ad96-867ef62507f1")
 		)
 		(pad "2" smd roundrect
@@ -4369,6 +4558,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "a0aef373-dbcb-4916-a942-5c097e5c2f60")
 		)
 		(embedded_fonts no)
@@ -4754,6 +4947,10 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "28d1cc2d-9a9d-48a7-9c92-cfa2f1b6b990")
 		)
 		(pad "" thru_hole circle
@@ -4762,6 +4959,10 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "20c628aa-b784-4097-a2ec-f029b90882a1")
 		)
 		(pad "1" thru_hole roundrect
@@ -4785,6 +4986,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3ece15fb-6cba-4b39-bd8e-191f566af148")
 		)
 		(pad "2" thru_hole circle
@@ -4807,6 +5012,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3034192f-803c-4ade-b7df-8ebbec1896f8")
 		)
 		(pad "3" thru_hole circle
@@ -4828,6 +5037,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "2816f384-a8ff-48bb-be4a-ff91fe7e6e4a")
 		)
@@ -5301,6 +5514,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "870105c8-d4f1-4011-b48c-57545b5dd894")
 		)
 		(pad "2" smd roundrect
@@ -5311,6 +5528,10 @@
 			(net 15 "Net-(Q2-IN)")
 			(pinfunction "IN")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "767eae1d-df2c-43c6-bbd2-52011b80ddf7")
 		)
 		(pad "3" smd roundrect
@@ -5321,6 +5542,10 @@
 			(net 16 "Net-(Q2-INH)")
 			(pinfunction "INH")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "846bf8c4-f91e-444d-ad60-dde413d1fe3e")
 		)
 		(pad "4" smd roundrect
@@ -5341,6 +5566,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "bb7ddfb6-2c5c-4fa0-adb2-1520f9b23af6")
 		)
 		(pad "5" smd roundrect
@@ -5351,6 +5580,10 @@
 			(net 14 "Net-(Q2-SR)")
 			(pinfunction "SR")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "d478fdda-22ff-4991-8cae-add667487dc9")
 		)
 		(pad "6" smd roundrect
@@ -5361,6 +5594,10 @@
 			(net 13 "A3")
 			(pinfunction "IS")
 			(pintype "output")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "b7a20ee9-75be-4971-ba72-0f3b62adb740")
 		)
 		(pad "7" smd roundrect
@@ -5370,6 +5607,10 @@
 			(roundrect_rratio 0.25)
 			(net 2 "VCC")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "4e18a0d5-2448-4822-8023-9a409974bd8a")
 		)
 		(pad "8" smd roundrect
@@ -5389,6 +5630,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "0bd9c180-9892-4bfa-b04f-c87c220d778c")
 		)
@@ -5410,6 +5655,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "9f45c1ed-077d-4678-bd5a-1f7365ad4dff")
 		)
 		(pad "8" smd roundrect
@@ -5429,6 +5678,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "b744511a-dc7a-4092-8f0d-73939a62c0e2")
 		)
@@ -5450,6 +5703,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "a9b2facf-a40f-44e4-9d48-cf65ad7bb0c5")
 		)
 		(pad "8" smd roundrect
@@ -5469,6 +5726,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "be53a829-0630-4683-9997-d5a0ad77745f")
 		)
@@ -5662,6 +5923,10 @@
 			(roundrect_rratio 0.25)
 			(net 13 "A3")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "57a07cd3-b62f-415b-bba6-57ba3162d261")
 		)
 		(pad "2" smd roundrect
@@ -5671,6 +5936,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "995bd23a-3b33-429c-8cf4-d7a551e89f2f")
 		)
 		(embedded_fonts no)
@@ -5904,6 +6173,10 @@
 			(net 5 "GND")
 			(pinfunction "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "a087e398-a0e9-4477-9672-9fafc03d4559")
 		)
 		(pad "2" smd roundrect
@@ -5924,6 +6197,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "b0c0e491-4a7b-43f1-a6ae-f971d7a92e9b")
 		)
@@ -5946,6 +6223,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "74534065-024d-4777-8f57-f4ad33f8a962")
 		)
 		(pad "4" smd roundrect
@@ -5956,6 +6237,10 @@
 			(net 5 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "e3c3e9fb-bac5-45af-ba9c-0fcc8aaf081d")
 		)
 		(pad "5" smd roundrect
@@ -5966,6 +6251,10 @@
 			(net 23 "+3.3V")
 			(pinfunction "V+")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "73812816-59a8-43eb-982f-41c84e64db37")
 		)
 		(pad "6" smd roundrect
@@ -5976,6 +6265,10 @@
 			(net 23 "+3.3V")
 			(pinfunction "REF2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "007fd2a0-bd4a-413a-9407-fc9e6908c8c1")
 		)
 		(pad "7" smd roundrect
@@ -5986,6 +6279,10 @@
 			(net 24 "Net-(U1-REF1)")
 			(pinfunction "REF1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "cac26b35-a8ed-4138-b2ea-0143cd574b7e")
 		)
 		(pad "8" smd roundrect
@@ -5995,6 +6292,10 @@
 			(roundrect_rratio 0.25)
 			(net 28 "A0")
 			(pintype "output")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "ab43c366-f046-4e56-a499-83613787871e")
 		)
 		(embedded_fonts no)
@@ -6187,6 +6488,10 @@
 			(roundrect_rratio 0.25)
 			(net 3 "MOT_C")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "ea4957dd-df53-42ca-b7ad-0cafb66d81ba")
 		)
 		(pad "2" smd roundrect
@@ -6196,6 +6501,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "299014a5-e33b-4259-b717-b466ef71aa09")
 		)
 		(embedded_fonts no)
@@ -6388,6 +6697,10 @@
 			(roundrect_rratio 0.25)
 			(net 23 "+3.3V")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "c567c006-d006-4e0b-ae32-36240665c607")
 		)
 		(pad "2" smd roundrect
@@ -6397,6 +6710,10 @@
 			(roundrect_rratio 0.25)
 			(net 4 "MOT_A")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "d45f37b0-2af1-4bc8-b92d-23e24266a3fb")
 		)
 		(embedded_fonts no)
@@ -6589,6 +6906,10 @@
 			(roundrect_rratio 0.25)
 			(net 20 "Net-(Q3-IS)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "7128dcf5-1d72-4c6b-af62-7132f76e5fa6")
 		)
 		(pad "2" smd roundrect
@@ -6598,6 +6919,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "e44959a6-d2a5-4b1a-aad5-76dbf55def16")
 		)
 		(embedded_fonts no)
@@ -6790,6 +7115,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "76e21fd3-092d-4c1b-9c33-24a13a3bf854")
 		)
 		(pad "2" smd roundrect
@@ -6799,6 +7128,10 @@
 			(roundrect_rratio 0.25)
 			(net 1 "MOT_B")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "a690b549-0140-4545-a6c5-8495fa93ec1c")
 		)
 		(embedded_fonts no)
@@ -7012,6 +7345,10 @@
 			(net 5 "GND")
 			(pinfunction "K")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "f229e270-45ec-4989-8805-66b75732126e")
 		)
 		(pad "2" smd roundrect
@@ -7022,6 +7359,10 @@
 			(net 27 "Net-(42V1-A)")
 			(pinfunction "A")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "072f417d-f881-42a8-8788-7bfc326bce2e")
 		)
 		(embedded_fonts no)
@@ -7266,6 +7607,10 @@
 			(net 31 "IN_1")
 			(pinfunction "Pin_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "90498981-71a0-4bdd-b6d0-373768522420")
 		)
 		(pad "2" thru_hole oval
@@ -7277,6 +7622,10 @@
 			(net 32 "IN_2")
 			(pinfunction "Pin_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "67117b0e-deee-4291-b909-b7fee7c7cc3e")
 		)
 		(pad "3" thru_hole oval
@@ -7288,6 +7637,10 @@
 			(net 30 "IN_3")
 			(pinfunction "Pin_3")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "0360cb79-61b3-4f4f-8b1d-5802588b408e")
 		)
 		(embedded_fonts no)
@@ -7480,6 +7833,10 @@
 			(roundrect_rratio 0.25)
 			(net 4 "MOT_A")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "bc35c3e2-1dd1-4c0f-976a-792805f0a565")
 		)
 		(pad "2" smd roundrect
@@ -7489,6 +7846,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "667dfdbb-29b8-4dd5-b76c-d5bda85c2806")
 		)
 		(embedded_fonts no)
@@ -7961,6 +8322,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "4ffef7df-9128-41b2-911d-b1c3129a54f0")
 		)
 		(pad "2" smd roundrect
@@ -7971,6 +8336,10 @@
 			(net 18 "Net-(Q3-IN)")
 			(pinfunction "IN")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "efe9ff14-12ea-4f99-a7fa-45133b689aad")
 		)
 		(pad "3" smd roundrect
@@ -7981,6 +8350,10 @@
 			(net 19 "Net-(Q3-INH)")
 			(pinfunction "INH")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "0f940ce5-c11e-4dba-b258-88f3c23edf30")
 		)
 		(pad "4" smd roundrect
@@ -8001,6 +8374,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "6cfb35ff-5f18-41bd-a8cb-7dfe18f85a69")
 		)
 		(pad "5" smd roundrect
@@ -8011,6 +8388,10 @@
 			(net 17 "Net-(Q3-SR)")
 			(pinfunction "SR")
 			(pintype "input")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3cf01fcc-51fc-4c23-9022-0e2919509578")
 		)
 		(pad "6" smd roundrect
@@ -8021,6 +8402,10 @@
 			(net 20 "Net-(Q3-IS)")
 			(pinfunction "IS")
 			(pintype "output")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "e4304665-a3fc-4cb0-a780-d8e701dba26f")
 		)
 		(pad "7" smd roundrect
@@ -8030,6 +8415,10 @@
 			(roundrect_rratio 0.25)
 			(net 2 "VCC")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3330c76b-90a0-4e2b-9d7a-43cc95f7f970")
 		)
 		(pad "8" smd roundrect
@@ -8049,6 +8438,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "3f0b9b8b-60fb-4688-b037-2643f39cbf95")
 		)
@@ -8070,6 +8463,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "b2418982-bdcb-4a1c-af87-5f66bcddc145")
 		)
 		(pad "8" smd roundrect
@@ -8089,6 +8486,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "7b0fdca4-4d58-4aa8-aa0b-a1232aaff7ff")
 		)
@@ -8110,6 +8511,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "99617366-7f34-465f-8e77-181bd8e05d85")
 		)
 		(pad "8" smd roundrect
@@ -8129,6 +8534,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "17ac0a18-df4d-4cb3-a801-9fc66b425610")
 		)
@@ -8322,6 +8731,10 @@
 			(roundrect_rratio 0.25)
 			(net 1 "MOT_B")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "5beff5b0-09fb-4cff-b290-84a5966ef4c2")
 		)
 		(pad "2" smd roundrect
@@ -8331,6 +8744,10 @@
 			(roundrect_rratio 0.25)
 			(net 23 "+3.3V")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "edf028f7-edcb-4762-9ce4-0395e1a3b867")
 		)
 		(embedded_fonts no)
@@ -8564,6 +8981,10 @@
 			(net 5 "GND")
 			(pinfunction "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "fcea422b-e78c-4aaa-9560-e312a3871f7e")
 		)
 		(pad "2" smd roundrect
@@ -8584,6 +9005,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "7ca62351-7688-491f-bfc1-da3ad04fa26b")
 		)
@@ -8606,6 +9031,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "d0285b2a-7af1-46de-ba43-567d8963a131")
 		)
 		(pad "4" smd roundrect
@@ -8616,6 +9045,10 @@
 			(net 5 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "bd00ba74-824d-4c70-a796-cc1da6c5fbcb")
 		)
 		(pad "5" smd roundrect
@@ -8626,6 +9059,10 @@
 			(net 23 "+3.3V")
 			(pinfunction "V+")
 			(pintype "power_in")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "0849642f-756e-45d8-9d6d-bd570456dab7")
 		)
 		(pad "6" smd roundrect
@@ -8636,6 +9073,10 @@
 			(net 23 "+3.3V")
 			(pinfunction "REF2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "0272b73d-c836-4685-9753-75bb0d6bae0f")
 		)
 		(pad "7" smd roundrect
@@ -8646,6 +9087,10 @@
 			(net 25 "Net-(U2-REF1)")
 			(pinfunction "REF1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "67fcf815-10a7-4283-afa4-6fadee623a97")
 		)
 		(pad "8" smd roundrect
@@ -8655,6 +9100,10 @@
 			(roundrect_rratio 0.25)
 			(net 29 "A1")
 			(pintype "output")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "dadbf964-9780-452c-a2bb-7b8cd7a9e946")
 		)
 		(embedded_fonts no)
@@ -8847,6 +9296,10 @@
 			(roundrect_rratio 0.25)
 			(net 1 "MOT_B")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "868ac2e9-f5b6-4123-9c31-5b6b628ba170")
 		)
 		(pad "2" smd roundrect
@@ -8856,6 +9309,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "04fa87b7-e65e-49bd-9274-d32ae45cd817")
 		)
 		(embedded_fonts no)
@@ -9048,6 +9505,10 @@
 			(roundrect_rratio 0.25)
 			(net 2 "VCC")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "4978a7fd-7e62-4b77-babf-a47cbcd048a6")
 		)
 		(pad "2" smd roundrect
@@ -9057,6 +9518,10 @@
 			(roundrect_rratio 0.25)
 			(net 27 "Net-(42V1-A)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "f598243c-6f79-4deb-a032-f8e8a4c36d56")
 		)
 		(embedded_fonts no)
@@ -9249,6 +9714,10 @@
 			(roundrect_rratio 0.25)
 			(net 11 "Net-(Q1-SR)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "a259ce89-0840-4b8d-9918-15b945b93d19")
 		)
 		(pad "2" smd roundrect
@@ -9258,6 +9727,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3ef8ad57-f79d-4bb1-9dc1-cd5b9a168884")
 		)
 		(embedded_fonts no)
@@ -9502,6 +9975,10 @@
 			(net 23 "+3.3V")
 			(pinfunction "Pin_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "48507630-8aa5-4e57-8021-445c8644fe4b")
 		)
 		(pad "2" thru_hole oval
@@ -9513,6 +9990,10 @@
 			(net 5 "GND")
 			(pinfunction "Pin_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "71a7bc1d-0b49-447c-adeb-30d8a11af1bf")
 		)
 		(embedded_fonts no)
@@ -9986,6 +10467,10 @@
 			(net 23 "+3.3V")
 			(pinfunction "Pin_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "0d04b42e-2299-4da3-8108-ce78ab1a6808")
 		)
 		(pad "2" smd roundrect
@@ -9996,6 +10481,10 @@
 			(net 4 "MOT_A")
 			(pinfunction "Pin_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "8f434118-8559-41fd-9c97-b85622b21b00")
 		)
 		(pad "3" smd roundrect
@@ -10006,6 +10495,10 @@
 			(net 1 "MOT_B")
 			(pinfunction "Pin_3")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "c73cf39c-6188-462d-8d68-556e5d27586f")
 		)
 		(pad "4" smd roundrect
@@ -10016,6 +10509,10 @@
 			(net 3 "MOT_C")
 			(pinfunction "Pin_4")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "efab83b7-87b0-4211-8862-b54c456761a9")
 		)
 		(pad "5" smd roundrect
@@ -10026,6 +10523,10 @@
 			(net 5 "GND")
 			(pinfunction "Pin_5")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "27c2de2f-fbe3-4a62-97df-41e714062d7f")
 		)
 		(pad "MP" smd roundrect
@@ -10033,6 +10534,10 @@
 			(size 1.6 3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.15625)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "bbd0c0cd-659b-421d-bafe-dfbc5916ad88")
 		)
 		(pad "MP" smd roundrect
@@ -10040,6 +10545,10 @@
 			(size 1.6 3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.15625)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "d34a59a4-ed16-4f35-8125-0a082465c146")
 		)
 		(embedded_fonts no)
@@ -10232,6 +10741,10 @@
 			(roundrect_rratio 0.25)
 			(net 13 "A3")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "7e00d4ae-38b0-4960-a8c6-54fd5d7e33de")
 		)
 		(pad "2" smd roundrect
@@ -10241,6 +10754,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "6f1d7789-44bb-46ed-a601-167b9a65afda")
 		)
 		(embedded_fonts no)
@@ -10454,6 +10971,10 @@
 			(net 5 "GND")
 			(pinfunction "K")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "cb862fa9-7a72-4827-aae6-52016185e7de")
 		)
 		(pad "2" smd roundrect
@@ -10464,6 +10985,10 @@
 			(net 26 "Net-(3.3V1-A)")
 			(pinfunction "A")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "c754e623-7719-4d90-a7bc-4f2c2813c3f8")
 		)
 		(embedded_fonts no)
@@ -10656,6 +11181,10 @@
 			(roundrect_rratio 0.25)
 			(net 14 "Net-(Q2-SR)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "b505c5fa-b60c-45bb-b3ab-3b2c74500d55")
 		)
 		(pad "2" smd roundrect
@@ -10665,6 +11194,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "cbc5e61c-063b-4efe-8fec-33ecc84c9e66")
 		)
 		(embedded_fonts no)
@@ -10868,6 +11401,10 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "6af387b3-8496-4761-8da0-8366dfffba70")
 		)
 		(pad "2" smd roundrect
@@ -10887,6 +11424,10 @@
 				(enabled yes)
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
+			)
+			(tenting
+				(front none)
+				(back none)
 			)
 			(uuid "84f44faf-ac74-4045-bf16-bf118ded4a76")
 		)
@@ -11080,6 +11621,10 @@
 			(roundrect_rratio 0.25)
 			(net 3 "MOT_C")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "89243334-0160-4b9a-be46-f1b4103caf66")
 		)
 		(pad "2" smd roundrect
@@ -11089,6 +11634,10 @@
 			(roundrect_rratio 0.25)
 			(net 23 "+3.3V")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "cc8c06ed-ae21-4abf-8464-d65f357f4134")
 		)
 		(embedded_fonts no)
@@ -11281,6 +11830,10 @@
 			(roundrect_rratio 0.25)
 			(net 18 "Net-(Q3-IN)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "f7f18093-3648-4400-a568-c1c078b80f58")
 		)
 		(pad "2" smd roundrect
@@ -11290,6 +11843,10 @@
 			(roundrect_rratio 0.25)
 			(net 30 "IN_3")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "06c7eae3-25cc-4e36-bd7d-55ffabd64b6f")
 		)
 		(embedded_fonts no)
@@ -11567,6 +12124,10 @@
 			(drill oval 0.6 1.7)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "6440ccfa-63a3-42b5-8947-7f45e9d363e0")
 		)
 		(pad "" thru_hole rect
@@ -11575,6 +12136,10 @@
 			(drill oval 0.6 1.7)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "0f154bd0-667a-43f2-b6b0-0a5339222e9e")
 		)
 		(pad "1" thru_hole roundrect
@@ -11587,6 +12152,10 @@
 			(net 5 "GND")
 			(pinfunction "Pin_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "77e37749-978d-4c83-ad71-6e9f875518d9")
 		)
 		(pad "2" thru_hole circle
@@ -11598,6 +12167,10 @@
 			(net 2 "VCC")
 			(pinfunction "Pin_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "b4b83282-69e7-4624-8850-f3f5587f3185")
 		)
 		(embedded_fonts no)
@@ -11790,6 +12363,10 @@
 			(roundrect_rratio 0.25)
 			(net 14 "Net-(Q2-SR)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "3a6638d3-efea-4b32-a7f6-7ea489170437")
 		)
 		(pad "2" smd roundrect
@@ -11799,6 +12376,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "f8688898-f449-4519-a147-a8ab846399b1")
 		)
 		(embedded_fonts no)
@@ -11991,6 +12572,10 @@
 			(roundrect_rratio 0.25)
 			(net 17 "Net-(Q3-SR)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "e56e0b2e-d946-4c62-876c-5ca65dd68975")
 		)
 		(pad "2" smd roundrect
@@ -12000,6 +12585,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "cc877fb3-92be-46d6-a057-cd37adaacc1c")
 		)
 		(embedded_fonts no)
@@ -12192,6 +12781,10 @@
 			(roundrect_rratio 0.25)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "1a353813-7893-4f88-b804-0f43e504a2d0")
 		)
 		(pad "2" smd roundrect
@@ -12201,6 +12794,10 @@
 			(roundrect_rratio 0.25)
 			(net 4 "MOT_A")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "a0c5a5f4-d6b0-4012-be22-e4ac9c2d0112")
 		)
 		(embedded_fonts no)
@@ -12624,6 +13221,10 @@
 			(roundrect_rratio 0.1)
 			(net 2 "VCC")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "8caac240-a013-40ae-9a9e-84f9a44ce3e5")
 		)
 		(pad "2" smd roundrect
@@ -12633,6 +13234,10 @@
 			(roundrect_rratio 0.1)
 			(net 5 "GND")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "ba0f826b-0e24-4f89-9689-302ed91e547c")
 		)
 		(embedded_fonts no)
@@ -12825,6 +13430,10 @@
 			(roundrect_rratio 0.25)
 			(net 19 "Net-(Q3-INH)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "e1ea3bd0-d14f-496e-bb0d-08449d51be65")
 		)
 		(pad "2" smd roundrect
@@ -12834,6 +13443,10 @@
 			(roundrect_rratio 0.25)
 			(net 33 "INH_EN")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "cdd7c5e1-39b1-4206-bc5c-f3b4fd134e0c")
 		)
 		(embedded_fonts no)
@@ -13078,6 +13691,10 @@
 			(net 13 "A3")
 			(pinfunction "Pin_1")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "4401b099-5187-448f-8648-7aa5282d55a7")
 		)
 		(pad "2" thru_hole oval
@@ -13089,6 +13706,10 @@
 			(net 12 "A2")
 			(pinfunction "Pin_2")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "aed9086d-20c3-4fbf-bd1c-adb572df674f")
 		)
 		(pad "3" thru_hole oval
@@ -13100,6 +13721,10 @@
 			(net 29 "A1")
 			(pinfunction "Pin_3")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "515b2be2-0344-41c5-9174-946b6455a413")
 		)
 		(pad "4" thru_hole oval
@@ -13111,6 +13736,10 @@
 			(net 28 "A0")
 			(pinfunction "Pin_4")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "362191f1-b4d7-4e1e-88ff-54cc5eee7264")
 		)
 		(embedded_fonts no)
@@ -13303,6 +13932,10 @@
 			(roundrect_rratio 0.25)
 			(net 25 "Net-(U2-REF1)")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "d0cc326f-ce7a-417d-9d74-35133fa21315")
 		)
 		(pad "2" smd roundrect
@@ -13312,6 +13945,10 @@
 			(roundrect_rratio 0.25)
 			(net 23 "+3.3V")
 			(pintype "passive")
+			(tenting
+				(front none)
+				(back none)
+			)
 			(uuid "b03b30dd-3758-4976-a0e8-dc4935538931")
 		)
 		(embedded_fonts no)
@@ -13464,6 +14101,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 1)
 		(uuid "2d201270-06d0-4156-a941-052e4186730d")
 	)
@@ -13648,6 +14299,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "2b7ef652-9d55-49f9-a312-cb007201f626")
 	)
@@ -13656,6 +14321,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "39c742e6-3931-4e6f-897b-9eabbf80fa8f")
 	)
@@ -13664,6 +14343,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "42898b30-44ec-409e-8e58-8bad37d10d1e")
 	)
@@ -13672,6 +14365,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "6238392b-cf61-439f-8016-dd5f0c2e70df")
 	)
@@ -13680,6 +14387,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "6e91a4d2-54e3-40bc-8b56-6350c964c5eb")
 	)
@@ -13688,6 +14409,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "7e529898-f7c3-431c-895b-cd7bb9271daa")
 	)
@@ -13696,6 +14431,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "8cfa96b4-69c6-4106-b844-d581c3f98b45")
 	)
@@ -13704,6 +14453,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "8d4f0082-895c-4119-963b-4907bbc6aa13")
 	)
@@ -13712,6 +14475,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "c641e8d7-ffcd-4152-99aa-bd7a04f3d443")
 	)
@@ -13720,6 +14497,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 2)
 		(uuid "f1741608-2b0a-45ba-a2e4-45bfe3fbb725")
 	)
@@ -13776,6 +14567,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 3)
 		(uuid "66525b68-b6bc-49dd-9cbe-c61c3f2c4e72")
 	)
@@ -13864,6 +14669,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 4)
 		(uuid "2e3eb62c-d3c9-4a90-81b0-ecbf24654752")
 	)
@@ -14040,6 +14859,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "196e04be-7bd4-415a-8b7f-4f3e3d605497")
 	)
@@ -14048,6 +14881,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "1e8f8866-aebc-4c13-8cf4-dc3e9d5ec685")
 	)
@@ -14056,6 +14903,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "1ee90909-3982-4674-b00d-49b23c59659d")
 	)
@@ -14064,6 +14925,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "47f45547-e524-46aa-9826-60b482aab084")
 	)
@@ -14072,6 +14947,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "5413b88a-7bce-492c-9504-93e73fa36141")
 	)
@@ -14080,6 +14969,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "77a63f76-2444-4e86-9644-3406c40db988")
 	)
@@ -14088,6 +14991,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "830b09f0-695e-4347-90ff-ccdf737f4dcc")
 	)
@@ -14096,6 +15013,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "84316fe4-b0d4-4f0d-85b8-f0d2f303670d")
 	)
@@ -14104,6 +15035,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "8e777e74-8e42-49dc-abb2-dcf75291c2b0")
 	)
@@ -14112,6 +15057,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "b3d4f4a8-7100-434a-8b3c-0f3eb4b561db")
 	)
@@ -14120,6 +15079,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "bb012264-9a5e-4d60-bb22-f4ef43c3dd55")
 	)
@@ -14128,6 +15101,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "e1b4db2d-2b04-4da1-8770-3ed0b06f2b53")
 	)
@@ -14136,6 +15123,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "e3b4be1d-ea2c-462f-86bb-2c9b40ff3b9d")
 	)
@@ -14144,6 +15145,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "eb723e02-5758-4842-a58c-69d6e793f5d6")
 	)
@@ -14152,6 +15167,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 5)
 		(uuid "f8242016-3e3a-442c-951e-0baf21363afe")
 	)
@@ -14288,6 +15317,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 7)
 		(uuid "1792c5a6-58bb-4b22-8ecf-d4d8d482ea04")
 	)
@@ -14296,6 +15339,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 7)
 		(uuid "497b819b-6336-4d85-a9f6-aa73101a56af")
 	)
@@ -14472,6 +15529,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 12)
 		(uuid "4a59f8fa-b0b5-42e6-b195-a9e6b9919524")
 	)
@@ -14576,6 +15647,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 13)
 		(uuid "a440f18f-eeb0-4b51-b8e7-c554d6b03045")
 	)
@@ -15240,6 +16325,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 23)
 		(uuid "928e6985-65b8-4223-a717-648580cdda8f")
 	)
@@ -15248,6 +16347,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 23)
 		(uuid "e65bd05d-1a79-4479-ae47-e9e969e1c032")
 	)
@@ -15337,6 +16450,20 @@
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
 		(free yes)
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 28)
 		(uuid "44b63c40-06ce-4e4f-a09f-2fe3ceecbbc2")
 	)
@@ -15370,6 +16497,20 @@
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
 		(free yes)
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 29)
 		(uuid "8ebbf215-433e-4a42-821a-9a466a7b5d28")
 	)
@@ -15426,6 +16567,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 30)
 		(uuid "645f1c45-7742-4b72-bc85-6f09432a1b39")
 	)
@@ -15450,6 +16605,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 31)
 		(uuid "333abe68-54f8-4b80-aeed-cc1440ca0e6f")
 	)
@@ -15506,6 +16675,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 32)
 		(uuid "cbf02eaf-8227-4254-aac7-5901d336e078")
 	)
@@ -15730,6 +16913,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 33)
 		(uuid "08ed378b-7a5d-4973-b7de-6af43e210864")
 	)
@@ -15738,6 +16935,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 33)
 		(uuid "203c5440-fadb-4fb1-ab01-59577cae5bc2")
 	)
@@ -15746,6 +16957,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 33)
 		(uuid "2ecbf1e5-055f-4fe5-bc9c-cf372845c297")
 	)
@@ -15754,6 +16979,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 33)
 		(uuid "3ad872d6-b717-4557-b4d9-de044f24db72")
 	)
@@ -15762,6 +17001,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 33)
 		(uuid "46b77024-05d4-4b34-9b5c-c90e2bf21269")
 	)
@@ -15770,6 +17023,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 33)
 		(uuid "7a6c0b15-ebd8-44d4-8f7c-c43e1605f8ed")
 	)
@@ -15778,6 +17045,20 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
+		(tenting
+			(front none)
+			(back none)
+		)
+		(capping none)
+		(covering
+			(front none)
+			(back none)
+		)
+		(plugging
+			(front none)
+			(back none)
+		)
+		(filling none)
 		(net 33)
 		(uuid "f285c396-bd8b-4544-bded-4fa926bc5b23")
 	)
