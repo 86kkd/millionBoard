@@ -5,282 +5,6 @@
 	(uuid "0fa19466-3962-4cfd-a765-c6c255377c86")
 	(paper "A4")
 	(lib_symbols
-		(symbol "CR0402JF0101G_2"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R6"
-				(at -1.4986 5.7023 0)
-				(effects
-					(font
-						(face "Arial")
-						(size 1.6891 1.6891)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "10KΩ"
-				(at -1.4986 3.4671 0)
-				(effects
-					(font
-						(face "Arial")
-						(size 1.6891 1.6891)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Supplier Part" "C100570"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer Part" "CR0402JF0101G"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Supplier" "LCSC"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer" "LIZ"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "CR0402JF0101G_2_0_0"
-				(rectangle
-					(start -2.54 1.016)
-					(end 2.54 -1.016)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "CR0402JF0101G_3"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R7"
-				(at -1.4986 5.8801 0)
-				(effects
-					(font
-						(face "Arial")
-						(size 1.6891 1.6891)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "10KΩ"
-				(at -2.9718 3.3401 0)
-				(effects
-					(font
-						(face "Arial")
-						(size 1.6891 1.6891)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Supplier Part" "C100570"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer Part" "CR0402JF0101G"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Supplier" "LCSC"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer" "LIZ"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "CR0402JF0101G_3_0_0"
-				(rectangle
-					(start -2.54 1.016)
-					(end 2.54 -1.016)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0.0254 0.0254)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Conn_01x04_Pin"
 			(pin_names
 				(offset 1.016)
@@ -4042,211 +3766,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_BJT:SS8050"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SS8050"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 5.08 -7.366 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "http://www.secosgmbh.com/datasheet/products/SSMPTransistor/SOT-23/SS8050.pdf"
-				(at 5.08 -4.826 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "General Purpose NPN Transistor, 1.5A Ic, 25V Vce, SOT-23"
-				(at 34.036 -2.286 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "SS8050 NPN Transistor"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SS8050_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy 0.635 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SS8050_1_1"
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Transistor_FET:AO3401A"
 			(pin_names
 				(hide yes)
@@ -5046,6 +4565,36 @@
 		)
 		(uuid "1878a9a9-4daa-4f10-8da2-8e789bfc5230")
 	)
+	(text "Hall sensors"
+		(exclude_from_sim no)
+		(at 37.338 145.288 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "26b6faa8-0eff-44e0-8ac1-4d29ed4b72ba")
+	)
+	(text "currents"
+		(exclude_from_sim no)
+		(at 35.052 132.334 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6d2b5565-6633-49c7-88df-5ecf6421dc61")
+	)
+	(text "MOTOR PWMS"
+		(exclude_from_sim no)
+		(at 93.218 130.81 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7389f3db-0303-49da-87a4-e69376aaee82")
+	)
 	(text "上电复位"
 		(exclude_from_sim no)
 		(at 109.22 25.7683 0)
@@ -5080,29 +4629,15 @@
 		)
 		(uuid "c40e9fcc-d06d-4703-af77-10215bfeae38")
 	)
-	(text "DTR   RTS   RST	GPIO0\n 1      1     1      1\n 0      0     1      1\n 1      0     0      1\n 0      1     1      0"
+	(text "MOTOR PWMS"
 		(exclude_from_sim no)
-		(at 236.982 29.464 0)
+		(at 93.218 148.082 90)
 		(effects
 			(font
-				(face "KiCad Font")
-				(size 1.8288 1.8288)
+				(size 1.27 1.27)
 			)
-			(justify left top)
 		)
-		(uuid "ef47d6e6-15de-4e6b-ab3c-d99e43173d45")
-	)
-	(text "AUTO PROGRAM"
-		(exclude_from_sim no)
-		(at 200.66 37.084 0)
-		(effects
-			(font
-				(face "KiCad Font")
-				(size 2.1717 2.1717)
-			)
-			(justify left top)
-		)
-		(uuid "f78f6c3d-5992-4af6-b38c-7a10c51d17d1")
+		(uuid "d095bbcc-6e1d-4901-bb61-cc3630e36960")
 	)
 	(junction
 		(at 72.39 53.34)
@@ -5171,12 +4706,6 @@
 		(uuid "b576d521-1c9e-4fb9-8191-f33e4eb4c115")
 	)
 	(junction
-		(at 238.76 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bce8f345-a180-4318-9e76-36df0f148aa7")
-	)
-	(junction
 		(at 78.74 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5187,12 +4716,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d5ff03b7-0a22-4947-aac7-3dc658c8444d")
-	)
-	(junction
-		(at 234.95 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f6f15094-6e51-4335-b242-2956638ea645")
 	)
 	(junction
 		(at 53.34 77.47)
@@ -5223,16 +4746,6 @@
 	(no_connect
 		(at 78.74 156.21)
 		(uuid "f05d8289-d6c6-44dd-bbd0-313227b93d74")
-	)
-	(wire
-		(pts
-			(xy 205.74 45.72) (xy 217.17 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0170d71a-3fe4-40f3-94ef-5d320eac8c3b")
 	)
 	(wire
 		(pts
@@ -5273,36 +4786,6 @@
 			(type default)
 		)
 		(uuid "1005ca2b-2ebb-498f-847c-bd0f50899fc7")
-	)
-	(wire
-		(pts
-			(xy 234.95 59.69) (xy 234.95 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "10f432c4-3b7e-4ba2-a80f-dbf6578f5450")
-	)
-	(wire
-		(pts
-			(xy 234.95 67.31) (xy 237.49 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "135030d4-8b08-4252-87ad-fc2465bed3d3")
-	)
-	(wire
-		(pts
-			(xy 217.17 59.69) (xy 234.95 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "181c3334-1e86-4ed6-badf-0c460116c5fb")
 	)
 	(wire
 		(pts
@@ -5396,16 +4879,6 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 62.23) (xy 217.17 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35eee517-c3a1-4827-9816-8ab131c52516")
-	)
-	(wire
-		(pts
 			(xy 195.58 124.46) (xy 195.58 128.27)
 		)
 		(stroke
@@ -5446,16 +4919,6 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 60.96) (xy 238.76 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4ecb0524-64da-46f5-9ec3-417e258accb9")
-	)
-	(wire
-		(pts
 			(xy 80.01 58.42) (xy 72.39 58.42)
 		)
 		(stroke
@@ -5493,16 +4956,6 @@
 			(type default)
 		)
 		(uuid "58e82e5e-f04b-4c1e-afd8-da5d43e57e05")
-	)
-	(wire
-		(pts
-			(xy 238.76 53.34) (xy 234.95 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "596abdb2-b7cb-4f43-b1d6-6d1fc62c4b98")
 	)
 	(wire
 		(pts
@@ -5563,16 +5016,6 @@
 			(type default)
 		)
 		(uuid "68316b2c-9197-4042-9299-e20bd0006e2b")
-	)
-	(wire
-		(pts
-			(xy 238.76 53.34) (xy 241.3 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b3050d7-64ec-4710-85b4-ec38f246efb4")
 	)
 	(wire
 		(pts
@@ -5673,16 +5116,6 @@
 			(type default)
 		)
 		(uuid "87734a6c-3a7f-400a-a118-e337ac2497c8")
-	)
-	(wire
-		(pts
-			(xy 217.17 72.39) (xy 217.17 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "899733fc-1104-4d61-b33d-49ddec8923cc")
 	)
 	(wire
 		(pts
@@ -5856,16 +5289,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 60.96) (xy 238.76 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b55918c0-0aa4-455b-827a-7810433b0ffd")
-	)
-	(wire
-		(pts
 			(xy 90.17 173.99) (xy 93.98 173.99)
 		)
 		(stroke
@@ -5903,26 +5326,6 @@
 			(type default)
 		)
 		(uuid "c09d9443-6424-47f3-beaa-ebb0000d07f7")
-	)
-	(wire
-		(pts
-			(xy 205.74 74.93) (xy 217.17 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4c0cd6c-62e1-4bac-9680-18682020e80d")
-	)
-	(wire
-		(pts
-			(xy 217.17 58.42) (xy 217.17 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c748195c-3a8e-4f81-a5ba-274851fdf0c3")
 	)
 	(wire
 		(pts
@@ -6056,16 +5459,6 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 48.26) (xy 217.17 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7f5c2df-34a8-41f0-85c1-b8b04aee8ae8")
-	)
-	(wire
-		(pts
 			(xy 213.36 132.08) (xy 219.71 132.08)
 		)
 		(stroke
@@ -6113,6 +5506,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "PD_SCK1"
+		(shape input)
+		(at 78.74 140.97 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0e4f0869-4a67-4999-8481-f9217d06b8e6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.1918 140.97 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6202,26 +5617,6 @@
 			)
 		)
 	)
-	(global_label "RTS"
-		(shape input)
-		(at 237.49 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3d6b3d5e-8749-4214-8c2d-b453cf5be3c7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 237.49 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "TXD_SENSOR"
 		(shape input)
 		(at 78.74 118.11 0)
@@ -6308,28 +5703,6 @@
 			)
 		)
 	)
-	(global_label "DOUT_1"
-		(shape input)
-		(at 78.74 130.81 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5ca84752-d823-49fb-9d7d-bd013e788b6c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 88.8009 130.81 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "IRQ"
 		(shape input)
 		(at 118.11 177.8 0)
@@ -6343,28 +5716,6 @@
 		(uuid "64ffd660-9134-4019-b141-a065c2d225fb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 124.3005 177.8 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "PD_SCK1"
-		(shape input)
-		(at 78.74 133.35 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "67f8476b-72c7-492a-87c5-ed35255dfaff")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 90.1918 133.35 0)
 			(hide yes)
 			(effects
 				(font
@@ -6698,28 +6049,6 @@
 			)
 		)
 	)
-	(global_label "PD_SCK2"
-		(shape input)
-		(at 78.74 128.27 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c768387d-9313-45bf-a066-af4f1360f1c8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 90.1918 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "IRQ"
 		(shape input)
 		(at 48.26 120.65 180)
@@ -6742,6 +6071,28 @@
 			)
 		)
 	)
+	(global_label "PD_SCK2"
+		(shape input)
+		(at 78.74 135.89 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "db222e70-5783-46c9-bc42-d0803cf19a8b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.1918 135.89 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "U0_TXD"
 		(shape input)
 		(at 266.7 113.03 90)
@@ -6761,26 +6112,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-	)
-	(global_label "IO0"
-		(shape input)
-		(at 205.74 74.93 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "de1a046d-e45b-4a56-a86e-473bc0ae1d0e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.74 74.93 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 	)
@@ -6825,26 +6156,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-	)
-	(global_label "EN"
-		(shape input)
-		(at 205.74 45.72 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e64e682a-8895-416b-9be7-63949139c536")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.74 45.72 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 	)
@@ -6958,23 +6269,25 @@
 			)
 		)
 	)
-	(global_label "DTR"
+	(global_label "DOUT_1"
 		(shape input)
-		(at 241.3 53.34 0)
+		(at 78.74 138.43 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "fc964842-4c69-4bcf-b69c-7c45275acc7a")
+		(uuid "fcd98a29-2aaa-4ff3-b5fd-1f4805dcd18a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.3 53.34 0)
+			(at 88.8009 138.43 0)
 			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 	)
@@ -7033,27 +6346,27 @@
 		)
 		(uuid "1d7198e5-26f9-484f-9e62-87ccca09c344")
 	)
-	(hierarchical_label "IN1_2"
+	(hierarchical_label "IN1_3"
 		(shape input)
-		(at 78.74 138.43 0)
+		(at 78.74 128.27 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "280a76b5-1ea3-40df-a57c-192caf30d50c")
+		(uuid "20f580ab-6b3a-4769-bafb-5b6e454ea037")
 	)
 	(hierarchical_label "IN1_1"
 		(shape input)
-		(at 78.74 135.89 0)
+		(at 78.74 133.35 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "2c0ce54e-9991-4c22-b7c6-4b667f999634")
+		(uuid "262a5166-9b38-4ac1-a0ca-4df40ac2236e")
 	)
 	(hierarchical_label "IN2_2"
 		(shape input)
@@ -7065,6 +6378,17 @@
 			(justify left)
 		)
 		(uuid "2d29f996-3150-4344-85c7-c5763a75ab36")
+	)
+	(hierarchical_label "IN1_2"
+		(shape input)
+		(at 78.74 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5489ae88-fe36-405a-9a81-1c303fe1d996")
 	)
 	(hierarchical_label "current2_0"
 		(shape input)
@@ -7164,17 +6488,6 @@
 			(justify right)
 		)
 		(uuid "e0bcf1a4-1b07-43a4-83f4-2d488221ed48")
-	)
-	(hierarchical_label "IN1_3"
-		(shape input)
-		(at 78.74 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e94e24e6-ec02-4b4e-9c6c-3a872179b00f")
 	)
 	(hierarchical_label "MOT2_C"
 		(shape input)
@@ -7487,7 +6800,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical"
 			(at 113.03 175.26 0)
 			(hide yes)
 			(effects
@@ -7978,113 +7291,6 @@
 			(project "skateboard"
 				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "CR0402JF0101G_2")
-		(at 229.87 53.34 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "28e3cbe6-b978-47e0-8809-1fa6f2887207")
-		(property "Manufacturer Part" "CR0402JF0101G"
-			(at 229.87 53.34 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "LIZ"
-			(at 229.87 53.34 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part" "C100570"
-			(at 229.87 53.34 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 229.87 53.34 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reference" "R8"
-			(at 228.3714 47.6377 0)
-			(effects
-				(font
-					(face "Arial")
-					(size 1.6891 1.6891)
-				)
-				(justify left top)
-			)
-		)
-		(property "Value" "10K"
-			(at 228.3714 49.8729 0)
-			(effects
-				(font
-					(face "Arial")
-					(size 1.6891 1.6891)
-				)
-				(justify left top)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 229.87 53.34 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 229.87 53.34 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 229.87 53.34 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3bd04d3b-892e-4932-a240-6ce16753dc4d")
-		)
-		(pin "2"
-			(uuid "182fa210-4c61-420d-9177-8a89181c657e")
-		)
-		(instances
-			(project "skateboard"
-				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
-					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -8759,82 +7965,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:SS8050")
-		(at 219.71 67.31 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5119fcfb-4b06-4403-9e9f-fe1cd06dee99")
-		(property "Reference" "Q3"
-			(at 214.63 66.0399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SS8050"
-			(at 214.63 68.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 214.63 59.944 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "http://www.secosgmbh.com/datasheet/products/SSMPTransistor/SOT-23/SS8050.pdf"
-			(at 214.63 62.484 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "General Purpose NPN Transistor, 1.5A Ic, 25V Vce, SOT-23"
-			(at 185.674 65.024 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "e8ec5b8f-1c35-469d-8c72-9e2191b02d40")
-		)
-		(pin "1"
-			(uuid "37c5d501-36bb-4132-9043-fb4b695069ca")
-		)
-		(pin "2"
-			(uuid "c129fbe3-1626-464d-805a-054f1d4ddc62")
-		)
-		(instances
-			(project "skateboard"
-				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
-					(reference "Q3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 237.49 142.24 0)
 		(unit 1)
@@ -9164,113 +8294,6 @@
 			(project "skateboard"
 				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
 					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "CR0402JF0101G_3")
-		(at 229.87 67.31 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5e56cf5d-3dc9-48e9-9ddc-f132fbb9c1c6")
-		(property "Manufacturer Part" "CR0402JF0101G"
-			(at 229.87 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "LIZ"
-			(at 229.87 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part" "C100570"
-			(at 229.87 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" "LCSC"
-			(at 229.87 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reference" "R9"
-			(at 228.3714 61.4299 0)
-			(effects
-				(font
-					(face "Arial")
-					(size 1.6891 1.6891)
-				)
-				(justify left top)
-			)
-		)
-		(property "Value" "10K"
-			(at 226.8982 63.9699 0)
-			(effects
-				(font
-					(face "Arial")
-					(size 1.6891 1.6891)
-				)
-				(justify left top)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 229.87 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 229.87 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 229.87 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "31fc5fe6-b7c9-43c0-8eae-ec4f6601ed10")
-		)
-		(pin "2"
-			(uuid "730ee5bd-e0b6-4e4c-9606-b582678ae541")
-		)
-		(instances
-			(project "skateboard"
-				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
-					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -10751,82 +9774,6 @@
 			(project "skateboard"
 				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
 					(reference "#PWR018")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:SS8050")
-		(at 219.71 53.34 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e1ef48c6-f8de-484a-87fd-5d86dff84c5d")
-		(property "Reference" "Q2"
-			(at 214.63 54.6101 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SS8050"
-			(at 214.63 52.0701 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 214.63 60.706 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "http://www.secosgmbh.com/datasheet/products/SSMPTransistor/SOT-23/SS8050.pdf"
-			(at 214.63 58.166 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "General Purpose NPN Transistor, 1.5A Ic, 25V Vce, SOT-23"
-			(at 185.674 55.626 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "bbabf8ab-875d-4f0b-9c69-eac3c0f0a52f")
-		)
-		(pin "1"
-			(uuid "22996ca2-5fee-4c59-b4d3-a6c9c6f28138")
-		)
-		(pin "2"
-			(uuid "f075538f-aa91-4c17-9cd1-4c6c5f34405e")
-		)
-		(instances
-			(project "skateboard"
-				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
-					(reference "Q2")
 					(unit 1)
 				)
 			)
