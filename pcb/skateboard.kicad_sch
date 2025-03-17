@@ -254,8 +254,20 @@
 		)
 	)
 	(no_connect
+		(at 378.46 212.09)
+		(uuid "5bd99ff0-948c-4256-9852-0671fc36e41b")
+	)
+	(no_connect
 		(at 339.09 246.38)
 		(uuid "5c76e339-0d14-44ce-b285-ec7f2aea655c")
+	)
+	(no_connect
+		(at 379.73 240.03)
+		(uuid "5cf1cb3a-d490-41c4-b394-0d6961ca901d")
+	)
+	(no_connect
+		(at 379.73 231.14)
+		(uuid "794218b2-ea07-4838-a2e0-dbefd6efe74f")
 	)
 	(no_connect
 		(at 345.44 237.49)
@@ -264,6 +276,10 @@
 	(no_connect
 		(at 345.44 246.38)
 		(uuid "d8ebc243-385a-4439-a5ea-45b4b04f42e5")
+	)
+	(no_connect
+		(at 378.46 222.25)
+		(uuid "db14a9e0-c749-42b8-8e83-f8ce34a95701")
 	)
 	(no_connect
 		(at 339.09 237.49)
@@ -381,6 +397,16 @@
 	)
 	(wire
 		(pts
+			(xy 264.16 203.2) (xy 264.16 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74b069a0-6ca9-4867-aece-d7a7ea2a9db0")
+	)
+	(wire
+		(pts
 			(xy 290.83 222.25) (xy 326.39 222.25)
 		)
 		(stroke
@@ -471,13 +497,23 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 209.55) (xy 335.28 209.55)
+			(xy 273.05 209.55) (xy 335.28 209.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a98a6bc8-3454-4093-adeb-18a146145edd")
+	)
+	(wire
+		(pts
+			(xy 273.05 209.55) (xy 273.05 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b497a4a4-ef28-4863-b75f-a2d821a837b1")
 	)
 	(wire
 		(pts
@@ -488,16 +524,6 @@
 			(type default)
 		)
 		(uuid "be3f4262-107a-4b3f-89d8-bf02a6dc3072")
-	)
-	(wire
-		(pts
-			(xy 264.16 203.2) (xy 264.16 213.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "beb0a96f-15ed-4c29-a40d-3f96686a599f")
 	)
 	(wire
 		(pts
@@ -558,16 +584,6 @@
 			(type default)
 		)
 		(uuid "e0d9bf9a-822d-479e-9397-ddd39156a0ff")
-	)
-	(wire
-		(pts
-			(xy 271.78 213.36) (xy 271.78 209.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6f8a32c-59ae-448f-8cda-51eeebbe1aa7")
 	)
 	(wire
 		(pts
@@ -1195,7 +1211,7 @@
 			)
 		)
 		(pin "MOT1_C" input
-			(at 271.78 213.36 90)
+			(at 264.16 213.36 90)
 			(uuid "716633b5-347a-4a2c-85a3-3271b5e82f67")
 			(effects
 				(font
@@ -1215,7 +1231,7 @@
 			)
 		)
 		(pin "MOT1_A" input
-			(at 264.16 213.36 90)
+			(at 273.05 213.36 90)
 			(uuid "f802e18d-4736-45e4-8636-05ff39d6b4c5")
 			(effects
 				(font

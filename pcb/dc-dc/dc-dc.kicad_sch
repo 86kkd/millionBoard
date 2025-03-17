@@ -4297,7 +4297,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF/16v"
+		(property "Value" "100nF"
 			(at 118.11 36.83 90)
 			(effects
 				(font
@@ -4456,7 +4456,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF/16v"
+		(property "Value" "100nF"
 			(at 182.88 100.33 90)
 			(effects
 				(font
@@ -6023,7 +6023,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nf/50v"
+		(property "Value" "100nf"
 			(at 53.594 47.752 0)
 			(effects
 				(font
@@ -6705,7 +6705,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF/16v"
+		(property "Value" "100nF"
 			(at 245.11 39.37 90)
 			(effects
 				(font
