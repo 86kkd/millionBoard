@@ -2330,7 +2330,7 @@
 	)
 	(global_label "CANH"
 		(shape input)
-		(at 250.19 129.54 0)
+		(at 213.36 106.68 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2340,7 +2340,7 @@
 		)
 		(uuid "1e7f05fd-c716-4e47-98af-6fe444731e62")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 258.1948 129.54 0)
+			(at 221.3648 106.68 0)
 			(hide yes)
 			(effects
 				(font
@@ -2462,7 +2462,7 @@
 	)
 	(global_label "24V{slash}3A"
 		(shape input)
-		(at 250.19 127 0)
+		(at 213.36 104.14 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2472,7 +2472,7 @@
 		)
 		(uuid "6aca9a7d-e56b-4d12-8b13-f062e73eec9b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 260.3114 127 0)
+			(at 223.4814 104.14 0)
 			(hide yes)
 			(effects
 				(font
@@ -2682,7 +2682,7 @@
 	)
 	(global_label "CANL"
 		(shape input)
-		(at 250.19 132.08 0)
+		(at 213.36 109.22 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2692,7 +2692,7 @@
 		)
 		(uuid "fcb38f29-cb12-4516-a665-c0202d982a8c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.8924 132.08 0)
+			(at 221.0624 109.22 0)
 			(hide yes)
 			(effects
 				(font
@@ -3077,7 +3077,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 250.19 124.46 90)
+		(at 213.36 101.6 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3086,7 +3086,7 @@
 		(fields_autoplaced yes)
 		(uuid "315c4267-6bcd-4836-a55d-2b566548ecce")
 		(property "Reference" "#PWR062"
-			(at 256.54 124.46 0)
+			(at 219.71 101.6 0)
 			(hide yes)
 			(effects
 				(font
@@ -3095,7 +3095,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 254 124.4601 90)
+			(at 217.17 101.6001 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3104,7 +3104,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 250.19 124.46 0)
+			(at 213.36 101.6 0)
 			(hide yes)
 			(effects
 				(font
@@ -3113,7 +3113,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 250.19 124.46 0)
+			(at 213.36 101.6 0)
 			(hide yes)
 			(effects
 				(font
@@ -3122,7 +3122,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 250.19 124.46 0)
+			(at 213.36 101.6 0)
 			(hide yes)
 			(effects
 				(font
@@ -4357,7 +4357,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Pin")
-		(at 245.11 127 0)
+		(at 208.28 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4366,7 +4366,7 @@
 		(fields_autoplaced yes)
 		(uuid "9d49cc56-0973-4ba0-8647-8286efb1b517")
 		(property "Reference" "J3"
-			(at 245.745 119.38 0)
+			(at 208.915 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4374,7 +4374,7 @@
 			)
 		)
 		(property "Value" "can_sensor"
-			(at 245.745 121.92 0)
+			(at 208.915 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4382,7 +4382,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical"
-			(at 245.11 127 0)
+			(at 208.28 104.14 0)
 			(hide yes)
 			(effects
 				(font
@@ -4391,7 +4391,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.11 127 0)
+			(at 208.28 104.14 0)
 			(hide yes)
 			(effects
 				(font
@@ -4400,7 +4400,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 245.11 127 0)
+			(at 208.28 104.14 0)
 			(hide yes)
 			(effects
 				(font
