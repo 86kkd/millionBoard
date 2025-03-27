@@ -1,5 +1,5 @@
 (kicad_sch
-	(version 20250227)
+	(version 20250318)
 	(generator "eeschema")
 	(generator_version "9.99")
 	(uuid "5cdb5c16-5e05-458b-86f0-906cf8114d7e")
@@ -13,6 +13,7 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
 				(at 0 2.54 0)
 				(effects
@@ -38,7 +39,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(hide yes)
 				(effects
@@ -139,6 +140,7 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "#PWR"
 				(at 0 -3.81 0)
 				(hide yes)
@@ -234,7 +236,7 @@
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
-					(name "~"
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -640,7 +642,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 373.38 222.25 0)
 			(hide yes)
 			(effects
@@ -705,7 +707,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 374.65 240.03 0)
 			(hide yes)
 			(effects
@@ -770,7 +772,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 374.65 231.14 0)
 			(hide yes)
 			(effects
@@ -902,7 +904,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 373.38 212.09 0)
 			(hide yes)
 			(effects
