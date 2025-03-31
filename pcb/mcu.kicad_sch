@@ -5,6 +5,170 @@
 	(uuid "0fa19466-3962-4cfd-a765-c6c255377c86")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Conn_01x02_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02_Pin"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_Pin_1_1"
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x04_Pin"
 			(pin_names
 				(offset 1.016)
@@ -4381,14 +4545,6 @@
 		(at 72.39 67.31)
 		(uuid "c05a30cb-0872-4dc7-826e-608dd2196117")
 	)
-	(no_connect
-		(at 78.74 148.59)
-		(uuid "cd8165e2-60fb-4604-9cce-90bd0adc7018")
-	)
-	(no_connect
-		(at 78.74 156.21)
-		(uuid "f05d8289-d6c6-44dd-bbd0-313227b93d74")
-	)
 	(wire
 		(pts
 			(xy 185.42 128.27) (xy 185.42 139.7)
@@ -5139,6 +5295,28 @@
 		)
 		(uuid "ff31850e-8e00-438a-bec1-d0141eb0e988")
 	)
+	(global_label "PD_SCK2"
+		(shape input)
+		(at 78.74 153.67 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "11794d96-439d-4951-9f2e-9647e4a68e4e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.1918 153.67 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "EN"
 		(shape input)
 		(at 48.26 110.49 180)
@@ -5313,6 +5491,50 @@
 			)
 		)
 	)
+	(global_label "Battery_TXD"
+		(shape input)
+		(at 121.92 147.32 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "40e22d04-3bea-4a47-95f9-f898c81a31ce")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.0327 147.32 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "DOUT_2"
+		(shape input)
+		(at 78.74 125.73 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "43c79858-ca50-44db-9e71-a0baf0f7717c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.8009 125.73 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "TXD_SENSOR"
 		(shape input)
 		(at 78.74 118.11 0)
@@ -5370,28 +5592,6 @@
 		(uuid "4b98b762-b709-4933-a187-18fddcf65ff2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 125.6914 172.72 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "DOUT_2"
-		(shape input)
-		(at 78.74 153.67 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4de539e3-860d-4f75-a35f-36c3902e3755")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 88.8009 153.67 0)
 			(hide yes)
 			(effects
 				(font
@@ -5531,28 +5731,6 @@
 			)
 		)
 	)
-	(global_label "PD_SCK2"
-		(shape input)
-		(at 78.74 125.73 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "851355c2-e073-42f6-b4d5-3fe26d91e1b2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 90.1918 125.73 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "U0_RXD"
 		(shape input)
 		(at 93.98 173.99 0)
@@ -5588,6 +5766,28 @@
 		(uuid "9554d364-5438-4a91-bbf7-14b15ceed8a6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 90.6152 58.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Battery_RXD"
+		(shape input)
+		(at 121.92 149.86 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9d902ac0-67e8-47ab-bc1a-0f56f7b64b1a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.3351 149.86 0)
 			(hide yes)
 			(effects
 				(font
@@ -5702,6 +5902,28 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+	)
+	(global_label "Battery_TXD"
+		(shape input)
+		(at 78.74 148.59 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b09495d8-8d56-4e88-9419-ac4d87fa344a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 92.8527 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -5962,6 +6184,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "Battery_RXD"
+		(shape input)
+		(at 78.74 156.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f6df6965-25eb-4007-8019-6a9e2eb1cbd3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 93.1551 156.21 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6239,6 +6483,74 @@
 			(project "skateboard"
 				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 116.84 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "097ab86e-7cab-4493-a90d-3e6351663cc2")
+		(property "Reference" "J17"
+			(at 117.475 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 117.475 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+			(at 116.84 147.32 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 147.32 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 116.84 147.32 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9e82e126-fc23-4d8b-b28f-8be97034a2ff")
+		)
+		(pin "1"
+			(uuid "77bd5e54-8373-4482-bc14-7b74fe5fdd8a")
+		)
+		(instances
+			(project ""
+				(path "/5cdb5c16-5e05-458b-86f0-906cf8114d7e/5f743cab-9820-4aca-8ca5-f45b69affbe2"
+					(reference "J17")
 					(unit 1)
 				)
 			)
