@@ -52,7 +52,12 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "starved_thermal|187960000|122682000|ccaa70d9-2eca-455c-bace-21814478c462|d1437421-bcd1-4f8e-b22e-8d930f60eb0d|F.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -512,7 +517,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gender/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -523,7 +528,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "${PROJECTNAME}.csv",
+    "bom_export_filename": "gender\\battery.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -578,6 +583,18 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
           "show": false
         },
         {

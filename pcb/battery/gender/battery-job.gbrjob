@@ -5,20 +5,20 @@
       "Application": "Pcbnew",
       "Version": "9.99.0-701-g151cb01795"
     },
-    "CreationDate": "2025-04-01T21:42:42+08:00"
+    "CreationDate": "2025-04-05T01:47:37+08:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "skateboard",
-      "GUID": "736b6174-6562-46f6-9172-642e6b696361",
+      "Name": "battery",
+      "GUID": "62617474-6572-4792-9e6b-696361645f70",
       "Revision": "rev?"
     },
     "Size": {
-      "X": 83.6681,
-      "Y": 84.8597
+      "X": 56.65,
+      "Y": 33.7447
     },
-    "LayerNumber": 4,
-    "BoardThickness": 1.67,
+    "LayerNumber": 6,
+    "BoardThickness": 1.6,
     "Finish": "None"
   },
   "DesignRules": [
@@ -28,8 +28,8 @@
       "PadToTrack": 0.2,
       "TrackToTrack": 0.2,
       "MinLineWidth": 0.2,
-      "TrackToRegion": 0.2,
-      "RegionToRegion": 0.2
+      "TrackToRegion": 0.5,
+      "RegionToRegion": 0.5
     },
     {
       "Layers": "Inner",
@@ -43,57 +43,67 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "skateboard-F_Cu.gbr",
+      "Path": "battery-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-In1_Cu.gbr",
+      "Path": "battery-In1_Cu.gbr",
       "FileFunction": "Copper,L5,Inr",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-In2_Cu.gbr",
+      "Path": "battery-In2_Cu.gbr",
       "FileFunction": "Copper,L7,Inr",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-B_Cu.gbr",
-      "FileFunction": "Copper,L4,Bot",
+      "Path": "battery-In3_Cu.gbr",
+      "FileFunction": "Copper,L9,Inr",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-F_Paste.gbr",
+      "Path": "battery-In4_Cu.gbr",
+      "FileFunction": "Copper,L11,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery-B_Cu.gbr",
+      "FileFunction": "Copper,L6,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "battery-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-B_Paste.gbr",
+      "Path": "battery-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-F_Silkscreen.gbr",
+      "Path": "battery-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-B_Silkscreen.gbr",
+      "Path": "battery-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "skateboard-F_Mask.gbr",
+      "Path": "battery-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "skateboard-B_Mask.gbr",
+      "Path": "battery-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "skateboard-Edge_Cuts.gbr",
+      "Path": "battery-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
@@ -109,13 +119,12 @@
     },
     {
       "Type": "SolderMask",
-      "Color": "Black",
       "Thickness": 0.01,
       "Name": "Top Solder Mask"
     },
     {
       "Type": "Copper",
-      "Thickness": 0.07,
+      "Thickness": 0.035,
       "Name": "F.Cu"
     },
     {
@@ -132,7 +141,7 @@
     },
     {
       "Type": "Dielectric",
-      "Thickness": 1.24,
+      "Thickness": 0.535,
       "Material": "FR4",
       "Name": "In1.Cu/In2.Cu",
       "Notes": "Type: dielectric layer 2 (from In1.Cu to In2.Cu)"
@@ -146,17 +155,40 @@
       "Type": "Dielectric",
       "Thickness": 0.1,
       "Material": "FR4",
-      "Name": "In2.Cu/B.Cu",
-      "Notes": "Type: dielectric layer 3 (from In2.Cu to B.Cu)"
+      "Name": "In2.Cu/In3.Cu",
+      "Notes": "Type: dielectric layer 3 (from In2.Cu to In3.Cu)"
     },
     {
       "Type": "Copper",
-      "Thickness": 0.07,
+      "Thickness": 0.035,
+      "Name": "In3.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.535,
+      "Material": "FR4",
+      "Name": "In3.Cu/In4.Cu",
+      "Notes": "Type: dielectric layer 4 (from In3.Cu to In4.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "In4.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.1,
+      "Material": "FR4",
+      "Name": "In4.Cu/B.Cu",
+      "Notes": "Type: dielectric layer 5 (from In4.Cu to B.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
       "Name": "B.Cu"
     },
     {
       "Type": "SolderMask",
-      "Color": "Black",
       "Thickness": 0.01,
       "Name": "Bottom Solder Mask"
     },
