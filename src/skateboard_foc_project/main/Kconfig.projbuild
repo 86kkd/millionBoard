@@ -1,0 +1,185 @@
+# 设置主程序源文件
+set(COMPONENT_SRCS "main.c")
+set(COMPONENT_ADD_INCLUDEDIRS ".")
+
+# 注册组件
+register_component()
+
+# 将组件添加到项目依赖中
+set(COMPONENT_REQUIRES 
+    motor_control_foc
+    sensors
+    communication
+    battery_management
+    utils
+)
+
+menu "电动滑板配置"
+    
+    menu "硬件引脚配置"
+        menu "HX711 压力传感器配置"
+            config HX711_FRONT_DOUT_GPIO
+                int "前传感器 DOUT 引脚"
+                default 4
+                help
+                    前部压力传感器的 HX711 DOUT 引脚。
+
+            config HX711_FRONT_SCK_GPIO
+                int "前传感器 SCK 引脚"
+                default 5
+                help
+                    前部压力传感器的 HX711 SCK 引脚。
+
+            config HX711_REAR_DOUT_GPIO
+                int "后传感器 DOUT 引脚"
+                default 6
+                help
+                    后部压力传感器的 HX711 DOUT 引脚。
+
+            config HX711_REAR_SCK_GPIO
+                int "后传感器 SCK 引脚"
+                default 7
+                help
+                    后部压力传感器的 HX711 SCK 引脚。
+        endmenu
+
+        menu "CAN 总线配置"
+            config CAN_TX_GPIO
+                int "CAN TX 引脚"
+                default 37
+                help
+                    CAN 总线发送引脚。
+
+            config CAN_RX_GPIO
+                int "CAN RX 引脚"
+                default 38
+                help
+                    CAN 总线接收引脚。
+
+            config CAN_BITRATE
+                int "CAN 总线比特率"
+                default 250000
+                help
+                    CAN 总线比特率。常用值：125000, 250000, 500000, 1000000。
+        endmenu
+
+        menu "NFC 配置"
+            config NFC_SDA_GPIO
+                int "NFC I2C SDA 引脚"
+                default 18
+                help
+                    NFC 模块的 I2C SDA 引脚。
+
+            config NFC_SCL_GPIO
+                int "NFC I2C SCL 引脚"
+                default 21
+                help
+                    NFC 模块的 I2C SCL 引脚。
+
+            config NFC_IRQ_GPIO
+                int "NFC 中断引脚"
+                default 3
+                help
+                    NFC 模块的中断引脚。
+
+            config NFC_I2C_ADDR
+                hex "NFC I2C 地址"
+                default 0x24
+                help
+                    NFC 模块的 I2C 地址。
+        endmenu
+
+        menu "GPS 配置"
+            config GPS_UART_PORT
+                int "GPS UART 端口号"
+                default 1
+                help
+                    GPS 模块使用的 UART 端口号。
+
+            config GPS_UART_TX_GPIO
+                int "GPS UART TX 引脚"
+                default 17
+                help
+                    GPS 模块的 UART TX 引脚。
+
+            config GPS_UART_RX_GPIO
+                int "GPS UART RX 引脚"
+                default 16
+                help
+                    GPS 模块的 UART RX 引脚。
+
+            config GPS_UART_BAUD
+                int "GPS UART 波特率"
+                default 9600
+                help
+                    GPS 模块的 UART 波特率。
+        endmenu
+
+        menu "电池管理配置"
+            config BATTERY_UART_PORT
+                int "电池管理 UART 端口号"
+                default 2
+                help
+                    电池管理芯片使用的 UART 端口号。
+
+            config BATTERY_UART_TX_GPIO
+                int "电池管理 UART TX 引脚"
+                default 14
+                help
+                    电池管理芯片的 UART TX 引脚。
+
+            config BATTERY_UART_RX_GPIO
+                int "电池管理 UART RX 引脚"
+                default 15
+                help
+                    电池管理芯片的 UART RX 引脚。
+
+            config BATTERY_UART_BAUD
+                int "电池管理 UART 波特率"
+                default 9600
+                help
+                    电池管理芯片的 UART 波特率。
+        endmenu
+
+        menu "电机控制配置"
+            config MOTOR_PWM_U_PIN
+                int "电机 U 相 PWM 引脚"
+                default 3
+                help
+                    FOC 控制器 U 相 PWM 输出引脚。
+
+            config MOTOR_PWM_V_PIN
+                int "电机 V 相 PWM 引脚"
+                default 8
+                help
+                    FOC 控制器 V 相 PWM 输出引脚。
+
+            config MOTOR_PWM_W_PIN
+                int "电机 W 相 PWM 引脚"
+                default 18
+                help
+                    FOC 控制器 W 相 PWM 输出引脚。
+
+            config MOTOR_ENABLE_PIN
+                int "电机使能引脚"
+                default 9
+                help
+                    电机驱动器使能引脚。
+        endmenu
+    endmenu
+
+    menu "系统设置"
+        config MAX_SPEED
+            int "最大速度 (km/h)"
+            default 20
+            help
+                滑板最大速度 (km/h)。
+
+        config ENABLE_UNIT_TESTS
+            bool "启用单元测试"
+            default n
+            help
+                启用单元测试编译和执行。
+    endmenu
+
+endmenu

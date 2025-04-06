@@ -1,0 +1,52 @@
+menu "电池管理配置"
+    
+    menu "电池管理测试设置"
+        depends on ENABLE_UNIT_TESTS
+        
+        config BATTERY_TEST_CELL_COUNT
+            int "测试用电池单元数量"
+            default 10
+            range 6 16
+            help
+                测试时使用的电池单元数量。
+
+        config BATTERY_TEST_NOMINAL_VOLTAGE
+            int "测试用电池标称电压 (mV)"
+            default 36000
+            help
+                电池组标称电压，单位为毫伏。
+
+        config BATTERY_TEST_FULL_CHARGE_VOLTAGE
+            int "测试用电池满充电压 (mV)"
+            default 42000
+            help
+                电池组满充电压，单位为毫伏。
+
+        config BATTERY_TEST_CUTOFF_VOLTAGE
+            int "测试用电池截止电压 (mV)"
+            default 30000
+            help
+                电池组截止电压，单位为毫伏。
+    endmenu
+
+    menu "电池保护设置"
+        config BATTERY_OVERCURRENT_PROTECTION
+            int "过流保护电流 (mA)"
+            default 30000
+            help
+                电池过流保护阈值，单位为毫安。
+
+        config BATTERY_OVERTEMP_PROTECTION
+            int "过温保护阈值 (°C)"
+            default 45
+            help
+                电池过温保护阈值，单位为摄氏度。
+
+        config BATTERY_UNDERTEMP_PROTECTION
+            int "低温保护阈值 (°C)"
+            default 0
+            help
+                电池低温保护阈值，单位为摄氏度。
+    endmenu
+
+endmenu

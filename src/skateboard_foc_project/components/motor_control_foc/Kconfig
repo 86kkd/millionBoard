@@ -1,0 +1,69 @@
+menu "电机控制配置"
+    
+    menu "FOC控制参数"
+        config FOC_PWM_FREQUENCY
+            int "PWM频率 (Hz)"
+            default 25000
+            range 15000 50000
+            help
+                FOC控制器PWM频率，单位为赫兹。
+
+        config FOC_PWM_RESOLUTION_BITS
+            int "PWM分辨率 (位)"
+            default 10
+            range 8 14
+            help
+                PWM分辨率，以位为单位。值越高，控制精度越高，但频率受限。
+
+        config MOTOR_POLE_PAIRS
+            int "电机极对数"
+            default 10
+            range 1 50
+            help
+                电机的极对数。必须与实际电机匹配。
+
+        config MOTOR_MAX_CURRENT
+            int "最大电机电流 (mA)"
+            default 8000
+            help
+                电机最大允许电流，单位为毫安。
+    endmenu
+
+    menu "控制器参数"
+        config VELOCITY_PID_P
+            int "速度PID-P系数 (x1000)"
+            default 1200
+            help
+                速度环PID控制器的比例系数，乘以1000存储。
+
+        config VELOCITY_PID_I
+            int "速度PID-I系数 (x1000)"
+            default 20000
+            help
+                速度环PID控制器的积分系数，乘以1000存储。
+
+        config VELOCITY_PID_D
+            int "速度PID-D系数 (x1000)"
+            default 40
+            help
+                速度环PID控制器的微分系数，乘以1000存储。
+
+        config VELOCITY_LPF_TIME_CONSTANT
+            int "速度低通滤波时间常数 (x1000)"
+            default 10
+            help
+                速度低通滤波器的时间常数，乘以1000存储。
+    endmenu
+
+    menu "电机测试设置"
+        depends on ENABLE_UNIT_TESTS
+        
+        config MOTOR_TEST_MAX_SPEED
+            int "测试最大速度百分比 (%)"
+            default 50
+            range 10 100
+            help
+                测试时使用的最大速度百分比。
+    endmenu
+
+endmenu
