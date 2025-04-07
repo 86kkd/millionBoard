@@ -1,6 +1,7 @@
 #include "nfc.h"
 #include "esp_log.h"
 #include "i2c_comm.h"
+#include <string.h>
 
 static const char *TAG = "NFC";
 

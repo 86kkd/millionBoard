@@ -3,7 +3,17 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "nvs_flash.h"
+#include <math.h>
 #include <stdio.h>
+
+// Define UART pins if not already defined in Kconfig
+#ifndef CONFIG_UART_TX_PIN
+#define CONFIG_UART_TX_PIN 17 // Default TX pin
+#endif
+
+#ifndef CONFIG_UART_RX_PIN
+#define CONFIG_UART_RX_PIN 16 // Default RX pin
+#endif
 
 // 包含各模块的头文件
 #include "angle_sensor.h"
@@ -195,7 +205,14 @@ void app_main(void) {
   // 1. 通信模块初始化
   i2c_comm_init();
   can_comm_init();
-  uart_comm_init();
+  // Configure UART parameters
+  uart_config_t uart_config = {.baud_rate = 115200,
+                               .data_bits = UART_DATA_8_BITS,
+                               .parity = UART_PARITY_DISABLE,
+                               .stop_bits = UART_STOP_BITS_1,
+                               .flow_ctrl = UART_HW_FLOWCTRL_DISABLE};
+  uart_comm_init(UART_NUM_1, &uart_config, CONFIG_UART_TX_PIN,
+                 CONFIG_UART_RX_PIN);
 
   // 2. 传感器初始化
   hx711_config_t front_config = {.dout_gpio = CONFIG_HX711_FRONT_DOUT_GPIO,

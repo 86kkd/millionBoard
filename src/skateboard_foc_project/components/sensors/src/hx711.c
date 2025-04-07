@@ -93,18 +93,18 @@ esp_err_t hx711_read_raw(hx711_handle_t handle, int32_t *value,
   int32_t data = 0;
   for (int i = 0; i < 24; i++) {
     gpio_set_level(handle->sck_gpio, 1);
-    ets_delay_us(1); // Short delay
+    esp_rom_delay_us(1); // Short delay
     data = (data << 1) | gpio_get_level(handle->dout_gpio);
     gpio_set_level(handle->sck_gpio, 0);
-    ets_delay_us(1); // Short delay
+    esp_rom_delay_us(1); // Short delay
   }
 
   // Set gain for next reading
   for (int i = 0; i < handle->gain; i++) {
     gpio_set_level(handle->sck_gpio, 1);
-    ets_delay_us(1);
+    esp_rom_delay_us(1);
     gpio_set_level(handle->sck_gpio, 0);
-    ets_delay_us(1);
+    esp_rom_delay_us(1);
   }
 
   // Convert to signed value (2's complement)

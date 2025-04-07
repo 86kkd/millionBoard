@@ -1,6 +1,7 @@
 #include "battery_mgr.h"
 #include "esp_log.h"
 #include "uart_comm.h"
+#include <math.h>
 #include <string.h>
 
 static const char *TAG = "BATTERY_MGR";
@@ -114,7 +115,7 @@ esp_err_t battery_mgr_init(void) {
   uart_config_t uart_config = {
       .baud_rate = CONFIG_BATTERY_UART_BAUD,
       .data_bits = UART_DATA_8_BITS,
-      .parity = UART_PARITY_NONE,
+      .parity = UART_PARITY_DISABLE,
       .stop_bits = UART_STOP_BITS_1,
       .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
       .rx_flow_ctrl_thresh = 0,

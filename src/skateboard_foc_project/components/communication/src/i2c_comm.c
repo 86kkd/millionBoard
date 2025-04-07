@@ -91,8 +91,9 @@ esp_err_t i2c_comm_read(uint8_t addr, uint8_t *data, size_t len,
   size_t bytes_read = 0;
   while (bytes_read < len) {
     size_t remaining = len - bytes_read;
-    esp_err_t ret = i2c_master_read(cmd_read, &data[bytes_read], remaining,
-                                    i2c_ack_type_t(remaining > 1));
+    esp_err_t ret =
+        i2c_master_read(cmd_read, &data[bytes_read], remaining,
+                        (remaining > 1) ? I2C_MASTER_ACK : I2C_MASTER_NACK);
     if (ret != ESP_OK) {
       i2c_cmd_link_delete(cmd_read);
       return ret;
@@ -127,8 +128,9 @@ esp_err_t i2c_comm_write_read(uint8_t addr, const uint8_t *write_data,
   size_t bytes_read = 0;
   while (bytes_read < *read_len) {
     size_t remaining = *read_len - bytes_read;
-    esp_err_t ret = i2c_master_read(cmd_read, &read_data[bytes_read], remaining,
-                                    i2c_ack_type_t(remaining > 1));
+    esp_err_t ret =
+        i2c_master_read(cmd_read, &read_data[bytes_read], remaining,
+                        (remaining > 1) ? I2C_MASTER_ACK : I2C_MASTER_NACK);
     if (ret != ESP_OK) {
       i2c_cmd_link_delete(cmd_read);
       return ret;
@@ -160,8 +162,9 @@ esp_err_t i2c_comm_scan(void) {
   uint8_t address;
   size_t bytes_read = 0;
   while (1) {
-    esp_err_t ret = i2c_master_read(cmd_read, &address, 1,
-                                    i2c_ack_type_t(bytes_read < 127));
+    esp_err_t ret =
+        i2c_master_read(cmd_read, &address, 1,
+                        (bytes_read < 127) ? I2C_MASTER_ACK : I2C_MASTER_NACK);
     if (ret != ESP_OK) {
       i2c_cmd_link_delete(cmd_read);
       return ret;

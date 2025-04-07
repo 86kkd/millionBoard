@@ -10,7 +10,7 @@ static const char *TAG = "MOTOR_CONTROL";
 #define MOTOR_PWM_FREQ 25000                   // PWM frequency
 #define MOTOR_PWM_RESOLUTION LEDC_TIMER_10_BIT // 10-bit resolution (0-1023)
 #define MOTOR_PWM_TIMER LEDC_TIMER_0
-#define MOTOR_PWM_MODE LEDC_HIGH_SPEED_MODE
+#define MOTOR_PWM_MODE LEDC_LOW_SPEED_MODE
 
 // Motor GPIO pins (defined in sdkconfig)
 #define MOTOR_PWM_U_PIN CONFIG_MOTOR_PWM_U_PIN

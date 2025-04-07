@@ -9,13 +9,11 @@ set(COMPONENT_SRCS
 set(COMPONENT_ADD_INCLUDEDIRS "include")
 
 # 注册组件
-register_component()
-
-# 设置组件依赖
-set(COMPONENT_REQUIRES 
-    driver
-    communication
-    utils
+idf_component_register(
+    SRCS ${COMPONENT_SRCS}
+    INCLUDE_DIRS ${COMPONENT_ADD_INCLUDEDIRS}
+    REQUIRES driver communication utils esp_driver_gpio
+    PRIV_REQUIRES esp_timer
 )
 
 # 添加测试目录

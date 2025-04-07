@@ -45,16 +45,16 @@ esp_err_t can_comm_init(void) {
 
   switch (CAN_BITRATE) {
   case 125000:
-    t_config = TWAI_TIMING_CONFIG_125KBITS();
+    t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_125KBITS();
     break;
   case 250000:
-    t_config = TWAI_TIMING_CONFIG_250KBITS();
+    t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_250KBITS();
     break;
   case 500000:
-    t_config = TWAI_TIMING_CONFIG_500KBITS();
+    t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_500KBITS();
     break;
   case 1000000:
-    t_config = TWAI_TIMING_CONFIG_1MBITS();
+    t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_1MBITS();
     break;
   default:
     ESP_LOGE(TAG, "Unsupported CAN bitrate: %d", CAN_BITRATE);
@@ -250,20 +250,20 @@ esp_err_t can_comm_bus_recovery(void) {
 
     switch (CAN_BITRATE) {
     case 125000:
-      t_config = TWAI_TIMING_CONFIG_125KBITS();
+      t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_125KBITS();
       break;
     case 250000:
-      t_config = TWAI_TIMING_CONFIG_250KBITS();
+      t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_250KBITS();
       break;
     case 500000:
-      t_config = TWAI_TIMING_CONFIG_500KBITS();
+      t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_500KBITS();
       break;
     case 1000000:
-      t_config = TWAI_TIMING_CONFIG_1MBITS();
+      t_config = (twai_timing_config_t)TWAI_TIMING_CONFIG_1MBITS();
       break;
     default:
-      t_config = TWAI_TIMING_CONFIG_250KBITS();
-      break;
+      ESP_LOGE(TAG, "Unsupported CAN bitrate: %d", CAN_BITRATE);
+      return ESP_ERR_INVALID_ARG;
     }
 
     twai_filter_config_t f_config = TWAI_FILTER_CONFIG_ACCEPT_ALL();
