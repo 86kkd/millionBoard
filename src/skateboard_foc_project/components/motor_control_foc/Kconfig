@@ -24,7 +24,7 @@ menu "电机控制配置"
 
         config MOTOR_MAX_CURRENT
             int "最大电机电流 (mA)"
-            default 8000
+            default 10000
             help
                 电机最大允许电流，单位为毫安。
     endmenu
