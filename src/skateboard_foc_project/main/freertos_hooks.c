@@ -1,22 +1,22 @@
 /**
- * FreeRTOS hooks implementation
+ * FreeRTOS钩子函数实现
  *
- * This file provides custom implementations for FreeRTOS hooks
- * required by the current ESP-IDF configuration.
+ * 本文件提供了当前ESP-IDF配置所需的
+ * FreeRTOS钩子函数的自定义实现。
  */
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
 /**
- * @brief Implementation of vPortCleanUpTCB
+ * @brief vPortCleanUpTCB函数的实现
  *
- * This function is called by vPortTCBPreDeleteHook during task deletion.
- * It's responsible for cleaning up any TCB-related resources.
+ * 该函数在任务删除期间由vPortTCBPreDeleteHook调用。
+ * 负责清理任何与TCB相关的资源。
  *
- * @param pxTCB Pointer to the Task Control Block
+ * @param pxTCB 指向任务控制块的指针
  */
 void vPortCleanUpTCB(void *pxTCB) {
-  // Empty implementation - just satisfies the linker
-  // Add custom cleanup code here if needed
+  // 空实现 - 仅用于满足链接器要求
+  // 如有需要可在此添加自定义清理代码
 }

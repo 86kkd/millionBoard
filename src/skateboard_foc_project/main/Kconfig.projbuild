@@ -166,6 +166,38 @@ menu "电动滑板配置"
                 Enable compilation and execution of unit tests.
     endmenu
 
+    menu "组件使能配置"
+        config ENABLE_SENSORS
+            bool "启用传感器模块"
+            default y
+            help
+                启用传感器相关功能，包括温度、电流等传感器的支持。
+
+        config ENABLE_BATTERY_MANAGEMENT
+            bool "启用电池管理模块"
+            default y
+            help
+                启用电池管理功能，包括电量监测、充放电控制等。
+
+        config ENABLE_COMMUNICATION
+            bool "启用通信模块"
+            default y
+            help
+                启用通信功能，包括蓝牙、CAN等通信接口。
+
+        config ENABLE_MOTOR_CONTROL_FOC
+            bool "启用FOC电机控制模块"
+            default y
+            help
+                启用FOC电机控制功能。
+
+        config ENABLE_UTILS
+            bool "启用工具模块"
+            default y
+            help
+                启用通用工具功能。
+    endmenu
+
 endmenu
 
 # Main Configuration
