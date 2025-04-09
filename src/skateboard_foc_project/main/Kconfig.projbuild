@@ -1,169 +1,178 @@
 menu "电动滑板配置"
     
-    menu "硬件引脚配置"
-        menu "HX711 压力传感器配置"
+    menu "Hardware Pin Configuration"
+        menu "HX711 Pressure Sensor Configuration"
             config HX711_FRONT_DOUT_GPIO
-                int "前传感器 DOUT 引脚"
+                int "Front Sensor DOUT Pin"
                 default 4
                 help
-                    前部压力传感器的 HX711 DOUT 引脚。
+                    HX711 DOUT pin for front pressure sensor.
 
             config HX711_FRONT_SCK_GPIO
-                int "前传感器 SCK 引脚"
+                int "Front Sensor SCK Pin"
                 default 5
                 help
-                    前部压力传感器的 HX711 SCK 引脚。
+                    HX711 SCK pin for front pressure sensor.
 
             config HX711_REAR_DOUT_GPIO
-                int "后传感器 DOUT 引脚"
+                int "Rear Sensor DOUT Pin"
                 default 6
                 help
-                    后部压力传感器的 HX711 DOUT 引脚。
+                    HX711 DOUT pin for rear pressure sensor.
 
             config HX711_REAR_SCK_GPIO
-                int "后传感器 SCK 引脚"
+                int "Rear Sensor SCK Pin"
                 default 7
                 help
-                    后部压力传感器的 HX711 SCK 引脚。
+                    HX711 SCK pin for rear pressure sensor.
         endmenu
 
-        menu "CAN 总线配置"
+        menu "CAN Bus Configuration"
             config CAN_TX_GPIO
-                int "CAN TX 引脚"
+                int "CAN TX Pin"
                 default 37
                 help
-                    CAN 总线发送引脚。
+                    CAN bus transmit pin.
 
             config CAN_RX_GPIO
-                int "CAN RX 引脚"
+                int "CAN RX Pin"
                 default 38
                 help
-                    CAN 总线接收引脚。
+                    CAN bus receive pin.
 
             config CAN_BITRATE
-                int "CAN 总线比特率"
+                int "CAN Bus Bitrate"
                 default 250000
                 help
-                    CAN 总线比特率。常用值：125000, 250000, 500000, 1000000。
+                    CAN bus bitrate. Common values: 125000, 250000, 500000, 1000000.
         endmenu
 
-        menu "NFC 配置"
+        menu "NFC Configuration"
             config NFC_SDA_GPIO
-                int "NFC I2C SDA 引脚"
+                int "NFC I2C SDA Pin"
                 default 18
                 help
-                    NFC 模块的 I2C SDA 引脚。
+                    I2C SDA pin for NFC module.
 
             config NFC_SCL_GPIO
-                int "NFC I2C SCL 引脚"
+                int "NFC I2C SCL Pin"
                 default 21
                 help
-                    NFC 模块的 I2C SCL 引脚。
+                    I2C SCL pin for NFC module.
 
             config NFC_IRQ_GPIO
-                int "NFC 中断引脚"
+                int "NFC Interrupt Pin"
                 default 3
                 help
-                    NFC 模块的中断引脚。
+                    Interrupt pin for NFC module.
 
             config NFC_I2C_ADDR
-                hex "NFC I2C 地址"
+                hex "NFC I2C Address"
                 default 0x24
                 help
-                    NFC 模块的 I2C 地址。
+                    I2C address for NFC module.
         endmenu
 
-        menu "GPS 配置"
+        menu "GPS Configuration"
             config GPS_UART_PORT
-                int "GPS UART 端口号"
+                int "GPS UART Port Number"
                 default 1
                 help
-                    GPS 模块使用的 UART 端口号。
+                    UART port number used by GPS module.
 
             config GPS_UART_TX_GPIO
-                int "GPS UART TX 引脚"
+                int "GPS UART TX Pin"
                 default 17
                 help
-                    GPS 模块的 UART TX 引脚。
+                    UART TX pin for GPS module.
 
             config GPS_UART_RX_GPIO
-                int "GPS UART RX 引脚"
+                int "GPS UART RX Pin"
                 default 16
                 help
-                    GPS 模块的 UART RX 引脚。
+                    UART RX pin for GPS module.
 
             config GPS_UART_BAUD
-                int "GPS UART 波特率"
+                int "GPS UART Baudrate"
                 default 9600
                 help
-                    GPS 模块的 UART 波特率。
+                    UART baudrate for GPS module.
         endmenu
 
-        menu "电池管理配置"
+        menu "Battery Management Configuration"
             config BATTERY_UART_PORT
-                int "电池管理 UART 端口号"
+                int "Battery Management UART Port"
                 default 2
                 help
-                    电池管理芯片使用的 UART 端口号。
+                    UART port number used by battery management chip.
 
             config BATTERY_UART_TX_GPIO
-                int "电池管理 UART TX 引脚"
+                int "Battery Management UART TX Pin"
                 default 14
                 help
-                    电池管理芯片的 UART TX 引脚。
+                    UART TX pin for battery management chip.
 
             config BATTERY_UART_RX_GPIO
-                int "电池管理 UART RX 引脚"
+                int "Battery Management UART RX Pin"
                 default 15
                 help
-                    电池管理芯片的 UART RX 引脚。
+                    UART RX pin for battery management chip.
 
             config BATTERY_UART_BAUD
-                int "电池管理 UART 波特率"
+                int "Battery Management UART Baudrate"
                 default 9600
                 help
-                    电池管理芯片的 UART 波特率。
+                    UART baudrate for battery management chip.
         endmenu
 
-        menu "电机控制配置"
+        menu "Motor Control Configuration"
             config MOTOR_PWM_U_PIN
-                int "电机 U 相 PWM 引脚"
+                int "Motor Phase U PWM Pin"
                 default 3
                 help
-                    FOC 控制器 U 相 PWM 输出引脚。
+                    FOC controller Phase U PWM output pin.
 
             config MOTOR_PWM_V_PIN
-                int "电机 V 相 PWM 引脚"
+                int "Motor Phase V PWM Pin"
                 default 8
                 help
-                    FOC 控制器 V 相 PWM 输出引脚。
+                    FOC controller Phase V PWM output pin.
 
             config MOTOR_PWM_W_PIN
-                int "电机 W 相 PWM 引脚"
+                int "Motor Phase W PWM Pin"
                 default 18
                 help
-                    FOC 控制器 W 相 PWM 输出引脚。
+                    FOC controller Phase W PWM output pin.
 
             config MOTOR_ENABLE_PIN
-                int "电机使能引脚"
+                int "Motor Enable Pin"
                 default 9
                 help
-                    电机驱动器使能引脚。
+                    Motor driver enable pin.
         endmenu
     endmenu
 
-    menu "系统设置"
+    menu "System Settings"
         config MAX_SPEED
-            int "最大速度 (km/h)"
+            int "Maximum Speed (km/h)"
             default 20
             help
-                滑板最大速度 (km/h)。
+                Maximum skateboard speed (km/h).
 
         config ENABLE_UNIT_TESTS
-            bool "启用单元测试"
+            bool "Enable Unit Tests"
             default n
             help
-                启用单元测试编译和执行。
+                Enable compilation and execution of unit tests.
     endmenu
 
+endmenu
+
+# Main Configuration
+menu "Main Configuration"
+    config MAIN_SOURCE_FILE
+        string "Main source file"
+        default "main.c"
+        help
+            The main source file for the application.
 endmenu
