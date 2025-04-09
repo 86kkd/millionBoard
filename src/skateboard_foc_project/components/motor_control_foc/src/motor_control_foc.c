@@ -17,13 +17,14 @@ static const char *TAG = "MOTOR_CONTROL";
 #define MOTOR_PWM_U_PIN CONFIG_MOTOR_PWM_U_PIN
 #define MOTOR_PWM_V_PIN CONFIG_MOTOR_PWM_V_PIN
 #define MOTOR_PWM_W_PIN CONFIG_MOTOR_PWM_W_PIN
-#define MOTOR_ENABLE_PIN CONFIG_MOTOR_ENABLE_PIN
 
 // 副电机GPIO引脚(在sdkconfig中定义)
 #define MOTOR2_PWM_U_PIN CONFIG_MOTOR2_PWM_U_PIN
 #define MOTOR2_PWM_V_PIN CONFIG_MOTOR2_PWM_V_PIN
 #define MOTOR2_PWM_W_PIN CONFIG_MOTOR2_PWM_W_PIN
-#define MOTOR2_ENABLE_PIN CONFIG_MOTOR2_ENABLE_PIN
+
+// 电机共用使能引脚
+#define MOTOR_ENABLE_PIN CONFIG_MOTOR_ENABLE_PIN
 
 // PWM通道定义
 #define MOTOR1_CHANNEL_U LEDC_CHANNEL_0
@@ -51,7 +52,6 @@ typedef struct {
 // 单个电机控制状态
 typedef struct {
   bool initialized;
-  bool enabled;
   float target_speed;  // 目标速度(-1.0到1.0)
   float current_speed; // 当前速度
   motor_direction_t direction;
@@ -61,6 +61,7 @@ typedef struct {
 // 双电机控制状态
 static struct {
   motor_control_state_t motors[2]; // 0=主电机，1=副电机
+  bool enabled;                    // 电机使能状态(共用)
 } motor_state = {0};
 
 // 内部函数 - 更新单个电机
@@ -223,33 +224,22 @@ esp_err_t motor_control_init(void) {
   };
   ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_m2_w));
 
-  // 配置主电机使能引脚
-  gpio_config_t io_conf_m1 = {
+  // 配置电机使能引脚(共用)
+  gpio_config_t io_conf = {
       .intr_type = GPIO_INTR_DISABLE,
       .mode = GPIO_MODE_OUTPUT,
       .pin_bit_mask = (1ULL << MOTOR_ENABLE_PIN),
       .pull_down_en = 0,
       .pull_up_en = 0,
   };
-  gpio_config(&io_conf_m1);
+  gpio_config(&io_conf);
 
-  // 配置副电机使能引脚
-  gpio_config_t io_conf_m2 = {
-      .intr_type = GPIO_INTR_DISABLE,
-      .mode = GPIO_MODE_OUTPUT,
-      .pin_bit_mask = (1ULL << MOTOR2_ENABLE_PIN),
-      .pull_down_en = 0,
-      .pull_up_en = 0,
-  };
-  gpio_config(&io_conf_m2);
-
-  // 初始时禁用两个电机
+  // 初始时禁用电机
   gpio_set_level(MOTOR_ENABLE_PIN, 0);
-  gpio_set_level(MOTOR2_ENABLE_PIN, 0);
+  motor_state.enabled = false;
   
   // 初始化两个电机的状态
   for (int i = 0; i < 2; i++) {
-    motor_state.motors[i].enabled = false;
     motor_state.motors[i].foc.angle = 0.0f;
     motor_state.motors[i].foc.voltage_alpha = 0.0f;
     motor_state.motors[i].foc.voltage_beta = 0.0f;
@@ -335,45 +325,35 @@ esp_err_t motor_control_get_status(motor_id_t motor_id, motor_status_t *status) 
   return ESP_OK;
 }
 
-// 使能电机
+// 使能所有电机
 esp_err_t motor_control_enable(motor_id_t motor_id) {
-  if (motor_id != MOTOR_ID_PRIMARY && motor_id != MOTOR_ID_SECONDARY) {
-    return ESP_ERR_INVALID_ARG;
-  }
-
-  motor_control_state_t *motor = &motor_state.motors[motor_id];
-  if (!motor->initialized) {
+  if (!motor_state.motors[MOTOR_ID_PRIMARY].initialized || 
+      !motor_state.motors[MOTOR_ID_SECONDARY].initialized) {
     return ESP_ERR_INVALID_STATE;
   }
 
-  ESP_LOGI(TAG, "正在使能电机%d", motor_id);
-  
-  if (motor_id == MOTOR_ID_PRIMARY) {
+  // 忽略motor_id参数，使能所有电机
+  if (!motor_state.enabled) {
+    ESP_LOGI(TAG, "正在使能所有电机");
     gpio_set_level(MOTOR_ENABLE_PIN, 1);
-  } else {
-    gpio_set_level(MOTOR2_ENABLE_PIN, 1);
+    motor_state.enabled = true;
   }
-  
-  motor->enabled = true;
 
   return ESP_OK;
 }
 
-// 禁用电机
+// 禁用所有电机
 esp_err_t motor_control_disable(motor_id_t motor_id) {
-  if (motor_id != MOTOR_ID_PRIMARY && motor_id != MOTOR_ID_SECONDARY) {
-    return ESP_ERR_INVALID_ARG;
-  }
-
-  motor_control_state_t *motor = &motor_state.motors[motor_id];
-  if (!motor->initialized) {
+  if (!motor_state.motors[MOTOR_ID_PRIMARY].initialized || 
+      !motor_state.motors[MOTOR_ID_SECONDARY].initialized) {
     return ESP_ERR_INVALID_STATE;
   }
 
-  ESP_LOGI(TAG, "正在禁用电机%d", motor_id);
-  
-  if (motor_id == MOTOR_ID_PRIMARY) {
+  // 忽略motor_id参数，禁用所有电机
+  if (motor_state.enabled) {
+    ESP_LOGI(TAG, "正在禁用所有电机");
     gpio_set_level(MOTOR_ENABLE_PIN, 0);
+    motor_state.enabled = false;
     
     // 将所有PWM通道设置为零
     ledc_set_duty(MOTOR_PWM_MODE, MOTOR1_CHANNEL_U, 0);
@@ -382,10 +362,7 @@ esp_err_t motor_control_disable(motor_id_t motor_id) {
     ledc_update_duty(MOTOR_PWM_MODE, MOTOR1_CHANNEL_U);
     ledc_update_duty(MOTOR_PWM_MODE, MOTOR1_CHANNEL_V);
     ledc_update_duty(MOTOR_PWM_MODE, MOTOR1_CHANNEL_W);
-  } else {
-    gpio_set_level(MOTOR2_ENABLE_PIN, 0);
     
-    // 将所有PWM通道设置为零
     ledc_set_duty(MOTOR_PWM_MODE, MOTOR2_CHANNEL_U, 0);
     ledc_set_duty(MOTOR_PWM_MODE, MOTOR2_CHANNEL_V, 0);
     ledc_set_duty(MOTOR_PWM_MODE, MOTOR2_CHANNEL_W, 0);
@@ -394,8 +371,6 @@ esp_err_t motor_control_disable(motor_id_t motor_id) {
     ledc_update_duty(MOTOR_PWM_MODE, MOTOR2_CHANNEL_W);
   }
   
-  motor->enabled = false;
-
   return ESP_OK;
 }
 

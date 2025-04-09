@@ -240,9 +240,8 @@ void app_main(void) {
   // 4. 电机控制初始化
   ESP_ERROR_CHECK(motor_control_init());
   
-  // 使能两个电机
+  // 使能所有电机（现在只需调用一次，会同时使能所有电机）
   ESP_ERROR_CHECK(motor_control_enable(MOTOR_ID_PRIMARY));
-  ESP_ERROR_CHECK(motor_control_enable(MOTOR_ID_SECONDARY));
 
   // 创建任务
   xTaskCreate(pressure_sensor_task, "pressure_sensor", 4096, NULL, 5, NULL);

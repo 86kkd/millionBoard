@@ -50,13 +50,6 @@ menu "电机控制配置"
             range 0 39
             help
                 连接到主电机驱动W相的PWM输出引脚。
-
-        config MOTOR_ENABLE_PIN
-            int "主电机使能引脚"
-            default 4
-            range 0 39
-            help
-                连接到主电机驱动使能的GPIO引脚。
     endmenu
 
     menu "副电机引脚配置"
@@ -80,13 +73,15 @@ menu "电机控制配置"
             range 0 39
             help
                 连接到副电机驱动W相的PWM输出引脚。
+    endmenu
 
-        config MOTOR2_ENABLE_PIN
-            int "副电机使能引脚"
-            default 5
+    menu "电机通用配置"
+        config MOTOR_ENABLE_PIN
+            int "电机使能引脚(共用)"
+            default 4
             range 0 39
             help
-                连接到副电机驱动使能的GPIO引脚。
+                连接到所有电机驱动使能的共用GPIO引脚。
     endmenu
 
     menu "控制器参数"
