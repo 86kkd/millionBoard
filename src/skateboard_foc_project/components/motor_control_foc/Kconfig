@@ -29,34 +29,64 @@ menu "电机控制配置"
                 电机最大允许电流，单位为毫安。
     endmenu
 
-    menu "电机引脚配置"
+    menu "主电机引脚配置"
         config MOTOR_PWM_U_PIN
-            int "电机U相PWM引脚"
+            int "主电机U相PWM引脚"
             default 25
             range 0 39
             help
-                连接到电机驱动U相的PWM输出引脚。
+                连接到主电机驱动U相的PWM输出引脚。
 
         config MOTOR_PWM_V_PIN
-            int "电机V相PWM引脚"
+            int "主电机V相PWM引脚"
             default 26
             range 0 39
             help
-                连接到电机驱动V相的PWM输出引脚。
+                连接到主电机驱动V相的PWM输出引脚。
 
         config MOTOR_PWM_W_PIN
-            int "电机W相PWM引脚"
+            int "主电机W相PWM引脚"
             default 27
             range 0 39
             help
-                连接到电机驱动W相的PWM输出引脚。
+                连接到主电机驱动W相的PWM输出引脚。
 
         config MOTOR_ENABLE_PIN
-            int "电机使能引脚"
+            int "主电机使能引脚"
             default 4
             range 0 39
             help
-                连接到电机驱动使能的GPIO引脚。
+                连接到主电机驱动使能的GPIO引脚。
+    endmenu
+
+    menu "副电机引脚配置"
+        config MOTOR2_PWM_U_PIN
+            int "副电机U相PWM引脚"
+            default 12
+            range 0 39
+            help
+                连接到副电机驱动U相的PWM输出引脚。
+
+        config MOTOR2_PWM_V_PIN
+            int "副电机V相PWM引脚"
+            default 13
+            range 0 39
+            help
+                连接到副电机驱动V相的PWM输出引脚。
+
+        config MOTOR2_PWM_W_PIN
+            int "副电机W相PWM引脚"
+            default 14
+            range 0 39
+            help
+                连接到副电机驱动W相的PWM输出引脚。
+
+        config MOTOR2_ENABLE_PIN
+            int "副电机使能引脚"
+            default 5
+            range 0 39
+            help
+                连接到副电机驱动使能的GPIO引脚。
     endmenu
 
     menu "控制器参数"

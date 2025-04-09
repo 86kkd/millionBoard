@@ -6,6 +6,12 @@
 extern "C" {
 #endif
 
+// 电机ID枚举
+typedef enum {
+  MOTOR_ID_PRIMARY = 0,  // 主电机（默认）
+  MOTOR_ID_SECONDARY = 1 // 副电机
+} motor_id_t;
+
 // 电机方向枚举
 typedef enum {
   MOTOR_DIR_FORWARD = 1,
@@ -32,32 +38,45 @@ esp_err_t motor_control_init(void);
 /**
  * @brief 设置电机速度
  *
+ * @param motor_id 电机ID (主电机或副电机)
  * @param speed 速度值，正值为前进，负值为后退，单位为标准化值(-1.0到1.0)
  * @return esp_err_t ESP_OK成功，否则失败
  */
-esp_err_t motor_control_set_speed(float speed);
+esp_err_t motor_control_set_speed(motor_id_t motor_id, float speed);
 
 /**
  * @brief 获取电机状态
  *
+ * @param motor_id 电机ID (主电机或副电机)
  * @param status 指向状态结构体的指针
  * @return esp_err_t ESP_OK成功，否则失败
  */
-esp_err_t motor_control_get_status(motor_status_t *status);
+esp_err_t motor_control_get_status(motor_id_t motor_id, motor_status_t *status);
 
 /**
  * @brief 启用电机
  *
+ * @param motor_id 电机ID (主电机或副电机)
  * @return esp_err_t ESP_OK成功，否则失败
  */
-esp_err_t motor_control_enable(void);
+esp_err_t motor_control_enable(motor_id_t motor_id);
 
 /**
  * @brief 禁用电机
  *
+ * @param motor_id 电机ID (主电机或副电机)
  * @return esp_err_t ESP_OK成功，否则失败
  */
-esp_err_t motor_control_disable(void);
+esp_err_t motor_control_disable(motor_id_t motor_id);
+
+/**
+ * @brief 同时设置两个电机速度
+ *
+ * @param speed1 主电机速度值，标准化值(-1.0到1.0)
+ * @param speed2 副电机速度值，标准化值(-1.0到1.0)
+ * @return esp_err_t ESP_OK成功，否则失败
+ */
+esp_err_t motor_control_set_dual_speed(float speed1, float speed2);
 
 /**
  * @brief 计算坡度补偿值

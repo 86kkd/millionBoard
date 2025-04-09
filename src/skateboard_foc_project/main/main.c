@@ -137,14 +137,14 @@ void motor_control_task(void *pvParameters) {
           calculate_incline_compensation(board_state.board_angle);
       motor_output += incline_compensation;
 
-      // 应用电机控制
-      motor_control_set_speed(motor_output);
+      // 应用双电机控制 - 同样的速度设置给两个电机
+      motor_control_set_dual_speed(motor_output, motor_output);
 
-      ESP_LOGI(TAG, "Motor Speed: %.1f, Compensation: %.1f", motor_output,
+      ESP_LOGI(TAG, "Motors Speed: %.1f, Compensation: %.1f", motor_output,
                incline_compensation);
     } else {
       // 锁定状态，停止电机
-      motor_control_set_speed(0);
+      motor_control_set_dual_speed(0, 0);
     }
 
     vTaskDelay(pdMS_TO_TICKS(20)); // 50Hz
@@ -239,6 +239,10 @@ void app_main(void) {
 
   // 4. 电机控制初始化
   ESP_ERROR_CHECK(motor_control_init());
+  
+  // 使能两个电机
+  ESP_ERROR_CHECK(motor_control_enable(MOTOR_ID_PRIMARY));
+  ESP_ERROR_CHECK(motor_control_enable(MOTOR_ID_SECONDARY));
 
   // 创建任务
   xTaskCreate(pressure_sensor_task, "pressure_sensor", 4096, NULL, 5, NULL);
