@@ -1,0 +1,21 @@
+menu "HX711 传感器配置"
+    config ENABLE_HX711
+        bool "启用 HX711 重量传感器"
+        default y
+        help
+            启用 HX711 称重传感器功能。
+
+    if ENABLE_HX711
+        config HX711_DATA_PIN
+            int "HX711 数据引脚"
+            default 36
+            help
+                HX711 传感器的数据引脚。
+
+        config HX711_CLOCK_PIN
+            int "HX711 时钟引脚"
+            default 37
+            help
+                HX711 传感器的时钟引脚。
+    endif
+endmenu

@@ -1,0 +1,21 @@
+menu "GPS 传感器配置"
+    config ENABLE_GPS
+        bool "启用 GPS GPS模块"
+        default y
+        help
+            启用 GPS GPS模块功能。
+
+    if ENABLE_GPS
+        config GPS_DATA_PIN
+            int "GPS RX引脚"
+            default 36
+            help
+                GPS 传感器的RX引脚。
+
+        config GPS_CLOCK_PIN
+            int "GPS TX引脚"
+            default 37
+            help
+                GPS 传感器的TX引脚。
+    endif
+endmenu

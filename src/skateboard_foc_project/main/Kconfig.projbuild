@@ -1,177 +1,35 @@
 menu "电动滑板配置"
     
-    menu "Hardware Pin Configuration"
-        menu "HX711 Pressure Sensor Configuration"
-            config HX711_FRONT_DOUT_GPIO
-                int "Front Sensor DOUT Pin"
-                default 4
-                help
-                    HX711 DOUT pin for front pressure sensor.
-
-            config HX711_FRONT_SCK_GPIO
-                int "Front Sensor SCK Pin"
-                default 5
-                help
-                    HX711 SCK pin for front pressure sensor.
-
-            config HX711_REAR_DOUT_GPIO
-                int "Rear Sensor DOUT Pin"
-                default 6
-                help
-                    HX711 DOUT pin for rear pressure sensor.
-
-            config HX711_REAR_SCK_GPIO
-                int "Rear Sensor SCK Pin"
-                default 7
-                help
-                    HX711 SCK pin for rear pressure sensor.
-        endmenu
-
-        menu "CAN Bus Configuration"
-            config CAN_TX_GPIO
-                int "CAN TX Pin"
-                default 37
-                help
-                    CAN bus transmit pin.
-
-            config CAN_RX_GPIO
-                int "CAN RX Pin"
-                default 38
-                help
-                    CAN bus receive pin.
-
-            config CAN_BITRATE
-                int "CAN Bus Bitrate"
-                default 250000
-                help
-                    CAN bus bitrate. Common values: 125000, 250000, 500000, 1000000.
-        endmenu
-
-        menu "NFC Configuration"
-            config NFC_SDA_GPIO
-                int "NFC I2C SDA Pin"
-                default 18
-                help
-                    I2C SDA pin for NFC module.
-
-            config NFC_SCL_GPIO
-                int "NFC I2C SCL Pin"
-                default 21
-                help
-                    I2C SCL pin for NFC module.
-
-            config NFC_IRQ_GPIO
-                int "NFC Interrupt Pin"
-                default 3
-                help
-                    Interrupt pin for NFC module.
-
-            config NFC_I2C_ADDR
-                hex "NFC I2C Address"
-                default 0x24
-                help
-                    I2C address for NFC module.
-        endmenu
-
-        menu "GPS Configuration"
-            config GPS_UART_PORT
-                int "GPS UART Port Number"
-                default 1
-                help
-                    UART port number used by GPS module.
-
-            config GPS_UART_TX_GPIO
-                int "GPS UART TX Pin"
-                default 17
-                help
-                    UART TX pin for GPS module.
-
-            config GPS_UART_RX_GPIO
-                int "GPS UART RX Pin"
-                default 16
-                help
-                    UART RX pin for GPS module.
-
-            config GPS_UART_BAUD
-                int "GPS UART Baudrate"
-                default 9600
-                help
-                    UART baudrate for GPS module.
-        endmenu
-
-        menu "Battery Management Configuration"
-            config BATTERY_UART_PORT
-                int "Battery Management UART Port"
-                default 2
-                help
-                    UART port number used by battery management chip.
-
-            config BATTERY_UART_TX_GPIO
-                int "Battery Management UART TX Pin"
-                default 14
-                help
-                    UART TX pin for battery management chip.
-
-            config BATTERY_UART_RX_GPIO
-                int "Battery Management UART RX Pin"
-                default 15
-                help
-                    UART RX pin for battery management chip.
-
-            config BATTERY_UART_BAUD
-                int "Battery Management UART Baudrate"
-                default 9600
-                help
-                    UART baudrate for battery management chip.
-        endmenu
-
-        menu "Motor Control Configuration"
-            config MOTOR_PWM_U_PIN
-                int "Motor Phase U PWM Pin"
-                default 3
-                help
-                    FOC controller Phase U PWM output pin.
-
-            config MOTOR_PWM_V_PIN
-                int "Motor Phase V PWM Pin"
-                default 8
-                help
-                    FOC controller Phase V PWM output pin.
-
-            config MOTOR_PWM_W_PIN
-                int "Motor Phase W PWM Pin"
-                default 18
-                help
-                    FOC controller Phase W PWM output pin.
-
-            config MOTOR_ENABLE_PIN
-                int "Motor Enable Pin"
-                default 9
-                help
-                    Motor driver enable pin.
-        endmenu
-    endmenu
-
-    menu "System Settings"
-        config MAX_SPEED
-            int "Maximum Speed (km/h)"
-            default 20
-            help
-                Maximum skateboard speed (km/h).
-
-        config ENABLE_UNIT_TESTS
-            bool "Enable Unit Tests"
-            default n
-            help
-                Enable compilation and execution of unit tests.
-    endmenu
-
     menu "组件使能配置"
-        config ENABLE_SENSORS
-            bool "启用传感器模块"
+        config ENABLE_HX711
+            bool "启用 HX711 重量传感器"
             default y
             help
-                启用传感器相关功能，包括温度、电流等传感器的支持。
+                启用 HX711 称重传感器功能。
+
+        config ENABLE_ANGLE_SENSOR
+            bool "启用角度传感器"
+            default y
+            help
+                启用角度传感器功能。
+
+        config ENABLE_NFC
+            bool "启用NFC功能"
+            default y
+            help
+                启用NFC读卡器功能。
+
+        config ENABLE_GPS
+            bool "启用GPS功能"
+            default y
+            help
+                启用GPS定位功能。
+
+        config ENABLE_MOTOR_CONTROL_FOC
+            bool "启用FOC电机控制模块"
+            default y
+            help
+                启用FOC电机控制功能。
 
         config ENABLE_BATTERY_MANAGEMENT
             bool "启用电池管理模块"
@@ -185,12 +43,6 @@ menu "电动滑板配置"
             help
                 启用通信功能，包括蓝牙、CAN等通信接口。
 
-        config ENABLE_MOTOR_CONTROL_FOC
-            bool "启用FOC电机控制模块"
-            default y
-            help
-                启用FOC电机控制功能。
-
         config ENABLE_UTILS
             bool "启用工具模块"
             default y
@@ -198,13 +50,11 @@ menu "电动滑板配置"
                 启用通用工具功能。
     endmenu
 
-endmenu
-
-# Main Configuration
-menu "Main Configuration"
-    config MAIN_SOURCE_FILE
-        string "Main source file"
-        default "main.c"
+    config ENABLE_UNIT_TESTS
+        bool "启用单元测试"
+        default n
         help
-            The main source file for the application.
+            启用单元测试功能。
+
+
 endmenu

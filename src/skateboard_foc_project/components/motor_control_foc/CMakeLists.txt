@@ -15,8 +15,8 @@ if(CONFIG_ENABLE_MOTOR_CONTROL_FOC)
     endif()
     
     # 只有当传感器模块启用时才添加依赖
-    if(CONFIG_ENABLE_SENSORS)
-        list(APPEND COMPONENT_REQUIRES sensors)
+    if(CONFIG_ENABLE_HX711 || CONFIG_ENABLE_ANGLE_SENSOR || CONFIG_ENABLE_NFC || CONFIG_ENABLE_GPS)
+        list(APPEND COMPONENT_REQUIRES hx711 angle_sensor nfc gps)
     endif()
 
     # 注册组件

@@ -1,0 +1,21 @@
+menu "ANGLE_SENSOR 传感器配置"
+    config ENABLE_ANGLE_SENSOR
+        bool "启用 ANGLE_SENSOR 角度传感器"
+        default y
+        help
+            启用 ANGLE_SENSOR 角度传感器功能。
+
+    if ENABLE_ANGLE_SENSOR
+        config ANGLE_SENSOR_DATA_PIN
+            int "ANGLE_SENSOR SPI MISO引脚"
+            default 36
+            help
+                ANGLE_SENSOR 传感器的SPI MISO引脚。
+
+        config ANGLE_SENSOR_CLOCK_PIN
+            int "ANGLE_SENSOR SPI CLK引脚"
+            default 37
+            help
+                ANGLE_SENSOR 传感器的SPI CLK引脚。
+    endif
+endmenu

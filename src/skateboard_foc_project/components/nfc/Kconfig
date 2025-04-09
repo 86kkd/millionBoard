@@ -1,0 +1,21 @@
+menu "NFC 传感器配置"
+    config ENABLE_NFC
+        bool "启用 NFC NFC读卡器"
+        default y
+        help
+            启用 NFC NFC读卡器功能。
+
+    if ENABLE_NFC
+        config NFC_DATA_PIN
+            int "NFC SDA引脚"
+            default 36
+            help
+                NFC 传感器的SDA引脚。
+
+        config NFC_CLOCK_PIN
+            int "NFC SCL引脚"
+            default 37
+            help
+                NFC 传感器的SCL引脚。
+    endif
+endmenu
