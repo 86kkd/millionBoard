@@ -56,5 +56,11 @@ menu "电动滑板配置"
         help
             启用单元测试功能。
 
+    config MAX_SPEED
+        int "电动滑板最大速度(km/h)"
+        default 25
+        range 5 50
+        help
+            设置电动滑板的最大速度，单位为km/h
 
 endmenu

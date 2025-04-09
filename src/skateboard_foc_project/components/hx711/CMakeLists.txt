@@ -6,7 +6,7 @@ set(SRCS
 
 set(INCLUDE_DIRS "include")
 
-set(COMPONENT_REQUIRES driver esp_driver_gpio)
+set(COMPONENT_REQUIRES driver esp_driver_gpio esp_timer)
 
 # 根据需要添加依赖项
 if(CONFIG_ENABLE_UTILS)

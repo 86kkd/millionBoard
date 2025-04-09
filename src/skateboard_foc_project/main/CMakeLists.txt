@@ -15,6 +15,7 @@ set(REQUIRES_LIST
     angle_sensor
     nfc
     gps
+    nvs_flash
 )
 # 注册组件
 idf_component_register(

@@ -49,4 +49,33 @@ menu "电池管理配置"
                 电池低温保护阈值，单位为摄氏度。
     endmenu
 
+    menu "电池通信设置"
+        config BATTERY_UART_PORT
+            int "电池管理UART端口号"
+            default 1
+            range 0 2
+            help
+                用于电池通信的UART端口号。
+
+        config BATTERY_UART_BAUD
+            int "电池通信波特率"
+            default 115200
+            help
+                电池通信的UART波特率。
+
+        config BATTERY_UART_TX_GPIO
+            int "电池UART发送引脚"
+            default 17
+            range 0 39
+            help
+                用于电池通信的UART发送引脚。
+
+        config BATTERY_UART_RX_GPIO
+            int "电池UART接收引脚"
+            default 18
+            range 0 39
+            help
+                用于电池通信的UART接收引脚。
+    endmenu
+
 endmenu

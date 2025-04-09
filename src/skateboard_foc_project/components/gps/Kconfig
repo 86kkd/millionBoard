@@ -6,16 +6,29 @@ menu "GPS 传感器配置"
             启用 GPS GPS模块功能。
 
     if ENABLE_GPS
-        config GPS_DATA_PIN
-            int "GPS RX引脚"
-            default 36
+        
+        config GPS_UART_PORT 
+            int "GPS UART端口号"
+            default 1
             help
-                GPS 传感器的RX引脚。
+                GPS UART端口号。            
+                
+        config GPS_UART_BAUD
+            int "GPS UART波特率"
+            default 9600
+            help
+                GPS UART波特率。
+                
+        config GPS_UART_TX_GPIO
+            int "GPS UART发送引脚"
+            default 17
+            help
+                GPS UART发送引脚。
 
-        config GPS_CLOCK_PIN
-            int "GPS TX引脚"
-            default 37
+        config GPS_UART_RX_GPIO
+            int "GPS UART接收引脚"
+            default 18
             help
-                GPS 传感器的TX引脚。
+                GPS UART接收引脚。
     endif
 endmenu

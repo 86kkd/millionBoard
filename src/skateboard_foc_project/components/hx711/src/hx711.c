@@ -16,6 +16,7 @@ struct hx711_dev_t {
 };
 
 esp_err_t hx711_init(const hx711_config_t *config, hx711_handle_t *handle) {
+#if CONFIG_ENABLE_HX711
   if (config == NULL || handle == NULL) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -58,9 +59,14 @@ esp_err_t hx711_init(const hx711_config_t *config, hx711_handle_t *handle) {
            dev->sck_gpio);
 
   return ESP_OK;
+#else
+  ESP_LOGW(TAG, "HX711 support is disabled");
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t hx711_deinit(hx711_handle_t handle) {
+#if CONFIG_ENABLE_HX711
   if (handle == NULL) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -72,10 +78,14 @@ esp_err_t hx711_deinit(hx711_handle_t handle) {
   free(handle);
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t hx711_read_raw(hx711_handle_t handle, int32_t *value,
                          uint32_t timeout_ms) {
+#if CONFIG_ENABLE_HX711
   if (handle == NULL || value == NULL) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -116,9 +126,13 @@ esp_err_t hx711_read_raw(hx711_handle_t handle, int32_t *value,
   handle->last_raw_reading = data;
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 float hx711_get_weight(hx711_handle_t handle) {
+#if CONFIG_ENABLE_HX711
   if (handle == NULL) {
     return 0.0f;
   }
@@ -131,9 +145,13 @@ float hx711_get_weight(hx711_handle_t handle) {
 
   // Calculate weight based on raw value, offset, and scale
   return (raw_value - handle->offset) / handle->scale;
+#else
+  return 0.0f;
+#endif
 }
 
 esp_err_t hx711_tare(hx711_handle_t handle) {
+#if CONFIG_ENABLE_HX711
   if (handle == NULL) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -155,9 +173,13 @@ esp_err_t hx711_tare(hx711_handle_t handle) {
   ESP_LOGI(TAG, "Tare offset set to %d", handle->offset);
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t hx711_set_scale(hx711_handle_t handle, float scale) {
+#if CONFIG_ENABLE_HX711
   if (handle == NULL) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -166,9 +188,13 @@ esp_err_t hx711_set_scale(hx711_handle_t handle, float scale) {
   ESP_LOGI(TAG, "Scale set to %.4f", scale);
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t hx711_power_down(hx711_handle_t handle) {
+#if CONFIG_ENABLE_HX711
   if (handle == NULL) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -177,9 +203,13 @@ esp_err_t hx711_power_down(hx711_handle_t handle) {
   vTaskDelay(pdMS_TO_TICKS(60)); // Hold SCK high for >60ms to enter power down
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t hx711_power_up(hx711_handle_t handle) {
+#if CONFIG_ENABLE_HX711
   if (handle == NULL) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -188,4 +218,7 @@ esp_err_t hx711_power_up(hx711_handle_t handle) {
   vTaskDelay(pdMS_TO_TICKS(1)); // Need at least 1ms to power up
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }

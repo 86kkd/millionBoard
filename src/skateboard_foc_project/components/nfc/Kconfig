@@ -6,16 +6,19 @@ menu "NFC 传感器配置"
             启用 NFC NFC读卡器功能。
 
     if ENABLE_NFC
-        config NFC_DATA_PIN
-            int "NFC SDA引脚"
-            default 36
+        
+        config NFC_I2C_PORT
+            int "NFC I2C端口号"
+            default 1
             help
-                NFC 传感器的SDA引脚。
-
-        config NFC_CLOCK_PIN
-            int "NFC SCL引脚"
-            default 37
+                NFC I2C端口号。
+                
+        config NFC_I2C_ADDR
+            hex "NFC I2C地址"
+            default 0x28
             help
-                NFC 传感器的SCL引脚。
+                NFC I2C地址。
+                
+                
     endif
 endmenu

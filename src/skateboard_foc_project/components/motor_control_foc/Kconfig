@@ -29,6 +29,36 @@ menu "电机控制配置"
                 电机最大允许电流，单位为毫安。
     endmenu
 
+    menu "电机引脚配置"
+        config MOTOR_PWM_U_PIN
+            int "电机U相PWM引脚"
+            default 25
+            range 0 39
+            help
+                连接到电机驱动U相的PWM输出引脚。
+
+        config MOTOR_PWM_V_PIN
+            int "电机V相PWM引脚"
+            default 26
+            range 0 39
+            help
+                连接到电机驱动V相的PWM输出引脚。
+
+        config MOTOR_PWM_W_PIN
+            int "电机W相PWM引脚"
+            default 27
+            range 0 39
+            help
+                连接到电机驱动W相的PWM输出引脚。
+
+        config MOTOR_ENABLE_PIN
+            int "电机使能引脚"
+            default 4
+            range 0 39
+            help
+                连接到电机驱动使能的GPIO引脚。
+    endmenu
+
     menu "控制器参数"
         config VELOCITY_PID_P
             int "速度PID-P系数 (x1000)"

@@ -9,6 +9,20 @@ menu "通信配置"
                 I2C主机通信频率，单位为赫兹。
                 标准模式为100kHz，快速模式为400kHz。
 
+        config NFC_SDA_GPIO
+            int "I2C SDA引脚GPIO编号"
+            default 21
+            range 0 39
+            help
+                I2C数据线(SDA)引脚的GPIO编号。
+
+        config NFC_SCL_GPIO
+            int "I2C SCL引脚GPIO编号"
+            default 22
+            range 0 39
+            help
+                I2C时钟线(SCL)引脚的GPIO编号。
+
         config I2C_TIMEOUT_MS
             int "I2C通信超时时间 (ms)"
             default 1000
@@ -18,6 +32,27 @@ menu "通信配置"
     endmenu
 
     menu "CAN通信设置"
+        config CAN_TX_GPIO
+            int "CAN发送引脚GPIO编号"
+            default 21
+            range 0 39
+            help
+                CAN总线发送引脚的GPIO编号。
+
+        config CAN_RX_GPIO
+            int "CAN接收引脚GPIO编号"
+            default 22
+            range 0 39
+            help
+                CAN总线接收引脚的GPIO编号。
+                
+        config CAN_BITRATE
+            int "CAN总线比特率"
+            default 500000
+            range 125000 1000000
+            help
+                CAN总线通信比特率，支持125kbps、250kbps、500kbps和1Mbps。
+
         config CAN_RX_TASK_STACK_SIZE
             int "CAN接收任务栈大小"
             default 4096

@@ -6,16 +6,30 @@ menu "HX711 传感器配置"
             启用 HX711 称重传感器功能。
 
     if ENABLE_HX711
-        config HX711_DATA_PIN
-            int "HX711 数据引脚"
+        config HX711_FRONT_DOUT_GPIO
+            int "前称重传感器数据引脚"
             default 36
             help
-                HX711 传感器的数据引脚。
-
-        config HX711_CLOCK_PIN
-            int "HX711 时钟引脚"
+                前称重传感器数据引脚。      
+                
+        config HX711_FRONT_SCK_GPIO
+            int "前称重传感器时钟引脚"
             default 37
             help
-                HX711 传感器的时钟引脚。
+                前称重传感器时钟引脚。
+                
+        config HX711_REAR_DOUT_GPIO
+            int "后称重传感器数据引脚"
+            default 38
+            help
+                后称重传感器数据引脚。
+                
+        config HX711_REAR_SCK_GPIO
+            int "后称重传感器时钟引脚"
+            default 39
+            help
+                后称重传感器时钟引脚。
+                
+                
     endif
 endmenu
