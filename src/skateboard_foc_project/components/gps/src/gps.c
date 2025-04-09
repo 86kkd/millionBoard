@@ -12,6 +12,7 @@ static bool is_initialized = false;
 
 // Helper function to parse decimal degrees from NMEA format
 static float parse_degrees(const char *value, char direction) {
+#if CONFIG_ENABLE_GPS
   if (value == NULL || strlen(value) < 3) {
     return 0.0f;
   }
@@ -35,10 +36,14 @@ static float parse_degrees(const char *value, char direction) {
   }
 
   return decimal_degrees;
+#else
+  return 0.0f;
+#endif
 }
 
 // Parse NMEA sentence
 static void parse_nmea_sentence(const char *sentence) {
+#if CONFIG_ENABLE_GPS
   if (sentence == NULL || strlen(sentence) < 10) {
     return;
   }
@@ -125,9 +130,11 @@ static void parse_nmea_sentence(const char *sentence) {
     }
   }
   // Additional sentence types could be parsed here (GGA, GSA, etc.)
+#endif
 }
 
 esp_err_t gps_init(void) {
+#if CONFIG_ENABLE_GPS
   if (is_initialized) {
     return ESP_OK;
   }
@@ -163,9 +170,14 @@ esp_err_t gps_init(void) {
   ESP_LOGI(TAG, "GPS initialized successfully");
 
   return ESP_OK;
+#else
+  ESP_LOGW(TAG, "GPS support is disabled");
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t gps_get_location(gps_data_t *data) {
+#if CONFIG_ENABLE_GPS
   if (!is_initialized || data == NULL) {
     return ESP_ERR_INVALID_STATE;
   }
@@ -181,20 +193,40 @@ esp_err_t gps_get_location(gps_data_t *data) {
   memcpy(data, &gps_data, sizeof(gps_data_t));
 
   return ESP_OK;
+#else
+  if (data != NULL) {
+    memset(data, 0, sizeof(gps_data_t));
+  }
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t gps_get_speed(float *speed_kmh) {
+#if CONFIG_ENABLE_GPS
   if (!is_initialized || speed_kmh == NULL) {
     return ESP_ERR_INVALID_STATE;
   }
 
   *speed_kmh = gps_data.speed_kmh;
   return ESP_OK;
+#else
+  if (speed_kmh != NULL) {
+    *speed_kmh = 0.0f;
+  }
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
-bool gps_is_valid(void) { return is_initialized && gps_data.valid; }
+bool gps_is_valid(void) { 
+#if CONFIG_ENABLE_GPS
+  return is_initialized && gps_data.valid; 
+#else
+  return false;
+#endif
+}
 
 esp_err_t gps_get_datetime(gps_datetime_t *datetime) {
+#if CONFIG_ENABLE_GPS
   if (!is_initialized || !gps_data.valid || datetime == NULL) {
     return ESP_ERR_INVALID_STATE;
   }
@@ -207,4 +239,10 @@ esp_err_t gps_get_datetime(gps_datetime_t *datetime) {
   datetime->second = gps_data.second;
 
   return ESP_OK;
+#else
+  if (datetime != NULL) {
+    memset(datetime, 0, sizeof(gps_datetime_t));
+  }
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }

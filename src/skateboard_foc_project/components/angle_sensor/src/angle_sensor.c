@@ -11,6 +11,7 @@ static angle_sensor_data_t last_data = {0};
 // CAN receive callback
 static void angle_sensor_can_callback(uint32_t id, uint8_t *data,
                                       uint8_t length, void *user_data) {
+#if CONFIG_ENABLE_ANGLE_SENSOR
   if (id != CAN_ID_ANGLE_SENSOR_DATA || length < 8) {
     return;
   }
@@ -31,9 +32,11 @@ static void angle_sensor_can_callback(uint32_t id, uint8_t *data,
   ESP_LOGD(TAG,
            "Angle data - Roll: %.2f°, Pitch: %.2f°, Yaw: %.2f°, Temp: %.1f°C",
            last_data.roll, last_data.pitch, last_data.yaw, last_data.temp);
+#endif
 }
 
 esp_err_t angle_sensor_init(void) {
+#if CONFIG_ENABLE_ANGLE_SENSOR
   if (is_initialized) {
     return ESP_OK;
   }
@@ -70,9 +73,14 @@ esp_err_t angle_sensor_init(void) {
   ESP_LOGI(TAG, "Angle sensor initialized successfully");
 
   return ESP_OK;
+#else
+  ESP_LOGW(TAG, "Angle sensor support is disabled");
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t angle_sensor_read(angle_sensor_data_t *data) {
+#if CONFIG_ENABLE_ANGLE_SENSOR
   if (!is_initialized || data == NULL) {
     return ESP_ERR_INVALID_STATE;
   }
@@ -81,9 +89,16 @@ esp_err_t angle_sensor_read(angle_sensor_data_t *data) {
   memcpy(data, &last_data, sizeof(angle_sensor_data_t));
 
   return ESP_OK;
+#else
+  if (data != NULL) {
+    memset(data, 0, sizeof(angle_sensor_data_t));
+  }
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t angle_sensor_calibrate(void) {
+#if CONFIG_ENABLE_ANGLE_SENSOR
   if (!is_initialized) {
     return ESP_ERR_INVALID_STATE;
   }
@@ -105,4 +120,7 @@ esp_err_t angle_sensor_calibrate(void) {
            current_data.roll, current_data.pitch, current_data.yaw);
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }

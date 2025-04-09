@@ -17,6 +17,7 @@ static uint8_t authorized_uid_lengths[10];
 static int num_authorized_uids = 0;
 
 esp_err_t nfc_init(void) {
+#if CONFIG_ENABLE_NFC
   if (is_initialized) {
     return ESP_OK; // Already initialized
   }
@@ -67,9 +68,14 @@ esp_err_t nfc_init(void) {
   ESP_LOGI(TAG, "NFC initialized successfully");
 
   return ESP_OK;
+#else
+  ESP_LOGW(TAG, "NFC support is disabled");
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t nfc_read_passive_target(uint8_t *uid, uint8_t *uid_len) {
+#if CONFIG_ENABLE_NFC
   if (!is_initialized || uid == NULL || uid_len == NULL) {
     return ESP_ERR_INVALID_STATE;
   }
@@ -103,9 +109,16 @@ esp_err_t nfc_read_passive_target(uint8_t *uid, uint8_t *uid_len) {
   }
 
   return ESP_ERR_INVALID_RESPONSE;
+#else
+  if (uid_len != NULL) {
+    *uid_len = 0;
+  }
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 bool nfc_check_authorized(uint8_t *uid, uint8_t uid_len) {
+#if CONFIG_ENABLE_NFC
   if (uid == NULL || uid_len == 0 || uid_len > 10) {
     return false;
   }
@@ -122,9 +135,13 @@ bool nfc_check_authorized(uint8_t *uid, uint8_t uid_len) {
 
   ESP_LOGW(TAG, "Unauthorized card detected");
   return false;
+#else
+  return false;
+#endif
 }
 
 esp_err_t nfc_add_authorized_uid(uint8_t *uid, uint8_t uid_len) {
+#if CONFIG_ENABLE_NFC
   if (uid == NULL || uid_len == 0 || uid_len > 10) {
     return ESP_ERR_INVALID_ARG;
   }
@@ -143,10 +160,17 @@ esp_err_t nfc_add_authorized_uid(uint8_t *uid, uint8_t uid_len) {
   ESP_LOG_BUFFER_HEX(TAG, uid, uid_len);
 
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 esp_err_t nfc_clear_authorized_uids(void) {
+#if CONFIG_ENABLE_NFC
   num_authorized_uids = 0;
   ESP_LOGI(TAG, "Cleared all authorized UIDs");
   return ESP_OK;
+#else
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
