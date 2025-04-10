@@ -7,7 +7,8 @@ set(SRCS
 # 设置包含目录
 set(INCLUDE_DIRS "include")
 
-set(COMPONENT_REQUIRES driver hx711 angle_sensor utils)
+# 根据需要添加依赖项
+set(COMPONENT_REQUIRES driver esp_driver_gpio current_sensor)
 
 
 # 注册组件

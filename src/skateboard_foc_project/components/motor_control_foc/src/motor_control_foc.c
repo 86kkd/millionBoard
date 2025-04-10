@@ -3,6 +3,7 @@
 #include "driver/ledc.h"
 #include "esp_log.h"
 #include "math.h"
+#include "current_sensor.h"  // 添加电流传感器头文件
 
 static const char *TAG = "MOTOR_CONTROL";
 
@@ -318,9 +319,25 @@ esp_err_t motor_control_get_status(motor_id_t motor_id, motor_status_t *status) 
 
   status->current_speed = motor->current_speed;
   status->target_speed = motor->target_speed;
-  status->motor_current = 0.0f; // 在实际实现中将从电流传感器读取
-  status->motor_temp = 25.0f;   // 在实际实现中将从温度传感器读取
   status->direction = motor->direction;
+
+  // 获取三相电流
+  current_sensor_get_three_phase_current(motor_id, 
+                                        &status->current_u, 
+                                        &status->current_v, 
+                                        &status->current_w);
+
+  // 获取DQ轴电流
+  current_sensor_get_dq_current(motor_id, 
+                               motor->foc.angle, 
+                               &status->current_d, 
+                               &status->current_q);
+
+  // 计算总电流大小（使用Q轴电流作为主要电流值）
+  status->motor_current = fabsf(status->current_q) / 1000.0f;  // 转换为安培
+  
+  // 电机温度目前还没有传感器，使用默认值
+  status->motor_temp = 25.0f;   // 在实际实现中将从温度传感器读取
 
   return ESP_OK;
 }

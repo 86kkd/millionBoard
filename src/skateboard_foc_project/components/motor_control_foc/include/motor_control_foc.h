@@ -26,6 +26,13 @@ typedef struct {
   float motor_current;         // 电机电流 (A)
   float motor_temp;            // 电机温度 (°C)
   motor_direction_t direction; // 电机方向
+  
+  // 电流相关信息
+  float current_u;             // U相电流 (mA)
+  float current_v;             // V相电流 (mA)
+  float current_w;             // W相电流 (mA)
+  float current_d;             // D轴电流 (mA)
+  float current_q;             // Q轴电流 (mA)
 } motor_status_t;
 
 /**

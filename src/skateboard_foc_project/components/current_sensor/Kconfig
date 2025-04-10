@@ -1,0 +1,82 @@
+menu "FOC电流传感器配置"
+    config ENABLE_CURRENT_SENSOR
+        bool "启用电流传感器"
+        default y
+        help
+            启用电流传感器功能，用于FOC控制电流采样。
+
+    if ENABLE_CURRENT_SENSOR
+        menu "主电机电流传感器配置"
+            config MOTOR1_CURRENT_U_ADC_CHANNEL
+                int "主电机U相电流ADC通道"
+                default 0
+                range 0 7
+                help
+                    连接到主电机U相电流传感器的ADC通道号。
+
+            config MOTOR1_CURRENT_W_ADC_CHANNEL
+                int "主电机W相电流ADC通道"
+                default 2
+                range 0 7
+                help
+                    连接到主电机W相电流传感器的ADC通道号。
+        endmenu
+
+        menu "副电机电流传感器配置"
+            config MOTOR2_CURRENT_U_ADC_CHANNEL
+                int "副电机U相电流ADC通道"
+                default 3
+                range 0 7
+                help
+                    连接到副电机U相电流传感器的ADC通道号。
+
+            config MOTOR2_CURRENT_W_ADC_CHANNEL
+                int "副电机W相电流ADC通道"
+                default 5
+                range 0 7
+                help
+                    连接到副电机W相电流传感器的ADC通道号。
+        endmenu
+
+        menu "电流传感器校准参数"
+            config CURRENT_ZERO_REFERENCE_MV
+                int "电流零点参考电压 (mV)"
+                default 550
+                range 0 3300
+                help
+                    电流传感器的零点参考电压值，单位为毫伏。默认为550mV。
+
+            config CURRENT_SCALE_FACTOR_MA_MV
+                int "电流比例系数 (mA/mV)"
+                default 20
+                range 1 100
+                help
+                    电流传感器的比例系数，即每毫伏(mV)对应的电流值(mA)。
+
+            config CURRENT_FILTER_ALPHA
+                int "电流滤波系数 (x100)"
+                default 50
+                range 1 99
+                help
+                    电流读数的指数滤波系数，乘以100后的值。
+                    值越小，滤波效果越强，但响应越慢。
+        endmenu
+
+        config CURRENT_ADC_WIDTH
+            int "ADC位宽"
+            default 12
+            range 9 12
+            help
+                ADC转换的位宽，ESP32支持9-12位。
+
+        config CURRENT_ADC_ATTEN
+            int "ADC衰减设置"
+            default 0
+            range 0 3
+            help
+                ADC衰减设置，0对应0dB（无衰减），测量范围约0-1.1V
+                1对应2.5dB，测量范围约0-1.5V
+                2对应6dB，测量范围约0-2.2V
+                3对应11dB，测量范围约0-3.3V
+    endif
+endmenu 
