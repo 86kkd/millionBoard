@@ -1,0 +1,34 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Pressure Sensor Component Guide
+
+## Overview
+The pressure sensor component provides weight measurement functionality using HX711 load cell amplifiers. It supports dual sensors for weight distribution detection and includes a comprehensive calibration system.
+
+## Key Files
+- [components/pressure_sensor/include/pressure_sensor.hpp](mdc:components/pressure_sensor/include/pressure_sensor.hpp): Implementation of the PressureSensor class methods
+- [example.cpp](mdc:components/pressure_sensor/src/example.cpp): Interface example for the pressure sensor class
+- [components/pressure_sensor/src/pressure_sensor.cpp](mdc:components/pressure_sensor/src/pressure_sensor.cpp): Contains a sample application for calibration and usage
+- External dependency: [managed_components/supcik__hx711/include/hx711.hpp](mdc:managed_components/supcik__hx711/include/hx711.hpp)
+
+## Features
+- **Dual Sensor Support**: Two pressure sensors for weight distribution measurement
+- **Calibration System**:
+  - Zero-point calibration (Tare method)
+  - Scale factor calibration using known weights
+  - Persistent storage of calibration parameters in NVS
+- **Multi-Sample Reading**: Support for noise reduction through multiple sample averaging
+
+## Hardware Configuration
+- Uses GPIO pins 15, 16, 47, 21 for interfacing with HX711 chips
+- Configured for Channel A with 128 gain
+- Default calibration weight: 1kg standard weight
+
+## Calibration Workflow
+1. Zero-point calibration (empty scale)
+2. Scale factor calibration (with known weight)
+3. Storage of calibration parameters to NVS
+4. Continuous measurement mode

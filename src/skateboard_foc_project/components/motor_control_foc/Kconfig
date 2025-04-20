@@ -50,6 +50,41 @@ menu "电机控制配置"
             range 0 39
             help
                 连接到主电机驱动W相的PWM输出引脚。
+                
+        config MOTOR1_HALL_A
+            int "主电机Hall传感器A引脚"
+            default 4
+            range 0 39
+            help
+                连接到主电机Hall传感器A相的GPIO引脚。
+                
+        config MOTOR1_HALL_B
+            int "主电机Hall传感器B引脚"
+            default 5
+            range 0 39
+            help
+                连接到主电机Hall传感器B相的GPIO引脚。
+                
+        config MOTOR1_HALL_C
+            int "主电机Hall传感器C引脚"
+            default 6
+            range 0 39
+            help
+                连接到主电机Hall传感器C相的GPIO引脚。
+                
+        config MOTOR1_CURRENT_A
+            int "主电机电流传感器A通道"
+            default 0
+            range 0 7
+            help
+                主电机电流传感器A相的ADC通道。
+                
+        config MOTOR1_CURRENT_B
+            int "主电机电流传感器B通道"
+            default 1
+            range 0 7
+            help
+                主电机电流传感器B相的ADC通道。
     endmenu
 
     menu "副电机引脚配置"
@@ -73,6 +108,41 @@ menu "电机控制配置"
             range 0 39
             help
                 连接到副电机驱动W相的PWM输出引脚。
+                
+        config MOTOR2_HALL_A
+            int "副电机Hall传感器A引脚"
+            default 15
+            range 0 39
+            help
+                连接到副电机Hall传感器A相的GPIO引脚。
+                
+        config MOTOR2_HALL_B
+            int "副电机Hall传感器B引脚"
+            default 16
+            range 0 39
+            help
+                连接到副电机Hall传感器B相的GPIO引脚。
+                
+        config MOTOR2_HALL_C
+            int "副电机Hall传感器C引脚"
+            default 17
+            range 0 39
+            help
+                连接到副电机Hall传感器C相的GPIO引脚。
+                
+        config MOTOR2_CURRENT_A
+            int "副电机电流传感器A通道"
+            default 2
+            range 0 7
+            help
+                副电机电流传感器A相的ADC通道。
+                
+        config MOTOR2_CURRENT_B
+            int "副电机电流传感器B通道"
+            default 3
+            range 0 7
+            help
+                副电机电流传感器B相的ADC通道。
     endmenu
 
     menu "电机通用配置"

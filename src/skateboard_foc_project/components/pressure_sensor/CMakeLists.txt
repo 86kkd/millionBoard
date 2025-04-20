@@ -1,12 +1,13 @@
-# HX711 组件配置
+#  压力传感器组件配置
 
 set(SRCS 
-    "src/hx711.c"
+    "src/pressure_sensor.cpp"
+    "src/pressure_sensor_c.cpp"
 )
 
 set(INCLUDE_DIRS "include")
 
-set(COMPONENT_REQUIRES driver esp_driver_gpio esp_timer)
+set(COMPONENT_REQUIRES driver esp_driver_gpio esp_timer nvs_flash hx711)
 
 # 根据需要添加依赖项
 if(CONFIG_ENABLE_UTILS)

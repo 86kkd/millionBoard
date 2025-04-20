@@ -1,0 +1,31 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# ESP32-S3 & ESP-IDF v5.5 开发环境规则
+
+## 开发环境
+- 硬件平台: ESP32-S3
+- 框架版本: ESP-IDF v5.5
+
+## API版本注意事项
+1. 请始终使用ESP-IDF v5.5兼容的API和组件
+2. 注意v5.5中的API可能与旧版本不兼容，特别是:
+   - TWAI V2 API (CAN总线)
+   - 蓝牙API更新
+   - Wi-Fi和网络组件
+   - 电源管理功能
+3. 参考ESP-IDF v5.5官方文档进行开发
+4. 代码示例应当符合ESP32-S3的硬件规格和限制
+
+## 代码生成指南
+- 包含正确的头文件和组件依赖
+- 使用ESP-IDF v5.5的错误处理机制
+- 遵循ESP-IDF v5.5的项目结构和CMake构建系统
+- 考虑ESP32-S3的特定功能(如USB OTG、LCD接口等)
+- uisng cpp for the projcet (if possiable)
+
+请根据以上规则提供代码和建议，确保与ESP32-S3硬件和ESP-IDF v5.5 API完全兼容。
+

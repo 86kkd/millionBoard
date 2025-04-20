@@ -11,7 +11,7 @@ set(REQUIRES_LIST
     battery_management
     utils
     driver
-    hx711
+    pressure_sensor
     angle_sensor
     nfc
     gps

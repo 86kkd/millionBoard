@@ -21,11 +21,11 @@
 #include "can_comm.h"
 #include "debug.h"
 #include "gps.h"
-#include "hx711.h"
 #include "i2c_comm.h"
 #include "math_utils.h"
-#include "motor_control_foc.h"
+#include "motor_control_foc.hpp"
 #include "nfc.h"
+#include "pressure_sensor.h"
 #include "uart_comm.h"
 
 static const char *TAG = "MAIN";
@@ -55,8 +55,8 @@ skateboard_state_t board_state = {0};
 void pressure_sensor_task(void *pvParameters) {
   while (1) {
     // 读取前后脚踩压力
-    board_state.front_pressure = hx711_get_weight(front_sensor);
-    board_state.rear_pressure = hx711_get_weight(rear_sensor);
+    board_state.front_pressure = pressure_sensor_get_weight(front_sensor);
+    board_state.rear_pressure = pressure_sensor_get_weight(rear_sensor);
 
     // 计算重心和目标速度
     float weight_diff = board_state.front_pressure - board_state.rear_pressure;
@@ -147,6 +147,9 @@ void motor_control_task(void *pvParameters) {
       motor_control_set_dual_speed(0, 0);
     }
 
+    // 运行FOC算法更新
+    motor_control_update();
+
     vTaskDelay(pdMS_TO_TICKS(20)); // 50Hz
   }
 }
@@ -215,20 +218,22 @@ void app_main(void) {
                  CONFIG_UART_RX_PIN);
 
   // 2. 传感器初始化
-  hx711_config_t front_config = {.dout_gpio = CONFIG_HX711_FRONT_DOUT_GPIO,
-                                 .sck_gpio = CONFIG_HX711_FRONT_SCK_GPIO,
-                                 .gain = HX711_GAIN_128_A,
-                                 .offset = 0,
-                                 .scale = 1.0f};
+  pressure_sensor_config_t front_config = {
+      .dout_gpio = CONFIG_HX711_FRONT_DOUT_GPIO,
+      .sck_gpio = CONFIG_HX711_FRONT_SCK_GPIO,
+      .gain = HX711_GAIN_128_A,
+      .offset = 0,
+      .scale = 1.0f};
 
-  hx711_config_t rear_config = {.dout_gpio = CONFIG_HX711_REAR_DOUT_GPIO,
-                                .sck_gpio = CONFIG_HX711_REAR_SCK_GPIO,
-                                .gain = HX711_GAIN_128_A,
-                                .offset = 0,
-                                .scale = 1.0f};
+  pressure_sensor_config_t rear_config = {
+      .dout_gpio = CONFIG_HX711_REAR_DOUT_GPIO,
+      .sck_gpio = CONFIG_HX711_REAR_SCK_GPIO,
+      .gain = HX711_GAIN_128_A,
+      .offset = 0,
+      .scale = 1.0f};
 
-  ESP_ERROR_CHECK(hx711_init(&front_config, &front_sensor));
-  ESP_ERROR_CHECK(hx711_init(&rear_config, &rear_sensor));
+  ESP_ERROR_CHECK(pressure_sensor_init(&front_config, &front_sensor));
+  ESP_ERROR_CHECK(pressure_sensor_init(&rear_config, &rear_sensor));
 
   ESP_ERROR_CHECK(angle_sensor_init());
   ESP_ERROR_CHECK(nfc_init());
@@ -239,7 +244,7 @@ void app_main(void) {
 
   // 4. 电机控制初始化
   ESP_ERROR_CHECK(motor_control_init());
-  
+
   // 使能所有电机（现在只需调用一次，会同时使能所有电机）
   ESP_ERROR_CHECK(motor_control_enable(MOTOR_ID_PRIMARY));
 
