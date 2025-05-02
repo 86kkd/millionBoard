@@ -7,7 +7,7 @@
 #include "freertos/FreeRTOS.h"
 #include "hx711.hpp"
 #include "nvs_flash.h"
-#include "scale.hpp"
+#include "pressure_sensor.hpp"
 
 #define SCALE_1_PIN GPIO_NUM_15
 #define SCALE_2_PIN GPIO_NUM_47
@@ -15,7 +15,13 @@
 #define SCALE_2_DATA_PIN GPIO_NUM_21
 
 // 添加宏定义来指定要校准的传感器: 1 表示 scale_1, 2 表示 scale_2
-#define SENSOR_TO_CALIBRATE 1 // 修改此值以选择所需校准的传感器
+#define SENSOR_TO_CALIBRATE 2 // 修改此值以选择所需校准的传感器
+
+// 是否强制重新校准，即使存在有效的校准数据
+#define FORCE_CALIBRATION 0 // 设为0关闭强制校准，设为1强制校准所选传感器
+
+// 已知重量（克）- 用于校准
+static const float kKnownWeight = 1000.0f; // 1kg 标准砝码
 
 extern "C" {
 void app_main(void);
@@ -41,9 +47,6 @@ enum CalibrationState {
   kMeasurement  // 校准完成，正在进行测量
 };
 
-// 已知重量（克）- 用于校准
-static const float kKnownWeight = 1000.0f; // 1kg 标准砝码
-
 void app_main(void) {
   ESP_LOGI(kTag, "Starting App");
 
@@ -60,29 +63,63 @@ void app_main(void) {
   HX711 hx711_1(kClockPin_1, kDataPin_1, HX711::Mode::kChannelA128);
   HX711 hx711_2(kClockPin_2, kDataPin_2, HX711::Mode::kChannelA128);
 
-  Scale scale_1(hx711_1);
-  Scale scale_2(hx711_2);
+  PressureSensor sensor_1(hx711_1);
+  PressureSensor sensor_2(hx711_2);
 
   // 尝试从NVS加载校准参数
-  bool loaded_1 = scale_1.LoadCalibration(kNvsNamespace, kScalePrefix1);
-  bool loaded_2 = scale_2.LoadCalibration(kNvsNamespace, kScalePrefix2);
+  bool loaded_1 = sensor_1.LoadCalibration(kNvsNamespace, kScalePrefix1);
+  bool loaded_2 = sensor_2.LoadCalibration(kNvsNamespace, kScalePrefix2);
   // 根据宏选择是否已加载要校准的传感器参数
   bool loaded_selected = (SENSOR_TO_CALIBRATE == 1 ? loaded_1 : loaded_2);
 
-  // // 根据是否成功加载参数决定初始状态
+  // 根据是否成功加载参数决定初始状态
   CalibrationState state;
-  if (loaded_selected) {
-    ESP_LOGI(kTag, "已从NVS加载第 %d 号传感器校准参数，直接进入测量模式",
-             SENSOR_TO_CALIBRATE);
-    state = kMeasurement;
-  } else {
-    ESP_LOGI(kTag, "需要对第 %d 号传感器进行校准", SENSOR_TO_CALIBRATE);
-    state = kNone;
+
+  // 检查系数是否合理
+  bool valid_sensor1 = loaded_1 && (fabs(sensor_1.GetScale()) > 0.1);
+  bool valid_sensor2 = loaded_2 && (fabs(sensor_2.GetScale()) > 0.1);
+
+  // 打印加载状态
+  ESP_LOGI(kTag, "传感器1: 加载=%s, 有效=%s, 零点=%.2f, 系数=%.2f",
+           loaded_1 ? "成功" : "失败", valid_sensor1 ? "是" : "否",
+           sensor_1.GetOffset(), sensor_1.GetScale());
+
+  ESP_LOGI(kTag, "传感器2: 加载=%s, 有效=%s, 零点=%.2f, 系数=%.2f",
+           loaded_2 ? "成功" : "失败", valid_sensor2 ? "是" : "否",
+           sensor_2.GetOffset(), sensor_2.GetScale());
+
+  // 决定是否需要校准
+  if (SENSOR_TO_CALIBRATE == 1) {
+    if (valid_sensor1 && !FORCE_CALIBRATION) {
+      ESP_LOGI(kTag, "传感器1已有有效校准参数，直接进入测量模式");
+      state = kMeasurement;
+    } else {
+      if (FORCE_CALIBRATION) {
+        ESP_LOGI(kTag, "强制校准传感器1");
+      } else {
+        ESP_LOGI(kTag, "传感器1需要校准");
+      }
+      state = kNone;
+    }
+  } else { // SENSOR_TO_CALIBRATE == 2
+    if (valid_sensor2 && !FORCE_CALIBRATION) {
+      ESP_LOGI(kTag, "传感器2已有有效校准参数，直接进入测量模式");
+      state = kMeasurement;
+    } else {
+      if (FORCE_CALIBRATION) {
+        ESP_LOGI(kTag, "强制校准传感器2");
+      } else {
+        ESP_LOGI(kTag, "传感器2需要校准");
+      }
+      state = kNone;
+    }
   }
 
-  // state = kNone;
+  float weight_1, weight_2; // 变量声明
 
-  float weight_1, weight_2; // 将变量声明移到switch外部
+  // 主循环
+  int calibration_attempts = 0;
+  const int MAX_CALIBRATION_ATTEMPTS = 3; // 最大校准尝试次数
 
   while (true) {
     switch (state) {
@@ -96,9 +133,9 @@ void app_main(void) {
     case kTare:
 // 仅对指定传感器进行零点校准
 #if SENSOR_TO_CALIBRATE == 1
-      if (scale_1.Tare(10)) {
+      if (sensor_1.Tare(10)) {
 #else
-      if (scale_2.Tare(10)) {
+      if (sensor_2.Tare(10)) {
 #endif
         ESP_LOGI(kTag,
                  "传感器 %d 零点校准完成，请在秤上放置 %.1f "
@@ -114,28 +151,40 @@ void app_main(void) {
       break;
 
     case kCalibration:
+      // 增加校准尝试次数
+      calibration_attempts++;
+
 // 仅对指定传感器进行比例系数校准
 #if SENSOR_TO_CALIBRATE == 1
-      if (scale_1.Calibrate(kKnownWeight, 10)) {
-        scale_1.SaveCalibration(kNvsNamespace, kScalePrefix1);
+      if (sensor_1.Calibrate(kKnownWeight, 10)) {
+        sensor_1.SaveCalibration(kNvsNamespace, kScalePrefix1);
 #else
-      if (scale_2.Calibrate(kKnownWeight, 10)) {
-        scale_2.SaveCalibration(kNvsNamespace, kScalePrefix2);
+      if (sensor_2.Calibrate(kKnownWeight, 10)) {
+        sensor_2.SaveCalibration(kNvsNamespace, kScalePrefix2);
 #endif
-        ESP_LOGI(kTag, "传感器 %d 校准完成，进入测量模式...",
+        ESP_LOGI(kTag, "传感器 %d 校准成功，进入测量模式...",
                  SENSOR_TO_CALIBRATE);
         state = kMeasurement;
       } else {
-        ESP_LOGE(kTag, "传感器 %d 校准失败，5秒后重试...", SENSOR_TO_CALIBRATE);
-        vTaskDelay(pdMS_TO_TICKS(5000));
-        state = kTare; // 返回零点校准
+        if (calibration_attempts < MAX_CALIBRATION_ATTEMPTS) {
+          ESP_LOGE(kTag, "传感器 %d 校准失败，尝试 %d/%d，5秒后重试...",
+                   SENSOR_TO_CALIBRATE, calibration_attempts,
+                   MAX_CALIBRATION_ATTEMPTS);
+          vTaskDelay(pdMS_TO_TICKS(5000));
+        } else {
+          ESP_LOGE(kTag,
+                   "传感器 %d "
+                   "校准失败达到最大尝试次数，进入测量模式但结果可能不准确",
+                   SENSOR_TO_CALIBRATE);
+          state = kMeasurement;
+        }
       }
       break;
 
     case kMeasurement:
       // 读取重量并显示
-      weight_1 = scale_1.GetWeight(5);
-      weight_2 = scale_2.GetWeight(5);
+      weight_1 = sensor_1.GetWeight(5);
+      weight_2 = sensor_2.GetWeight(5);
 
       // 检查测量值是否有效
       if (!isnan(weight_1) && !isnan(weight_2)) {
@@ -148,8 +197,8 @@ void app_main(void) {
       // 校准参数信息
       ESP_LOGI(kTag,
                "校准参数: 1(零点=%.2f, 系数=%.2f), 2(零点=%.2f, 系数=%.2f)",
-               scale_1.GetOffset(), scale_1.GetScale(), scale_2.GetOffset(),
-               scale_2.GetScale());
+               sensor_1.GetOffset(), sensor_1.GetScale(), sensor_2.GetOffset(),
+               sensor_2.GetScale());
 
       break;
 
