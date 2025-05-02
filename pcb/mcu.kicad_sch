@@ -1,5 +1,5 @@
 (kicad_sch
-	(version 20250318)
+	(version 20250425)
 	(generator "eeschema")
 	(generator_version "9.99")
 	(uuid "0fa19466-3962-4cfd-a765-c6c255377c86")
@@ -7204,15 +7204,6 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2bda340b-ced1-4afc-886c-af35e1611294")
-		(property "Sim.Pins" "1=K 2=A"
-			(at 245.11 138.43 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Reference" "D7"
 			(at 248.92 138.7474 90)
 			(effects
@@ -7250,6 +7241,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 245.11 138.43 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
 			(at 245.11 138.43 0)
 			(hide yes)
 			(effects
@@ -8615,15 +8615,6 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6bbb9f5c-edf4-4617-b294-f809066e0c53")
-		(property "Sim.Pins" "1=K 2=A"
-			(at 237.49 138.43 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Reference" "D6"
 			(at 241.3 138.7474 90)
 			(effects
@@ -8661,6 +8652,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 237.49 138.43 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
 			(at 237.49 138.43 0)
 			(hide yes)
 			(effects
@@ -9963,15 +9963,6 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e342ea91-8001-438c-8a5f-2ebfb8ce3297")
-		(property "Sim.Pins" "1=K 2=A"
-			(at 265.43 138.43 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Reference" "D10"
 			(at 267.97 135.5724 90)
 			(effects
@@ -10009,6 +10000,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 265.43 138.43 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
 			(at 265.43 138.43 0)
 			(hide yes)
 			(effects
@@ -10108,15 +10108,6 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7cdc8c1-617e-4a83-b287-87f980793628")
-		(property "Sim.Pins" "1=K 2=A"
-			(at 257.81 138.43 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Reference" "D9"
 			(at 260.35 135.5724 90)
 			(effects
@@ -10154,6 +10145,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 257.81 138.43 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
 			(at 257.81 138.43 0)
 			(hide yes)
 			(effects
