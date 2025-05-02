@@ -5340,7 +5340,7 @@
 				)
 			)
 		)
-		(property "Value" "22uH"
+		(property "Value" "10uH"
 			(at 242.824 53.594 90)
 			(effects
 				(font
