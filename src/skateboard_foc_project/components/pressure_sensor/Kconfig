@@ -61,6 +61,6 @@ menu "HX711 传感器配置"
             default "scale2"
             help
                 后部传感器校准数据在 NVS 中的键前缀 (不含 "_offset"/"_scale")。
-
+                
     endif
 endmenu

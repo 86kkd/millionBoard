@@ -2,7 +2,6 @@
 
 set(SRCS 
     "src/pressure_sensor.cpp"
-    "src/pressure_sensor_c.cpp"
 )
 
 set(INCLUDE_DIRS "include")

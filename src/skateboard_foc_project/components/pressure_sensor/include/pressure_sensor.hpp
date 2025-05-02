@@ -9,6 +9,11 @@
 
 class PressureSensor {
 public:
+  // Static functions for global initialization/deinitialization
+  static esp_err_t Init(void);
+  static esp_err_t Deinit(void);
+  static void Task(void *pvParameters);
+
   PressureSensor(HX711 &hx711);
 
   // 设置零点偏移量(空载时的值)

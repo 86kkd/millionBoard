@@ -34,22 +34,6 @@ static const char *TAG = "MAIN";
 #define CONFIG_UART_RX_PIN 16 // Default RX pin
 #endif
 
-// Define pins for HX711 sensors
-static const gpio_num_t kFrontScaleClockPin =
-    static_cast<gpio_num_t>(CONFIG_HX711_FRONT_SCK_GPIO);
-static const gpio_num_t kFrontScaleDataPin =
-    static_cast<gpio_num_t>(CONFIG_HX711_FRONT_DOUT_GPIO);
-static const gpio_num_t kRearScaleClockPin =
-    static_cast<gpio_num_t>(CONFIG_HX711_REAR_SCK_GPIO);
-static const gpio_num_t kRearScaleDataPin =
-    static_cast<gpio_num_t>(CONFIG_HX711_REAR_DOUT_GPIO);
-
-// Create global C++ objects as pointers
-HX711 *hx711_front = nullptr;
-HX711 *hx711_rear = nullptr;
-PressureSensor *pressure_sensor_front = nullptr;
-PressureSensor *pressure_sensor_rear = nullptr;
-
 // Global state for skateboard
 typedef struct {
   float front_pressure;
@@ -78,41 +62,38 @@ skateboard_state_t board_state = {.front_pressure = 0.0f,
                                   .is_moving = false,
                                   .is_locked = false};
 
-// Forward declare the C++ motor control object
-MotorControlFOC *motor_control = nullptr;
+// Helper function for component initialization
+static bool init_component(const char *name, esp_err_t (*init_func)(void),
+                           void (*success_callback)(void)) {
+  ESP_LOGI(TAG, "Initializing %s...", name);
 
-// Task functions
-extern "C" void pressure_sensor_task(void *pvParameters) {
-  while (1) {
-    // Read pressures from both sensors
-    board_state.front_pressure = pressure_sensor_front->GetWeight(5);
-    board_state.rear_pressure = pressure_sensor_rear->GetWeight(5);
-
-    // Calculate center of gravity and target speed
-    float weight_diff = board_state.front_pressure - board_state.rear_pressure;
-    float total_weight = board_state.front_pressure + board_state.rear_pressure;
-
-    if (total_weight > 100.0f) { // Confirm someone is on the board
-      // Calculate balance point percentage (-1.0 to 1.0)
-      float balance_point = weight_diff / total_weight;
-
-      // Calculate target speed based on balance
-      board_state.target_speed = balance_point * CONFIG_MAX_SPEED;
-      board_state.is_moving = (fabs(board_state.target_speed) > 0.5f);
-    } else {
-      // No one on the board, stop
-      board_state.target_speed = 0.0f;
-      board_state.is_moving = false;
-    }
-
-    ESP_LOGI(TAG, "Pressure - Front: %.1f, Rear: %.1f, Target Speed: %.1f",
-             board_state.front_pressure, board_state.rear_pressure,
-             board_state.target_speed);
-
-    vTaskDelay(pdMS_TO_TICKS(50)); // 20Hz sampling rate
+  esp_err_t ret = init_func();
+  if (ret == ESP_ERR_NOT_SUPPORTED) {
+    ESP_LOGW(TAG, "%s disabled, continuing without it", name);
+    return false;
+  } else if (ret != ESP_OK) {
+    ESP_LOGE(TAG, "%s init failed with error %d", name, ret);
+    return false;
   }
+
+  ESP_LOGI(TAG, "%s initialized successfully", name);
+  if (success_callback) {
+    success_callback();
+  }
+  return true;
 }
 
+// We'll need these forward declarations
+static void create_angle_sensor_tasks(void);
+static void create_nfc_task(void);
+static void create_gps_task(void);
+static void create_battery_task(void);
+static void create_motor_task(void);
+
+// Shared pointers for the tasks to use
+static MotorControlFOC *g_motor_control = nullptr;
+
+// Task functions
 extern "C" void angle_sensor_task(void *pvParameters) {
   while (1) {
     // Read angle sensor data through the C interface
@@ -151,7 +132,7 @@ extern "C" void battery_monitor_task(void *pvParameters) {
 }
 
 extern "C" void motor_control_task(void *pvParameters) {
-  if (!motor_control) {
+  if (!g_motor_control) {
     ESP_LOGE(TAG, "Motor control not initialized!");
     vTaskDelete(NULL);
     return;
@@ -165,23 +146,24 @@ extern "C" void motor_control_task(void *pvParameters) {
 
       // Apply incline compensation
       float incline_compensation =
-          motor_control->calculateInclineCompensation(board_state.board_angle);
+          g_motor_control->calculateInclineCompensation(
+              board_state.board_angle);
       motor_output += incline_compensation;
 
       // Set both motors to the same speed
-      motor_control->setDualSpeed(motor_output, motor_output);
+      g_motor_control->setDualSpeed(motor_output, motor_output);
 
       ESP_LOGI(TAG, "Motors Speed: %.1f, Compensation: %.1f", motor_output,
                incline_compensation);
     } else {
       // Board is locked, stop motors
-      motor_control->setDualSpeed(0, 0);
+      g_motor_control->setDualSpeed(0, 0);
     }
 
     // Update FOC algorithm
-    motor_control->update();
+    g_motor_control->update();
 
-    vTaskDelay(pdMS_TO_TICKS(20)); // 50Hz
+    vTaskDelay(pdMS_TO_TICKS(2000)); // 50Hz
   }
 }
 
@@ -220,31 +202,9 @@ extern "C" void gps_task(void *pvParameters) {
   }
 }
 
-// Helper function for component initialization
-static bool init_component(const char *name, esp_err_t (*init_func)(void),
-                           void (*success_callback)(void)) {
-  ESP_LOGI(TAG, "Initializing %s...", name);
-
-  esp_err_t ret = init_func();
-  if (ret == ESP_ERR_NOT_SUPPORTED) {
-    ESP_LOGW(TAG, "%s disabled, continuing without it", name);
-    return false;
-  } else if (ret != ESP_OK) {
-    ESP_LOGE(TAG, "%s init failed with error %d", name, ret);
-    return false;
-  }
-
-  ESP_LOGI(TAG, "%s initialized successfully", name);
-  if (success_callback) {
-    success_callback();
-  }
-  return true;
-}
-
 // Task creation callbacks
 static void create_angle_sensor_tasks(void) {
   xTaskCreate(angle_sensor_task, "angle_sensor", 4096, NULL, 5, NULL);
-  xTaskCreate(pressure_sensor_task, "pressure_sensor", 4096, NULL, 5, NULL);
 }
 
 static void create_nfc_task(void) {
@@ -291,36 +251,12 @@ extern "C" void app_main(void) {
   uart_comm_init(UART_NUM_1, &uart_config, CONFIG_UART_TX_PIN,
                  CONFIG_UART_RX_PIN);
 
-  // 2. Initialize pressure sensors (C++ interface)
-  // Add a delay to give hardware time to stabilize
-  vTaskDelay(pdMS_TO_TICKS(100));
-
-  // Create HX711 and PressureSensor objects
-  ESP_LOGI(TAG, "Initializing HX711 sensors...");
-  hx711_front = new HX711(kFrontScaleClockPin, kFrontScaleDataPin,
-                          HX711::Mode::kChannelA128);
-  hx711_rear = new HX711(kRearScaleClockPin, kRearScaleDataPin,
-                         HX711::Mode::kChannelA128);
-
-  ESP_LOGI(TAG, "Creating pressure sensor interfaces...");
-  pressure_sensor_front = new PressureSensor(*hx711_front);
-  pressure_sensor_rear = new PressureSensor(*hx711_rear);
-
-  // Load HX711 sensor calibration from NVS
-  bool front_loaded = pressure_sensor_front->LoadCalibration(
-      CONFIG_HX711_NVS_NAMESPACE, CONFIG_HX711_NVS_KEY_PREFIX_FRONT);
-  bool rear_loaded = pressure_sensor_rear->LoadCalibration(
-      CONFIG_HX711_NVS_NAMESPACE, CONFIG_HX711_NVS_KEY_PREFIX_REAR);
-
-  // Report pressure sensor status
-  ESP_LOGI(TAG, "Front pressure sensor: %s, offset=%.2f, scale=%.2f",
-           front_loaded ? "calibrated" : "not calibrated",
-           pressure_sensor_front->GetOffset(),
-           pressure_sensor_front->GetScale());
-
-  ESP_LOGI(TAG, "Rear pressure sensor: %s, offset=%.2f, scale=%.2f",
-           rear_loaded ? "calibrated" : "not calibrated",
-           pressure_sensor_rear->GetOffset(), pressure_sensor_rear->GetScale());
+  // 2. Initialize pressure sensors using the static component API
+  // This will create the sensors and start the pressure sensor task
+  esp_err_t ret_pressure = PressureSensor::Init();
+  if (ret_pressure != ESP_OK) {
+    ESP_LOGE(TAG, "Failed to initialize pressure sensors");
+  }
 
   // 3. Initialize other components using C interfaces
   init_component("Angle sensor", angle_sensor_init, create_angle_sensor_tasks);
@@ -329,10 +265,10 @@ extern "C" void app_main(void) {
   init_component("Battery manager", battery_mgr_init, create_battery_task);
 
   // 4. Initialize motor control (C++ interface)
-  motor_control = new MotorControlFOC();
-  if (motor_control->init() == ESP_OK) {
+  g_motor_control = new MotorControlFOC();
+  if (g_motor_control->init() == ESP_OK) {
     ESP_LOGI(TAG, "Motor control initialized successfully");
-    if (motor_control->enable() == ESP_OK) {
+    if (g_motor_control->enable() == ESP_OK) {
       ESP_LOGI(TAG, "Motors enabled successfully");
       create_motor_task();
     } else {
