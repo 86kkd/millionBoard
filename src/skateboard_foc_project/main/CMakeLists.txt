@@ -1,6 +1,6 @@
 # 设置主程序源文件
 set(COMPONENT_SRCS 
-    "main.c"
+    "main.cpp"
     "freertos_hooks.c"
 )
 set(COMPONENT_ADD_INCLUDEDIRS ".")
@@ -23,3 +23,6 @@ idf_component_register(
     INCLUDE_DIRS ${COMPONENT_ADD_INCLUDEDIRS}
     REQUIRES ${REQUIRES_LIST}
 )
+
+# Set C++ standard to C++23
+target_compile_features(${COMPONENT_LIB} PRIVATE cxx_std_23)

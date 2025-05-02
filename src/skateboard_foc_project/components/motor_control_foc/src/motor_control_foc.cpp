@@ -611,3 +611,59 @@ void motor_control_foc_get_current(float *ia1, float *ib1, float *ic1,
   *ia2 = *ib2 = *ic2 = 0.0f;
 #endif
 }
+
+// C++ wrapper implementation
+#ifdef __cplusplus
+
+MotorControlFOC::MotorControlFOC() {
+  // Constructor is empty as initialization is done in init()
+}
+
+MotorControlFOC::~MotorControlFOC() {
+  // Clean up if needed
+  this->disable();
+}
+
+esp_err_t MotorControlFOC::init() { return motor_control_init(); }
+
+esp_err_t MotorControlFOC::enable() {
+  esp_err_t ret1 = motor_control_enable(MOTOR_ID_PRIMARY);
+  esp_err_t ret2 = motor_control_enable(MOTOR_ID_SECONDARY);
+
+  // Return error if either motor failed to enable
+  if (ret1 != ESP_OK)
+    return ret1;
+  return ret2;
+}
+
+esp_err_t MotorControlFOC::disable() {
+  motor_control_disable(MOTOR_ID_PRIMARY);
+  motor_control_disable(MOTOR_ID_SECONDARY);
+  return ESP_OK;
+}
+
+esp_err_t MotorControlFOC::setSpeed(motor_id_t motorId, float speed) {
+  return motor_control_set_speed(motorId, speed);
+}
+
+esp_err_t MotorControlFOC::setDualSpeed(float speed1, float speed2) {
+  return motor_control_set_dual_speed(speed1, speed2);
+}
+
+esp_err_t MotorControlFOC::getStatus(motor_id_t motorId,
+                                     motor_status_t *status) {
+  return motor_control_get_status(motorId, status);
+}
+
+esp_err_t MotorControlFOC::update() { return motor_control_update(); }
+
+float MotorControlFOC::calculateInclineCompensation(float angle) {
+  return calculate_incline_compensation(angle);
+}
+
+void MotorControlFOC::getCurrents(float *ia1, float *ib1, float *ic1,
+                                  float *ia2, float *ib2, float *ic2) {
+  motor_control_foc_get_current(ia1, ib1, ic1, ia2, ib2, ic2);
+}
+
+#endif // __cplusplus

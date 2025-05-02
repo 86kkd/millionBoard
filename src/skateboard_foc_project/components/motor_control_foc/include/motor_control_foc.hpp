@@ -116,4 +116,40 @@ void motor_control_foc_get_current(float *ia1, float *ib1, float *ic1,
 
 #ifdef __cplusplus
 }
-#endif
+
+// C++ wrapper class for FOC motor control
+class MotorControlFOC {
+public:
+  MotorControlFOC();
+  ~MotorControlFOC();
+
+  // Initialize FOC motor control
+  esp_err_t init();
+
+  // Enable all motors
+  esp_err_t enable();
+
+  // Disable all motors
+  esp_err_t disable();
+
+  // Set speed for a single motor (normalized -1.0 to 1.0)
+  esp_err_t setSpeed(motor_id_t motorId, float speed);
+
+  // Set speed for both motors
+  esp_err_t setDualSpeed(float speed1, float speed2);
+
+  // Get status for a single motor
+  esp_err_t getStatus(motor_id_t motorId, motor_status_t *status);
+
+  // Update FOC algorithm (call periodically)
+  esp_err_t update();
+
+  // Calculate incline compensation value
+  float calculateInclineCompensation(float angle);
+
+  // Get current values
+  void getCurrents(float *ia1, float *ib1, float *ic1, float *ia2, float *ib2,
+                   float *ic2);
+};
+
+#endif // __cplusplus
