@@ -32,57 +32,57 @@ menu "电机控制配置"
     menu "主电机引脚配置"
         config MOTOR_PWM_U_PIN
             int "主电机U相PWM引脚"
-            default 25
-            range 0 39
+            default 11
+            range 0 48
             help
                 连接到主电机驱动U相的PWM输出引脚。
 
         config MOTOR_PWM_V_PIN
             int "主电机V相PWM引脚"
-            default 26
-            range 0 39
+            default 10
+            range 0 48
             help
                 连接到主电机驱动V相的PWM输出引脚。
 
         config MOTOR_PWM_W_PIN
             int "主电机W相PWM引脚"
-            default 27
-            range 0 39
+            default 9
+            range 0 48
             help
                 连接到主电机驱动W相的PWM输出引脚。
                 
         config MOTOR1_HALL_A
             int "主电机Hall传感器A引脚"
-            default 4
-            range 0 39
+            default 38
+            range 0 48
             help
                 连接到主电机Hall传感器A相的GPIO引脚。
                 
         config MOTOR1_HALL_B
             int "主电机Hall传感器B引脚"
-            default 5
-            range 0 39
+            default 41
+            range 0 48
             help
                 连接到主电机Hall传感器B相的GPIO引脚。
                 
         config MOTOR1_HALL_C
             int "主电机Hall传感器C引脚"
-            default 6
-            range 0 39
+            default 42
+            range 0 48
             help
                 连接到主电机Hall传感器C相的GPIO引脚。
                 
         config MOTOR1_CURRENT_A
             int "主电机电流传感器A通道"
-            default 0
-            range 0 7
+            default 5
+            range 0 48
             help
                 主电机电流传感器A相的ADC通道。
                 
         config MOTOR1_CURRENT_B
             int "主电机电流传感器B通道"
-            default 1
-            range 0 7
+            default 4
+            range 0 48
             help
                 主电机电流传感器B相的ADC通道。
     endmenu
@@ -90,57 +90,57 @@ menu "电机控制配置"
     menu "副电机引脚配置"
         config MOTOR2_PWM_U_PIN
             int "副电机U相PWM引脚"
-            default 12
-            range 0 39
+            default 14
+            range 0 48
             help
                 连接到副电机驱动U相的PWM输出引脚。
 
         config MOTOR2_PWM_V_PIN
             int "副电机V相PWM引脚"
             default 13
-            range 0 39
+            range 0 48
             help
                 连接到副电机驱动V相的PWM输出引脚。
 
         config MOTOR2_PWM_W_PIN
             int "副电机W相PWM引脚"
-            default 14
-            range 0 39
+            default 12
+            range 0 48
             help
                 连接到副电机驱动W相的PWM输出引脚。
                 
         config MOTOR2_HALL_A
             int "副电机Hall传感器A引脚"
-            default 15
-            range 0 39
+            default 37
+            range 0 48
             help
                 连接到副电机Hall传感器A相的GPIO引脚。
                 
         config MOTOR2_HALL_B
             int "副电机Hall传感器B引脚"
-            default 16
-            range 0 39
+            default 36
+            range 0 48
             help
                 连接到副电机Hall传感器B相的GPIO引脚。
                 
         config MOTOR2_HALL_C
             int "副电机Hall传感器C引脚"
-            default 17
-            range 0 39
+            default 35
+            range 0 48
             help
                 连接到副电机Hall传感器C相的GPIO引脚。
                 
         config MOTOR2_CURRENT_A
             int "副电机电流传感器A通道"
-            default 2
-            range 0 7
+            default 6
+            range 0 48
             help
                 副电机电流传感器A相的ADC通道。
                 
         config MOTOR2_CURRENT_B
             int "副电机电流传感器B通道"
-            default 3
-            range 0 7
+            default 7
+            range 0 48
             help
                 副电机电流传感器B相的ADC通道。
     endmenu
@@ -148,8 +148,8 @@ menu "电机控制配置"
     menu "电机通用配置"
         config MOTOR_ENABLE_PIN
             int "电机使能引脚(共用)"
-            default 4
-            range 0 39
+            default 46
+            range 0 48
             help
                 连接到所有电机驱动使能的共用GPIO引脚。
     endmenu
