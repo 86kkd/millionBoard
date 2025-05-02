@@ -16,6 +16,22 @@ def calculate_feedback_resistors(vout, vref=0.75, rfbb=10000):
     return rfbt, rfbb
 
 
+def calc_delta_i_L(VOUT, VIN_MAX, L, f_SW):
+    """计算电感电流纹波
+
+    参数:
+    VOUT - 输出电压 (V)
+    VIN_MAX - 最大输入电压 (V)
+    L - 电感值 (H)
+    f_SW - 开关频率 (Hz)
+
+    返回:
+    delta_i_L - 电感电流纹波 (A)
+    """
+    delta_i_L = VOUT * (VIN_MAX - VOUT) / (VIN_MAX * L * f_SW)
+    return delta_i_L
+
+
 def calculate_inductor(vin, vout, iout_max, fsw_khz, ripple_current_ratio=0.3):
     """计算电感值"""
     fsw = fsw_khz * 1000
@@ -63,6 +79,38 @@ def calculate_soft_start_capacitor(startup_time_ms, current_source=3e-6):
     return css * 1e6  # 转换为微法
 
 
+def check_min_on_time(vout, vin, fsw_khz):
+    """检查是否满足LMR16030的最小导通时间要求
+
+    参数:
+    vout - 输出电压 (V)
+    vin - 输入电压 (V)
+    fsw_khz - 开关频率 (kHz)
+
+    返回:
+    is_valid - 是否满足最小导通时间要求
+    on_time_ns - 计算得到的导通时间（纳秒）
+    min_on_time_ns - 最小导通时间（纳秒）
+    """
+    # LMR16030芯片的最小导通时间
+    min_on_time_ns_typical = 90  # 典型值
+    min_on_time_ns_max = 130  # 最大值
+
+    # 计算开关周期
+    period_ns = 1e6 / fsw_khz  # 周期（纳秒）
+
+    # 计算占空比
+    duty_cycle = vout / vin
+
+    # 计算导通时间
+    on_time_ns = period_ns * duty_cycle
+
+    # 检查是否满足最小导通时间要求
+    is_valid = on_time_ns >= min_on_time_ns_typical
+
+    return is_valid, on_time_ns, min_on_time_ns_typical, min_on_time_ns_max
+
+
 def main():
     # 使用argparse解析命令行参数
     parser = argparse.ArgumentParser(
@@ -101,6 +149,16 @@ def main():
     cboot_uf = calculate_bootstrap_capacitor()
     css_uf = calculate_soft_start_capacitor(startup_time_ms)
 
+    # 计算电感电流纹波
+    l_value_h = l_value_uh / 1e6  # 转换为亨利
+    fsw_hz = fsw_khz * 1000  # 转换为赫兹
+    delta_i_L = calc_delta_i_L(vout, vin, l_value_h, fsw_hz)
+
+    # 检查最小导通时间要求
+    is_valid_on_time, on_time_ns, min_on_time_typical, min_on_time_max = (
+        check_min_on_time(vout, vin, fsw_khz)
+    )
+
     # 显示结果
     print("\n===== 计算结果 =====")
     print(
@@ -125,8 +183,33 @@ def main():
     # 额外信息
     print("\n===== 设计参数 =====")
     print(f"占空比 = {duty_cycle*100:.1f}%")
-    print(f"电感电流纹波 = {0.3*iout_max:.2f} A (峰峰值，约为最大输出电流的30%)")
+    print(
+        f"电感电流纹波 (使用简化估算) = {0.3*iout_max:.2f} A (峰峰值，约为最大输出电流的30%)"
+    )
+    print(f"电感电流纹波 (精确计算) = {delta_i_L:.2f} A (峰峰值)")
     print(f"输出电压纹波 = {vout*0.01:.3f} V (峰峰值，约为输出电压的1%)")
+
+    # 显示最小导通时间相关信息
+    print("\n===== 最小导通时间检查 =====")
+    print(f"计算得到的导通时间 = {on_time_ns:.1f} ns")
+    print(f"LMR16030最小导通时间 (典型值) = {min_on_time_typical} ns")
+    print(f"LMR16030最小导通时间 (最大值) = {min_on_time_max} ns")
+
+    if not is_valid_on_time:
+        print("\n⚠️ 警告：计算得到的导通时间小于LMR16030的最小导通时间要求！")
+        print("这可能导致以下问题：")
+        print("  - 输出电压调节不稳定")
+        print("  - 输出电压纹波增加")
+        print("  - 芯片无法正常工作或频率降低")
+        print("\n推荐解决方案：")
+        print("  1. 降低开关频率")
+        print(f"  2. 选择更小的输入电压 (目前 Vin = {vin}V)")
+        print(f"  3. 选择更大的输出电压 (目前 Vout = {vout}V)")
+        print("  4. 考虑使用其他芯片，如具有更小最小导通时间的型号")
+
+        # 计算推荐的最大开关频率
+        recommended_fsw_khz = 1e6 / (min_on_time_typical / duty_cycle)
+        print(f"\n根据当前参数，推荐的最大开关频率约为：{recommended_fsw_khz:.1f} kHz")
 
     # 绘制效率曲线（估算值）
     if show_graph:
