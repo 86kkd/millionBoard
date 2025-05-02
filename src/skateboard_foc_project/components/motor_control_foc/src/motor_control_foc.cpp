@@ -248,12 +248,19 @@ extern "C" esp_err_t motor_control_init(void) {
   sensor2.direction = Direction::CW;
 
   // 初始化电流传感器
-  init_current_sensor();
-  ESP_LOGI(TAG, "电流传感器初始化成功");
-
-  // 跳过电流传感器对齐过程
-  current_sense1.skip_align = true;
-  current_sense2.skip_align = true;
+  esp_err_t current_sensor_ret = init_current_sensor();
+  if (current_sensor_ret == ESP_ERR_NOT_SUPPORTED) {
+    ESP_LOGW(TAG, "电流传感器被禁用，将继续但无电流控制");
+    // Continue without current sensing
+  } else if (current_sensor_ret != ESP_OK) {
+    ESP_LOGE(TAG, "电流传感器初始化失败，错误码: %d", current_sensor_ret);
+    // Continue but with warnings
+  } else {
+    ESP_LOGI(TAG, "电流传感器初始化成功");
+    // 跳过电流传感器对齐过程
+    current_sense1.skip_align = true;
+    current_sense2.skip_align = true;
+  }
 
   // 配置主电机驱动器
   driver1.voltage_power_supply = MOTOR_SUPPLY_VOLTAGE;
@@ -410,6 +417,7 @@ extern "C" esp_err_t motor_control_get_status(motor_id_t motor_id,
   if (motor_id == MOTOR_ID_PRIMARY) {
     current_rad_per_sec = motor1.shaft_velocity;
 
+#if CONFIG_ENABLE_CURRENT_SENSOR
     // 获取相电流
     PhaseCurrent_s phase_currents = current_sense1.getPhaseCurrents();
     status->current_u = phase_currents.a * 1000.0f; // 转换为毫安
@@ -421,9 +429,15 @@ extern "C" esp_err_t motor_control_get_status(motor_id_t motor_id,
         current_sense1.getFOCCurrents(motor1.electrical_angle);
     status->current_d = dq_current.d * 1000.0f; // 转换为毫安
     status->current_q = dq_current.q * 1000.0f; // 转换为毫安
+#else
+    // 电流传感器被禁用，使用零值
+    status->current_u = status->current_v = status->current_w = 0.0f;
+    status->current_d = status->current_q = 0.0f;
+#endif
   } else {
     current_rad_per_sec = motor2.shaft_velocity;
 
+#if CONFIG_ENABLE_CURRENT_SENSOR
     // 获取相电流
     PhaseCurrent_s phase_currents = current_sense2.getPhaseCurrents();
     status->current_u = phase_currents.a * 1000.0f; // 转换为毫安
@@ -435,6 +449,11 @@ extern "C" esp_err_t motor_control_get_status(motor_id_t motor_id,
         current_sense2.getFOCCurrents(motor2.electrical_angle);
     status->current_d = dq_current.d * 1000.0f; // 转换为毫安
     status->current_q = dq_current.q * 1000.0f; // 转换为毫安
+#else
+    // 电流传感器被禁用，使用零值
+    status->current_u = status->current_v = status->current_w = 0.0f;
+    status->current_d = status->current_q = 0.0f;
+#endif
   }
 
   status->current_speed = current_rad_per_sec / max_speed;
@@ -505,10 +524,12 @@ extern "C" esp_err_t motor_control_disable(motor_id_t motor_id) {
 // FOC主循环更新函数 - 应在主循环或电机任务中周期性调用
 extern "C" esp_err_t motor_control_update(void) {
   if (motor_state.enabled) {
+#if CONFIG_ENABLE_CURRENT_SENSOR
     // 更新电流传感 - InlineCurrentSense类没有update方法，
     // 而是在getPhaseCurrents()中自动更新
     current_sense1.getPhaseCurrents();
     current_sense2.getPhaseCurrents();
+#endif
 
     // 更新电机FOC算法
     motor1.loopFOC();
@@ -537,7 +558,8 @@ extern "C" float calculate_incline_compensation(float angle) {
 }
 
 // 初始化电流传感器
-static void init_current_sensor(void) {
+static esp_err_t init_current_sensor(void) {
+#if CONFIG_ENABLE_CURRENT_SENSOR
   ESP_LOGI(TAG, "Initializing current sensors");
 
   // 电流传感器已经在全局定义并初始化了，这里不需要重新创建
@@ -549,6 +571,7 @@ static void init_current_sensor(void) {
     ESP_LOGI(TAG, "Current sensor 1 calibration done!");
   } else {
     ESP_LOGE(TAG, "Failed to initialize current sensor 1");
+    return ESP_FAIL;
   }
 
   if (current_sense2.init()) {
@@ -558,12 +581,20 @@ static void init_current_sensor(void) {
     ESP_LOGI(TAG, "Current sensor 2 calibration done!");
   } else {
     ESP_LOGE(TAG, "Failed to initialize current sensor 2");
+    return ESP_FAIL;
   }
+
+  return ESP_OK;
+#else
+  ESP_LOGW(TAG, "Current sensor support is disabled");
+  return ESP_ERR_NOT_SUPPORTED;
+#endif
 }
 
 // 获取当前电流值
 void motor_control_foc_get_current(float *ia1, float *ib1, float *ic1,
                                    float *ia2, float *ib2, float *ic2) {
+#if CONFIG_ENABLE_CURRENT_SENSOR
   // 使用current_sense1来获取电流值
   PhaseCurrent_s currents = current_sense1.getPhaseCurrents();
   *ia1 = currents.a;
@@ -574,4 +605,9 @@ void motor_control_foc_get_current(float *ia1, float *ib1, float *ic1,
   *ia2 = currents2.a;
   *ib2 = currents2.b;
   *ic2 = currents2.c;
+#else
+  // 电流传感器被禁用，返回零电流
+  *ia1 = *ib1 = *ic1 = 0.0f;
+  *ia2 = *ib2 = *ic2 = 0.0f;
+#endif
 }

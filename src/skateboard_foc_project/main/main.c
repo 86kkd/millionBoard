@@ -62,7 +62,7 @@ void pressure_sensor_task(void *pvParameters) {
     float weight_diff = board_state.front_pressure - board_state.rear_pressure;
     float total_weight = board_state.front_pressure + board_state.rear_pressure;
 
-    if (total_weight > 10.0f) { // 确认有人站在板上
+    if (total_weight > 100.0f) { // 确认有人站在板上
       // 计算重心百分比位置 (-1.0 到 1.0)
       float balance_point = weight_diff / total_weight;
 
@@ -191,6 +191,54 @@ void gps_task(void *pvParameters) {
   }
 }
 
+// Helper function for component initialization
+static bool init_component(const char *name, esp_err_t (*init_func)(void),
+                           void (*success_callback)(void)) {
+  ESP_LOGI(TAG, "Initializing %s...", name);
+
+  esp_err_t ret = init_func();
+  if (ret == ESP_ERR_NOT_SUPPORTED) {
+    ESP_LOGW(TAG, "%s disabled, continuing without it", name);
+    return false;
+  } else if (ret != ESP_OK) {
+    ESP_LOGE(TAG, "%s init failed with error %d", name, ret);
+    return false;
+  }
+
+  ESP_LOGI(TAG, "%s initialized successfully", name);
+  if (success_callback) {
+    success_callback();
+  }
+  return true;
+}
+
+// Task creation callbacks
+static void create_angle_sensor_tasks(void) {
+  xTaskCreate(angle_sensor_task, "angle_sensor", 4096, NULL, 5, NULL);
+  xTaskCreate(pressure_sensor_task, "pressure_sensor", 4096, NULL, 5, NULL);
+}
+
+static void create_nfc_task(void) {
+  xTaskCreate(nfc_task, "nfc", 4096, NULL, 4, NULL);
+}
+
+static void create_gps_task(void) {
+  xTaskCreate(gps_task, "gps", 4096, NULL, 2, NULL);
+}
+
+static void create_battery_task(void) {
+  xTaskCreate(battery_monitor_task, "battery_monitor", 4096, NULL, 3, NULL);
+}
+
+static void create_motor_task(void) {
+  xTaskCreate(motor_control_task, "motor_control", 4096, NULL, 10, NULL);
+}
+
+// Add this function above app_main
+static esp_err_t motor_enable_wrapper(void) {
+  return motor_control_enable(MOTOR_ID_PRIMARY);
+}
+
 void app_main(void) {
   // 初始化NVS
   esp_err_t ret = nvs_flash_init();
@@ -222,39 +270,36 @@ void app_main(void) {
       .dout_gpio = CONFIG_HX711_FRONT_DOUT_GPIO,
       .sck_gpio = CONFIG_HX711_FRONT_SCK_GPIO,
       .gain = HX711_GAIN_128_A,
-      .offset = 0,
-      .scale = 1.0f};
+  };
 
   pressure_sensor_config_t rear_config = {
       .dout_gpio = CONFIG_HX711_REAR_DOUT_GPIO,
       .sck_gpio = CONFIG_HX711_REAR_SCK_GPIO,
       .gain = HX711_GAIN_128_A,
-      .offset = 0,
-      .scale = 1.0f};
+  };
 
   ESP_ERROR_CHECK(pressure_sensor_init(&front_config, &front_sensor));
   ESP_ERROR_CHECK(pressure_sensor_init(&rear_config, &rear_sensor));
 
-  ESP_ERROR_CHECK(angle_sensor_init());
-  ESP_ERROR_CHECK(nfc_init());
-  ESP_ERROR_CHECK(gps_init());
+  // 3) Immediately pull your saved calibration out of NVS
+  ESP_ERROR_CHECK(
+      pressure_sensor_load_calibration(front_sensor, CONFIG_HX711_NVS_NAMESPACE,
+                                       CONFIG_HX711_NVS_KEY_PREFIX_FRONT));
+  ESP_ERROR_CHECK(
+      pressure_sensor_load_calibration(rear_sensor, CONFIG_HX711_NVS_NAMESPACE,
+                                       CONFIG_HX711_NVS_KEY_PREFIX_REAR));
 
-  // 3. 电池管理初始化
-  ESP_ERROR_CHECK(battery_mgr_init());
+  // Initialize all components with a clean pattern
+  init_component("Angle sensor", angle_sensor_init, create_angle_sensor_tasks);
+  init_component("NFC", nfc_init, create_nfc_task);
+  init_component("GPS", gps_init, create_gps_task);
+  init_component("Battery manager", battery_mgr_init, create_battery_task);
 
-  // 4. 电机控制初始化
-  ESP_ERROR_CHECK(motor_control_init());
-
-  // 使能所有电机（现在只需调用一次，会同时使能所有电机）
-  ESP_ERROR_CHECK(motor_control_enable(MOTOR_ID_PRIMARY));
-
-  // 创建任务
-  xTaskCreate(pressure_sensor_task, "pressure_sensor", 4096, NULL, 5, NULL);
-  xTaskCreate(angle_sensor_task, "angle_sensor", 4096, NULL, 5, NULL);
-  xTaskCreate(battery_monitor_task, "battery_monitor", 4096, NULL, 3, NULL);
-  xTaskCreate(motor_control_task, "motor_control", 4096, NULL, 10, NULL);
-  xTaskCreate(nfc_task, "nfc", 4096, NULL, 4, NULL);
-  xTaskCreate(gps_task, "gps", 4096, NULL, 2, NULL);
+  // For motor control, we have two steps
+  if (init_component("Motor control", motor_control_init, NULL)) {
+    // Only try to enable if init succeeded
+    init_component("Motor enable", motor_enable_wrapper, create_motor_task);
+  }
 
   ESP_LOGI(TAG, "Skateboard control system started!");
 }

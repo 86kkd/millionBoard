@@ -8,28 +8,59 @@ menu "HX711 传感器配置"
     if ENABLE_HX711
         config HX711_FRONT_DOUT_GPIO
             int "前称重传感器数据引脚"
-            default 36
+            default 16
             help
                 前称重传感器数据引脚。      
                 
         config HX711_FRONT_SCK_GPIO
             int "前称重传感器时钟引脚"
-            default 37
+            default 15
             help
                 前称重传感器时钟引脚。
                 
         config HX711_REAR_DOUT_GPIO
             int "后称重传感器数据引脚"
-            default 38
+            default 21
             help
                 后称重传感器数据引脚。
                 
         config HX711_REAR_SCK_GPIO
             int "后称重传感器时钟引脚"
-            default 39
+            default 47
             help
                 后称重传感器时钟引脚。
                 
-                
+        # — 编译时校准参数默认值 —
+        config HX711_DEFAULT_OFFSET
+            int "默认零点偏移 (tare)"
+            default 0
+            help
+                如果未从 NVS 加载偏移量时使用的默认零点偏移值。
+
+        config HX711_DEFAULT_SCALE
+            string "默认比例因子 (scale)"
+            default "1.0"
+            help
+                如果未从 NVS 加载比例因子时使用的默认值。
+
+        # — NVS 校准存储配置 —
+        config HX711_NVS_NAMESPACE
+            string "NVS 命名空间"
+            default "scale_cal"
+            help
+                用于存储校准数据的 NVS 命名空间。
+
+        config HX711_NVS_KEY_PREFIX_FRONT
+            string "前传感器 NVS 键前缀"
+            default "scale1"
+            help
+                前部传感器校准数据在 NVS 中的键前缀 (不含 "_offset"/"_scale")。
+
+        config HX711_NVS_KEY_PREFIX_REAR
+            string "后传感器 NVS 键前缀"
+            default "scale2"
+            help
+                后部传感器校准数据在 NVS 中的键前缀 (不含 "_offset"/"_scale")。
+
     endif
 endmenu

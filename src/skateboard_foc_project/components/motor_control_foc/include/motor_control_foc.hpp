@@ -106,7 +106,7 @@ float calculate_incline_compensation(float angle);
 /**
  * @brief 初始化电流传感器
  */
-static void init_current_sensor(void);
+static esp_err_t init_current_sensor(void);
 
 /**
  * @brief 获取当前电流值
