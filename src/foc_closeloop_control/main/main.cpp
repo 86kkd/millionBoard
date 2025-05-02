@@ -19,14 +19,15 @@
 #include <stdio.h>
 #include <string.h>
 #define SWITCH_BUTTON 2
-#define PHASE_U_GPIO 3
-#define PHASE_V_GPIO 8
-#define PHASE_W_GPIO 18
+#define PHASE_U_GPIO 12
+#define PHASE_V_GPIO 13
+#define PHASE_W_GPIO 14
+#define MOTOR_POWER 46
 #define MOTOR_PP 10
 
-#define HALL_SENSOR_1 11
-#define HALL_SENSOR_2 12
-#define HALL_SENSOR_3 13
+#define HALL_SENSOR_1 37
+#define HALL_SENSOR_2 36
+#define HALL_SENSOR_3 35
 
 #define USING_MCPWM 1
 
@@ -57,6 +58,17 @@ void doC() { sensor.handleC(); }
 void motor_init(void) {
   SimpleFOCDebug::enable();
   Serial.begin(115200);
+
+  // Configure MOTOR_POWER pin as output and enable it
+  gpio_config_t io_conf = {};
+  io_conf.pin_bit_mask = (1ULL << MOTOR_POWER);
+  io_conf.mode = GPIO_MODE_OUTPUT;
+  io_conf.pull_up_en = GPIO_PULLUP_DISABLE;
+  io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
+  io_conf.intr_type = GPIO_INTR_DISABLE;
+  gpio_config(&io_conf);
+  gpio_set_level((gpio_num_t)MOTOR_POWER, 1); // Enable motor power
+  ESP_LOGI(TAG, ":%d Motor Power Enabled", __LINE__);
 
   ESP_LOGI(TAG, ":%d Motor Initialize Start", __LINE__);
   sensor.pullup = Pullup::USE_EXTERN;
@@ -176,6 +188,9 @@ static void motor_task(void *arg) {
   const float alpha = 0.9;
 
   while (1) {
+    // Feed the watchdog timer to prevent timeout
+    vTaskDelay(1 / portTICK_PERIOD_MS);
+
     motor.loopFOC();
     static int count = 0;
     if (count++ % 1 == 0) {
@@ -195,6 +210,9 @@ static void motor_task(void *arg) {
 
         ESP_LOGI(TAG, ":%d Move torque: %.1f", __LINE__, torque);
         last_mech_angle = mech_angle;
+
+        // Yield to prevent watchdog timeout
+        vTaskDelay(1 / portTICK_PERIOD_MS);
       }
     }
 
@@ -222,7 +240,9 @@ static void motor_task(void *arg) {
                             motor.shaft_angle);
     }
     motor.move(torque);
-    vTaskDelay(1 / portTICK_PERIOD_MS);
+
+    // Increase delay to prevent watchdog timeout - 10ms instead of 1ms
+    vTaskDelay(10 / portTICK_PERIOD_MS);
   }
 }
 

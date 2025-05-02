@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import argparse
 
 
 def calculate_rt(fsw_khz):
@@ -63,15 +64,30 @@ def calculate_soft_start_capacitor(startup_time_ms, current_source=3e-6):
 
 
 def main():
-    # 输入参数
-    print("===== 降压转换器参数计算器 =====")
-    print("\n请输入以下参数:")
+    # 使用argparse解析命令行参数
+    parser = argparse.ArgumentParser(
+        description="降压转换器参数计算器 (基于LMR16030/LMR16020)"
+    )
+    parser.add_argument("--vin", type=float, required=True, help="输入电压 (V)")
+    parser.add_argument("--vout", type=float, required=True, help="输出电压 (V)")
+    parser.add_argument(
+        "--iout_max", type=float, required=True, help="最大输出电流 (A)"
+    )
+    parser.add_argument("--fsw_khz", type=float, required=True, help="开关频率 (kHz)")
+    parser.add_argument(
+        "--startup_time_ms", type=float, required=True, help="软启动时间 (ms)"
+    )
+    parser.add_argument("--show_graph", action="store_true", help="显示效率曲线图")
 
-    vin = float(input("输入电压 (V): "))
-    vout = float(input("输出电压 (V): "))
-    iout_max = float(input("最大输出电流 (A): "))
-    fsw_khz = float(input("开关频率 (kHz): "))
-    startup_time_ms = float(input("软启动时间 (ms): "))
+    args = parser.parse_args()
+
+    # 获取参数
+    vin = args.vin
+    vout = args.vout
+    iout_max = args.iout_max
+    fsw_khz = args.fsw_khz
+    startup_time_ms = args.startup_time_ms
+    show_graph = args.show_graph
 
     # 计算占空比
     duty_cycle = vout / vin
@@ -113,7 +129,11 @@ def main():
     print(f"输出电压纹波 = {vout*0.01:.3f} V (峰峰值，约为输出电压的1%)")
 
     # 绘制效率曲线（估算值）
-    plot_efficiency_curve(vin, vout, iout_max, fsw_khz)
+    if show_graph:
+        plot_efficiency_curve(vin, vout, iout_max, fsw_khz)
+    else:
+        # 即使不显示图形，也打印效率数据
+        print_efficiency_data(vin, vout, iout_max, fsw_khz)
 
 
 def find_closest_standard_value(value):
@@ -248,6 +268,79 @@ def find_closest_capacitor_value(value_uf):
     return closest
 
 
+def print_efficiency_data(
+    vin, vout, iout_max, fsw_khz, typical_load_min=0.2, typical_load_max=0.8
+):
+    """打印效率数据但不显示图形"""
+    # 简化的效率模型
+    current_points = np.linspace(0.05, iout_max, 20)
+    efficiencies = []
+
+    # 估计参数
+    rds_on = 0.1  # 假设的MOSFET导通电阻
+    fsw = fsw_khz * 1000
+    duty_cycle = vout / vin
+
+    for iout in current_points:
+        # 导通损耗
+        p_conduction = iout**2 * rds_on * duty_cycle
+
+        # 开关损耗 (简化模型)
+        p_switching = vin * iout * fsw * 20e-9  # 假设20ns的开关时间
+
+        # 控制器损耗 (固定值)
+        p_control = 0.1
+
+        # 总损耗
+        p_loss = p_conduction + p_switching + p_control
+
+        # 输出功率
+        p_out = vout * iout
+
+        # 输入功率
+        p_in = p_out + p_loss
+
+        # 效率
+        efficiency = (p_out / p_in) * 100 if p_in > 0 else 0
+        efficiencies.append(efficiency)
+
+    # 计算典型负载区间
+    typical_min_current = iout_max * typical_load_min
+    typical_max_current = iout_max * typical_load_max
+
+    # 找到典型负载区间对应的效率值
+    min_idx = np.abs(current_points - typical_min_current).argmin()
+    max_idx = np.abs(current_points - typical_max_current).argmin()
+
+    typical_min_efficiency = efficiencies[min_idx]
+    typical_max_efficiency = efficiencies[max_idx]
+
+    # 计算最大效率及其对应的电流点
+    max_efficiency = max(efficiencies)
+    max_eff_idx = efficiencies.index(max_efficiency)
+    max_eff_current = current_points[max_eff_idx]
+
+    # 打印效率数据表
+    print("\n===== 效率数据 =====")
+    print("负载百分比  |  输出电流  |  效率")
+    print("------------|-----------|--------")
+
+    load_percentages = [10, 25, 50, 75, 100]
+    for pct in load_percentages:
+        current = iout_max * pct / 100
+        idx = np.abs(current_points - current).argmin()
+        efficiency = efficiencies[idx]
+        print(f"{pct:12}% | {current:8.2f}A | {efficiency:6.1f}%")
+
+    # 打印典型工作区间的效率范围
+    print(f"\n典型工作区间 ({typical_load_min*100}%-{typical_load_max*100}% 负载):")
+    print(f"  - 电流范围: {typical_min_current:.2f}A - {typical_max_current:.2f}A")
+    print(
+        f"  - 效率范围: {min(typical_min_efficiency, typical_max_efficiency):.1f}% - {max(typical_min_efficiency, typical_max_efficiency):.1f}%"
+    )
+    print(f"最大效率: {max_efficiency:.1f}% (在 {max_eff_current:.2f}A 时)")
+
+
 def plot_efficiency_curve(
     vin, vout, iout_max, fsw_khz, typical_load_min=0.2, typical_load_max=0.8
 ):
@@ -262,10 +355,6 @@ def plot_efficiency_curve(
     typical_load_min - 典型负载最小值 (占最大负载的百分比)
     typical_load_max - 典型负载最大值 (占最大负载的百分比)
     """
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from matplotlib.patches import Rectangle
-
     # 简化的效率模型
     current_points = np.linspace(0.05, iout_max, 20)
     efficiencies = []
@@ -389,6 +478,7 @@ def plot_efficiency_curve(
 
     # Display chart
     plt.show()
+
     # 打印典型工作区间的效率范围
     print(f"典型工作区间 ({typical_load_min*100}%-{typical_load_max*100}% 负载):")
     print(f"  - 电流范围: {typical_min_current:.2f}A - {typical_max_current:.2f}A")

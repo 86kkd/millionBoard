@@ -1,5 +1,5 @@
 (kicad_pcb
-	(version 20250324)
+	(version 20250401)
 	(generator "pcbnew")
 	(generator_version "9.99")
 	(general
@@ -3970,7 +3970,7 @@
 				)
 			)
 		)
-		(property "Value" "22uH"
+		(property "Value" "10uH"
 			(at 0 7.25 90)
 			(layer "F.Fab")
 			(uuid "b6e41d6c-b645-4b1f-a114-f184ad8fc239")
@@ -80054,6 +80054,7 @@
 			(xy 126.999241 82.267)
 		)
 		(initial_side "right")
+		(is_time_domain no)
 		(last_diff_pair_gap 0.25)
 		(last_netname "INA1-")
 		(last_status "tuned")
@@ -80068,6 +80069,9 @@
 		(override_custom_rules no)
 		(rounded yes)
 		(single_sided no)
+		(target_delay 1000000)
+		(target_delay_max 1000000)
+		(target_delay_min 0)
 		(target_length 1000000)
 		(target_length_max 1000000)
 		(target_length_min 0)

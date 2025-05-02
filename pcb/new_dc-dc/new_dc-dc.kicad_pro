@@ -48,11 +48,16 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "starved_thermal|154400000|110765000|a9c821e4-67cb-46af-8d97-dff4a5fde9b3|95bb27b5-24fe-4d36-8d21-95142fdee295|F.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -496,7 +501,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "product_output/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

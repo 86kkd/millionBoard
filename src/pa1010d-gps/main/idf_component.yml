@@ -1,0 +1,3 @@
+dependencies:
+  igrr/pa1010d:
+    version: '*'
