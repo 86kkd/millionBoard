@@ -1,5 +1,5 @@
-#include <cmath>
-#include <cstdio>
+#include <math.h>
+#include <stdio.h>
 
 // System includes
 #include "esp_log.h"
@@ -89,6 +89,7 @@ static void create_nfc_task(void);
 static void create_gps_task(void);
 static void create_battery_task(void);
 static void create_motor_task(void);
+static void create_motor_monitor_task(void);
 
 // Shared pointers for the tasks to use
 static MotorControlFOC *g_motor_control = nullptr;
@@ -153,8 +154,12 @@ extern "C" void motor_control_task(void *pvParameters) {
       // Set both motors to the same speed
       g_motor_control->setDualSpeed(motor_output, motor_output);
 
-      ESP_LOGI(TAG, "Motors Speed: %.1f, Compensation: %.1f", motor_output,
-               incline_compensation);
+      // ESP_LOGI(TAG, "Motors Speed: %.1f, Compensation: %.1f", motor_output,
+      //          incline_compensation);
+      float ia1, ib1, ic1, ia2, ib2, ic2;
+      g_motor_control->getCurrents(&ia1, &ib1, &ic1, &ia2, &ib2, &ic2);
+      // ESP_LOGI(TAG, "Currents: %.1f, %.1f, %.1f, %.1f, %.1f, %.1f", ia1, ib1,
+      //          ic1, ia2, ib2, ic2);
     } else {
       // Board is locked, stop motors
       g_motor_control->setDualSpeed(0, 0);
@@ -163,7 +168,7 @@ extern "C" void motor_control_task(void *pvParameters) {
     // Update FOC algorithm
     g_motor_control->update();
 
-    vTaskDelay(pdMS_TO_TICKS(2000)); // 50Hz
+    vTaskDelay(pdMS_TO_TICKS(20)); // 50Hz
   }
 }
 
@@ -202,6 +207,39 @@ extern "C" void gps_task(void *pvParameters) {
   }
 }
 
+// Motor monitoring task: log mechanical/electrical angles and phase currents
+extern "C" void motor_monitor_task(void *pvParameters) {
+  if (!g_motor_control) {
+    ESP_LOGE(TAG, "Motor control not initialized!");
+    vTaskDelete(NULL);
+    return;
+  }
+  float mech, elec;
+  float ia1, ib1, ic1, ia2, ib2, ic2;
+  motor_status_t status;
+  const float RAD2DEG = 180.0f / M_PI;
+  while (1) {
+    // Read angles
+    mech = g_motor_control->getMechanicalAngle(MOTOR_ID_SECONDARY);
+    elec = g_motor_control->getElectricalAngle(MOTOR_ID_SECONDARY);
+    // Read phase currents
+    g_motor_control->getCurrents(&ia1, &ib1, &ic1, &ia2, &ib2, &ic2);
+    // Get current speed for monitoring
+    if (g_motor_control->getStatus(MOTOR_ID_SECONDARY, &status) == ESP_OK) {
+      board_state.current_speed = status.current_speed;
+    }
+    // Calculate total RMS current in mA
+    float i1_total = sqrtf((ia1 * ia1 + ib1 * ib1 + ic1 * ic1) / 3.0f);
+    float i2_total = sqrtf((ia2 * ia2 + ib2 * ib2 + ic2 * ic2) / 3.0f);
+    ESP_LOGI(TAG,
+             "Motor Mon: Mech=%.2f°, Elec=%.2f°, I_total=[%.2f, %.2f] mA, "
+             "Speed=%.2f",
+             mech * RAD2DEG, elec * RAD2DEG, i1_total, i2_total,
+             board_state.current_speed);
+    vTaskDelay(pdMS_TO_TICKS(200)); // 5Hz
+  }
+}
+
 // Task creation callbacks
 static void create_angle_sensor_tasks(void) {
   xTaskCreate(angle_sensor_task, "angle_sensor", 4096, NULL, 5, NULL);
@@ -221,6 +259,19 @@ static void create_battery_task(void) {
 
 static void create_motor_task(void) {
   xTaskCreate(motor_control_task, "motor_control", 4096, NULL, 10, NULL);
+}
+
+static void create_motor_monitor_task(void) {
+  xTaskCreate(motor_monitor_task, "motor_monitor", 4096, NULL, 4, NULL);
+}
+
+// Callback from PressureSensor to update shared board_state
+static void pressure_data_callback(float front_pressure, float rear_pressure,
+                                   float target_speed, bool is_moving) {
+  board_state.front_pressure = front_pressure;
+  board_state.rear_pressure = rear_pressure;
+  board_state.target_speed = target_speed;
+  board_state.is_moving = is_moving;
 }
 
 extern "C" void app_main(void) {
@@ -256,6 +307,9 @@ extern "C" void app_main(void) {
   esp_err_t ret_pressure = PressureSensor::Init();
   if (ret_pressure != ESP_OK) {
     ESP_LOGE(TAG, "Failed to initialize pressure sensors");
+  } else {
+    // Register callback to receive pressure updates
+    PressureSensor::RegisterCallback(pressure_data_callback);
   }
 
   // 3. Initialize other components using C interfaces
@@ -271,11 +325,10 @@ extern "C" void app_main(void) {
     if (g_motor_control->enable() == ESP_OK) {
       ESP_LOGI(TAG, "Motors enabled successfully");
       create_motor_task();
+      create_motor_monitor_task();
     } else {
       ESP_LOGE(TAG, "Failed to enable motors");
     }
-  } else {
-    ESP_LOGE(TAG, "Failed to initialize motor control");
   }
 
   ESP_LOGI(TAG, "Skateboard control system started!");

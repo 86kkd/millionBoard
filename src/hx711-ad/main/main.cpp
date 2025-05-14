@@ -15,10 +15,10 @@
 #define SCALE_2_DATA_PIN GPIO_NUM_21
 
 // 添加宏定义来指定要校准的传感器: 1 表示 scale_1, 2 表示 scale_2
-#define SENSOR_TO_CALIBRATE 2 // 修改此值以选择所需校准的传感器
+#define SENSOR_TO_CALIBRATE 1 // 修改此值以选择所需校准的传感器
 
 // 是否强制重新校准，即使存在有效的校准数据
-#define FORCE_CALIBRATION 0 // 设为0关闭强制校准，设为1强制校准所选传感器
+#define FORCE_CALIBRATION 1 // 设为0关闭强制校准，设为1强制校准所选传感器
 
 // 已知重量（克）- 用于校准
 static const float kKnownWeight = 1000.0f; // 1kg 标准砝码

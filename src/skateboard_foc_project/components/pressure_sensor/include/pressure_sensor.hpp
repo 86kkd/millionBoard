@@ -42,6 +42,12 @@ public:
   // 检查校准状态
   bool IsCalibrated() const { return scale_factor_ != 0.0f; }
 
+  // Callback type for reporting pressure data and new target speed
+  typedef void (*DataCallback)(float front_pressure, float rear_pressure,
+                               float target_speed, bool is_moving);
+  // Register a callback to receive pressure updates
+  static void RegisterCallback(DataCallback cb);
+
 private:
   // 读取平均原始值
   int32_t ReadAverage(int samples, TickType_t timeout);
@@ -52,4 +58,7 @@ private:
   HX711 &hx711_;
   float offset_ = 0.0f;       // 零点偏移量
   float scale_factor_ = 1.0f; // 比例因子 (raw/单位)
+
+  // Static callback invoked on each pressure update
+  static DataCallback data_callback_;
 };

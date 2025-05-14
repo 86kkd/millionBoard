@@ -17,6 +17,9 @@ static PressureSensor *g_pressure_sensor_front = nullptr;
 static PressureSensor *g_pressure_sensor_rear = nullptr;
 static TaskHandle_t g_pressure_task_handle = nullptr;
 
+// Initialize static data callback pointer
+PressureSensor::DataCallback PressureSensor::data_callback_ = nullptr;
+
 esp_err_t PressureSensor::Init(void) {
   // Allow HX711 modules to power up and stabilize
   vTaskDelay(pdMS_TO_TICKS(100));
@@ -115,7 +118,7 @@ void PressureSensor::Task(void *pvParameters) {
     float weight_diff = front_pressure - rear_pressure;
     float total_weight = front_pressure + rear_pressure;
 
-    if (total_weight > 100.0f) { // Confirm someone is on the board
+    if (total_weight > 1000.0f) { // Confirm someone is on the board
       // Calculate balance point percentage (-1.0 to 1.0)
       float balance_point = weight_diff / total_weight;
 
@@ -128,8 +131,16 @@ void PressureSensor::Task(void *pvParameters) {
       is_moving = false;
     }
 
-    ESP_LOGI(TAG, "Pressure - Front: %.1f, Rear: %.1f, Target Speed: %.1f",
-             front_pressure, rear_pressure, target_speed);
+    ESP_LOGI(TAG,
+             "Pressure - Front: %.1f, Rear: %.1f, Target Speed: %.1f ,front "
+             "weight: %.1f, rear weight: %.1f, total weight: %.1f",
+             front_pressure, rear_pressure, target_speed, front_pressure,
+             rear_pressure, total_weight);
+
+    // Report data via callback if registered
+    if (data_callback_) {
+      data_callback_(front_pressure, rear_pressure, target_speed, is_moving);
+    }
 
     vTaskDelay(pdMS_TO_TICKS(50)); // 20Hz sampling rate
   }
@@ -345,3 +356,6 @@ void PressureSensor::SetCalibration(float offset, float scale_factor) {
   offset_ = offset;
   scale_factor_ = scale_factor;
 }
+
+// Add callback registration implementation
+void PressureSensor::RegisterCallback(DataCallback cb) { data_callback_ = cb; }

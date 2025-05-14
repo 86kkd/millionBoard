@@ -2,6 +2,8 @@
 #define INLINE_CS_LIB_H
 
 #include "base_classes/CurrentSense.h"
+#include "esp_adc/adc_oneshot.h" // for adc_oneshot_unit_handle_t
+
 class ESP32InlineCurrentSense : public CurrentSense {
 public:
   /**
@@ -61,5 +63,16 @@ private:
    */
   void calibrateOffsets();
 };
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Provide the ADC handle used by the shared ADC unit
+void current_sensor_set_adc_handle(adc_oneshot_unit_handle_t handle);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

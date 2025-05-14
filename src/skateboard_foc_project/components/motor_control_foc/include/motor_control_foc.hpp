@@ -35,12 +35,7 @@ typedef struct {
   float current_q; // Q轴电流 (mA)
 } motor_status_t;
 
-/**
- * @brief 初始化FOC电机控制
- *
- * @return esp_err_t ESP_OK成功，否则失败
- */
-esp_err_t motor_control_init(void);
+// Initialization is now moved into MotorControlFOC::init();
 
 /**
  * @brief 设置电机速度
@@ -103,19 +98,16 @@ esp_err_t motor_control_update(void);
  */
 float calculate_incline_compensation(float angle);
 
-/**
- * @brief 初始化电流传感器
- */
-static esp_err_t init_current_sensor(void);
-
-/**
- * @brief 获取当前电流值
- */
-void motor_control_foc_get_current(float *ia1, float *ib1, float *ic1,
-                                   float *ia2, float *ib2, float *ic2);
+// Monitoring: read motor shaft and electrical angles
+float motor_control_get_mechanical_angle(motor_id_t motor_id);
+float motor_control_get_electrical_angle(motor_id_t motor_id);
 
 #ifdef __cplusplus
 }
+
+// Monitoring support: read motor angles
+float getMechanicalAngle(motor_id_t motorId);
+float getElectricalAngle(motor_id_t motorId);
 
 // C++ wrapper class for FOC motor control
 class MotorControlFOC {
@@ -147,7 +139,11 @@ public:
   // Calculate incline compensation value
   float calculateInclineCompensation(float angle);
 
-  // Get current values
+  // Get motor angles for monitoring
+  float getMechanicalAngle(motor_id_t motorId);
+  float getElectricalAngle(motor_id_t motorId);
+
+  // Get phase DQ current estimates for both motors (ia=Id, ib=Iq, ic=unused)
   void getCurrents(float *ia1, float *ib1, float *ic1, float *ia2, float *ib2,
                    float *ic2);
 };

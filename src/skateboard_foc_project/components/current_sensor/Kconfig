@@ -48,7 +48,7 @@ menu "FOC电流传感器配置"
 
             config CURRENT_SCALE_FACTOR_MA_MV
                 int "电流比例系数 (mA/mV)"
-                default 20
+                default 50
                 range 1 100
                 help
                     电流传感器的比例系数，即每毫伏(mV)对应的电流值(mA)。

@@ -106,7 +106,7 @@ void motor_init(void) {
 
   // 根据规格书转矩曲线优化PID参数
   motor.PID_velocity.P = 0.12 * MOTOR_PP; // 1.2
-  motor.PID_velocity.I = 2.0 * MOTOR_PP;  // 20.0
+  motor.PID_velocity.I = 3.0 * MOTOR_PP;  // 20.0
   motor.PID_velocity.D = 0.04;
   motor.PID_velocity.output_ramp = 10000;
   motor.PID_velocity.limit = 30; // 最大电流限制
