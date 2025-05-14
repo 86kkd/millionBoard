@@ -1,7 +1,12 @@
 #pragma once
 
+#include "driver/rc522_spi.h"
 #include "esp_err.h"
-#include <stdbool.h>
+#include "freertos/FreeRTOS.h"
+#include "rc522.h"
+#include "rc522_picc.h"
+#include <esp_event.h>
+#include <stddef.h>
 #include <stdint.h>
 
 #ifdef __cplusplus
@@ -9,76 +14,106 @@ extern "C" {
 #endif
 
 /**
- * @brief NFC 标签数据结构
+ * @brief Forward declarations for ESP event types
+ */
+typedef const char *esp_event_base_t;
+typedef void (*esp_event_handler_t)(void *handler_arg,
+                                    esp_event_base_t event_base,
+                                    int32_t event_id, void *event_data);
+
+/**
+ * @brief NFC event base
+ */
+extern const esp_event_base_t NFC_EVENTS;
+
+/**
+ * @brief NFC event types
+ */
+typedef enum {
+  NFC_EVENT_TAG_DETECTED, /**< Tag detected in the field */
+  NFC_EVENT_TAG_REMOVED,  /**< Tag removed from the field */
+} nfc_event_t;
+
+/**
+ * @brief NFC tag data structure
  */
 typedef struct {
-  uint8_t uid[10];     // UID 数据缓冲区
-  uint8_t uid_length;  // UID 实际长度
-  uint8_t data[16];    // 标签数据
-  uint8_t data_length; // 数据长度
+  uint8_t uid[10];     /**< UID buffer */
+  uint8_t uid_length;  /**< UID length */
+  uint8_t data[16];    /**< Tag data buffer */
+  uint8_t data_length; /**< Tag data length */
 } nfc_tag_data_t;
 
 /**
- * @brief 初始化 NFC 模块
- *
- * @return esp_err_t ESP_OK 表示成功
+ * @brief Configuration for NFC module
  */
-esp_err_t nfc_init(void);
+typedef struct {
+  uint8_t i2c_addr;          /**< I2C address of PN532 */
+  uint32_t poll_interval_ms; /**< Polling interval in milliseconds */
+  size_t task_stack_size;    /**< FreeRTOS task stack size */
+  UBaseType_t task_priority; /**< FreeRTOS task priority */
+} nfc_config_t;
 
 /**
- * @brief 读取 NFC 被动目标卡片
- *
- * @param uid UID 缓冲区
- * @param uid_len UID 长度指针
- * @return esp_err_t ESP_OK 表示成功，ESP_ERR_NOT_FOUND 表示未找到卡片
+ * @brief NFC handle type
  */
-esp_err_t nfc_read_passive_target(uint8_t *uid, uint8_t *uid_len);
+typedef struct nfc *nfc_handle_t;
 
 /**
- * @brief 检查卡片是否授权
+ * @brief Create and initialize NFC module
  *
- * @param uid UID 缓冲区
- * @param uid_len UID 长度
- * @return bool 如果卡片授权返回 true
+ * @param config Configuration parameters
+ * @param out_handle Returned handle for the NFC instance
+ * @return esp_err_t ESP_OK on success
  */
-bool nfc_check_authorized(uint8_t *uid, uint8_t uid_len);
+esp_err_t nfc_create(const nfc_config_t *config, nfc_handle_t *out_handle);
 
 /**
- * @brief 添加授权的 UID
+ * @brief Start NFC polling
  *
- * @param uid UID 缓冲区
- * @param uid_len UID 长度
- * @return esp_err_t ESP_OK 表示成功
+ * @param handle NFC instance handle
+ * @return esp_err_t ESP_OK on success
  */
-esp_err_t nfc_add_authorized_uid(uint8_t *uid, uint8_t uid_len);
+esp_err_t nfc_start(nfc_handle_t handle);
 
 /**
- * @brief 清除所有授权的 UID
+ * @brief Pause NFC polling
  *
- * @return esp_err_t ESP_OK 表示成功
+ * @param handle NFC instance handle
+ * @return esp_err_t ESP_OK on success
  */
-esp_err_t nfc_clear_authorized_uids(void);
+esp_err_t nfc_pause(nfc_handle_t handle);
 
 /**
- * @brief 读取 NFC 标签数据
+ * @brief Destroy NFC module and free resources
  *
- * @param block_num 读取的块号
- * @param data 数据缓冲区
- * @param data_len 数据长度指针
- * @return esp_err_t ESP_OK 表示成功
+ * @param handle NFC instance handle
+ * @return esp_err_t ESP_OK on success
  */
-esp_err_t nfc_read_data(uint8_t block_num, uint8_t *data, uint8_t *data_len);
+esp_err_t nfc_destroy(nfc_handle_t handle);
 
 /**
- * @brief 写入 NFC 标签数据
+ * @brief Register NFC events
  *
- * @param block_num 写入的块号
- * @param data 数据缓冲区
- * @param data_len 数据长度
- * @return esp_err_t ESP_OK 表示成功
+ * @param handle NFC instance handle
+ * @param event Event type to register
+ * @param handler Event handler
+ * @param handler_arg User-provided argument for handler
+ * @return esp_err_t ESP_OK on success
  */
-esp_err_t nfc_write_data(uint8_t block_num, const uint8_t *data,
-                         uint8_t data_len);
+esp_err_t nfc_register_events(nfc_handle_t handle, nfc_event_t event,
+                              esp_event_handler_t handler, void *handler_arg);
+
+/**
+ * @brief Unregister NFC events
+ *
+ * @param handle NFC instance handle
+ * @param event Event type to unregister
+ * @param handler Event handler
+ * @return esp_err_t ESP_OK on success
+ */
+esp_err_t nfc_unregister_events(nfc_handle_t handle, nfc_event_t event,
+                                esp_event_handler_t handler);
 
 #ifdef __cplusplus
 }
