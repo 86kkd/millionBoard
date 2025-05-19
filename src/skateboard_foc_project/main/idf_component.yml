@@ -17,4 +17,3 @@ dependencies:
   espressif/esp_simplefoc: =*
   supcik/hx711: '*'
   igrr/pa1010d: ^1.0.0
-  abobija/rc522: ^3.3.1

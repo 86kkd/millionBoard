@@ -3,246 +3,182 @@
 #include "math.h"
 #include "string.h"
 #include "uart_comm.h"
+#include "esp_err.h"
+#include "freertos/FreeRTOS.h"
+#include "pa1010d.h"
+#include "freertos/task.h"
+#include "driver/i2c.h"
+#include "i2c_comm.h"
+#define PA1010D_I2C_ADDR 0x10
+#define PA1010D_I2C_TIMEOUT_MS 1000
 
 static const char *TAG = "GPS";
 
-// NMEA parser state
-static gps_data_t gps_data = {0};
-static bool is_initialized = false;
-
-// Helper function to parse decimal degrees from NMEA format
-static float parse_degrees(const char *value, char direction) {
-#if CONFIG_ENABLE_GPS
-  if (value == NULL || strlen(value) < 3) {
-    return 0.0f;
-  }
-
-  // Extract degrees part (first 2 or 3 digits)
-  int deg_len =
-      (value[0] == '0' || direction == 'N' || direction == 'S') ? 2 : 3;
-
-  char deg_str[4] = {0};
-  strncpy(deg_str, value, deg_len);
-
-  // Extract minutes part
-  float minutes = atof(value + deg_len);
-
-  // Calculate decimal degrees
-  float decimal_degrees = atof(deg_str) + minutes / 60.0f;
-
-  // Handle negatives for South and West
-  if (direction == 'S' || direction == 'W') {
-    decimal_degrees = -decimal_degrees;
-  }
-
-  return decimal_degrees;
-#else
-  return 0.0f;
-#endif
-}
-
-// Parse NMEA sentence
-static void parse_nmea_sentence(const char *sentence) {
-#if CONFIG_ENABLE_GPS
-  if (sentence == NULL || strlen(sentence) < 10) {
-    return;
-  }
-
-  // Verify checksum (ignored for simplicity here)
-
-  // Parse different sentence types
-  if (strncmp(sentence, "$GPRMC", 6) == 0 ||
-      strncmp(sentence, "$GNRMC", 6) == 0) {
-    // RMC sentence (Recommended Minimum data)
-    char temp[15] = {0};
-    char field[20][15] = {0};
-    int field_idx = 0;
-
-    // Split the sentence into fields
-    size_t len = strlen(sentence);
-    int temp_idx = 0;
-
-    for (size_t i = 7; i < len && field_idx < 20; i++) {
-      if (sentence[i] == ',' || sentence[i] == '*') {
-        temp[temp_idx] = '\0';
-        strcpy(field[field_idx++], temp);
-        temp_idx = 0;
-        memset(temp, 0, sizeof(temp));
-      } else {
-        temp[temp_idx++] = sentence[i];
-      }
+// 实现 PA1010D 发送命令函数
+esp_err_t pa1010d_send_command(pa1010d_handle_t handle, const char *command)
+{
+    if (handle == NULL || command == NULL) {
+        return ESP_ERR_INVALID_ARG;
     }
-
-    // Process fields
-    if (field_idx >= 10) {
-      // Status (field[1]): A=active, V=void
-      gps_data.valid = (field[1][0] == 'A');
-
-      if (gps_data.valid) {
-        // Time (field[0])
-        if (strlen(field[0]) >= 6) {
-          int hour = (field[0][0] - '0') * 10 + (field[0][1] - '0');
-          int minute = (field[0][2] - '0') * 10 + (field[0][3] - '0');
-          int second = (field[0][4] - '0') * 10 + (field[0][5] - '0');
-
-          gps_data.hour = hour;
-          gps_data.minute = minute;
-          gps_data.second = second;
-        }
-
-        // Latitude (field[2], field[3])
-        if (strlen(field[2]) > 0 && strlen(field[3]) > 0) {
-          gps_data.latitude = parse_degrees(field[2], field[3][0]);
-        }
-
-        // Longitude (field[4], field[5])
-        if (strlen(field[4]) > 0 && strlen(field[5]) > 0) {
-          gps_data.longitude = parse_degrees(field[4], field[5][0]);
-        }
-
-        // Speed (field[6])
-        if (strlen(field[6]) > 0) {
-          // Convert knots to km/h
-          gps_data.speed_kmh = atof(field[6]) * 1.852f;
-        }
-
-        // Course (field[7])
-        if (strlen(field[7]) > 0) {
-          gps_data.course = atof(field[7]);
-        }
-
-        // Date (field[8])
-        if (strlen(field[8]) >= 6) {
-          int day = (field[8][0] - '0') * 10 + (field[8][1] - '0');
-          int month = (field[8][2] - '0') * 10 + (field[8][3] - '0');
-          int year = 2000 + (field[8][4] - '0') * 10 + (field[8][5] - '0');
-
-          gps_data.day = day;
-          gps_data.month = month;
-          gps_data.year = year;
-        }
-
-        ESP_LOGI(TAG, "GPS: %.6f,%.6f %.1fkm/h Course:%.1f°", gps_data.latitude,
-                 gps_data.longitude, gps_data.speed_kmh, gps_data.course);
-      } else {
-        ESP_LOGD(TAG, "GPS data invalid");
-      }
+    
+    // 获取命令长度
+    size_t cmd_len = strlen(command);
+    
+    // 通过通信组件发送命令到PA1010D
+    esp_err_t ret = i2c_comm_write(PA1010D_I2C_ADDR,
+                                   (const uint8_t *)command,
+                                   cmd_len,
+                                   PA1010D_I2C_TIMEOUT_MS);
+    
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send command to PA1010D: %s", esp_err_to_name(ret));
+    } else {
+        ESP_LOGI(TAG, "Command sent to PA1010D: %s", command);
     }
-  }
-  // Additional sentence types could be parsed here (GGA, GSA, etc.)
-#endif
+    
+    return ret;
 }
 
-esp_err_t gps_init(void) {
-#if CONFIG_ENABLE_GPS
-  if (is_initialized) {
-    return ESP_OK;
-  }
+// 卫星系统类型
+typedef enum {
+    SAT_SYS_UNKNOWN = 0,
+    SAT_SYS_GPS,
+    SAT_SYS_GLONASS,
+    SAT_SYS_BEIDOU,
+    SAT_SYS_GALILEO,
+    SAT_SYS_GNSS
+} pa_satellite_system_t;
 
-  ESP_LOGI(TAG, "Initializing GPS module");
+// GPS 信息结构体
+typedef struct {
+    bool has_fix;
+    int num_satellites;
+    float latitude;
+    float longitude;
+    pa_satellite_system_t system;
+} pa1010d_gps_info_t;
 
-  // Initialize UART communication
-  uart_config_t uart_config = {
-      .baud_rate = CONFIG_GPS_UART_BAUD,
-      .data_bits = UART_DATA_8_BITS,
-      .parity = UART_PARITY_DISABLE,
-      .stop_bits = UART_STOP_BITS_1,
-      .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
-      .rx_flow_ctrl_thresh = 0,
-      .source_clk = UART_SCLK_APB,
-  };
+static const char *PA_TAG = "PA1010D_GPS";
+static pa1010d_handle_t pa_handle = NULL;
 
-  if (uart_comm_init(CONFIG_GPS_UART_PORT, &uart_config,
-                     CONFIG_GPS_UART_TX_GPIO,
-                     CONFIG_GPS_UART_RX_GPIO) != ESP_OK) {
-    ESP_LOGE(TAG, "Failed to initialize UART for GPS");
-    return ESP_FAIL;
-  }
-
-  // Set default values
-  gps_data.valid = false;
-  gps_data.latitude = 0.0f;
-  gps_data.longitude = 0.0f;
-  gps_data.speed_kmh = 0.0f;
-  gps_data.course = 0.0f;
-
-  is_initialized = true;
-  ESP_LOGI(TAG, "GPS initialized successfully");
-
-  return ESP_OK;
-#else
-  ESP_LOGW(TAG, "GPS support is disabled");
-  return ESP_ERR_NOT_SUPPORTED;
-#endif
+static pa_satellite_system_t identify_pa_system(const char *msg) {
+    if (!msg || msg[0] != '$') return SAT_SYS_UNKNOWN;
+    if (strncmp(msg, "$GP", 3) == 0) return SAT_SYS_GPS;
+    if (strncmp(msg, "$GL", 3) == 0) return SAT_SYS_GLONASS;
+    if (strncmp(msg, "$GB", 3) == 0) return SAT_SYS_BEIDOU;
+    if (strncmp(msg, "$GA", 3) == 0) return SAT_SYS_GALILEO;
+    if (strncmp(msg, "$GN", 3) == 0) return SAT_SYS_GNSS;
+    return SAT_SYS_UNKNOWN;
 }
 
-esp_err_t gps_get_location(gps_data_t *data) {
-#if CONFIG_ENABLE_GPS
-  if (!is_initialized || data == NULL) {
-    return ESP_ERR_INVALID_STATE;
-  }
-
-  // Read NMEA sentences
-  char nmea_buffer[128] = {0};
-  if (uart_comm_read_line(CONFIG_GPS_UART_PORT, nmea_buffer,
-                          sizeof(nmea_buffer), 500) == ESP_OK) {
-    parse_nmea_sentence(nmea_buffer);
-  }
-
-  // Copy the current GPS data
-  memcpy(data, &gps_data, sizeof(gps_data_t));
-
-  return ESP_OK;
-#else
-  if (data != NULL) {
-    memset(data, 0, sizeof(gps_data_t));
-  }
-  return ESP_ERR_NOT_SUPPORTED;
-#endif
+// 获取系统名称
+static const char* get_pa_system_name(pa_satellite_system_t sys) {
+    switch (sys) {
+        case SAT_SYS_GPS: return "GPS";
+        case SAT_SYS_GLONASS: return "GLONASS";
+        case SAT_SYS_BEIDOU: return "北斗";
+        case SAT_SYS_GALILEO: return "Galileo";
+        case SAT_SYS_GNSS: return "多系统";
+        default: return "未知";
+    }
 }
 
-esp_err_t gps_get_speed(float *speed_kmh) {
-#if CONFIG_ENABLE_GPS
-  if (!is_initialized || speed_kmh == NULL) {
-    return ESP_ERR_INVALID_STATE;
-  }
-
-  *speed_kmh = gps_data.speed_kmh;
-  return ESP_OK;
-#else
-  if (speed_kmh != NULL) {
-    *speed_kmh = 0.0f;
-  }
-  return ESP_ERR_NOT_SUPPORTED;
-#endif
+// 解析 NMEA 消息
+static void parse_pa_nmea_message(const char *msg, pa1010d_gps_info_t *info) {
+    if (!msg || !info) return;
+    info->system = identify_pa_system(msg);
+    // GGA 消息解析可见卫星数和定位状态
+    if (strstr(msg, "GGA")) {
+        char buf[200]; strcpy(buf, msg);
+        char *token = strtok(buf, ",");
+        int idx = 0;
+        char *fields[15] = {0};
+        while (token && idx < 15) {
+            fields[idx++] = token;
+            token = strtok(NULL, ",");
+        }
+        if (idx > 7) {
+            info->num_satellites = atoi(fields[7]);
+            int fix = atoi(fields[6]);
+            info->has_fix = (fix > 0);
+            if (fields[2] && fields[4]) {
+                info->latitude = atof(fields[2]);
+                info->longitude = atof(fields[4]);
+            }
+        }
+    }
+    // GSV 可见卫星总数
+    else if (strstr(msg, "GSV")) {
+        char buf[200]; strcpy(buf, msg);
+        char *token = strtok(buf, ",");
+        int idx = 0;
+        char *fields[5] = {0};
+        while (token && idx < 5) {
+            fields[idx++] = token;
+            token = strtok(NULL, ",*");
+        }
+        if (idx > 3) info->num_satellites = atoi(fields[3]);
+    }
+    // GSA 定位类型
+    else if (strstr(msg, "GSA")) {
+        char buf[200]; strcpy(buf, msg);
+        char *token = strtok(buf, ",");
+        int idx = 0;
+        char *fields[3] = {0};
+        while (token && idx < 3) {
+            fields[idx++] = token;
+            token = strtok(NULL, ",");
+        }
+        if (idx > 2) info->has_fix = (atoi(fields[2]) > 1);
+    }
 }
 
-bool gps_is_valid(void) { 
-#if CONFIG_ENABLE_GPS
-  return is_initialized && gps_data.valid; 
-#else
-  return false;
-#endif
+// 打印 GPS 状态
+static void print_pa_gps_status(const pa1010d_gps_info_t *info) {
+    if (!info) return;
+    ESP_LOGI(PA_TAG, "===========================");
+    ESP_LOGI(PA_TAG, "系统: %s", get_pa_system_name(info->system));
+    ESP_LOGI(PA_TAG, "定位: %s", info->has_fix ? "已锁定" : "未锁定");
+    ESP_LOGI(PA_TAG, "卫星数: %d", info->num_satellites);
+    if (info->has_fix) {
+        ESP_LOGI(PA_TAG, "经度: %.6f, 纬度: %.6f", info->longitude, info->latitude);
+    }
+    ESP_LOGI(PA_TAG, "===========================");
 }
 
-esp_err_t gps_get_datetime(gps_datetime_t *datetime) {
-#if CONFIG_ENABLE_GPS
-  if (!is_initialized || !gps_data.valid || datetime == NULL) {
-    return ESP_ERR_INVALID_STATE;
-  }
+// 初始化 PA1010D GPS 并创建 FreeRTOS 任务
+esp_err_t pa1010d_gps_init(void) {
+    if (pa_handle) return ESP_OK;
+    pa1010d_config_t cfg = {.i2c_port = I2C_NUM_0, .i2c_dev_addr = 0x10};
+    esp_err_t ret = pa1010d_init(&cfg, &pa_handle);
+    if (ret != ESP_OK) {
+        ESP_LOGE(PA_TAG, "init failed: %s", esp_err_to_name(ret));
+        return ret;
+    }
+    const char *cmd = "$PMTK353,1,1,0,1,0*2B\r\n";
+    ret = pa1010d_send_command(pa_handle, cmd);
+    if (ret != ESP_OK) ESP_LOGE(PA_TAG, "send cmd failed: %s", esp_err_to_name(ret));
+    xTaskCreate(pa1010d_gps_task, "pa1010d_gps", 4096, NULL, 2, NULL);
+    return ret;
+}
 
-  datetime->year = gps_data.year;
-  datetime->month = gps_data.month;
-  datetime->day = gps_data.day;
-  datetime->hour = gps_data.hour;
-  datetime->minute = gps_data.minute;
-  datetime->second = gps_data.second;
-
-  return ESP_OK;
-#else
-  if (datetime != NULL) {
-    memset(datetime, 0, sizeof(gps_datetime_t));
-  }
-  return ESP_ERR_NOT_SUPPORTED;
-#endif
+// PA1010D GPS FreeRTOS 任务函数
+void pa1010d_gps_task(void *pvParameters) {
+    char msg[200];
+    int count = 0;
+    pa1010d_gps_info_t info = {0};
+    while (1) {
+        if (pa1010d_get_nmea_msg(pa_handle, msg, sizeof(msg), 1000) == ESP_OK) {
+            // 打印原始 NMEA 消息
+            ESP_LOGI(PA_TAG, "Got message: '%s'", msg);
+            parse_pa_nmea_message(msg, &info);
+            if (++count >= 10) {
+                print_pa_gps_status(&info);
+                count = 0;
+            }
+        } else {
+            ESP_LOGE(PA_TAG, "get nmea msg failed");
+        }
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
 }

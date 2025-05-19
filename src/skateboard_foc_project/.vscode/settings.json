@@ -1,0 +1,9 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "files.associations": {
+    "uart_comm.h": "c",
+    "esp_err.h": "c",
+    "freertos.h": "c",
+    "pa1010d.h": "c"
+  }
+}

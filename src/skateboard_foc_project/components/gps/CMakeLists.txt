@@ -6,7 +6,7 @@ set(SRCS
 
 set(INCLUDE_DIRS "include")
 
-set(COMPONENT_REQUIRES driver esp_driver_gpio communication)
+set(COMPONENT_REQUIRES driver esp_driver_gpio communication pa1010d)
 
 # 根据需要添加依赖项
 if(CONFIG_ENABLE_UTILS)

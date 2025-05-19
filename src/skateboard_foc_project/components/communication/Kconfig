@@ -12,14 +12,14 @@ menu "通信配置"
         config NFC_SDA_GPIO
             int "I2C SDA引脚GPIO编号"
             default 21
-            range 0 39
+            range 0 47
             help
                 I2C数据线(SDA)引脚的GPIO编号。
 
         config NFC_SCL_GPIO
             int "I2C SCL引脚GPIO编号"
             default 22
-            range 0 39
+            range 0 47
             help
                 I2C时钟线(SCL)引脚的GPIO编号。
 
@@ -35,14 +35,14 @@ menu "通信配置"
         config CAN_TX_GPIO
             int "CAN发送引脚GPIO编号"
             default 21
-            range 0 39
+            range 0 47
             help
                 CAN总线发送引脚的GPIO编号。
 
         config CAN_RX_GPIO
             int "CAN接收引脚GPIO编号"
             default 22
-            range 0 39
+            range 0 47
             help
                 CAN总线接收引脚的GPIO编号。
                 
