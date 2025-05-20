@@ -77,7 +77,6 @@ static bool init_component(const char *name, esp_err_t (*init_func)(void),
 
 // We'll need these forward declarations
 static void create_board_angle_task(void);
-static void create_battery_task(void);
 static void create_motor_task(void);
 static void create_motor_monitor_task(void);
 
@@ -94,24 +93,17 @@ extern "C" void motor_control_task(void *pvParameters) {
   while (1) {
     // Only run motors if the board is unlocked
     if (!board_state.is_locked) {
-      // Calculate motor output
-      float motor_output = board_state.target_speed;
+      // 直接使用已归一化的目标速度并应用坡度补偿
+      float norm_target = board_state.target_speed;
+      // float comp = g_motor_control->calculateInclineCompensation(board_state.board_angle);
+      // norm_target += comp;
+      // 限幅到[-1,1]
+      if (norm_target > 1.0f) norm_target = 1.0f;
+      if (norm_target < -1.0f) norm_target = -1.0f;
+      g_motor_control->setDualSpeed(norm_target, norm_target);
 
-      // Apply incline compensation
-      float incline_compensation =
-          g_motor_control->calculateInclineCompensation(
-              board_state.board_angle);
-      motor_output += incline_compensation;
-
-      // Set both motors to the same speed
-      g_motor_control->setDualSpeed(motor_output, motor_output);
-
-      // ESP_LOGI(TAG, "Motors Speed: %.1f, Compensation: %.1f", motor_output,
-      //          incline_compensation);
       float ia1, ib1, ic1, ia2, ib2, ic2;
       g_motor_control->getCurrents(&ia1, &ib1, &ic1, &ia2, &ib2, &ic2);
-      // ESP_LOGI(TAG, "Currents: %.1f, %.1f, %.1f, %.1f, %.1f, %.1f", ia1, ib1,
-      //          ic1, ia2, ib2, ic2);
     } else {
       // Board is locked, stop motors
       g_motor_control->setDualSpeed(0, 0);
@@ -148,15 +140,67 @@ extern "C" void motor_monitor_task(void *pvParameters) {
     // Calculate total RMS current in mA
     float i1_total = sqrtf((ia1 * ia1 + ib1 * ib1 + ic1 * ic1) / 3.0f);
     float i2_total = sqrtf((ia2 * ia2 + ib2 * ib2 + ic2 * ic2) / 3.0f);
-    ESP_LOGI(TAG,
-             "Motor Mon: Mech=%.2f°, Elec=%.2f°, I_total=[%.2f, %.2f] mA, "
-             "Speed=%.2f",
-             mech * RAD2DEG, elec * RAD2DEG, i1_total, i2_total,
-             board_state.current_speed);
     vTaskDelay(pdMS_TO_TICKS(200)); // 5Hz
   }
 }
 
+// Task to periodically log central system status
+static void status_task(void *pvParameters) {
+    battery_status_t batt;
+    angle_sensor_data_t ang;
+    gps_info_t gps;
+    motor_status_t mstat;
+    float ia1, ib1, ic1, ia2, ib2, ic2;
+    float mech1, elec1, mech2, elec2;
+    while (1) {
+        // Battery status
+        if (battery_mgr_get_status(&batt) != ESP_OK) {
+            ESP_LOGW(TAG, "Failed to get battery status");
+        }
+        // Angle sensor
+        if (angle_sensor_read(&ang) != ESP_OK) {
+            ESP_LOGW(TAG, "Failed to read angle sensor");
+        }
+        // Motor currents & speed
+        g_motor_control->getCurrents(&ia1, &ib1, &ic1, &ia2, &ib2, &ic2);
+        if (g_motor_control->getStatus(MOTOR_ID_SECONDARY, &mstat) == ESP_OK) {
+            board_state.current_speed = mstat.current_speed;
+        }
+        // 获取 GPS 信息
+        if (pa1010d_gps_get_info(&gps) != ESP_OK) {
+            ESP_LOGW(TAG, "Failed to get GPS info");
+        }
+        // 获取主、副电机角度
+        mech1 = g_motor_control->getMechanicalAngle(MOTOR_ID_PRIMARY);
+        elec1 = g_motor_control->getElectricalAngle(MOTOR_ID_PRIMARY);
+        mech2 = g_motor_control->getMechanicalAngle(MOTOR_ID_SECONDARY);
+        elec2 = g_motor_control->getElectricalAngle(MOTOR_ID_SECONDARY);
+        // 归一化目标速度
+        float norm_target = board_state.target_speed;
+        float comp = g_motor_control->calculateInclineCompensation(board_state.board_angle);
+        norm_target += comp;
+        if (norm_target > 1.0f) norm_target = 1.0f;
+        if (norm_target < -1.0f) norm_target = -1.0f;
+        // Log all status
+        ESP_LOGI(TAG,
+            "STATUS | Pressure Fp:%.2f Rp:%.2f \n"
+            "Angle AP:%.2f° AR:%.2f° \n"
+            "GPS:%s Sats:%d Lat:%.6f Lon:%.6f \n"
+            "Bat:%.2fV %.2fA %d%% %s \n"
+            "Curr1:[%.2f,%.2f,%.2f] Curr2:[%.2f,%.2f,%.2f] \n"
+            "MA1:%.2f° EA1:%.2f° MA2:%.2f° EA2:%.2f° Spd:%.2f Target:%.2f",
+            board_state.front_pressure, board_state.rear_pressure,
+            ang.pitch, ang.roll,
+            gps.has_fix ? "Fix" : "NoFix", gps.num_satellites,
+            gps.latitude, gps.longitude,
+            batt.voltage, batt.current, batt.percentage,
+            batt.is_charging ? "Chg" : "Dsg",
+            ia1, ib1, ic1, ia2, ib2, ic2,
+            mech1, elec1, mech2, elec2,
+            board_state.current_speed, norm_target);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
 
 static void create_motor_task(void) {
   xTaskCreate(motor_control_task, "motor_control", 4096, NULL, 10, NULL);
@@ -189,20 +233,9 @@ extern "C" void app_main(void) {
 
   // 1. Initialize communication modules (using C interfaces)
   i2c_comm_init();
-  can_comm_init();
-
-  // 2. Initialize pressure sensors using the static component API
-  // This will create the sensors and start the pressure sensor task
-  esp_err_t ret_pressure = PressureSensor::Init();
-  if (ret_pressure != ESP_OK) {
-    ESP_LOGE(TAG, "Failed to initialize pressure sensors");
-  } else {
-    // Register callback to receive pressure updates
-    PressureSensor::RegisterCallback(pressure_data_callback);
-  }
 
   // 3. Initialize other components using C interfaces
-  angle_sensor_init();
+
   nfc_init();
 
   // 4. Initialize motor control (C++ interface)
@@ -215,7 +248,7 @@ extern "C" void app_main(void) {
       create_motor_monitor_task();
     } else {
       ESP_LOGE(TAG, "Failed to enable motors");
-    }
+    } 
   }
 
   // 启动 PA1010D I2C GPS 任务
@@ -224,6 +257,21 @@ extern "C" void app_main(void) {
   } else {
     ESP_LOGE(TAG, "PA1010D GPS I2C 初始化失败");
   }
+
+  angle_sensor_init();
+
+    // 2. Initialize pressure sensors using the static component API
+  // This will create the sensors and start the pressure sensor task
+  esp_err_t ret_pressure = PressureSensor::Init();
+  if (ret_pressure != ESP_OK) {
+    ESP_LOGE(TAG, "Failed to initialize pressure sensors");
+  } else {
+    // Register callback to receive pressure updates
+    PressureSensor::RegisterCallback(pressure_data_callback);
+  }
+
+  // 创建集中式状态打印任务
+  xTaskCreate(status_task, "status", 8192, NULL, 2, NULL);
 
   ESP_LOGI(TAG, "Skateboard control system started!");
 }

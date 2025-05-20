@@ -82,7 +82,7 @@ esp_err_t can_comm_init(void) {
   // Create a queue for CAN messages
   can_rx_queue = xQueueCreate(20, sizeof(twai_message_t));
   if (can_rx_queue == NULL) {
-    ESP_LOGE(TAG, "Failed to create CAN RX queue");
+    ESP_LOGE(TAG, "创建CAN RX队列失败");
     twai_stop();
     twai_driver_uninstall();
     return ESP_ERR_NO_MEM;
@@ -92,7 +92,7 @@ esp_err_t can_comm_init(void) {
   BaseType_t task_created =
       xTaskCreate(can_rx_task, "CAN_RX", 4096, NULL, 5, &can_rx_task_handle);
   if (task_created != pdPASS) {
-    ESP_LOGE(TAG, "Failed to create CAN RX task");
+    ESP_LOGE(TAG, "创建CAN RX任务失败");
     vQueueDelete(can_rx_queue);
     twai_stop();
     twai_driver_uninstall();
@@ -102,7 +102,7 @@ esp_err_t can_comm_init(void) {
   is_initialized = true;
   ESP_LOGI(
       TAG,
-      "CAN communication initialized successfully (TX:%d, RX:%d, Bitrate:%d)",
+      "CAN 通信初始化成功 (TX:%d, RX:%d, Bitrate:%d)",
       CAN_TX_GPIO, CAN_RX_GPIO, CAN_BITRATE);
 
   return ESP_OK;

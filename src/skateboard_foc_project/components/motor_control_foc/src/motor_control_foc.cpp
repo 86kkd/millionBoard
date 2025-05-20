@@ -38,6 +38,13 @@ static const char *TAG = "MOTOR_CONTROL";
 #define MOTOR2_HALL_B CONFIG_MOTOR2_HALL_B
 #define MOTOR2_HALL_C CONFIG_MOTOR2_HALL_C
 
+// 轮毂半径 (m)，直径 73.5mm
+#define WHEEL_RADIUS         (0.03675f)
+// 最大线速度 (m/s) = CONFIG_MAX_SPEED (km/h) / 3.6
+#define MAX_SPEED_M_S        (CONFIG_MAX_SPEED / 3.6f)
+// 最大角速度 (rad/s) = v_max / R
+#define MOTOR_MAX_RADS       (MAX_SPEED_M_S / WHEEL_RADIUS)
+
 // 电机驱动
 BLDCDriver3PWM driver1 =
     BLDCDriver3PWM(MOTOR1_PWM_U_PIN, MOTOR1_PWM_V_PIN, MOTOR1_PWM_W_PIN);
@@ -203,10 +210,8 @@ extern "C" esp_err_t motor_control_set_speed(motor_id_t motor_id, float speed) {
     motor_ctrl->direction = MOTOR_DIR_STOP;
   }
 
-  // 将标准化速度(-1到1)映射到电机所需的RPM或rad/s
-  // 使用rad/s作为速度单位
-  float max_speed = 30.0f; // 最大速度30 rad/s，约300 RPM
-  float target_rad_per_sec = speed * max_speed;
+  // 将标准化速度(-1到1)映射到电机所需的角速度 (rad/s)
+  float target_rad_per_sec = speed * MOTOR_MAX_RADS;
 
   // 设置电机目标速度
   if (motor_id == MOTOR_ID_PRIMARY) {
@@ -246,7 +251,7 @@ extern "C" esp_err_t motor_control_get_status(motor_id_t motor_id,
   }
 
   // 获取当前实际速度并转换为标准化值(-1到1)
-  float max_speed = 30.0f; // 与设置速度时使用的相同
+  float max_speed = MOTOR_MAX_RADS;
   float current_rad_per_sec;
 
   if (motor_id == MOTOR_ID_PRIMARY) {

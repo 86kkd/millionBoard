@@ -14,6 +14,9 @@
 
 static const char *TAG = "GPS";
 
+// 全局 GPS 信息，仅保留需要的字段
+static gps_info_t g_gps_info = { .has_fix = false, .num_satellites = 0, .latitude = 0.0f, .longitude = 0.0f };
+
 // 实现 PA1010D 发送命令函数
 esp_err_t pa1010d_send_command(pa1010d_handle_t handle, const char *command)
 {
@@ -169,16 +172,31 @@ void pa1010d_gps_task(void *pvParameters) {
     pa1010d_gps_info_t info = {0};
     while (1) {
         if (pa1010d_get_nmea_msg(pa_handle, msg, sizeof(msg), 1000) == ESP_OK) {
-            // 打印原始 NMEA 消息
-            ESP_LOGI(PA_TAG, "Got message: '%s'", msg);
             parse_pa_nmea_message(msg, &info);
-            if (++count >= 10) {
-                print_pa_gps_status(&info);
-                count = 0;
-            }
+            // 更新全局 GPS 信息
+            g_gps_info.has_fix = info.has_fix;
+            g_gps_info.num_satellites = info.num_satellites;
+            g_gps_info.latitude = info.latitude;
+            g_gps_info.longitude = info.longitude;
+            // if (++count >= 10) {
+            //     print_pa_gps_status(&info);
+            //     count = 0;
+            // }
         } else {
             ESP_LOGE(PA_TAG, "get nmea msg failed");
         }
         vTaskDelay(pdMS_TO_TICKS(500));
     }
+}
+
+// 获取最新 GPS 信息
+esp_err_t pa1010d_gps_get_info(gps_info_t *info) {
+    if (info == NULL) {
+        return ESP_ERR_INVALID_ARG;
+    }
+    info->has_fix = g_gps_info.has_fix;
+    info->num_satellites = g_gps_info.num_satellites;
+    info->latitude = g_gps_info.latitude;
+    info->longitude = g_gps_info.longitude;
+    return ESP_OK;
 }

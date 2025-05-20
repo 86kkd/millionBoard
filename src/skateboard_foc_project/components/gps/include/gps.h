@@ -32,6 +32,21 @@ esp_err_t pa1010d_gps_init(void);
  */
 void pa1010d_gps_task(void *pvParameters);
 
+// 外部 GPS 信息结构体，仅包含关键字段
+typedef struct {
+  bool has_fix;         // 是否已定位
+  int num_satellites;   // 可见卫星数
+  float latitude;       // 纬度
+  float longitude;      // 经度
+} gps_info_t;
+
+/**
+ * @brief 获取最新的 GPS 信息
+ * @param info 指向 GPS 信息结构体的指针
+ * @return esp_err_t ESP_OK 成功，否则失败
+ */
+esp_err_t pa1010d_gps_get_info(gps_info_t *info);
+
 #ifdef __cplusplus
 }
 #endif

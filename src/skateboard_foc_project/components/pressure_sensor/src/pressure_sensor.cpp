@@ -20,6 +20,8 @@ static TaskHandle_t g_pressure_task_handle = nullptr;
 // Initialize static data callback pointer
 PressureSensor::DataCallback PressureSensor::data_callback_ = nullptr;
 
+#define PS_EWMA_ALPHA 0.5f  // 指数平均系数
+
 esp_err_t PressureSensor::Init(void) {
   // Allow HX711 modules to power up and stabilize
   vTaskDelay(pdMS_TO_TICKS(100));
@@ -110,32 +112,42 @@ void PressureSensor::Task(void *pvParameters) {
   bool is_moving = false;
 
   while (1) {
-    // Read pressures from both sensors
-    front_pressure = g_pressure_sensor_front->GetWeight(5);
-    rear_pressure = g_pressure_sensor_rear->GetWeight(5);
+    // Read raw pressures and apply EWMA 滤波
+    static bool ps_first = true;
+    static float ps_filt_front = 0.0f, ps_filt_rear = 0.0f;
+    float raw_front = g_pressure_sensor_front->GetWeight(5);
+    float raw_rear = g_pressure_sensor_rear->GetWeight(5);
+    if (ps_first) {
+      ps_filt_front = raw_front;
+      ps_filt_rear = raw_rear;
+      ps_first = false;
+    } else {
+      ps_filt_front = PS_EWMA_ALPHA * raw_front + (1 - PS_EWMA_ALPHA) * ps_filt_front;
+      ps_filt_rear = PS_EWMA_ALPHA * raw_rear + (1 - PS_EWMA_ALPHA) * ps_filt_rear;
+    }
+    front_pressure = ps_filt_front;
+    rear_pressure = ps_filt_rear;
 
     // Calculate center of gravity and target speed
     float weight_diff = front_pressure - rear_pressure;
     float total_weight = front_pressure + rear_pressure;
 
-    if (total_weight > 1000.0f) { // Confirm someone is on the board
-      // Calculate balance point percentage (-1.0 to 1.0)
+    if (total_weight > 30000.0f) { // Confirm someone is on the board
+      // Calculate balance point percentage (-1.0 to 1.0) as normalized speed
       float balance_point = weight_diff / total_weight;
-
-      // Calculate target speed based on balance
-      target_speed = balance_point * CONFIG_MAX_SPEED;
-      is_moving = (fabs(target_speed) > 0.5f);
+      target_speed = balance_point;  // normalized target speed [-1,1]
+      is_moving = (fabs(balance_point) > 0.05f);
     } else {
       // No one on the board, stop
       target_speed = 0.0f;
       is_moving = false;
     }
 
-    ESP_LOGI(TAG,
-             "Pressure - Front: %.1f, Rear: %.1f, Target Speed: %.1f ,front "
-             "weight: %.1f, rear weight: %.1f, total weight: %.1f",
-             front_pressure, rear_pressure, target_speed, front_pressure,
-             rear_pressure, total_weight);
+    // ESP_LOGI(TAG,
+    //          "Pressure - Front: %.1f, Rear: %.1f, Target Speed: %.1f ,front "
+    //          "weight: %.1f, rear weight: %.1f, total weight: %.1f",
+    //          front_pressure, rear_pressure, target_speed, front_pressure,
+    //          rear_pressure, total_weight);
 
     // Report data via callback if registered
     if (data_callback_) {
