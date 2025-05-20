@@ -23,6 +23,7 @@
 #include "math_utils.h"
 #include "nfc.h"
 #include "uart_comm.h"
+#include "olcd.h"
 
 static const char *TAG = "MAIN";
 
@@ -53,6 +54,10 @@ skateboard_state_t board_state = {.front_pressure = 0.0f,
                                   .is_charging = false,
                                   .is_moving = false,
                                   .is_locked = false};
+
+// 全局LVGL显示数据数组：0=Fp,1=Rp,2=Angle,3=GPS Fix(1/0),4=Lock(1/0)
+static float lcd_vals[5] = {0};
+static olcd_data lcd_data = {0};
 
 // Helper function for component initialization
 static bool init_component(const char *name, esp_err_t (*init_func)(void),
@@ -199,6 +204,12 @@ static void status_task(void *pvParameters) {
             mech1, elec1, mech2, elec2,
             board_state.current_speed, norm_target);
         vTaskDelay(pdMS_TO_TICKS(1000));
+        // 更新LCD显示数组：总重量、俯仰、横滚
+        lcd_vals[0] = (board_state.front_pressure + board_state.rear_pressure) / 1000.0f;
+        lcd_vals[1] = ang.pitch;
+        lcd_vals[2] = ang.roll;
+        lcd_vals[3] = (gps.has_fix ? 1.0f : 0.0f);
+        lcd_vals[4] = (board_state.is_locked ? 1.0f : 0.0f);
     }
 }
 
@@ -272,6 +283,15 @@ extern "C" void app_main(void) {
 
   // 创建集中式状态打印任务
   xTaskCreate(status_task, "status", 8192, NULL, 2, NULL);
+
+  // 添加 OLCD 显示任务
+  {
+    // 初始化 OLCD 并创建显示线程
+    lv_disp_t *disp = setup_olcd();
+    lcd_data.disp = disp;
+    lcd_data.data = lcd_vals;
+    xTaskCreate(run_olcd, "olcd_task", 4096, &lcd_data, 5, NULL);
+  }
 
   ESP_LOGI(TAG, "Skateboard control system started!");
 }

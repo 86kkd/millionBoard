@@ -135,6 +135,7 @@ void PressureSensor::Task(void *pvParameters) {
     if (total_weight > 30000.0f) { // Confirm someone is on the board
       // Calculate balance point percentage (-1.0 to 1.0) as normalized speed
       float balance_point = weight_diff / total_weight;
+      if (fabs(balance_point) < 0.3f) balance_point = 0.0f;
       target_speed = balance_point;  // normalized target speed [-1,1]
       is_moving = (fabs(balance_point) > 0.05f);
     } else {
