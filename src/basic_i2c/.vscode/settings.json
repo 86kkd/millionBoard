@@ -1,0 +1,11 @@
+{
+    "idf.flashType": "UART",
+    "files.associations": {
+        "esp_log.h": "c",
+        "rc522.h": "c",
+        "rc522_registers.h": "c",
+        "MAIN.C": "cpp",
+        "RC522.C": "cpp"
+    },
+    "idf.portWin": "COM14"
+}
