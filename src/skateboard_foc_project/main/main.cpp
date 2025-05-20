@@ -24,6 +24,7 @@
 #include "nfc.h"
 #include "uart_comm.h"
 #include "olcd.h"
+#include <driver/gpio.h>
 
 static const char *TAG = "MAIN";
 
@@ -53,7 +54,7 @@ skateboard_state_t board_state = {.front_pressure = 0.0f,
                                   .battery_percentage = 0,
                                   .is_charging = false,
                                   .is_moving = false,
-                                  .is_locked = false};
+                                  .is_locked = true};
 
 // 全局LVGL显示数据数组：0=Fp,1=Rp,2=Angle,3=GPS Fix(1/0),4=Lock(1/0)
 static float lcd_vals[5] = {0};
@@ -158,9 +159,21 @@ static void status_task(void *pvParameters) {
     float ia1, ib1, ic1, ia2, ib2, ic2;
     float mech1, elec1, mech2, elec2;
     while (1) {
+        // 无人检测逻辑：重量 < 30000g 则计时，30s 后锁车
+        static int no_user_counter = 0;
+        float total_weight = board_state.front_pressure + board_state.rear_pressure; // 单位 g
+        if (total_weight < 30000.0f) {
+            no_user_counter++;
+            if (no_user_counter >= 30 && !board_state.is_locked) {
+                board_state.is_locked = true;
+                ESP_LOGW(TAG, "No user detected for 30s, board locked");
+            }
+        } else {
+            no_user_counter = 0;
+        }
         // Battery status
         if (battery_mgr_get_status(&batt) != ESP_OK) {
-            ESP_LOGW(TAG, "Failed to get battery status");
+            // ESP_LOGW(TAG, "Failed to get battery status");
         }
         // Angle sensor
         if (angle_sensor_read(&ang) != ESP_OK) {
@@ -230,6 +243,23 @@ static void pressure_data_callback(float front_pressure, float rear_pressure,
   board_state.is_moving = is_moving;
 }
 
+// NFC 认证回调，实现解锁/锁车
+static void nfc_auth_cb(bool authorized) {
+    if (authorized) {
+        board_state.is_locked = false;
+        ESP_LOGI(TAG, "Board unlocked by NFC");
+    } else {
+        // 卡片移除，仅在体重 <20kg 时立即锁车
+        float total_weight = board_state.front_pressure + board_state.rear_pressure; // g
+        if (total_weight < 20000.0f) {
+            board_state.is_locked = true;
+            ESP_LOGI(TAG, "Card removed and no user detected, board locked");
+        } else {
+            ESP_LOGI(TAG, "Card removed but user still on board (weight=%.0fg), defer lock", total_weight);
+        }
+    }
+}
+
 extern "C" void app_main(void) {
   // Initialize NVS
   esp_err_t ret = nvs_flash_init();
@@ -248,6 +278,7 @@ extern "C" void app_main(void) {
   // 3. Initialize other components using C interfaces
 
   nfc_init();
+  nfc_register_auth_callback(nfc_auth_cb);
 
   // 4. Initialize motor control (C++ interface)
   g_motor_control = new MotorControlFOC();

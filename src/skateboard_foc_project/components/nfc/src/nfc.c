@@ -10,6 +10,7 @@
 #include "esp_event.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include <stdbool.h>
 
 static const char *TAG = "NFC";
 
@@ -23,13 +24,42 @@ static const char *TAG = "NFC";
 static rc522_driver_handle_t driver;
 static rc522_handle_t scanner;
 
+// NFC 认证回调句柄
+static nfc_auth_cb_t auth_cb = NULL;
+
+// 实现注册认证回调函数
+esp_err_t nfc_register_auth_callback(nfc_auth_cb_t cb)
+{
+    auth_cb = cb;
+    return ESP_OK;
+}
+
 static void on_picc_state_changed(void *arg, esp_event_base_t base, int32_t event_id, void *data)
 {
     rc522_picc_state_changed_event_t *event = (rc522_picc_state_changed_event_t *)data;
     if (event->picc->state == RC522_PICC_STATE_ACTIVE) {
         rc522_picc_print(event->picc);
+        // 授权卡检测
+        const rc522_picc_uid_t *uid = &event->picc->uid;
+        const uint8_t allowed_uid[4] = {0xA0, 0x12, 0x46, 0x4F};
+        bool authorized = (uid->length == 4 &&
+            uid->value[0] == allowed_uid[0] &&
+            uid->value[1] == allowed_uid[1] &&
+            uid->value[2] == allowed_uid[2] &&
+            uid->value[3] == allowed_uid[3]);
+        if (authorized) {
+            ESP_LOGI(TAG, "Authorized card detected");
+        } else {
+            ESP_LOGW(TAG, "Unauthorized card");
+        }
+        if (auth_cb) {
+            auth_cb(authorized);
+        }
     } else if (event->picc->state == RC522_PICC_STATE_IDLE && event->old_state >= RC522_PICC_STATE_ACTIVE) {
         ESP_LOGI(TAG, "Card removed");
+        if (auth_cb) {
+            auth_cb(false);
+        }
     }
 }
 
